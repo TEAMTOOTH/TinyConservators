@@ -1,0 +1,65 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class WalkingMovement : MonoBehaviour
+{
+    Rigidbody2D rb2D;
+    Vector2 movementInput;
+    Vector2 velocity;
+    int direction = 1;
+
+    [SerializeField] Vector2 targetVelocity;
+    [SerializeField] float horizontalSpeedIncrease = 50;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        HandleMovement();
+    }
+
+    public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
+
+    void HandleMovement()
+    {
+        
+        if (movementInput.x != 0)
+        {
+            direction = 1;
+            
+            if (movementInput.x < 0)
+            {
+                direction = -1;
+            }
+
+            float directionX = Mathf.Sign(movementInput.x);
+            float inputMagnitudeX = Mathf.Abs(movementInput.x); // Get how far the stick is pushed (0 to 1)
+
+            // If changing directionX, allow a small slide before reversing
+            if (Mathf.Sign(velocity.x) != directionX && velocity.x != 0)
+            {
+                // Apply stronger deceleration when switching directionXs
+                velocity.x = Mathf.MoveTowards(velocity.x, 0, (horizontalSpeedIncrease * 2) * Time.deltaTime);
+            }
+            else
+            {
+                // Accelerate based on input magnitude (makes it smoother for controllers)
+                float targetSpeed = targetVelocity.x * inputMagnitudeX;
+                if (Mathf.Abs(velocity.x) < targetSpeed)
+                    velocity.x += directionX * horizontalSpeedIncrease * inputMagnitudeX * Time.deltaTime;
+                else
+                    velocity.x = directionX * targetSpeed;
+            }
+        }
+        else
+        {
+            // Apply deceleration when no input is given
+            velocity.x = Mathf.MoveTowards(velocity.x, 0, horizontalSpeedIncrease * Time.deltaTime);
+        }
+        Debug.Log(velocity.x);
+    }
+}
