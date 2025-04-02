@@ -13,20 +13,23 @@ public class WalkingMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         HandleMovement();
+        
+        //Calculate final velocity of rigidbody after movement and jump/jetpack has been applied
+        rb2D.linearVelocity = new Vector2(velocity.x, rb2D.linearVelocityY);
     }
 
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
 
+    //Take in input and apply it to the player/Handle all the game feel in terms of left/right movement within this class
     void HandleMovement()
     {
-        
         if (movementInput.x != 0)
         {
             direction = 1;
@@ -60,6 +63,5 @@ public class WalkingMovement : MonoBehaviour
             // Apply deceleration when no input is given
             velocity.x = Mathf.MoveTowards(velocity.x, 0, horizontalSpeedIncrease * Time.deltaTime);
         }
-        Debug.Log(velocity.x);
     }
 }
