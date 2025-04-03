@@ -4,6 +4,7 @@ using System.Collections;
 
 public class FlyingMovement : MonoBehaviour
 {
+    [SerializeField] float maxFlightSpeed;
     [SerializeField] float impulseForce;
     [SerializeField] int amountOfFlapsPerFly;
     [SerializeField] float flapCooldown;
@@ -25,6 +26,10 @@ public class FlyingMovement : MonoBehaviour
             if(amountOfFlaps > 0 && canFlap)
             {
                 rb2D.AddForceY(impulseForce, ForceMode2D.Impulse);
+                if(rb2D.linearVelocityY > maxFlightSpeed)
+                {
+                    rb2D.linearVelocityY = maxFlightSpeed;
+                }
                 amountOfFlaps--;
 
                 StartCoroutine(ResetCanFlap());
@@ -46,7 +51,7 @@ public class FlyingMovement : MonoBehaviour
 
     public void ResetFlaps()
     {
-        Debug.Log("Landed");
+       
         amountOfFlaps = amountOfFlapsPerFly;
     }
 }
