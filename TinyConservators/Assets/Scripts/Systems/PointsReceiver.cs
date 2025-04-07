@@ -11,4 +11,9 @@ public class PointsReceiver : MonoBehaviour
         //This is incredibly temporary, find a better way soon!!!!
         GetComponentInChildren<TextMeshPro>().text = points.ToString();
     }
+
+    public int GetPoints()
+    {
+        return points;
+    }
 }

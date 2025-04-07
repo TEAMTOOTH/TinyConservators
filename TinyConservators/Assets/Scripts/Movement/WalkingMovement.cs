@@ -7,6 +7,7 @@ public class WalkingMovement : MonoBehaviour
     Vector2 movementInput;
     Vector2 velocity;
     int direction = 1;
+    public bool canMove = true; //Should not be public, just did it for test 07.04
 
     [SerializeField] Vector2 targetVelocity;
     [SerializeField] float horizontalSpeedIncrease = 50;
@@ -20,9 +21,17 @@ public class WalkingMovement : MonoBehaviour
     void Update()
     {
         HandleMovement();
-        
+
         //Calculate final velocity of rigidbody after movement and jump/jetpack has been applied
-        rb2D.linearVelocity = new Vector2(velocity.x, rb2D.linearVelocityY);
+        if (canMove)
+        {
+            rb2D.linearVelocity = new Vector2(velocity.x, rb2D.linearVelocityY);
+        }
+        else
+        {
+            rb2D.linearVelocity = new Vector2(0, 0); //For the test on 07.04, change later
+        }
+            
     }
 
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
@@ -30,6 +39,12 @@ public class WalkingMovement : MonoBehaviour
     //Take in input and apply it to the player/Handle all the game feel in terms of left/right movement within this class
     void HandleMovement()
     {
+        if (!canMove) 
+        {
+            return;
+        }
+     
+
         if (movementInput.x != 0)
         {
             direction = 1;

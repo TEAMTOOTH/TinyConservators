@@ -8,6 +8,9 @@ public class FruitSpawner : MonoBehaviour
 
     Transform[] spawnPoints;
     bool canSpawn = true;
+
+    int previousSpawnIndex = 100; //Set to a high number so that get unique random only runs once on the first go.
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,8 +30,10 @@ public class FruitSpawner : MonoBehaviour
 
     public void TestStartMethod()
     {
+        Invoke("StartSpawning", 3);
         Invoke("StopSpawning", 63);
-        SpawnFruit();
+        //Invoke("StopSpawning", 15);
+        
     }
 
     void SpawnFruit()
@@ -41,6 +46,7 @@ public class FruitSpawner : MonoBehaviour
             GameObject g = Instantiate(spawnObjects[Random.Range(0, spawnObjects.Length)], spawnPoints[spawnIndex].position, Quaternion.identity);
 
             g.transform.parent = spawnPoints[spawnIndex];
+            previousSpawnIndex = spawnIndex;
         }
     }
 
@@ -57,6 +63,19 @@ public class FruitSpawner : MonoBehaviour
     void StopSpawning()
     {
         canSpawn = false;
+        GameManager gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gm.DetermineWinner();
+    }
+
+    int GetUniqueRandom()
+    {
+        return 0;
+    }
+
+    //Refactor this later, done for a test on the 07.04
+    void StartSpawning()
+    {
+        SpawnFruit();
     }
 
     
