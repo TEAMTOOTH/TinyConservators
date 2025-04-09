@@ -1,3 +1,4 @@
+using Pathfinding;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -15,12 +16,13 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        FindTarget();
     }
 
     public void KnockOut()
     {
         canMove = false;
+        GetComponent<AIPath>().enabled = false;
         rb2D.bodyType = RigidbodyType2D.Dynamic;
     }
 
@@ -29,17 +31,33 @@ public class EnemyMovement : MonoBehaviour
         canMove = true;
         rb2D.bodyType = RigidbodyType2D.Kinematic;
         transform.rotation = Quaternion.identity;
+        GetComponent<AIPath>().enabled = true;
     }
 
     void FindTarget()
     {
-        Collider2D[] objectsFound = Physics2D.OverlapAreaAll(new Vector2(-10, -6), new Vector2(10, 6));
+        float searchWidth = 10;
+        float searchHeight = 6;
+        float shortestDistance = searchWidth+searchHeight;
+
+
+        Collider2D[] objectsFound = Physics2D.OverlapAreaAll(new Vector2(-searchWidth, -searchHeight), new Vector2(searchWidth, searchHeight));
         for(int i = 0; i < objectsFound.Length; i++)
         {
             if (objectsFound[i].gameObject.CompareTag("Player"))
             {
-                Debug.Log("Found player");
+                float distance = Vector3.Distance(transform.position, objectsFound[i].transform.position);
+                if(shortestDistance > distance)
+                {
+                    shortestDistance = distance;
+                    SetNewTarget(objectsFound[i].gameObject);
+                }
             }
         }
+    }
+
+    void SetNewTarget(GameObject newTarget)
+    {
+        GetComponent<AIDestinationSetter>().target = newTarget.transform;
     }
 }

@@ -1,12 +1,15 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamageReceiver
 {
+    [SerializeField] float knockOutTime;
+
     bool receiveDamage = true;
     EnemyStates state = EnemyStates.flying;
 
-    
+    IEnumerator statusEnumerator;
 
     public EnemyStates State
     {
@@ -60,6 +63,9 @@ public class Enemy : MonoBehaviour, IDamageReceiver
     {
         GetComponent<EnemyMovement>().KnockOut();
         receiveDamage = false;
+        statusEnumerator = RecoverFromKnockOut();
+        StartCoroutine(statusEnumerator);
+
     }
 
     void DoDamage()
@@ -85,6 +91,12 @@ public class Enemy : MonoBehaviour, IDamageReceiver
         {
             Debug.Log("Im ready to be eaten");
         }
+    }
+
+    IEnumerator RecoverFromKnockOut()
+    {
+        yield return new WaitForSeconds(knockOutTime);
+        State = EnemyStates.flying;
     }
 }
 
