@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
         for(int i = 0; i < players.Length; i++)
         {
-            players[i].GetComponent<WalkingMovement>().canMove = false;
+            players[i].GetComponent<WalkingMovement>().SetCanMove(false);
             PointsReceiver pr = players[i].GetComponent<PointsReceiver>();
 
             if(pr.GetPoints() > highestScore)

@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamageReceiver
+public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
 {
     [SerializeField] float knockOutTime;
+    [SerializeField] float dieTime;
 
+    GameObject owner;
     bool receiveDamage = true;
+    bool eatable;
     EnemyStates state = EnemyStates.flying;
 
     IEnumerator statusEnumerator;
@@ -54,6 +57,9 @@ public class Enemy : MonoBehaviour, IDamageReceiver
             case EnemyStates.knockedOut:
                 KnockOut();
                 break;
+            case EnemyStates.projectile:
+                TurnIntoProjectile();
+                break;
             default:
                 break;
         }
@@ -68,6 +74,13 @@ public class Enemy : MonoBehaviour, IDamageReceiver
 
     }
 
+    void TurnIntoProjectile()
+    {
+        eatable = false;
+        transform.parent = null;
+        gameObject.SetActive(true);
+    }
+
     void DoDamage()
     {
         throw new NotImplementedException();
@@ -79,6 +92,17 @@ public class Enemy : MonoBehaviour, IDamageReceiver
         
     }
 
+    void Die()
+    {
+        StartCoroutine(die());
+        IEnumerator die()
+        {
+            //Do whatever you need of things to happen here
+            yield return new WaitForSeconds(dieTime);
+            Destroy(gameObject);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -87,16 +111,56 @@ public class Enemy : MonoBehaviour, IDamageReceiver
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(receiveDamage && collision.gameObject.CompareTag("Platform"))
+        if(!receiveDamage && collision.gameObject.CompareTag("Platform") && State != EnemyStates.projectile)
         {
             Debug.Log("Im ready to be eaten");
+            eatable = true;
         }
+        else if(State == EnemyStates.projectile)
+        {
+            ProjectileCollision(collision.gameObject);    
+        }
+    }
+
+    void ProjectileCollision(GameObject collidedObject)
+    {
+        IDamageReceiver damageObject = collidedObject.GetComponent<IDamageReceiver>();
+        if(damageObject != null && collidedObject != owner)
+        {
+            damageObject.Hurt();
+        }
+        Die();
     }
 
     IEnumerator RecoverFromKnockOut()
     {
         yield return new WaitForSeconds(knockOutTime);
         State = EnemyStates.flying;
+        receiveDamage = true;
+        eatable = false;
+        statusEnumerator = null;
+    }
+
+    public void Eat(GameObject eater)
+    {
+        if (eatable)
+        {
+            gameObject.SetActive(false);
+            transform.parent = eater.transform;
+            transform.localPosition = Vector2.zero;
+            if(statusEnumerator != null)
+            {
+                StopCoroutine(statusEnumerator);
+            }
+            
+        }
+    }
+
+    //Maybe uneccecary obfuscation, but following code standard of the class
+    public void SpitOut(GameObject spitter)
+    {
+        owner = spitter;
+        State = EnemyStates.projectile;
     }
 }
 
@@ -104,5 +168,6 @@ public enum EnemyStates
 {
     flying,
     damaging,
-    knockedOut
+    knockedOut,
+    projectile
 }

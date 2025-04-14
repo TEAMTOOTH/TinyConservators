@@ -24,6 +24,7 @@ public class EnemyMovement : MonoBehaviour
         canMove = false;
         GetComponent<AIPath>().enabled = false;
         rb2D.bodyType = RigidbodyType2D.Dynamic;
+        rb2D.freezeRotation = false;
     }
 
     public void StartMoving()
@@ -32,6 +33,7 @@ public class EnemyMovement : MonoBehaviour
         rb2D.bodyType = RigidbodyType2D.Kinematic;
         transform.rotation = Quaternion.identity;
         GetComponent<AIPath>().enabled = true;
+        rb2D.freezeRotation = true;
     }
 
     void FindTarget()

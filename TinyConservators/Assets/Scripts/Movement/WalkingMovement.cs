@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,7 +8,7 @@ public class WalkingMovement : MonoBehaviour
     Vector2 movementInput;
     Vector2 velocity;
     int direction = 1;
-    public bool canMove = true; //Should not be public, just did it for test 07.04
+    bool canMove = true;
 
     [SerializeField] Vector2 targetVelocity;
     [SerializeField] float horizontalSpeedIncrease = 50;
@@ -78,5 +79,28 @@ public class WalkingMovement : MonoBehaviour
             // Apply deceleration when no input is given
             velocity.x = Mathf.MoveTowards(velocity.x, 0, horizontalSpeedIncrease * Time.deltaTime);
         }
+    }
+
+    public void SetSpeedParameters((float, float) speeds)
+    {
+        targetVelocity.x = speeds.Item1;
+        horizontalSpeedIncrease = speeds.Item2;
+    }
+
+    public (float, float) GetSpeedParameters()
+    {
+        return (targetVelocity.x, horizontalSpeedIncrease);
+    }
+
+    public int GetDirection()
+    {
+        if (0 < velocity.x)
+            return 1;
+        return -1;
+    }
+
+    public void SetCanMove(bool state)
+    {
+        canMove = state;
     }
 }
