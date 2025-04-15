@@ -17,6 +17,12 @@ public class Player : MonoBehaviour, IDamageReceiver
     public void Hurt()
     {
         Debug.Log("Hurt called in player");
-        GetComponent<WalkingMovement>().SetCanMove(false);
+        GetComponent<IKnockoutable>().Knockout();
+    }
+
+    public void SetMoveState(bool state)
+    {
+        GetComponent<WalkingMovement>().SetCanMove(state);
+        GetComponent<FlyingMovement>().SetAllowedToFlap(state);
     }
 }

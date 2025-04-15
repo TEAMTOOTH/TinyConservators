@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
                 DoDamage();
                 break;
             case EnemyStates.knockedOut:
-                KnockOut();
+                GetComponent<IKnockoutable>().Knockout();
                 break;
             case EnemyStates.projectile:
                 TurnIntoProjectile();
@@ -65,18 +65,9 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
         }
     }
 
-    void KnockOut()
-    {
-        GetComponent<EnemyMovement>().KnockOut();
-        receiveDamage = false;
-        statusEnumerator = RecoverFromKnockOut();
-        StartCoroutine(statusEnumerator);
-
-    }
-
     void TurnIntoProjectile()
     {
-        eatable = false;
+        SetEatable(false);
         transform.parent = null;
         gameObject.SetActive(true);
     }
@@ -103,18 +94,11 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(!receiveDamage && collision.gameObject.CompareTag("Platform") && State != EnemyStates.projectile)
         {
-            Debug.Log("Im ready to be eaten");
-            eatable = true;
+            SetEatable(true);
         }
         else if(State == EnemyStates.projectile)
         {
@@ -127,18 +111,10 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
         IDamageReceiver damageObject = collidedObject.GetComponent<IDamageReceiver>();
         if(damageObject != null && collidedObject != owner)
         {
+            Debug.Log(collidedObject);
             damageObject.Hurt();
         }
         Die();
-    }
-
-    IEnumerator RecoverFromKnockOut()
-    {
-        yield return new WaitForSeconds(knockOutTime);
-        State = EnemyStates.flying;
-        receiveDamage = true;
-        eatable = false;
-        statusEnumerator = null;
     }
 
     public void Eat(GameObject eater)
@@ -159,9 +135,20 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
     //Maybe uneccecary obfuscation, but following code standard of the class
     public void SpitOut(GameObject spitter)
     {
-        owner = spitter;
         State = EnemyStates.projectile;
+        owner = spitter;
     }
+
+    public void SetReceiveDamage(bool state)
+    {
+        receiveDamage = state;
+    }
+
+    public void SetEatable(bool state)
+    {
+        eatable = state;
+    }
+
 }
 
 public enum EnemyStates

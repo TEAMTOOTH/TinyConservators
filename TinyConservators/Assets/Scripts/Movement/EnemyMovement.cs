@@ -19,17 +19,9 @@ public class EnemyMovement : MonoBehaviour
         FindTarget();
     }
 
-    public void KnockOut()
-    {
-        canMove = false;
-        GetComponent<AIPath>().enabled = false;
-        rb2D.bodyType = RigidbodyType2D.Dynamic;
-        rb2D.freezeRotation = false;
-    }
-
     public void StartMoving()
     {
-        canMove = true;
+        SetCanMove(true);
         rb2D.bodyType = RigidbodyType2D.Kinematic;
         transform.rotation = Quaternion.identity;
         GetComponent<AIPath>().enabled = true;
@@ -42,24 +34,35 @@ public class EnemyMovement : MonoBehaviour
         float searchHeight = 6;
         float shortestDistance = searchWidth+searchHeight;
 
+        GameObject targetObject = gameObject;
 
         Collider2D[] objectsFound = Physics2D.OverlapAreaAll(new Vector2(-searchWidth, -searchHeight), new Vector2(searchWidth, searchHeight));
         for(int i = 0; i < objectsFound.Length; i++)
         {
             if (objectsFound[i].gameObject.CompareTag("Player"))
             {
-                float distance = Vector3.Distance(transform.position, objectsFound[i].transform.position);
-                if(shortestDistance > distance)
+                IKnockoutable knockout = objectsFound[i].GetComponent<IKnockoutable>();
+                if (knockout != null && !knockout.IsKnockedOut())
                 {
-                    shortestDistance = distance;
-                    SetNewTarget(objectsFound[i].gameObject);
+                    float distance = Vector3.Distance(transform.position, objectsFound[i].transform.position);
+                    if (shortestDistance > distance)
+                    {
+                        shortestDistance = distance;
+                        targetObject = objectsFound[i].gameObject;
+                    }
                 }
             }
         }
+        SetNewTarget(targetObject);
     }
 
     void SetNewTarget(GameObject newTarget)
     {
         GetComponent<AIDestinationSetter>().target = newTarget.transform;
+    }
+
+    public void SetCanMove(bool state)
+    {
+        canMove = state;
     }
 }

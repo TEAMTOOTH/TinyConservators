@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 
     //All of this is garbage and need to be written better, but getting ready for a test on the 06.04, so need to be a bit janky.
     [SerializeField] FruitSpawner fruitSpawner;
+    [SerializeField] EnemySpawner enemySpawner;
     [SerializeField] GameObject startPanel;
     [SerializeField] TextMeshProUGUI countdown;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,6 +17,7 @@ public class UIManager : MonoBehaviour
     {
         startPanel.SetActive(false);
         fruitSpawner.TestStartMethod();
+        enemySpawner.StartSpawning();
 
         StartCoroutine(StartCountdown());
         

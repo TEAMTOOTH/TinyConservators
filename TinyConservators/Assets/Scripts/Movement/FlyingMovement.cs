@@ -12,6 +12,7 @@ public class FlyingMovement : MonoBehaviour
     int amountOfFlaps;
 
     bool canFlap = true;
+    bool allowedToFlap = true; //A general lock on flapping, while can flap is used as local/short term check.
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class FlyingMovement : MonoBehaviour
     {
         if (ctx.performed)
         {
-            if(amountOfFlaps > 0 && canFlap)
+            if(amountOfFlaps > 0 && canFlap && allowedToFlap)
             {
                 rb2D.AddForceY(impulseForce, ForceMode2D.Impulse);
                 if(rb2D.linearVelocityY > maxFlightSpeed)
@@ -53,5 +54,10 @@ public class FlyingMovement : MonoBehaviour
     {
        
         amountOfFlaps = amountOfFlapsPerFly;
+    }
+
+    public void SetAllowedToFlap(bool state)
+    {
+        allowedToFlap = state;
     }
 }

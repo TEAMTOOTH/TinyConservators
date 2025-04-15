@@ -30,7 +30,7 @@ public class WalkingMovement : MonoBehaviour
         }
         else
         {
-            rb2D.linearVelocity = new Vector2(0, 0); //For the test on 07.04, change later
+            rb2D.linearVelocity = new Vector2(rb2D.linearVelocityX, rb2D.linearVelocityY); //For the test on 07.04, change later
         }
             
     }

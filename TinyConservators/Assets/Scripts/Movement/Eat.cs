@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Data;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -27,8 +28,13 @@ public class Eat : MonoBehaviour
     public void Spit()
     {
         IEatable eatObject = transform.parent.GetComponentInChildren<IEatable>(true);
-
+        IKnockoutable knockout = GetComponentInParent<IKnockoutable>();
+        if (knockout != null)
+        {
+            knockout.PauseKnockout(.2f);
+        }
         eatObject.SpitOut(transform.parent.gameObject);
+
         MonoBehaviour mb = eatObject as MonoBehaviour;
 
         if(mb != null)
@@ -39,9 +45,10 @@ public class Eat : MonoBehaviour
             {
                 //eatRB.AddForce(Vector2.right * direction * spittingForce);
                 eatRB.AddForce(Vector2.right * GetComponentInParent<WalkingMovement>().GetDirection() * spittingForce);
+                
             }
-
         }
         
+
     }
 }
