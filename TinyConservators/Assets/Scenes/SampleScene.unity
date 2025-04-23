@@ -3314,7 +3314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78104d09435cc0d43a70d864204458b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 10
+  spawnRate: 6
   spawnPeriod: 60
   enemyToSpawn: {fileID: 1610061580652934218, guid: 698c83b3a417ab3418c77e8418fe4426, type: 3}
 --- !u!4 &2146594032
