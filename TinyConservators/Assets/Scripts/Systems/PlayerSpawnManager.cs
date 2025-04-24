@@ -7,7 +7,7 @@ public class PlayerSpawnManager : MonoBehaviour
     int amountOfPlayersJoined;
     
 
-    private void OnPlayerJoined(PlayerInput playerInput)
+    public void OnPlayerJoined(PlayerInput playerInput)
     {
         //(playerInput);
         SetUpPlayer(playerInput.gameObject, amountOfPlayersJoined);

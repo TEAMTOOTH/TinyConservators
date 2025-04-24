@@ -1,0 +1,51 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class CharacterCustomizer : MonoBehaviour
+{
+    [SerializeField] float sensitivity;
+    [SerializeField] CustomizePart[] visualElements;
+    
+
+    bool canCustomize = true;
+
+    Vector2 movementInput;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        visualElements = GetComponentsInChildren<CustomizePart>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(movementInput.x > sensitivity)
+        {
+            IncrementSelection(1);
+        }
+        else if(movementInput.x < -sensitivity)
+        {
+            IncrementSelection(-1);
+        }
+    }
+    
+    public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
+
+    public void OnSelect(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            //Should progress to next customize step in the game, for now just "finishes" the customization so that we can test 24.04.2025
+        }
+    }
+
+    void Initialize()
+    {
+
+    }
+
+    void IncrementSelection(int direction)
+    {
+        Debug.Log(direction);
+    }
+}
