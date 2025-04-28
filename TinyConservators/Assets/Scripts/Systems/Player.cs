@@ -16,10 +16,9 @@ public class Player : MonoBehaviour, IDamageReceiver
         OnPlayerStateChanged += (from, to) => StateChanged(from, to);
 
         playerId = id;
-        State = PlayerStates.moving;
         State = PlayerStates.customizing;
 
-        FullFreeze(true);
+        //FullFreeze(true);
         //This is temp for testing
         GetComponentInChildren<SpriteRenderer>().sprite = playerSprites[id];
         
@@ -58,6 +57,9 @@ public class Player : MonoBehaviour, IDamageReceiver
             case PlayerStates.customizing:
                 Customize();
                 break;
+            case PlayerStates.moving:
+                AllowMoving();
+                break;
             default:
                 break;
         }
@@ -72,7 +74,24 @@ public class Player : MonoBehaviour, IDamageReceiver
     public void SetMoveState(bool state)
     {
         GetComponent<WalkingMovement>().SetCanMove(state);
+        GetComponent<WalkingMovement>().enabled = state;
         GetComponent<FlyingMovement>().SetAllowedToFlap(state);
+        GetComponent<FlyingMovement>().enabled = state;
+
+        if (state)
+        {
+            GetComponent<PlayerInput>().ActivateInput();
+        }
+        else
+        {
+            GetComponent<PlayerInput>().DeactivateInput();
+        }
+    }
+
+    void AllowMoving()
+    {
+        Debug.Log("Allowing movement");
+        FullFreeze(false);
     }
 
     public void FullFreeze(bool state)
@@ -89,13 +108,16 @@ public class Player : MonoBehaviour, IDamageReceiver
         
     }
 
+    //Only a callback for testing, integrate this with the customizer!
+    public void DoneCustomizing()
+    {
+        State = PlayerStates.moving;
+        GetComponentInChildren<CharacterCustomizer>().gameObject.GetComponent<PlayerInput>().DeactivateInput();
+    }
+
     public void Customize()
     {
-        Debug.Log("Customizing");
-        FullFreeze(true);
-        GetComponent<PlayerInput>().DeactivateInput();
-        GetComponent<WalkingMovement>().enabled = false;
-        GetComponent<FlyingMovement>().enabled = false;
+        FullFreeze(true);   
     }
 }
 
