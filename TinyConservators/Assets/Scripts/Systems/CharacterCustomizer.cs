@@ -5,6 +5,7 @@ public class CharacterCustomizer : MonoBehaviour
 {
     [SerializeField] float sensitivity;
     [SerializeField] CustomizePart[] visualElements;
+
     
 
     bool canCustomize = true;
@@ -13,7 +14,7 @@ public class CharacterCustomizer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        visualElements = GetComponentsInChildren<CustomizePart>();
+        
     }
 
     // Update is called once per frame
@@ -41,9 +42,15 @@ public class CharacterCustomizer : MonoBehaviour
         }
     }
 
-    void Initialize()
+    //Currently working temp
+    public void Initialize(int id)
     {
-
+        Debug.Log("Initializing " + id);
+        visualElements = GetComponentsInChildren<CustomizePart>();
+        foreach (CustomizePart cp in visualElements)
+        {
+            cp.ChangePart(id);
+        }
     }
 
     void IncrementSelection(int direction)

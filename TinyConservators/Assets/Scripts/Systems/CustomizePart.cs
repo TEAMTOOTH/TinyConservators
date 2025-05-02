@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CustomizePart : MonoBehaviour
 {
-    SpriteRenderer bodyPart;
+    [SerializeField] SpriteRenderer bodyPart;
     [SerializeField] Sprite [] parts;
     [SerializeField] int partIndex;
 

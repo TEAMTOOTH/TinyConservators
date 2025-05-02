@@ -16,11 +16,12 @@ public class Player : MonoBehaviour, IDamageReceiver
         OnPlayerStateChanged += (from, to) => StateChanged(from, to);
 
         playerId = id;
+        
         State = PlayerStates.customizing;
 
-        //FullFreeze(true);
+        
         //This is temp for testing
-        GetComponentInChildren<SpriteRenderer>().sprite = playerSprites[id];
+        GetComponentInChildren<CharacterCustomizer>().Initialize(id);
         
 
 
@@ -72,20 +73,16 @@ public class Player : MonoBehaviour, IDamageReceiver
     }
 
     public void SetMoveState(bool state)
-    {
-        GetComponent<WalkingMovement>().SetCanMove(state);
+    { 
+        GetComponent<WalkingMovement>().SetCanMove(state); //Don't know if I need these, clean up if you have the time to check.
         GetComponent<WalkingMovement>().enabled = state;
-        GetComponent<FlyingMovement>().SetAllowedToFlap(state);
+        
+        GetComponent<FlyingMovement>().SetAllowedToFlap(state); //Don't know if I need these, clean up if you have the time to check.
         GetComponent<FlyingMovement>().enabled = state;
-
-        if (state)
-        {
-            GetComponent<PlayerInput>().ActivateInput();
-        }
-        else
-        {
-            GetComponent<PlayerInput>().DeactivateInput();
-        }
+        
+        //GetComponent<PlayerInput>().enabled = state;
+        
+        
     }
 
     void AllowMoving()
@@ -112,12 +109,18 @@ public class Player : MonoBehaviour, IDamageReceiver
     public void DoneCustomizing()
     {
         State = PlayerStates.moving;
-        GetComponentInChildren<CharacterCustomizer>().gameObject.GetComponent<PlayerInput>().DeactivateInput();
+        GetComponentInChildren<CharacterCustomizer>().enabled = false;
     }
 
     public void Customize()
     {
-        FullFreeze(true);   
+        FullFreeze(true);
+        
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("Oooh my gawd, the pain, im meeeeeeelting");
     }
 }
 

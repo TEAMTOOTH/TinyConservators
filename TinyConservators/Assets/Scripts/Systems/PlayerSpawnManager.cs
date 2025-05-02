@@ -10,13 +10,25 @@ public class PlayerSpawnManager : MonoBehaviour
     public void OnPlayerJoined(PlayerInput playerInput)
     {
         //(playerInput);
+        Debug.Log(playerInput.gameObject);
+        Debug.Break();
         SetUpPlayer(playerInput.gameObject, amountOfPlayersJoined);
-        amountOfPlayersJoined++;
+        
     }
 
     void SetUpPlayer(GameObject player, int id)
     {
-        player.GetComponent<Player>().Initialize(id);
-        player.transform.position = spawnPoints[id].transform.position;
+        Player p = player.GetComponent<Player>();
+        if(p != null)
+        {
+            p.Initialize(id);
+            p.transform.position = spawnPoints[id].transform.position;
+            amountOfPlayersJoined++;
+        }
+        else
+        {
+            Debug.Log("P is null");
+        }
+        
     }
 }
