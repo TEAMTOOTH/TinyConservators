@@ -120,7 +120,7 @@ public class Player : MonoBehaviour, IDamageReceiver
 
     private void OnDestroy()
     {
-        Debug.Log("Oooh my gawd, the pain, im meeeeeeelting");
+        //Debug.Log("Oooh my gawd, the pain, im meeeeeeelting");
     }
 }
 
