@@ -266,6 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552050641}
   - component: {fileID: 552050640}
+  - component: {fileID: 552050642}
   m_Layer: 0
   m_Name: Interstitial
   m_TagString: Interstitial
@@ -302,6 +303,18 @@ Transform:
   - {fileID: 1650833227}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &552050642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552050639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31590737a5deea34da473ceb5dc545e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

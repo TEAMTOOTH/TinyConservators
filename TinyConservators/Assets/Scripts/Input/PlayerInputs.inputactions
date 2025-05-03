@@ -156,7 +156,7 @@
                 {
                     "name": "",
                     "id": "26506d98-9de8-4dd0-bc38-d5899482b53f",
-                    "path": "<Keyboard>/delete",
+                    "path": "<Keyboard>/backspace",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",

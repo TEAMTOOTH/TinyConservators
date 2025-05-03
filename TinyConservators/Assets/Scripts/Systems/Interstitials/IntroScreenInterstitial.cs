@@ -11,24 +11,18 @@ public class IntroScreenInterstitial : MonoBehaviour, IInterstitial
     public void StartInterstitial()
     {
         gameObject.SetActive(true);
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log(currentSceneIndex);
+        //currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        //Debug.Log(currentSceneIndex);
         //Maybe just move the camera in
 
         //Starting to load the scene async, so it is ready when the scene finishes
-        LoadScene();
+        GetComponent<SceneLoader>().LoadScene(length);
 
-        StartCoroutine(TestOfLoading());
-        IEnumerator TestOfLoading()
-        {
-            yield return new WaitForSeconds(length);
-            EndInterstitial();
-        } 
+        
     }
     public void EndInterstitial()
     {
-        //Allow activation, so scene will switch when done loading.
-        sceneLoad.allowSceneActivation = true;
+        
     }
 
     public float GetLength()

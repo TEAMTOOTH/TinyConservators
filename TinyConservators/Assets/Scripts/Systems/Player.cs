@@ -13,6 +13,8 @@ public class Player : MonoBehaviour, IDamageReceiver
         //Randomize players before allowing players to customize.
         Debug.Log("Initialize");
 
+        DontDestroyOnLoad(this.gameObject);
+
         OnPlayerStateChanged += (from, to) => StateChanged(from, to);
 
         playerId = id;
@@ -118,9 +120,12 @@ public class Player : MonoBehaviour, IDamageReceiver
         
     }
 
-    private void OnDestroy()
+    public void DebugStartAction()
     {
-        //Debug.Log("Oooh my gawd, the pain, im meeeeeeelting");
+        if(State == PlayerStates.moving)
+        {
+            GameObject.FindGameObjectWithTag("Interstitial").GetComponent<IInterstitial>().StartInterstitial();
+        }
     }
 }
 
