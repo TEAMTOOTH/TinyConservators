@@ -63,6 +63,9 @@ public class Player : MonoBehaviour, IDamageReceiver
             case PlayerStates.moving:
                 AllowMoving();
                 break;
+            case PlayerStates.paused:
+                LockPlayerIn();
+                break;
             default:
                 break;
         }
@@ -89,7 +92,6 @@ public class Player : MonoBehaviour, IDamageReceiver
 
     void AllowMoving()
     {
-        Debug.Log("Allowing movement");
         FullFreeze(false);
     }
 
@@ -118,6 +120,11 @@ public class Player : MonoBehaviour, IDamageReceiver
     {
         FullFreeze(true);
         
+    }
+
+    public void LockPlayerIn()
+    {
+        FullFreeze(true);
     }
 
     public void DebugStartAction()

@@ -13,14 +13,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI countdown;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
    
-    public void ButtonClicked()
+    public void LevelStart()
     {
-        startPanel.SetActive(false);
-        fruitSpawner.TestStartMethod();
-        enemySpawner.StartSpawning();
-
-        StartCoroutine(StartCountdown());
-        
+        StartCoroutine(StartCountdown());   
         //Make counter go down.
     }
 
@@ -37,12 +32,13 @@ public class UIManager : MonoBehaviour
 
     IEnumerator StartCountdown()
     {
+        countdown.text = 3.ToString();
         yield return new WaitForSeconds(1);
         countdown.text = 2.ToString();
         yield return new WaitForSeconds(1);
         countdown.text = 1.ToString();
         yield return new WaitForSeconds(1);
-        countdown.text = 60.ToString();
-        InvokeRepeating("TempCountdown", 1f, 1f);
+        countdown.text = "";
+        //InvokeRepeating("TempCountdown", 1f, 1f);
     }
 }
