@@ -10,8 +10,8 @@ public class PlayerSpawnManager : MonoBehaviour
     public void OnPlayerJoined(PlayerInput playerInput)
     {
         //(playerInput);
-        Debug.Log(playerInput.gameObject);
-        Debug.Break();
+        //Debug.Log(playerInput.gameObject);
+        //Debug.Break();
         SetUpPlayer(playerInput.gameObject, amountOfPlayersJoined);
         
     }

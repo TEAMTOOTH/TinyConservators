@@ -37,8 +37,12 @@ public class CharacterCustomizer : MonoBehaviour
         if (ctx.performed)
         {
             //Should progress to next customize step in the game, for now just "finishes" the customization so that we can test 24.04.2025
-            Debug.Log("Pressed selection button");
-            GetComponentInParent<Player>().DoneCustomizing();
+            
+            if(GetComponentInParent<Player>().State == PlayerStates.customizing) 
+            {
+                Debug.Log("Pressed selection button");
+                GetComponentInParent<Player>().DoneCustomizing();
+            }
         }
     }
 
