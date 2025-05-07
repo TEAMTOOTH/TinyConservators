@@ -17,15 +17,23 @@ public class Level : MonoBehaviour
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         FreezePlayers(true, players);
 
-        interstitial = GameObject.FindGameObjectWithTag("Interstitial").GetComponent<IInterstitial>(); //Rememeber this only finds one of them.
+         
         spawnPoints = GetComponentsInChildren<SpawnPoint>();
         PutPlayersIntoPosition(players);
 
-        interstitial.StartInterstitial();
+        GameObject g = GameObject.FindGameObjectWithTag("Interstitial");
 
-        yield return new WaitForSeconds(interstitial.GetLength());
+        
 
-        interstitial.EndInterstitial();
+        if (g != null)
+        {
+            interstitial = g.GetComponent<IInterstitial>(); //Rememeber this only finds one of them.
+            interstitial.StartInterstitial();
+
+            yield return new WaitForSeconds(interstitial.GetLength());
+            interstitial.EndInterstitial();
+        }
+        
         onStart.Invoke();
 
         FreezePlayers(false, players);

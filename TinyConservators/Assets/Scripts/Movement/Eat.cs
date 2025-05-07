@@ -7,6 +7,7 @@ using UnityEngine;
 public class Eat : MonoBehaviour
 {
     [SerializeField] float spittingForce;
+    [SerializeField] Vector2 spitOffset;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IEatable eatObject = collision.GetComponent<IEatable>();
@@ -43,8 +44,10 @@ public class Eat : MonoBehaviour
 
             if(eatRB != null)
             {
-                //eatRB.AddForce(Vector2.right * direction * spittingForce);
-                eatRB.AddForce(Vector2.right * GetComponentInParent<WalkingMovement>().GetDirection() * spittingForce);
+                //Debug.Break();
+                int direction = GetComponentInParent<WalkingMovement>().GetDirection();
+                eatRB.gameObject.transform.position += (Vector3)(Vector2.right + spitOffset) * direction;
+                eatRB.AddForce(Vector2.right * direction * spittingForce);
                 
             }
         }

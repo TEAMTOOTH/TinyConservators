@@ -94,9 +94,7 @@ public class WalkingMovement : MonoBehaviour
 
     public int GetDirection()
     {
-        if (0 < velocity.x)
-            return 1;
-        return -1;
+        return direction;
     }
 
     public void SetCanMove(bool state)

@@ -1,19 +1,14 @@
+using System.Collections;
 using UnityEngine;
 
-public class GoblinKnockout : MonoBehaviour, IKnockoutable, IEatable
+public class GoblinKnockout : MonoBehaviour, IKnockoutable
 {
+    [SerializeField] float knockOutTime;
     bool knockedOut;
+    GameObject owner;
+    IEnumerator KnockOutTimer;
+    
 
-    public void Eat(GameObject eater)
-    {
-        Debug.Log("Aaaaah don't eat me!");
-        throw new System.NotImplementedException();
-    }
-
-    public void SpitOut(GameObject spitter)
-    {
-        throw new System.NotImplementedException();
-    }
 
     public bool IsKnockedOut()
     {
@@ -23,6 +18,9 @@ public class GoblinKnockout : MonoBehaviour, IKnockoutable, IEatable
     public void Knockout()
     {
         knockedOut = true;
+        
+        StartCoroutine(KnockedOut());
+
     }
 
     public void PauseKnockout(float pauseTime)
@@ -35,7 +33,16 @@ public class GoblinKnockout : MonoBehaviour, IKnockoutable, IEatable
         knockedOut = false;
     }
 
-    
+    IEnumerator KnockedOut()
+    {
+        yield return new WaitForSeconds(knockOutTime);
+        GetComponent<Minion>().Die();
+    }
+
+    public void ClearEnumerators()
+    {
+        StopAllCoroutines();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

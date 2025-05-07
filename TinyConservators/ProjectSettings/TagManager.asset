@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Interstitial
   - PlayerVisuals
+  - ScatterPoint
   layers:
   - Default
   - TransparentFX

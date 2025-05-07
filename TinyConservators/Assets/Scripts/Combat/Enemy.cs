@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
 {
@@ -34,7 +35,7 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
     {
         if (receiveDamage)
         {
-            State = EnemyStates.knockedOut;
+            State = EnemyStates.scatter;
         }
     }
 
@@ -46,6 +47,7 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
 
     void StateChanged(EnemyStates from, EnemyStates to) 
     {
+        Debug.Log($"{from} - {to}");
         switch (to)
         {
             case EnemyStates.flying:
@@ -54,8 +56,10 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
             case EnemyStates.damaging:
                 DoDamage();
                 break;
-            case EnemyStates.knockedOut:
-                GetComponent<IKnockoutable>().Knockout();
+            case EnemyStates.scatter:
+                //GetComponent<IKnockoutable>().Knockout();
+                GetComponentInChildren<GoblinSeat>().KnockedOff();
+                Scatter();
                 break;
             case EnemyStates.projectile:
                 TurnIntoProjectile();
@@ -72,6 +76,40 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
         gameObject.SetActive(true);
     }
 
+    void Scatter()
+    {
+        Debug.Log("Scattering");
+        //GetClosestScatterPoint();
+        //Get closest scatter point.
+        GameObject [] scatterPoints = GameObject.FindGameObjectsWithTag("ScatterPoint");
+
+        GameObject closest = null;
+        float shortestDistance = Mathf.Infinity;
+        Vector3 currentPosition = transform.position;
+
+        foreach (GameObject obj in scatterPoints)
+        {
+            if (obj == null) continue;
+
+            float distance = Vector3.Distance(currentPosition, obj.transform.position);
+            if (distance < shortestDistance)
+            {
+                shortestDistance = distance;
+                closest = obj;
+            }
+        }
+
+        GetComponent<EnemyMovement>().SetNewTarget(gameObject);
+
+        if (closest != null)
+        {    
+            GetComponent<EnemyMovement>().SetLookForTarget(false);    
+            GetComponent<EnemyMovement>().SetNewTarget(closest);
+        }
+
+
+    }
+
     void DoDamage()
     {
         throw new NotImplementedException();
@@ -80,7 +118,6 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
     void StartFlying()
     {
         GetComponent<EnemyMovement>().StartMoving();
-        
     }
 
     void Die()
@@ -155,6 +192,6 @@ public enum EnemyStates
 {
     flying,
     damaging,
-    knockedOut,
+    scatter,
     projectile
 }
