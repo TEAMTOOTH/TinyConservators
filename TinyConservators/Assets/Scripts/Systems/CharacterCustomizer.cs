@@ -59,6 +59,6 @@ public class CharacterCustomizer : MonoBehaviour
 
     void IncrementSelection(int direction)
     {
-        Debug.Log(direction);
+        //Debug.Log(direction);
     }
 }
