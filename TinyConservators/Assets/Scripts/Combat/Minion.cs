@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Minion : MonoBehaviour, IEatable
 {
-    MinionStates state = MinionStates.riding;
+    [SerializeField] float dieTime;
+    [SerializeField] float throwOffForce = 5f;
+
+    MinionStates state = MinionStates.knockedOut;
     GameObject owner;
-    bool eatable = true;
-    float dieTime;
+    bool eatable = false;
 
     public MinionStates State
     {
@@ -28,6 +30,8 @@ public class Minion : MonoBehaviour, IEatable
     void Start()
     {
         OnMinionStateChanged += (from, to) => StateChanged(from, to);
+
+        ThrowOff();
     }
 
     void StateChanged(MinionStates from, MinionStates to)
@@ -87,6 +91,29 @@ public class Minion : MonoBehaviour, IEatable
         {
             ProjectileCollision(collision.gameObject);
         }
+        else if (State == MinionStates.knockedOut && collision.gameObject.CompareTag("Platform"))
+        {
+            eatable = true;
+        } 
+    }
+
+    void ThrowOff()
+    {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+        float arcAngle = 22.5f;
+
+        // Get a random angle in degrees from -22.5 to +22.5
+        float randomAngle = UnityEngine.Random.Range(-arcAngle, arcAngle);
+
+        // Convert angle to a direction vector (rotate Vector2.up)
+        Vector2 direction = Quaternion.Euler(0, 0, randomAngle) * Vector2.up;
+
+        // Apply force (adjust forceMagnitude to suit your needs)
+        
+        rb.AddForce(direction * throwOffForce, ForceMode2D.Impulse);
+
+        
     }
 
     public void Die()

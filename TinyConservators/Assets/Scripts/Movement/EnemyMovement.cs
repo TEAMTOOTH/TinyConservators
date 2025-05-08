@@ -75,4 +75,9 @@ public class EnemyMovement : MonoBehaviour
     {
         lookForTarget = state;
     }
+
+    public void ChangeSpeed(float newSpeed)
+    {
+        GetComponent<AIPath>().maxSpeed = newSpeed;
+    }
 }

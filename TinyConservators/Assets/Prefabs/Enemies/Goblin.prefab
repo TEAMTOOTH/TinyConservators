@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1275319813948098079}
   - component: {fileID: 326678408316097099}
   - component: {fileID: 1443921039839903273}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Goblin
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d744e2c465ceb4d8d73f0a7697b428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dieTime: 1
+  throwOffForce: 5
 --- !u!114 &1443921039839903273
 MonoBehaviour:
   m_ObjectHideFlags: 0

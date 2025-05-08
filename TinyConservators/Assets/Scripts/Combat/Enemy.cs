@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
 {
     [SerializeField] float knockOutTime;
     [SerializeField] float dieTime;
+    [SerializeField] GameObject goblinVisual;
 
     GameObject owner;
     bool receiveDamage = true;
@@ -36,6 +37,8 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
         if (receiveDamage)
         {
             State = EnemyStates.scatter;
+            goblinVisual.SetActive(false);
+            GetComponent<EnemyMovement>().ChangeSpeed(6f);
         }
     }
 
@@ -89,6 +92,7 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
 
         foreach (GameObject obj in scatterPoints)
         {
+            Debug.Log("Found a scatterPoint");
             if (obj == null) continue;
 
             float distance = Vector3.Distance(currentPosition, obj.transform.position);
