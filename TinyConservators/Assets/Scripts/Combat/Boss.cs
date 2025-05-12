@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using static UnityEngine.UI.ScrollRect;
 
 public class Boss : MonoBehaviour
 {
@@ -48,14 +47,10 @@ public class Boss : MonoBehaviour
         OnBossStateChanged += (from, to) => StateChanged(from, to);
         transform.position = startPos;
         //InvokeRepeating("RepeatingPopUp", 0f, 5f);
-        State = BossStates.hurt;
+        State = BossStates.idle;
         State = BossStates.readying;
     }
 
-    void RepeatingPopUp()
-    {
-        PopUp(1, 2);
-    }
 
     void StateChanged(BossStates from, BossStates to)
     {
@@ -74,6 +69,7 @@ public class Boss : MonoBehaviour
             case BossStates.hurt:
                 LeaveScreen(0.5f);
                 GetComponentInChildren<BossDamage>().AllowCollisions(false);
+                GetComponent<BossAttack>().StopAllCoroutines();
                 break;
             case BossStates.walkOff:
                 LeaveScreen(3f);
@@ -176,6 +172,7 @@ public class Boss : MonoBehaviour
 
 public enum BossStates
 {
+    idle,
     readying,
     attack,
     eating,

@@ -80,4 +80,9 @@ public class EnemyMovement : MonoBehaviour
     {
         GetComponent<AIPath>().maxSpeed = newSpeed;
     }
+
+    public float GetCurrentSpeed()
+    {
+        return GetComponent<AIPath>().maxSpeed;
+    }
 }

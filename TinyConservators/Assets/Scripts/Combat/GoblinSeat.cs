@@ -5,6 +5,9 @@ public class GoblinSeat : MonoBehaviour
     [SerializeField]GameObject ridingGoblin;
     public void KnockedOff()
     {
-        Instantiate(ridingGoblin, transform.position, Quaternion.identity);
+        GameObject minion = Instantiate(ridingGoblin, transform.position, Quaternion.identity);
+        minion.GetComponent<Minion>().SetMount(GetComponentInParent<Enemy>());
+
+
     }
 }

@@ -7,6 +7,8 @@ public class Minion : MonoBehaviour, IEatable
     [SerializeField] float dieTime;
     [SerializeField] float throwOffForce = 5f;
 
+    Enemy mount;
+
     MinionStates state = MinionStates.knockedOut;
     GameObject owner;
     bool eatable = false;
@@ -116,6 +118,19 @@ public class Minion : MonoBehaviour, IEatable
         
     }
 
+    public void GetBackOnMount()
+    {
+        //Have it set the one it rode when it got knocked off as mount.
+        //Transport that mount back in. Set state back to hunting player
+        //Destroy minion.
+
+        //Do visual
+        mount.transform.position = transform.position;
+        mount.Recover();
+        Destroy(gameObject);
+
+    }
+
     public void Die()
     {
         StartCoroutine(die());
@@ -127,12 +142,9 @@ public class Minion : MonoBehaviour, IEatable
         }
     }
 
-
-
-    // Update is called once per frame
-    void Update()
+    public void SetMount(Enemy mount)
     {
-        
+        this.mount = mount;
     }
 
     private void OnDestroy()

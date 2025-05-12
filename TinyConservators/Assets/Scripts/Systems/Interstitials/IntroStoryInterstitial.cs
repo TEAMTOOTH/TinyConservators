@@ -22,7 +22,7 @@ public class IntroStoryInterstitial : MonoBehaviour, IInterstitial
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartInterstitial();
+        //StartInterstitial();
     }
 
     // Update is called once per frame

@@ -11,6 +11,7 @@ TagManager:
   - PlayerVisuals
   - ScatterPoint
   - Boss
+  - Goblin
   layers:
   - Default
   - TransparentFX

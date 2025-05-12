@@ -36,7 +36,9 @@ public class GoblinKnockout : MonoBehaviour, IKnockoutable
     IEnumerator KnockedOut()
     {
         yield return new WaitForSeconds(knockOutTime);
-        GetComponent<Minion>().Die();
+        //GetComponent<Minion>().Die();
+        //Respawn and then destroy minion.
+        GetComponent<Minion>().GetBackOnMount();
     }
 
     public void ClearEnumerators()

@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
     [SerializeField] float dieTime;
     [SerializeField] GameObject goblinVisual;
 
+    float originalSpeed;
+
     GameObject owner;
     bool receiveDamage = true;
     bool eatable;
@@ -46,11 +48,12 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
     void Start()
     {
         OnEnemyStateChanged += (from, to) => StateChanged(from, to);
+        originalSpeed = GetComponent<EnemyMovement>().GetCurrentSpeed();
     }
 
     void StateChanged(EnemyStates from, EnemyStates to) 
     {
-        Debug.Log($"{from} - {to}");
+        //Debug.Log($"{from} - {to}");
         switch (to)
         {
             case EnemyStates.flying:
@@ -114,6 +117,13 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
 
     }
 
+    public void Recover()
+    {
+        State = EnemyStates.flying;
+        goblinVisual.SetActive(true);
+        GetComponent<EnemyMovement>().SetLookForTarget(true);
+    }
+
     void DoDamage()
     {
         throw new NotImplementedException();
@@ -122,6 +132,8 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
     void StartFlying()
     {
         GetComponent<EnemyMovement>().StartMoving();
+        GetComponent<EnemyMovement>().ChangeSpeed(originalSpeed);
+
     }
 
     void Die()
@@ -155,6 +167,7 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
             Debug.Log(collidedObject);
             damageObject.Hurt();
         }
+        
         Die();
     }
 
