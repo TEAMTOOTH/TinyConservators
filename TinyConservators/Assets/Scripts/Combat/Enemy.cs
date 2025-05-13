@@ -84,7 +84,6 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
 
     void Scatter()
     {
-        Debug.Log("Scattering");
         //GetClosestScatterPoint();
         //Get closest scatter point.
         GameObject [] scatterPoints = GameObject.FindGameObjectsWithTag("ScatterPoint");
@@ -95,7 +94,6 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
 
         foreach (GameObject obj in scatterPoints)
         {
-            Debug.Log("Found a scatterPoint");
             if (obj == null) continue;
 
             float distance = Vector3.Distance(currentPosition, obj.transform.position);
@@ -136,15 +134,14 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
 
     }
 
-    void Die()
+    
+
+    public void RiderDied()
     {
-        StartCoroutine(die());
-        IEnumerator die()
-        {
-            //Do whatever you need of things to happen here
-            yield return new WaitForSeconds(dieTime);
-            Destroy(gameObject);
-        }
+        if(owner != null)
+            owner.GetComponent<IHappenedCounter>()?.ListenedActionHappened();
+        
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -155,7 +152,7 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
         }
         else if(State == EnemyStates.projectile)
         {
-            ProjectileCollision(collision.gameObject);    
+            //ProjectileCollision(collision.gameObject);    
         }
     }
 
@@ -164,11 +161,11 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
         IDamageReceiver damageObject = collidedObject.GetComponent<IDamageReceiver>();
         if(damageObject != null && collidedObject != owner)
         {
-            Debug.Log(collidedObject);
+            //Debug.Log(collidedObject);
             damageObject.Hurt();
         }
         
-        Die();
+        //Die();
     }
 
     public void Eat(GameObject eater)
@@ -201,6 +198,11 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
     public void SetEatable(bool state)
     {
         eatable = state;
+    }
+
+    public void SetOwner(GameObject owner)
+    {
+        this.owner = owner;
     }
 
 }

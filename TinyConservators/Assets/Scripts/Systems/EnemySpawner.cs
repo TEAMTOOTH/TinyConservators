@@ -20,36 +20,41 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    //Not a great method, just used for testing right now 15.04.2025 - Seb
-    public void StartSpawning()
+    public void SpawnEnemies(int amount)
     {
         IndexRandomizer indexRandom = new IndexRandomizer();
-        StartCoroutine(Spawn());
-        IEnumerator Spawn()
+
+        //Giving this an initial randomization, so that they can spawn in any position as their first one.
+        int enemyIndex = Random.Range(0, enemiesToSpawn.Length);
+        int positionIndex = Random.Range(0, enemySpawnPoints.Length);
+        
+
+        for (int i = 0; i < amount; i++)
         {
-            yield return new WaitForSeconds(3); //BADBADBAD, just for test
+            enemyIndex = indexRandom.GetNewIndex(enemiesToSpawn.Length, enemyIndex);
+            positionIndex = indexRandom.GetNewIndex(enemySpawnPoints.Length, positionIndex);
 
-            float timePassed = 0;
-            float timeSinceLastSpawn = 0;
-            int enemyIndex = 0;
-            int positionIndex = 0;
+            Instantiate(enemiesToSpawn[enemyIndex], enemySpawnPoints[positionIndex].transform.position, Quaternion.identity);
+        }
+    }
 
-            while(timePassed < spawnPeriod)
-            {
-                timePassed += Time.deltaTime;
-                timeSinceLastSpawn += Time.deltaTime;
+    public void SpawnEnemies(int amount, GameObject owner)
+    {
+        IndexRandomizer indexRandom = new IndexRandomizer();
 
-                if(timeSinceLastSpawn > spawnRate)
-                {
-                    enemyIndex = indexRandom.GetNewIndex(enemiesToSpawn.Length, enemyIndex);
-                    positionIndex = indexRandom.GetNewIndex(enemySpawnPoints.Length, positionIndex);
+        //Giving this an initial randomization, so that they can spawn in any position as their first one.
+        int enemyIndex = Random.Range(0, enemiesToSpawn.Length);
+        int positionIndex = Random.Range(0, enemySpawnPoints.Length);
 
-                    Instantiate(enemiesToSpawn[enemyIndex], enemySpawnPoints[positionIndex].transform.position, Quaternion.identity);
-                    timeSinceLastSpawn = 0;
-                    
-                }
-                yield return null;
-            }
+
+        for (int i = 0; i < amount; i++)
+        {
+            enemyIndex = indexRandom.GetNewIndex(enemiesToSpawn.Length, enemyIndex);
+            positionIndex = indexRandom.GetNewIndex(enemySpawnPoints.Length, positionIndex);
+
+            var g = Instantiate(enemiesToSpawn[enemyIndex], enemySpawnPoints[positionIndex].transform.position, Quaternion.identity);
+
+            g.GetComponent<Enemy>().SetOwner(owner);
         }
     }
 

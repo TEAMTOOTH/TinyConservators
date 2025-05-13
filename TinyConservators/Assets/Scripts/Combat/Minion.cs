@@ -137,7 +137,9 @@ public class Minion : MonoBehaviour, IEatable
         IEnumerator die()
         {
             //Do whatever you need of things to happen here
+            
             yield return new WaitForSeconds(dieTime);
+            mount.RiderDied();
             Destroy(gameObject);
         }
     }

@@ -24,6 +24,7 @@ public class Boss : MonoBehaviour
     [SerializeField] Vector2 startPos;
     [SerializeField] Vector2 endPos;
 
+    GameObject owner;
 
     BossStates state;
     public BossStates State
@@ -48,7 +49,8 @@ public class Boss : MonoBehaviour
         transform.position = startPos;
         //InvokeRepeating("RepeatingPopUp", 0f, 5f);
         State = BossStates.idle;
-        State = BossStates.readying;
+
+        //State = BossStates.readying;
     }
 
 
@@ -57,7 +59,7 @@ public class Boss : MonoBehaviour
         switch (to)
         {
             case BossStates.readying:
-                ReadyNextAttack(UnityEngine.Random.Range(minimumAttackWaitTime, maximumAttackWaitTime));
+                ReadyNextAttack(UnityEngine.Random.Range(minimumAttackWaitTime, maximumAttackWaitTime), null);
                 break;
             case BossStates.attack:
                 Attack();
@@ -67,9 +69,7 @@ public class Boss : MonoBehaviour
                 GetComponentInChildren<BossDamage>().AllowCollisions(true);
                 break;
             case BossStates.hurt:
-                LeaveScreen(0.5f);
-                GetComponentInChildren<BossDamage>().AllowCollisions(false);
-                GetComponent<BossAttack>().StopAllCoroutines();
+                Hurt();
                 break;
             case BossStates.walkOff:
                 LeaveScreen(3f);
@@ -81,40 +81,20 @@ public class Boss : MonoBehaviour
     }
 
     //Probably needs to be refactored at some point, hacking it a bit together for the demo on the 14.05
-    void ReadyNextAttack(float timeToNextAttack)
+    public void ReadyNextAttack(float timeToNextAttack, GameObject owner)
     {
+        this.owner = owner;
+
         StartCoroutine(ReadyAttack());
 
         IEnumerator ReadyAttack()
         {
-            float timeToPopUp = timeToNextAttack - popUpTime; //Use variables here
-
-            yield return new WaitForSeconds(timeToPopUp);
-
-            PopUp(1, popUpTime - 2);
-
-            yield return new WaitForSeconds(timeToNextAttack-timeToPopUp);
-
+            yield return new WaitForSeconds(timeToNextAttack);
             State = BossStates.attack;
 
         }
     }
-
-    void PopUp(float movementTime, float waitTime)
-    {
-        bossVisual.transform.localScale = new Vector3(bossPopupSize, bossPopupSize, bossPopupSize);
-        //transform.position = popUpPositions[UnityEngine.Random.Range(0, popUpPositions.Length)]; Skip for test
-        
-        StartCoroutine(Move());
-
-        IEnumerator Move()
-        { 
-            GetComponent<BossMovement>().Move(movementTime, startPos, endPos);
-            yield return new WaitForSeconds(movementTime + waitTime);
-            GetComponent<BossMovement>().Move(movementTime, endPos, startPos);
-        }
-    }
-   
+    
     void Attack()
     {
         bossVisual.transform.localScale = new Vector3(bossAttackSize, bossAttackSize, bossAttackSize);
@@ -129,6 +109,26 @@ public class Boss : MonoBehaviour
             //Do get ready to eat visual?
             State = BossStates.eating;
         }
+    }
+
+    void Hurt()
+    {
+        float leaveTime = 0.5f;
+        LeaveScreen(leaveTime);
+        GetComponent<BossAttack>().StopAllCoroutines();
+        GetComponentInChildren<BossDamage>().AllowCollisions(false);
+        
+        StartCoroutine(WaitBeforeCall());
+        IEnumerator WaitBeforeCall()
+        {
+            yield return new WaitForSeconds(leaveTime);
+            if(owner != null)
+            {
+                owner.GetComponent<ILevelFlowComponent>()?.FinishSection();
+            }
+        }
+        
+        
     }
 
     void LeaveScreen(float time)
@@ -162,17 +162,12 @@ public class Boss : MonoBehaviour
         }
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
 
 public enum BossStates
 {
     idle,
+    popup,
     readying,
     attack,
     eating,

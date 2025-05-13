@@ -4,7 +4,6 @@ using static UnityEngine.UI.ScrollRect;
 
 public class BossMovement : MonoBehaviour
 {
-    [SerializeField] float moveTime;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

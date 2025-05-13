@@ -12,6 +12,7 @@ TagManager:
   - ScatterPoint
   - Boss
   - Goblin
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX
