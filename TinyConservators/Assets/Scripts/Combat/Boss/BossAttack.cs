@@ -51,9 +51,12 @@ public class BossAttack : MonoBehaviour
                 //Do damage
 
 
-            }
-            
-            
+            }        
         } 
+    }
+
+    public void SetMaxEatingTime(float maxEatingTime)
+    {
+        maxEatTime = maxEatingTime;
     }
 }

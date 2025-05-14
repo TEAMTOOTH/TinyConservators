@@ -20,22 +20,28 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public void SpawnEnemies(int amount)
+    public Enemy[] SpawnEnemies(int amount)
     {
         IndexRandomizer indexRandom = new IndexRandomizer();
-
+        
         //Giving this an initial randomization, so that they can spawn in any position as their first one.
         int enemyIndex = Random.Range(0, enemiesToSpawn.Length);
         int positionIndex = Random.Range(0, enemySpawnPoints.Length);
-        
+
+        //Creating an empty array to fill in the for loop, so I can return it to the spawner.
+        Enemy[] enemiesSpawned = new Enemy[amount];
+
 
         for (int i = 0; i < amount; i++)
         {
             enemyIndex = indexRandom.GetNewIndex(enemiesToSpawn.Length, enemyIndex);
             positionIndex = indexRandom.GetNewIndex(enemySpawnPoints.Length, positionIndex);
 
-            Instantiate(enemiesToSpawn[enemyIndex], enemySpawnPoints[positionIndex].transform.position, Quaternion.identity);
+            GameObject e = Instantiate(enemiesToSpawn[enemyIndex], enemySpawnPoints[positionIndex].transform.position, Quaternion.identity);
+            enemiesSpawned[i] = e.GetComponent<Enemy>();
+
         }
+        return enemiesSpawned;
     }
 
     public void SpawnEnemies(int amount, GameObject owner)

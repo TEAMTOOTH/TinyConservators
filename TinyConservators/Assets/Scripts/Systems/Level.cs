@@ -37,8 +37,8 @@ public class Level : MonoBehaviour
         onStart.Invoke();
 
         FreezePlayers(false, players);
-        yield return new WaitForSeconds(levelLength);
-        onEnd.Invoke();
+        //yield return new WaitForSeconds(levelLength);
+        //onEnd.Invoke();
         
 
     }

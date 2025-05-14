@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
@@ -7,26 +8,25 @@ public class Boss : MonoBehaviour
     [SerializeField] float minimumAttackWaitTime;
     [SerializeField] float maximumAttackWaitTime;
 
-    [SerializeField] Vector2[] popUpPositions;
 
     [SerializeField] GameObject bossVisual;
-    [SerializeField] float bossPopupSize;
-    [SerializeField] float bossAttackSize;
-    
-    [SerializeField] AnimationCurve moveCurve;
 
     [Header("Attack timing")]
-    [SerializeField] float popUpTime;
     [SerializeField] float attackMoveTime;
 
 
     [Header("For test")]
     [SerializeField] Vector2 startPos;
-    [SerializeField] Vector2 endPos;
 
     GameObject owner;
 
     BossStates state;
+    EnemySpawner enemySpawner;
+
+    List<Enemy> currentMinions;
+
+    int minionAttackAmount;
+
     public BossStates State
     {
         get => state;
@@ -47,9 +47,11 @@ public class Boss : MonoBehaviour
     {
         OnBossStateChanged += (from, to) => StateChanged(from, to);
         transform.position = startPos;
+        currentMinions = new List<Enemy>();
         //InvokeRepeating("RepeatingPopUp", 0f, 5f);
         State = BossStates.idle;
 
+        enemySpawner = GameObject.FindGameObjectWithTag("EnemySpawner").GetComponent<EnemySpawner>();
         //State = BossStates.readying;
     }
 
@@ -59,7 +61,7 @@ public class Boss : MonoBehaviour
         switch (to)
         {
             case BossStates.readying:
-                ReadyNextAttack(UnityEngine.Random.Range(minimumAttackWaitTime, maximumAttackWaitTime), null);
+                ReadyNextAttack(UnityEngine.Random.Range(minimumAttackWaitTime, maximumAttackWaitTime));
                 break;
             case BossStates.attack:
                 Attack();
@@ -72,7 +74,7 @@ public class Boss : MonoBehaviour
                 Hurt();
                 break;
             case BossStates.walkOff:
-                LeaveScreen(3f);
+                LeaveScreen(3f, false);
                 GetComponentInChildren<BossDamage>().AllowCollisions(false);
                 break;
             default:
@@ -80,26 +82,43 @@ public class Boss : MonoBehaviour
         }
     }
 
-    //Probably needs to be refactored at some point, hacking it a bit together for the demo on the 14.05
-    public void ReadyNextAttack(float timeToNextAttack, GameObject owner)
+    public void InitializeAttackRound(float timeToNextAttack, GameObject owner, int amountOfMinions, float minimumTime, float maximumTime, float attackTime)
     {
         this.owner = owner;
+        minionAttackAmount = amountOfMinions;
+        GetComponent<BossAttack>().SetMaxEatingTime(attackTime);
+        minimumAttackWaitTime = minimumTime;
+        maximumAttackWaitTime = maximumTime;
 
+        ReadyNextAttack(timeToNextAttack);
+       
+    }
+
+    void ReadyNextAttack(float timeToNextAttack)
+    {
         StartCoroutine(ReadyAttack());
-
         IEnumerator ReadyAttack()
         {
             yield return new WaitForSeconds(timeToNextAttack);
             State = BossStates.attack;
-
         }
     }
     
     void Attack()
     {
-        bossVisual.transform.localScale = new Vector3(bossAttackSize, bossAttackSize, bossAttackSize);
+        //bossVisual.transform.localScale = new Vector3(bossAttackSize, bossAttackSize, bossAttackSize);
         GameObject attackSpot = GetComponent<BossMovement>().FindAttackSpot();
+
+        currentMinions.RemoveAll(obj => obj == null);
+
+        int amountToSpawnForRound = minionAttackAmount - currentMinions.Count;
+        Enemy[] m = enemySpawner.SpawnEnemies(amountToSpawnForRound);
         
+        for(int i = 0; i < m.Length; i++)
+        {
+            currentMinions.Add(m[i]);
+        }
+
 
         StartCoroutine(MoveToAttackPoint());
         IEnumerator MoveToAttackPoint()
@@ -114,24 +133,28 @@ public class Boss : MonoBehaviour
     void Hurt()
     {
         float leaveTime = 0.5f;
-        LeaveScreen(leaveTime);
+        LeaveScreen(leaveTime, true);
         GetComponent<BossAttack>().StopAllCoroutines();
         GetComponentInChildren<BossDamage>().AllowCollisions(false);
+
         
-        StartCoroutine(WaitBeforeCall());
-        IEnumerator WaitBeforeCall()
+
+        foreach (Enemy e in currentMinions)
         {
-            yield return new WaitForSeconds(leaveTime);
-            if(owner != null)
+            if(e != null)
             {
-                owner.GetComponent<ILevelFlowComponent>()?.FinishSection();
+                e.InstantDissapear();
             }
         }
+
         
-        
+
+        //currentMinions.
+
+
     }
 
-    void LeaveScreen(float time)
+    void LeaveScreen(float time, bool hasBeenChasedAway)
     {
         GameObject[] scatterPoints = GameObject.FindGameObjectsWithTag("ScatterPoint");
 
@@ -141,7 +164,6 @@ public class Boss : MonoBehaviour
 
         foreach (GameObject obj in scatterPoints)
         {
-            Debug.Log("Found a scatterPoint");
             if (obj == null) continue;
 
             float distance = Vector3.Distance(currentPosition, obj.transform.position);
@@ -158,7 +180,19 @@ public class Boss : MonoBehaviour
         IEnumerator Move()
         {
             yield return new WaitForSeconds(time);
-            State = BossStates.readying;
+            if (hasBeenChasedAway)
+            {
+                if (owner != null)
+                {
+                    owner.GetComponent<ILevelFlowComponent>()?.FinishSection();
+                    owner = null;
+                }
+            }
+            else
+            {
+                State = BossStates.readying;
+            }
+            
         }
 
     }

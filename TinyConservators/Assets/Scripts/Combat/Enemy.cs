@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
     float originalSpeed;
 
     GameObject owner;
+    GameObject minion;
     bool receiveDamage = true;
     bool eatable;
     EnemyStates state = EnemyStates.flying;
@@ -111,8 +112,21 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
             GetComponent<EnemyMovement>().SetLookForTarget(false);    
             GetComponent<EnemyMovement>().SetNewTarget(closest);
         }
+    }
 
-
+    public void InstantDissapear()
+    {
+        StartCoroutine(Dissapear());
+        IEnumerator Dissapear()
+        {
+            //Do particle effect or smth.
+            yield return new WaitForSeconds(.5f);
+            if(minion != null)
+            {
+                minion.GetComponent<Minion>().SafeDestroy();
+            }
+            Destroy(gameObject);
+        }
     }
 
     public void Recover()
@@ -203,6 +217,11 @@ public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
     public void SetOwner(GameObject owner)
     {
         this.owner = owner;
+    }
+
+    public void SetMinion(GameObject minion)
+    {
+        this.minion = minion;
     }
 
 }

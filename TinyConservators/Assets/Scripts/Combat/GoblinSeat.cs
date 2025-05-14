@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class GoblinSeat : MonoBehaviour
 {
-    [SerializeField]GameObject ridingGoblin;
+    [SerializeField] GameObject ridingGoblin;
     public void KnockedOff()
     {
         GameObject minion = Instantiate(ridingGoblin, transform.position, Quaternion.identity);
-        minion.GetComponent<Minion>().SetMount(GetComponentInParent<Enemy>());
+        Enemy e = GetComponentInParent<Enemy>();
+
+
+        minion.GetComponent<Minion>().SetMount(e);
+        e.SetMinion(minion);
 
 
     }

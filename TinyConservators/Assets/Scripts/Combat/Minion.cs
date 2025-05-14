@@ -144,6 +144,15 @@ public class Minion : MonoBehaviour, IEatable
         }
     }
 
+    //Not sure if this works, but need to know if the player is holding the minion in its mouth, and this seems like a fair way to do it? 
+    public void SafeDestroy()
+    {
+        if (gameObject.activeSelf)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void SetMount(Enemy mount)
     {
         this.mount = mount;
