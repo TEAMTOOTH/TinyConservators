@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
    
     public void LevelStart()
     {
-        StartCoroutine(StartCountdown());   
+        //StartCoroutine(StartCountdown());   
         //Make counter go down.
     }
 

@@ -73,7 +73,7 @@ public class Player : MonoBehaviour, IDamageReceiver
 
     public void Hurt()
     {
-        Debug.Log("Hurt called in player");
+        //Debug.Log("Hurt called in player");
         GetComponent<IKnockoutable>().Knockout();
     }
 

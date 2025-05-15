@@ -7,6 +7,7 @@ public class EnemySpawnFlow : MonoBehaviour, ILevelFlowComponent, IHappenedCount
     int enemiesKilled;
     EnemySpawner spawner;
     LevelFlowManager owner;
+    bool isTheActiveFlow;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,6 +18,7 @@ public class EnemySpawnFlow : MonoBehaviour, ILevelFlowComponent, IHappenedCount
 
     public void FinishSection()
     {
+        isTheActiveFlow = false;
         owner.ProgressFlow();
     }
 
@@ -24,13 +26,14 @@ public class EnemySpawnFlow : MonoBehaviour, ILevelFlowComponent, IHappenedCount
     {
         owner = flowManager;
         spawner.SpawnEnemies(amountOfEnemiesToSpawn, gameObject);
+        isTheActiveFlow = true;
     }
 
     public void ListenedActionHappened()
     {
         enemiesKilled++;
         Debug.Log(enemiesKilled);
-        if(enemiesKilled >= amountOfEnemiesToSpawn)
+        if(enemiesKilled >= amountOfEnemiesToSpawn && isTheActiveFlow)
         {
             FinishSection();
         }

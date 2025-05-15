@@ -12,14 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterCreationScene.unity
     guid: a1c5f85b31e005f47976a64e2a8b94c4
   - enabled: 1
-    path: Assets/Scenes/IntroStory.unity
-    guid: 9c1eaa9303977884d974b297c2c2b90c
-  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: 07bff2dd380a8d54880af1ec83926fd5
+  - enabled: 1
+    path: Assets/Scenes/IntroStory.unity
+    guid: 9c1eaa9303977884d974b297c2c2b90c
   - enabled: 0
     path: Assets/Scenes/TestScene.unity
     guid: 6e8bd946db75e2d448e5710586c01592

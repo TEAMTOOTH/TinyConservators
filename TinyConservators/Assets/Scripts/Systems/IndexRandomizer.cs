@@ -19,7 +19,7 @@ public class IndexRandomizer
     {
         if (length <= 1)
         {
-            Debug.Log("Length must be greater than 1 to get a different index.");
+            //Debug.Log("Length must be greater than 1 to get a different index.");
             return 0;
         }
             

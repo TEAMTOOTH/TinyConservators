@@ -33,7 +33,7 @@ public class BossAttack : MonoBehaviour
         //Spawn bubble and decal.
         IEnumerator Eat()
         {
-            Debug.Log("Eating");
+            //Debug.Log("Eating");
             
             while (eating)
             {
@@ -41,7 +41,7 @@ public class BossAttack : MonoBehaviour
                 //Debug.Log(time);
                 if(time > maxEatTime)
                 {
-                    Debug.Log("Heading off");
+                    //Debug.Log("Heading off");
                     eating = false;
                     GetComponent<Boss>().State = BossStates.walkOff;
                     
