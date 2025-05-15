@@ -23,16 +23,16 @@ public class Level : MonoBehaviour
 
         GameObject g = GameObject.FindGameObjectWithTag("Interstitial");
 
-        
+        yield return null;
 
-        if (g != null)
+        /*if (g != null)
         {
             interstitial = g.GetComponent<IInterstitial>(); //Rememeber this only finds one of them.
             interstitial.StartInterstitial();
 
             yield return new WaitForSeconds(interstitial.GetLength());
             interstitial.EndInterstitial();
-        }
+        }*/
         
         onStart.Invoke();
 

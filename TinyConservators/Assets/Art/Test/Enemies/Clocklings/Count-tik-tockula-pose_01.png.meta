@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Count-tik-tockula-pose_01_0: -7088368669851186522
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

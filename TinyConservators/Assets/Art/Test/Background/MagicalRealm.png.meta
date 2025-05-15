@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MagicalRealm_0: -5237312247582527784
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

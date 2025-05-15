@@ -6,7 +6,7 @@ public class Level1Interstitial : MonoBehaviour, IInterstitial
 
     public void StartInterstitial()
     {
-    
+        gameObject.SetActive(true);
     }
 
     public void EndInterstitial()
