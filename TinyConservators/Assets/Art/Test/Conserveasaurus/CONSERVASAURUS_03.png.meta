@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CONSERVASAURUS_03_0: -2775199508951366110
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
