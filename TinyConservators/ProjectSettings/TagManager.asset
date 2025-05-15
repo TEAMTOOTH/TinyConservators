@@ -7,6 +7,12 @@ TagManager:
   - Platform
   - GameManager
   - Enemy
+  - Interstitial
+  - PlayerVisuals
+  - ScatterPoint
+  - Boss
+  - Goblin
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX
@@ -14,10 +20,10 @@ TagManager:
   - Platform
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - PlayerBlocker
+  - Player
+  - Goblin
+  - Enemy
   - 
   - 
   - 
