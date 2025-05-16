@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2e9d3436a6ddc426aa4298658ed03605
+guid: db97f4ea622b248c7a616c4ea3773566
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9126880885701801937
-    second: paint-damage-bubble01_0
+      213: 7520729981652679125
+    second: character-create-screen-001_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: paint-damage-bubble01_0
+      name: character-create-screen-001_0
       rect:
         serializedVersion: 2
-        x: 189
-        y: 212
-        width: 412
-        height: 404
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d7fe8b2fc139ae70800000000000000
-      internalID: 9126880885701801937
+      spriteID: 5d9b90062100f5860800000000000000
+      internalID: 7520729981652679125
       vertices: []
       indices: 
       edges: []

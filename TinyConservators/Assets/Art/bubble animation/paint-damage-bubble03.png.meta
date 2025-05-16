@@ -103,10 +103,10 @@ TextureImporter:
       name: paint-damage-bubble03_0
       rect:
         serializedVersion: 2
-        x: 42
-        y: 42
-        width: 248
-        height: 248
+        x: 249
+        y: 221
+        width: 368
+        height: 396
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
