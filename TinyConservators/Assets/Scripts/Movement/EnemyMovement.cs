@@ -5,7 +5,7 @@ public class EnemyMovement : MonoBehaviour
 {
     bool canMove = true;
     Rigidbody2D rb2D;
-
+    bool lookForTarget = true;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,7 +16,12 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FindTarget();
+        if (lookForTarget)
+        {
+            FindTarget();
+        }
+        
+        
     }
 
     public void StartMoving()
@@ -56,7 +61,7 @@ public class EnemyMovement : MonoBehaviour
         SetNewTarget(targetObject);
     }
 
-    void SetNewTarget(GameObject newTarget)
+    public void SetNewTarget(GameObject newTarget)
     {
         GetComponent<AIDestinationSetter>().target = newTarget.transform;
     }
@@ -64,5 +69,20 @@ public class EnemyMovement : MonoBehaviour
     public void SetCanMove(bool state)
     {
         canMove = state;
+    }
+
+    public void SetLookForTarget(bool state)
+    {
+        lookForTarget = state;
+    }
+
+    public void ChangeSpeed(float newSpeed)
+    {
+        GetComponent<AIPath>().maxSpeed = newSpeed;
+    }
+
+    public float GetCurrentSpeed()
+    {
+        return GetComponent<AIPath>().maxSpeed;
     }
 }

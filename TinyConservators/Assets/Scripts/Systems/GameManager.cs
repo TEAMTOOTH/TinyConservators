@@ -4,7 +4,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    //All of this is temporary for a test on 07.04
+    //All of this is temporary for a test on 07.04.
+    //Needs to be incorporated into the greater structure system. 23.04.
     public void DetermineWinner()
     {
         int highestScore = 0;

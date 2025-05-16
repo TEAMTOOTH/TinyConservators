@@ -41,7 +41,7 @@ public class EnemyKnockout : MonoBehaviour, IKnockoutable
         GetComponent<EnemyMovement>().StartMoving();
         Enemy e = GetComponent<Enemy>();
         e.State = EnemyStates.flying; //Is it right to set this from here? Probably not, don't love it, but also can't think of a better way currently.
-        e.SetReceiveDamage(false);
+        e.SetReceiveDamage(true);
         e.SetEatable(false);
         statusEnumerator = null;
         isKnockedOut = false;

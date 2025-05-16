@@ -8,7 +8,7 @@ public class WeakPoint : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(enemyTag))
         {
-            Debug.Log($"KnockedOut by {collision.tag} in weakpoint");
+            //Debug.Log($"KnockedOut by {collision.tag} in weakpoint");
             IDamageReceiver damage = GetComponentInParent<IDamageReceiver>();
             damage.Hurt();
         }
