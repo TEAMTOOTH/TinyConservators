@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class Enemy : MonoBehaviour, IDamageReceiver, IEatable
+public class Enemy : MonoBehaviour, IDamageReceiver
 {
     [SerializeField] float knockOutTime;
     [SerializeField] float dieTime;

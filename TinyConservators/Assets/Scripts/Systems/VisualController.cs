@@ -5,23 +5,36 @@ public class VisualController : MonoBehaviour
     [SerializeField] SpriteRenderer[] sprites;
 
     Rigidbody2D rb2D;
+    WalkingMovement movement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sprites = GetComponentsInChildren<SpriteRenderer>();
         rb2D = GetComponent<Rigidbody2D>();
+        movement = GetComponent<WalkingMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(rb2D.linearVelocityX < 0)
+        if(movement.GetDirection() < 0)
         {
             sprites[0].flipX = true;
         }
-        else if (rb2D.linearVelocityX > 0)
+        else if (movement.GetDirection() > 0)
         {
             sprites[0].flipX = false;
         }
+    }
+
+    /// <summary>
+    /// IncrediblySimplified for test. Not how I want it in the final one.
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="visualIndex"></param>
+    public void UpdatePart(int visualIndex)
+    {
+        //this is also terrible!!!
+        sprites[0].GetComponent<CustomizePart>().SetPart(visualIndex);
     }
 }

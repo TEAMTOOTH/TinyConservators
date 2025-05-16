@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemySpawnFlow : MonoBehaviour, ILevelFlowComponent, IHappenedCounter
+public class EnemySpawnLevelFlow : MonoBehaviour, ILevelFlowComponent, IHappenedCounter
 {
     [SerializeField] int amountOfEnemiesToSpawn;
 

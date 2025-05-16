@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class TimePassedFlow : MonoBehaviour, ILevelFlowComponent
+public class TimePassedLevelFlow : MonoBehaviour, ILevelFlowComponent
 {
     [SerializeField] float length;
     

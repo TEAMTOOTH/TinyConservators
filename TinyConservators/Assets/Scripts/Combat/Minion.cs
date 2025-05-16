@@ -162,6 +162,11 @@ public class Minion : MonoBehaviour, IEatable
     {
         OnMinionStateChanged -= StateChanged; //Not completely sure if this is unsubscribing...
     }
+
+    public bool Eatable()
+    {
+        return eatable;
+    }
 }
 
 public enum MinionStates

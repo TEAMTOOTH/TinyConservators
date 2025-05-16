@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using static UnityEngine.UI.ScrollRect;
 
@@ -18,9 +19,12 @@ public class BossMovement : MonoBehaviour
 
     public GameObject FindAttackSpot()
     {
-        GameObject[] attackSpots = GetComponent<BossAttack>().GetAttackSpots();
-        
-        return attackSpots[Random.Range(0, attackSpots.Length)];
+        AttackPoint attackSpot = GetComponent<BossAttack>().ChooseNextAttackPoint();
+        if(attackSpot == null)
+        {
+            Debug.Log("Level lost");
+        }
+        return attackSpot.gameObject;
         
     }
 

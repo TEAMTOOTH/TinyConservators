@@ -6,7 +6,10 @@ public class BossDamage : MonoBehaviour
     {
         if (collision.CompareTag("Goblin"))
         {
-            GetComponentInParent<Boss>().State = BossStates.hurt;
+            if(collision.GetComponent<Minion>().State == MinionStates.projectile)
+            {
+                GetComponentInParent<Boss>().State = BossStates.hurt;
+            }
         }
     }
 

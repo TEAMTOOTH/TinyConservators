@@ -25,6 +25,8 @@ public class CustomizePart : MonoBehaviour
         }*/
     }
 
+    
+
     /// <summary>
     /// Change the visual part. 
     /// Takes arbritrary number, but usually is expecting 1 to -1. Will roll over to length of parts or 0 if the number exceeds the amount of parts.
@@ -43,5 +45,15 @@ public class CustomizePart : MonoBehaviour
         }
 
         bodyPart.sprite = parts[partIndex];
+    }
+
+    public void SetPart(int partIndex)
+    {
+        bodyPart.sprite = parts[partIndex];
+    }
+
+    public void SetParts(Sprite[] newParts)
+    {
+        parts = newParts;
     }
 }

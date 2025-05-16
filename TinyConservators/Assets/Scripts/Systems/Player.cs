@@ -8,6 +8,7 @@ public class Player : MonoBehaviour, IDamageReceiver
     int playerId;
     PlayerStates state = PlayerStates.paused;
 
+    VisualController playerVisuals;
     public void Initialize(int id)
     {
         //Randomize players before allowing players to customize.
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour, IDamageReceiver
         
         State = PlayerStates.customizing;
 
+        playerVisuals = GetComponent<VisualController>();
         
         //This is temp for testing
         GetComponentInChildren<CharacterCustomizer>().Initialize(id);
@@ -75,6 +77,10 @@ public class Player : MonoBehaviour, IDamageReceiver
     {
         //Debug.Log("Hurt called in player");
         GetComponent<IKnockoutable>().Knockout();
+        //SetVisual
+        
+        playerVisuals.UpdatePart(3);
+        
     }
 
     public void SetMoveState(bool state)
@@ -93,6 +99,7 @@ public class Player : MonoBehaviour, IDamageReceiver
     void AllowMoving()
     {
         FullFreeze(false);
+        playerVisuals.UpdatePart(0);
     }
 
     public void FullFreeze(bool state)
@@ -127,6 +134,7 @@ public class Player : MonoBehaviour, IDamageReceiver
         FullFreeze(true);
     }
 
+    //Not sure what this is?
     public void DebugStartAction()
     {
         if(State == PlayerStates.moving)

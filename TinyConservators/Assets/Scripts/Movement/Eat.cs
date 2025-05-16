@@ -13,7 +13,12 @@ public class Eat : MonoBehaviour
         IEatable eatObject = collision.GetComponent<IEatable>();
         if(eatObject != null && !IsCarryingFood())
         {
-            eatObject.Eat(transform.parent.gameObject);
+            if (eatObject.Eatable())
+            {
+                eatObject.Eat(transform.parent.gameObject);
+                AnimationTransition(1,2,0.2f);
+            }
+            
         }
     }
 
@@ -35,7 +40,7 @@ public class Eat : MonoBehaviour
             knockout.PauseKnockout(.2f);
         }
         eatObject.SpitOut(transform.parent.gameObject);
-
+        AnimationTransition(1, 0, 0.2f);
         MonoBehaviour mb = eatObject as MonoBehaviour;
 
         if(mb != null)
@@ -53,5 +58,16 @@ public class Eat : MonoBehaviour
         }
         
 
+    }
+
+    void AnimationTransition(int from, int to, float time)
+    {
+        StartCoroutine(eat());
+        IEnumerator eat()
+        {
+            GetComponentInParent<VisualController>().UpdatePart(from);
+            yield return new WaitForSeconds(time);
+            GetComponentInParent<VisualController>().UpdatePart(to);
+        }
     }
 }
