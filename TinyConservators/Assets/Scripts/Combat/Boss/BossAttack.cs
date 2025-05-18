@@ -95,6 +95,13 @@ public class BossAttack : MonoBehaviour
         } 
     }
 
+    public void InterruptAttack()
+    {
+        bubble.PopBubble();
+        StopAllCoroutines();
+
+    }
+
     public void SetMaxEatingTime(float maxEatingTime)
     {
         maxEatTime = maxEatingTime;

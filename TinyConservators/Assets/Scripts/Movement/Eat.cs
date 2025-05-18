@@ -16,7 +16,7 @@ public class Eat : MonoBehaviour
             if (eatObject.Eatable())
             {
                 eatObject.Eat(transform.parent.gameObject);
-                AnimationTransition(1,2,0.2f);
+                GetComponentInParent<Player>().AnimationTransition(1,2,0.1f);
             }
             
         }
@@ -40,7 +40,7 @@ public class Eat : MonoBehaviour
             knockout.PauseKnockout(.2f);
         }
         eatObject.SpitOut(transform.parent.gameObject);
-        AnimationTransition(1, 0, 0.2f);
+        GetComponentInParent<Player>().AnimationTransition(1, 0, 0.1f);
         MonoBehaviour mb = eatObject as MonoBehaviour;
 
         if(mb != null)
@@ -60,14 +60,5 @@ public class Eat : MonoBehaviour
 
     }
 
-    void AnimationTransition(int from, int to, float time)
-    {
-        StartCoroutine(eat());
-        IEnumerator eat()
-        {
-            GetComponentInParent<VisualController>().UpdatePart(from);
-            yield return new WaitForSeconds(time);
-            GetComponentInParent<VisualController>().UpdatePart(to);
-        }
-    }
+    
 }

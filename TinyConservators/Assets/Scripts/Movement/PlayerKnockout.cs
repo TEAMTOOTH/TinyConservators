@@ -24,6 +24,7 @@ public class PlayerKnockout : MonoBehaviour, IKnockoutable
 
             GetComponent<Player>().SetMoveState(false);
             isKnockedOut = true;
+            GetComponent<VisualController>().UpdatePart(3);
         }
     }
 
@@ -47,6 +48,7 @@ public class PlayerKnockout : MonoBehaviour, IKnockoutable
     public void Recover()
     {
         GetComponent<Player>().SetMoveState(true);
+        GetComponent<VisualController>().UpdatePart(0);
         isKnockedOut = false;
     }
 

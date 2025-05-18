@@ -9,6 +9,7 @@ public class BossDamage : MonoBehaviour
             if(collision.GetComponent<Minion>().State == MinionStates.projectile)
             {
                 GetComponentInParent<Boss>().State = BossStates.hurt;
+
             }
         }
     }
