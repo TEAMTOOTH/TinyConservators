@@ -129,10 +129,10 @@ TextureImporter:
       name: count-shout_0
       rect:
         serializedVersion: 2
-        x: 687
-        y: 425
-        width: 1303
-        height: 1746
+        x: 274
+        y: 169
+        width: 523
+        height: 700
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
