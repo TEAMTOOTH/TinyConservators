@@ -68,14 +68,12 @@ public class Boss : MonoBehaviour
                 break;
             case BossStates.eating:
                 GetComponent<BossAttack>().Attack();
-                GetComponentInChildren<BossDamage>().AllowCollisions(true);
                 break;
             case BossStates.hurt:
                 Hurt();
                 break;
             case BossStates.walkOff:
                 LeaveScreen(3f, false);
-                GetComponentInChildren<BossDamage>().AllowCollisions(false);
                 break;
             default:
                 break;
@@ -134,6 +132,7 @@ public class Boss : MonoBehaviour
     void Hurt()
     {
         float leaveTime = 0.5f;
+        GetComponentInChildren<BossDamage>().AllowCollisions(false);
         LeaveScreen(leaveTime, true);
 
         GetComponent<BossAttack>().InterruptAttack();

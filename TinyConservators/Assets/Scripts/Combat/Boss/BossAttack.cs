@@ -60,7 +60,7 @@ public class BossAttack : MonoBehaviour
 
         float damageToPoint = 0;
         GetComponentInChildren<Animator>().Play("BossAttack");
-
+        GetComponentInChildren<BossDamage>().AllowCollisions(true);
         bubble.StartShowing();
 
         StartCoroutine(Eat());
@@ -94,6 +94,7 @@ public class BossAttack : MonoBehaviour
                     GetComponent<Boss>().State = BossStates.walkOff;
                     GetComponentInChildren<Animator>().Play("BossNormal");
                     bubble.PopBubble();
+                    GetComponentInChildren<BossDamage>().AllowCollisions(false);
 
                 }
                 yield return null;

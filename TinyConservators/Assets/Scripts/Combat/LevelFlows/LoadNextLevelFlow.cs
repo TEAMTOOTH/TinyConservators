@@ -10,7 +10,8 @@ public class LoadNextLevelFlow : MonoBehaviour, ILevelFlowComponent
     }
 
     public void StartSection(LevelFlowManager flowManager)
-    {   
+    {
+        GameObject.FindGameObjectWithTag("StatTracker").GetComponent<StatTracker>().SetStats();
         FinishSection();
     }
 
