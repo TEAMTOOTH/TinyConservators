@@ -103,10 +103,10 @@ TextureImporter:
       name: count-suck-001_0
       rect:
         serializedVersion: 2
-        x: 495
-        y: 568
-        width: 1592
-        height: 1601
+        x: 198
+        y: 226
+        width: 638
+        height: 642
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
