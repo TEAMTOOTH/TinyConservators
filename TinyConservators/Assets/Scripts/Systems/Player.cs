@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,7 @@ public class Player : MonoBehaviour, IDamageReceiver
     int playerId;
     PlayerStates state = PlayerStates.paused;
 
+    VisualController playerVisuals;
     public void Initialize(int id)
     {
         //Randomize players before allowing players to customize.
@@ -21,6 +23,7 @@ public class Player : MonoBehaviour, IDamageReceiver
         
         State = PlayerStates.customizing;
 
+        playerVisuals = GetComponent<VisualController>();
         
         //This is temp for testing
         GetComponentInChildren<CharacterCustomizer>().Initialize(id);
@@ -74,7 +77,28 @@ public class Player : MonoBehaviour, IDamageReceiver
     public void Hurt()
     {
         //Debug.Log("Hurt called in player");
-        GetComponent<IKnockoutable>().Knockout();
+        
+        //SetVisual
+
+        //This is probably really poor, but putting this in for test in the 19/22 of may
+        if (GetComponentInChildren<Eat>().IsCarryingFood())
+        {
+            StartCoroutine(SpitThenKnockout());
+            IEnumerator SpitThenKnockout()
+            {
+                GetComponentInChildren<Eat>().Spit();
+                yield return new WaitForSeconds(.15f);
+
+                GetComponent<IKnockoutable>().Knockout();
+                //playerVisuals.UpdatePart(3);
+            }
+        }
+        else
+        {
+            GetComponent<IKnockoutable>().Knockout();
+        }
+        
+        
     }
 
     public void SetMoveState(bool state)
@@ -105,6 +129,7 @@ public class Player : MonoBehaviour, IDamageReceiver
         else
         {
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            //playerVisuals.UpdatePart(0);
         }
         
     }
@@ -127,6 +152,18 @@ public class Player : MonoBehaviour, IDamageReceiver
         FullFreeze(true);
     }
 
+    public void AnimationTransition(int from, int to, float time)
+    {
+        StartCoroutine(eat());
+        IEnumerator eat()
+        {
+            GetComponentInParent<VisualController>().UpdatePart(from);
+            yield return new WaitForSeconds(time);
+            GetComponentInParent<VisualController>().UpdatePart(to);
+        }
+    }
+
+    //Not sure what this is?
     public void DebugStartAction()
     {
         if(State == PlayerStates.moving)

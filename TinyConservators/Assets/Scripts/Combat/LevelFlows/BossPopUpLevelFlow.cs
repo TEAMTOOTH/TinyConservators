@@ -4,6 +4,7 @@ using UnityEngine;
 public class BossPopUpLevelFlow : MonoBehaviour, ILevelFlowComponent
 {
     [SerializeField] BossPopUp popUpVisual;
+    [SerializeField] Sprite popUpGraphic;
     [SerializeField] float movementLength;
     [SerializeField] float waitLength;
 
@@ -20,6 +21,7 @@ public class BossPopUpLevelFlow : MonoBehaviour, ILevelFlowComponent
         owner = flowManager;
         
         popUpVisual.PopUp(movementLength, waitLength, null, gameObject);
+        popUpVisual.SetVisual(popUpGraphic);
     }
 
     

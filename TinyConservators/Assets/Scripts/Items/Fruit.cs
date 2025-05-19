@@ -23,6 +23,11 @@ public class Fruit : MonoBehaviour, IEatable
         Destroy(gameObject);
     }
 
+    public bool Eatable()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public void SpitOut(GameObject spitter)
     {
         throw new System.NotImplementedException();

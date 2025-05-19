@@ -134,10 +134,11 @@ public class Boss : MonoBehaviour
     {
         float leaveTime = 0.5f;
         LeaveScreen(leaveTime, true);
-        GetComponent<BossAttack>().StopAllCoroutines();
-        GetComponentInChildren<BossDamage>().AllowCollisions(false);
 
+        GetComponent<BossAttack>().InterruptAttack();
+        GetComponentInChildren<BossDamage>().AllowCollisions(false);
         
+
 
         foreach (Enemy e in currentMinions)
         {

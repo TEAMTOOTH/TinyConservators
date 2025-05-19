@@ -24,4 +24,9 @@ public class BossPopUp : MonoBehaviour
             }
         }
     }
+
+    public void SetVisual(Sprite sprite)
+    {
+        GetComponentInChildren<SpriteRenderer>().sprite = sprite;
+    }
 }

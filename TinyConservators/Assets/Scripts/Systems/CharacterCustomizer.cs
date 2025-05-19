@@ -49,16 +49,30 @@ public class CharacterCustomizer : MonoBehaviour
     //Currently working temp
     public void Initialize(int id)
     {
-        Debug.Log("Initializing " + id);
+        //Debug.Log("Initializing " + id);
         visualElements = GetComponentsInChildren<CustomizePart>();
         foreach (CustomizePart cp in visualElements)
         {
-            cp.ChangePart(id);
+            //cp.ChangePart(id);
+            cp.SetParts(GameObject.FindGameObjectWithTag("CharacterBuilder").GetComponent<BadPartsGetter>().GetMyColororedBodyParts(id));
+            cp.ChangePart(0);
         }
+      
     }
 
     void IncrementSelection(int direction)
     {
         //Debug.Log(direction);
+    }
+
+    void GenerateConservator(string generationCode)
+    {
+        string[] codes = generationCode.Split('|');
+
+        for(int i = 0; i < codes.Length; i++)
+        {
+            int.TryParse(codes[i], out int result);
+            //Bodyparts[i] = arrayCodes etc etc etc.
+        }
     }
 }
