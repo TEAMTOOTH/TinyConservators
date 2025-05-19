@@ -57,6 +57,10 @@ public class BossAttack : MonoBehaviour
         float damageTimer = 0;
         float damageInterval = maxEatTime / currentAttackPoint.GetAmountOfVisualDamageSteps();
         eating = true;
+
+        float damageToPoint = 0;
+        GetComponentInChildren<Animator>().Play("BossAttack");
+
         bubble.StartShowing();
 
         StartCoroutine(Eat());
@@ -68,23 +72,29 @@ public class BossAttack : MonoBehaviour
             while (eating)
             {
                 time += Time.deltaTime;
-                damageTimer += Time.deltaTime;
+                //damageTimer += Time.deltaTime;
                 bubble.ChangeBubbleSize(time, maxEatTime);
+                
+                currentAttackPoint.Damage(time/maxEatTime);
 
                 //Debug.Log(time);
+
+                /*
                 if (damageTimer >= damageInterval)
                 {
                     currentAttackPoint.ProgressVisual();
                     Debug.Log("Damage painting");
                     damageTimer = 0f;
-                }
+                }*/
 
                 if (time > maxEatTime)
                 {
                     //Debug.Log("Heading off");
                     eating = false;
                     GetComponent<Boss>().State = BossStates.walkOff;
+                    GetComponentInChildren<Animator>().Play("BossNormal");
                     bubble.PopBubble();
+
                 }
                 yield return null;
 

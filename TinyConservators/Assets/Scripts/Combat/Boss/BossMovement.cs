@@ -66,6 +66,13 @@ public class BossMovement : MonoBehaviour
     {
         StartCoroutine(MakeMove());
 
+        BossDamage b = GetComponentInChildren<BossDamage>();
+
+        if(b != null)
+        {
+            b.AllowCollisions(false);
+        }
+
         IEnumerator MakeMove()
         {
             float time = 0f;
@@ -94,6 +101,13 @@ public class BossMovement : MonoBehaviour
             }
 
             transform.position = endPos;
+
+            BossDamage b = GetComponentInChildren<BossDamage>();
+
+            if (b != null)
+            {
+                b.AllowCollisions(false);
+            }
         }
     }
 }

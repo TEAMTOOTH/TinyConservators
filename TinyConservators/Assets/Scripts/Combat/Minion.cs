@@ -7,6 +7,9 @@ public class Minion : MonoBehaviour, IEatable
     [SerializeField] float dieTime;
     [SerializeField] float throwOffForce = 5f;
 
+    [SerializeField] Sprite fallingGoblin;
+    [SerializeField] Sprite knockedOutGoblin;
+
     Enemy mount;
 
     MinionStates state = MinionStates.knockedOut;
@@ -96,6 +99,7 @@ public class Minion : MonoBehaviour, IEatable
         else if (State == MinionStates.knockedOut && collision.gameObject.CompareTag("Platform"))
         {
             eatable = true;
+            GetComponentInChildren<SpriteRenderer>().sprite = knockedOutGoblin;
         } 
     }
 
@@ -104,6 +108,8 @@ public class Minion : MonoBehaviour, IEatable
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
         float arcAngle = 22.5f;
+
+        GetComponentInChildren<SpriteRenderer>().sprite = fallingGoblin;
 
         // Get a random angle in degrees from -22.5 to +22.5
         float randomAngle = UnityEngine.Random.Range(-arcAngle, arcAngle);
@@ -114,6 +120,7 @@ public class Minion : MonoBehaviour, IEatable
         // Apply force (adjust forceMagnitude to suit your needs)
         
         rb.AddForce(direction * throwOffForce, ForceMode2D.Impulse);
+
 
         
     }
