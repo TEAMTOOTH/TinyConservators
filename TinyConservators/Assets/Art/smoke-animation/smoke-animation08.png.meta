@@ -210,6 +210,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1084,7 +1110,46 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      smoke-animation08_0: 4676435385596881704
+      smoke-animation08_1: -3208842801796520912
+      smoke-animation08_10: 468652093576190266
+      smoke-animation08_11: 632632091637665132
+      smoke-animation08_12: -3583730497403244021
+      smoke-animation08_13: -240241426199699890
+      smoke-animation08_14: 6371331060362365431
+      smoke-animation08_15: 7418945797095875892
+      smoke-animation08_16: -6297718311464472513
+      smoke-animation08_17: 6941213564945738662
+      smoke-animation08_18: -6530968100103205840
+      smoke-animation08_19: 2183194601185415272
+      smoke-animation08_2: 2010268676117842838
+      smoke-animation08_20: -3609743817026134108
+      smoke-animation08_21: -8910024441130579543
+      smoke-animation08_22: -8018342045529992553
+      smoke-animation08_23: -8132973443528829556
+      smoke-animation08_24: -8603472219637281375
+      smoke-animation08_25: 1707684518837828285
+      smoke-animation08_26: 2174942196431285531
+      smoke-animation08_27: 361757221174936601
+      smoke-animation08_28: 3871270906220602756
+      smoke-animation08_29: 2859362169562654356
+      smoke-animation08_3: 1625232131036305585
+      smoke-animation08_30: -7204239965525477518
+      smoke-animation08_31: -6768207527514411488
+      smoke-animation08_32: -8805018138736320473
+      smoke-animation08_33: -2072067731410153828
+      smoke-animation08_34: -3083542203153623789
+      smoke-animation08_35: -1511375774842995143
+      smoke-animation08_36: 6295551770756812009
+      smoke-animation08_37: 5632014723175743386
+      smoke-animation08_38: 3096687939973030290
+      smoke-animation08_4: -8917121116039758802
+      smoke-animation08_5: -7742032914316047060
+      smoke-animation08_6: -9077799047808354191
+      smoke-animation08_7: 8111711741663524837
+      smoke-animation08_8: -2117143201061037118
+      smoke-animation08_9: -8988827914533824145
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

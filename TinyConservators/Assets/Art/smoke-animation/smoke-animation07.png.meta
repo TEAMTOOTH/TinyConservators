@@ -138,6 +138,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -484,7 +510,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      smoke-animation07_0: 8372205331701089087
+      smoke-animation07_1: -1514635537426377681
+      smoke-animation07_10: 4055108956327465452
+      smoke-animation07_11: -601274795401817620
+      smoke-animation07_12: -2716884261651024317
+      smoke-animation07_13: 8887937851898650238
+      smoke-animation07_14: -6260819706657088056
+      smoke-animation07_2: -1897424227030107394
+      smoke-animation07_3: -83646283389823085
+      smoke-animation07_4: -8820013434544319180
+      smoke-animation07_5: -10225357975032972
+      smoke-animation07_6: 2755643990789423361
+      smoke-animation07_7: 7535512230108331445
+      smoke-animation07_8: 3656322851406246092
+      smoke-animation07_9: 8019846035220426255
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

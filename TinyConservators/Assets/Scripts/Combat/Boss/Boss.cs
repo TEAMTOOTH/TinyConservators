@@ -101,6 +101,7 @@ public class Boss : MonoBehaviour
         {
             yield return new WaitForSeconds(timeToNextAttack);
             State = BossStates.attack;
+            GetComponentInChildren<Animator>().Play("BossHungry");
         }
     }
     
@@ -136,8 +137,7 @@ public class Boss : MonoBehaviour
         LeaveScreen(leaveTime, true);
 
         GetComponent<BossAttack>().InterruptAttack();
-        GetComponentInChildren<BossDamage>().AllowCollisions(false);
-        
+        GetComponentInChildren<Animator>().Play("BossHurt");
 
 
         foreach (Enemy e in currentMinions)

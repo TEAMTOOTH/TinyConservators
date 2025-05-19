@@ -89,6 +89,9 @@ public class Enemy : MonoBehaviour, IDamageReceiver
         //Get closest scatter point.
         GameObject [] scatterPoints = GameObject.FindGameObjectsWithTag("ScatterPoint");
 
+        //GetComponent<CapsuleCollider>().enabled = false;
+        gameObject.layer = LayerMask.NameToLayer("NoCollision");
+
         GameObject closest = null;
         float shortestDistance = Mathf.Infinity;
         Vector3 currentPosition = transform.position;
@@ -134,6 +137,7 @@ public class Enemy : MonoBehaviour, IDamageReceiver
         State = EnemyStates.flying;
         goblinVisual.SetActive(true);
         GetComponent<EnemyMovement>().SetLookForTarget(true);
+        gameObject.layer = LayerMask.NameToLayer("Enemy");
     }
 
     void DoDamage()
@@ -145,6 +149,7 @@ public class Enemy : MonoBehaviour, IDamageReceiver
     {
         GetComponent<EnemyMovement>().StartMoving();
         GetComponent<EnemyMovement>().ChangeSpeed(originalSpeed);
+        
 
     }
 
