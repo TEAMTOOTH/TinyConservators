@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: f31c106b8f48048df8eeeb79d2f02a25
+guid: 32be925d848c941abaa798c1a9b324ce
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1096228830796582072
-    second: count-profile 1_0
+      213: 502321386110966155
+    second: smoke-animation04_0
+  - first:
+      213: -7369261017333208097
+    second: smoke-animation04_1
+  - first:
+      213: 6429249729411649546
+    second: smoke-animation04_2
+  - first:
+      213: -6562107125125209205
+    second: smoke-animation04_3
+  - first:
+      213: 4857363621443216482
+    second: smoke-animation04_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +108,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: count-profile 1_0
+      name: smoke-animation04_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 219
+        y: 309
+        width: 518
+        height: 544
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8bc0c244056963f00800000000000000
-      internalID: 1096228830796582072
+      spriteID: b89d936a3aa98f600800000000000000
+      internalID: 502321386110966155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation04_1
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 410
+        width: 45
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdb68b416202bb990800000000000000
+      internalID: -7369261017333208097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation04_2
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 430
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a009bd5b098493950800000000000000
+      internalID: 6429249729411649546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation04_3
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 308
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b832ad45656bee4a0800000000000000
+      internalID: -6562107125125209205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation04_4
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 259
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26427017a72d86340800000000000000
+      internalID: 4857363621443216482
       vertices: []
       indices: 
       edges: []
@@ -160,8 +234,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      count-profile 1_0: 1096228830796582072
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

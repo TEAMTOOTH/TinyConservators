@@ -1,0 +1,792 @@
+fileFormatVersion: 2
+guid: f8e94e32076c34b79b969fb029102b71
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5990314141130065553
+    second: smoke-animation09_0
+  - first:
+      213: 666981106838900272
+    second: smoke-animation09_1
+  - first:
+      213: -2995275485691596165
+    second: smoke-animation09_2
+  - first:
+      213: -6726355897998343206
+    second: smoke-animation09_3
+  - first:
+      213: -542652261580763796
+    second: smoke-animation09_4
+  - first:
+      213: -347277265678257596
+    second: smoke-animation09_5
+  - first:
+      213: -1565884316603720928
+    second: smoke-animation09_6
+  - first:
+      213: 2696296880139833411
+    second: smoke-animation09_7
+  - first:
+      213: 9024565564100914432
+    second: smoke-animation09_8
+  - first:
+      213: 6753365693153950747
+    second: smoke-animation09_9
+  - first:
+      213: 5022746079422144249
+    second: smoke-animation09_10
+  - first:
+      213: -1054289315829208778
+    second: smoke-animation09_11
+  - first:
+      213: -235282679668348317
+    second: smoke-animation09_12
+  - first:
+      213: -561264237079894086
+    second: smoke-animation09_13
+  - first:
+      213: -3026094042313237926
+    second: smoke-animation09_14
+  - first:
+      213: 4092377658131794440
+    second: smoke-animation09_15
+  - first:
+      213: -2985606960213504562
+    second: smoke-animation09_16
+  - first:
+      213: 216873411547278987
+    second: smoke-animation09_17
+  - first:
+      213: 5978722950451862578
+    second: smoke-animation09_18
+  - first:
+      213: 208483919235357377
+    second: smoke-animation09_19
+  - first:
+      213: -57717756284425982
+    second: smoke-animation09_20
+  - first:
+      213: 3731691160936259425
+    second: smoke-animation09_21
+  - first:
+      213: 2053977477399134739
+    second: smoke-animation09_22
+  - first:
+      213: 4559319480862571763
+    second: smoke-animation09_23
+  - first:
+      213: -1515393928173724696
+    second: smoke-animation09_24
+  - first:
+      213: 1386049140248425175
+    second: smoke-animation09_25
+  - first:
+      213: -1707218462038353371
+    second: smoke-animation09_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: smoke-animation09_0
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 920
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6971f4d6012edca0800000000000000
+      internalID: -5990314141130065553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_1
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 860
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03e870968c7914900800000000000000
+      internalID: 666981106838900272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_2
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 844
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b72baeeb0d4ae66d0800000000000000
+      internalID: -2995275485691596165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_3
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 846
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad384f2d2fe27a2a0800000000000000
+      internalID: -6726355897998343206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 858
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6d8ae7a4ac1878f0800000000000000
+      internalID: -542652261580763796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_5
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 788
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 442bda4ba293e2bf0800000000000000
+      internalID: -347277265678257596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_6
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 788
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02bda7da28cd44ae0800000000000000
+      internalID: -1565884316603720928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_7
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 765
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3409ab51abb2b6520800000000000000
+      internalID: 2696296880139833411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_8
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 738
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00d257cf092bd3d70800000000000000
+      internalID: 9024565564100914432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_9
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 758
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c30ca2156c8bd50800000000000000
+      internalID: 6753365693153950747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_10
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 736
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fe51f492f064b540800000000000000
+      internalID: 5022746079422144249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 740
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 639a28ff3796e51f0800000000000000
+      internalID: -1054289315829208778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_12
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 726
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36ae09046ab1cbcf0800000000000000
+      internalID: -235282679668348317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_13
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 726
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab7e8bb662df538f0800000000000000
+      internalID: -561264237079894086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_14
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 664
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a5efe50872106d0800000000000000
+      internalID: -3026094042313237926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_15
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 696
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80ac0b73ccb0bc830800000000000000
+      internalID: 4092377658131794440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_16
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 680
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecd4a81c94ef096d0800000000000000
+      internalID: -2985606960213504562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_17
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 648
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8ea080083d720300800000000000000
+      internalID: 216873411547278987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_18
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 636
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c9828c8d0b8f250800000000000000
+      internalID: 5978722950451862578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_19
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 652
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ca976b150fa4e200800000000000000
+      internalID: 208483919235357377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_20
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 638
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2092f67a102f23ff0800000000000000
+      internalID: -57717756284425982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_21
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 569
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f121be651a9c330800000000000000
+      internalID: 3731691160936259425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_22
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 570
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 312470d12a1318c10800000000000000
+      internalID: 2053977477399134739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_23
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 588
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fcf45a59e4f54f30800000000000000
+      internalID: 4559319480862571763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_24
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 576
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ebdb60504d38fae0800000000000000
+      internalID: -1515393928173724696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_25
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 544
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d23eb5795c3c3310800000000000000
+      internalID: 1386049140248425175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-animation09_26
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 519
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a1730aaddbe48e0800000000000000
+      internalID: -1707218462038353371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
