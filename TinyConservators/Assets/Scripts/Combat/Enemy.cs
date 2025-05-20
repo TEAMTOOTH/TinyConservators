@@ -153,8 +153,6 @@ public class Enemy : MonoBehaviour, IDamageReceiver
 
     }
 
-    
-
     public void RiderDied()
     {
         if(owner != null)

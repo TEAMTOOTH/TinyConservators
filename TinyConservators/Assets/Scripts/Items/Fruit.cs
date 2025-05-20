@@ -3,12 +3,16 @@ using UnityEngine;
 
 public class Fruit : MonoBehaviour, IEatable
 {
+    
     [SerializeField] int pointsValue;
+
+    void Start()
+    {
+        ChooseColor();
+    }
+
     public void Eat(GameObject eater)
     {
-        
-        FruitSpawner spawner = GetComponentInParent<FruitSpawner>();
-
         PointsReceiver pointsReceiver = eater.GetComponent<PointsReceiver>();
 
         if(pointsReceiver != null)
@@ -16,20 +20,26 @@ public class Fruit : MonoBehaviour, IEatable
             pointsReceiver.AddPoints(pointsValue);
         }
 
-        if(spawner != null)
-        {
-            spawner.Respawn();
-        }
         Destroy(gameObject);
+
     }
 
     public bool Eatable()
     {
-        throw new System.NotImplementedException();
+        return true;
     }
 
     public void SpitOut(GameObject spitter)
     {
         throw new System.NotImplementedException();
+    }
+
+    void ChooseColor()
+    {
+        Animator colorAnimation = GetComponent<Animator>();
+        //colorAnimation.runtimeAnimatorController
+        //a.Play(Random.Range(0, a.runtimeAnimatorController.animationClips.Length));
+        
+        
     }
 }
