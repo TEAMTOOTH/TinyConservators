@@ -7,6 +7,7 @@ public class Pickup : MonoBehaviour, IEatable
     [SerializeField] int pointsValue;
     [SerializeField] float baseLifeTime;
     [SerializeField] float lifeTimeVariaton;
+    [SerializeField] bool spittable;
 
     void Start()
     {
@@ -53,6 +54,11 @@ public class Pickup : MonoBehaviour, IEatable
     {
         //Pop effect?
         Destroy(gameObject);
+    }
+
+    public bool Spittable()
+    {
+        return spittable;
     }
 }
 

@@ -115,8 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dieTime: 0.75
   throwOffForce: 5
-  fallingGoblin: {fileID: -6844992590156751018, guid: d7ecd532485d94b40887f313035a1042, type: 3}
-  knockedOutGoblin: {fileID: 4005847579614940333, guid: d76bbeed0594c4ef48d1e1aeb772a958, type: 3}
+  spittable: 1
 --- !u!114 &1443921039839903273
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,7 +16,14 @@ public class Eat : MonoBehaviour
             if (eatObject.Eatable())
             {
                 eatObject.Eat(transform.parent.gameObject);
-                GetComponentInParent<Player>().AnimationTransition(1,2,0.1f);
+                if (eatObject.Spittable())
+                {
+                    GetComponentInParent<Player>().AnimationTransition(1,2,0.1f);
+                }
+                else
+                {
+                    GetComponentInParent<Player>().AnimationTransition(1, 0, 0.1f);
+                }
             }
             
         }

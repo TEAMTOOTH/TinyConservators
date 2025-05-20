@@ -7,4 +7,6 @@ public interface IEatable
     public void SpitOut(GameObject spitter);
 
     public bool Eatable();
+
+    public bool Spittable();
 }

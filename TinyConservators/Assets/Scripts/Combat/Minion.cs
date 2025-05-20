@@ -7,8 +7,7 @@ public class Minion : MonoBehaviour, IEatable
     [SerializeField] float dieTime;
     [SerializeField] float throwOffForce = 5f;
 
-    [SerializeField] Sprite fallingGoblin;
-    [SerializeField] Sprite knockedOutGoblin;
+    [SerializeField] bool spittable; //Want to have access in editor
 
     Enemy mount;
 
@@ -16,6 +15,8 @@ public class Minion : MonoBehaviour, IEatable
     GameObject owner;
     bool eatable = false;
     bool hasDied = false;
+
+   
 
     Animator animations;
 
@@ -157,9 +158,13 @@ public class Minion : MonoBehaviour, IEatable
             GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             animations.Play("MinionExplode");
             GetComponent<PickupSpawner>().SpawnPickups();
-            
+            if (mount != null)
+            {
+                mount.RiderDied();
+            }
+
             yield return new WaitForSeconds(dieTime);
-            mount.RiderDied();
+            
             Destroy(gameObject);
         }
     }
@@ -186,6 +191,11 @@ public class Minion : MonoBehaviour, IEatable
     public bool Eatable()
     {
         return eatable;
+    }
+
+    public bool Spittable()
+    {
+        return spittable;
     }
 }
 
