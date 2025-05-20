@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 73490086b70cb478eb966abae3fd2514
+guid: d76bbeed0594c4ef48d1e1aeb772a958
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3871096020311018485
-    second: minion-stunned-001 1_0
+      213: 3156641737685074398
+    second: minion-stunned-001_0
   - first:
-      213: 1515917949342059930
-    second: minion-stunned-001 1_1
+      213: 5561336790575782994
+    second: minion-stunned-001_1
   - first:
-      213: 5192185186367354199
-    second: minion-stunned-001 1_2
+      213: 4005847579614940333
+    second: minion-stunned-001_2
   - first:
-      213: -8557547834428170824
-    second: minion-stunned-001 1_3
+      213: -1971409963660511615
+    second: minion-stunned-001_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -105,41 +105,15 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: minion-stunned-001 1_0
+      name: minion-stunned-001_0
       rect:
         serializedVersion: 2
-        x: 427
-        y: 687
+        x: 459
+        y: 710
         width: 28
         height: 27
       alignment: 0
@@ -150,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5fb011e0255e8b530800000000000000
-      internalID: 3871096020311018485
+      spriteID: ed104e19fe4aecb20800000000000000
+      internalID: 3156641737685074398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minion-stunned-001 1_1
+      name: minion-stunned-001_1
       rect:
         serializedVersion: 2
-        x: 274
+        x: 294
         y: 484
-        width: 83
+        width: 85
         height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -172,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9d0c2fd75f990510800000000000000
-      internalID: 1515917949342059930
+      spriteID: 25c94968856dd2d40800000000000000
+      internalID: 5561336790575782994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minion-stunned-001 1_2
+      name: minion-stunned-001_2
       rect:
         serializedVersion: 2
-        x: 353
-        y: 333
-        width: 245
-        height: 349
+        x: 375
+        y: 345
+        width: 249
+        height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,18 +168,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 755b879eae85e0840800000000000000
-      internalID: 5192185186367354199
+      spriteID: dac8e475621a79730800000000000000
+      internalID: 4005847579614940333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minion-stunned-001 1_3
+      name: minion-stunned-001_3
       rect:
         serializedVersion: 2
-        x: 591
-        y: 473
+        x: 617
+        y: 471
         width: 78
         height: 46
       alignment: 0
@@ -216,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8bdde7c959b7d3980800000000000000
-      internalID: -8557547834428170824
+      spriteID: 1867951451524a4e0800000000000000
+      internalID: -1971409963660511615
       vertices: []
       indices: 
       edges: []
@@ -226,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +209,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      minion-stunned-001 1_0: 3871096020311018485
-      minion-stunned-001 1_1: 1515917949342059930
-      minion-stunned-001 1_2: 5192185186367354199
-      minion-stunned-001 1_3: -8557547834428170824
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
