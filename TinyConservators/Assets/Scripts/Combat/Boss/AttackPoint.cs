@@ -43,4 +43,9 @@ public class AttackPoint : MonoBehaviour
         return visuals.Length;
     }
 
+    public float GetAmountOfDamage()
+    {
+        return damagePercentage;
+    }
+
 }
