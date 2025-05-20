@@ -37,9 +37,13 @@ public class Fruit : MonoBehaviour, IEatable
     void ChooseColor()
     {
         Animator colorAnimation = GetComponent<Animator>();
-        //colorAnimation.runtimeAnimatorController
-        //a.Play(Random.Range(0, a.runtimeAnimatorController.animationClips.Length));
-        
-        
+        AnimationClip[] clips = colorAnimation.runtimeAnimatorController.animationClips;
+
+        if (clips.Length == 0) return;
+
+        string clipName = clips[Random.Range(0, clips.Length)].name;
+
+        colorAnimation.Play(clipName);
     }
 }
+
