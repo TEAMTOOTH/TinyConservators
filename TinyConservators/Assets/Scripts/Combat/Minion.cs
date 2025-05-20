@@ -7,14 +7,18 @@ public class Minion : MonoBehaviour, IEatable
     [SerializeField] float dieTime;
     [SerializeField] float throwOffForce = 5f;
 
-    [SerializeField] Sprite fallingGoblin;
-    [SerializeField] Sprite knockedOutGoblin;
+    [SerializeField] bool spittable; //Want to have access in editor
 
     Enemy mount;
 
     MinionStates state = MinionStates.knockedOut;
     GameObject owner;
     bool eatable = false;
+    bool hasDied = false;
+
+   
+
+    Animator animations;
 
     public MinionStates State
     {
@@ -34,6 +38,7 @@ public class Minion : MonoBehaviour, IEatable
 
     void Start()
     {
+        animations = GetComponentInChildren<Animator>();
         OnMinionStateChanged += (from, to) => StateChanged(from, to);
 
         ThrowOff();
@@ -70,6 +75,7 @@ public class Minion : MonoBehaviour, IEatable
     {
         State = MinionStates.projectile;
         owner = spitter;
+        animations.Play("MinionSpit");
     }
 
     void TurnIntoProjectile()
@@ -82,7 +88,7 @@ public class Minion : MonoBehaviour, IEatable
     void ProjectileCollision(GameObject collidedObject)
     {
         IDamageReceiver damageObject = collidedObject.GetComponent<IDamageReceiver>();
-        if (damageObject != null && collidedObject != owner)
+        if (damageObject != null && collidedObject != owner && !hasDied)
         {
             Debug.Log(collidedObject);
             damageObject.Hurt();
@@ -92,14 +98,15 @@ public class Minion : MonoBehaviour, IEatable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (State == MinionStates.projectile)
+        if (State == MinionStates.projectile && !hasDied)
         {
             ProjectileCollision(collision.gameObject);
         }
         else if (State == MinionStates.knockedOut && collision.gameObject.CompareTag("Platform"))
         {
             eatable = true;
-            GetComponentInChildren<SpriteRenderer>().sprite = knockedOutGoblin;
+            //GetComponentInChildren<SpriteRenderer>().sprite = knockedOutGoblin;
+            animations.Play("MinionKnockedOut");
         } 
     }
 
@@ -109,7 +116,8 @@ public class Minion : MonoBehaviour, IEatable
 
         float arcAngle = 22.5f;
 
-        GetComponentInChildren<SpriteRenderer>().sprite = fallingGoblin;
+        //GetComponentInChildren<SpriteRenderer>().sprite = fallingGoblin;
+        animations.Play("MinionFalling");
 
         // Get a random angle in degrees from -22.5 to +22.5
         float randomAngle = UnityEngine.Random.Range(-arcAngle, arcAngle);
@@ -140,13 +148,23 @@ public class Minion : MonoBehaviour, IEatable
 
     public void Die()
     {
+        hasDied = true;
+        Debug.Log("Minion died");
         StartCoroutine(die());
         IEnumerator die()
         {
-            //Do whatever you need of things to happen here
             
+            //Do whatever you need of things to happen here
+            GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+            animations.Play("MinionExplode");
+            GetComponent<PickupSpawner>().SpawnPickups();
+            if (mount != null)
+            {
+                mount.RiderDied();
+            }
+
             yield return new WaitForSeconds(dieTime);
-            mount.RiderDied();
+            
             Destroy(gameObject);
         }
     }
@@ -173,6 +191,11 @@ public class Minion : MonoBehaviour, IEatable
     public bool Eatable()
     {
         return eatable;
+    }
+
+    public bool Spittable()
+    {
+        return spittable;
     }
 }
 

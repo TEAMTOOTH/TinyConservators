@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1275319813948098079}
   - component: {fileID: 326678408316097099}
   - component: {fileID: 1443921039839903273}
+  - component: {fileID: 6860626144572409928}
   m_Layer: 8
   m_Name: Goblin
   m_TagString: Goblin
@@ -112,10 +113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d744e2c465ceb4d8d73f0a7697b428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dieTime: 1
+  dieTime: 0.75
   throwOffForce: 5
-  fallingGoblin: {fileID: 21300000, guid: d7ecd532485d94b40887f313035a1042, type: 3}
-  knockedOutGoblin: {fileID: 21300000, guid: 73490086b70cb478eb966abae3fd2514, type: 3}
+  spittable: 1
 --- !u!114 &1443921039839903273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +129,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockOutTime: 5
+--- !u!114 &6860626144572409928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292657490118089590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd02a1dfa7f057428ad338e3f6b87d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnObject: {fileID: 4111976845852578208, guid: 27a9cc5516635114ebc6bb8ac1e33f79, type: 3}
+  minimumAmount: 1
+  maximumAmount: 3
+  throwOutForce: 5
 --- !u!1 &6328734306099860521
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,6 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6489184739642271165}
   - component: {fileID: 5661986089277286398}
+  - component: {fileID: 8933280899924341741}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -216,3 +233,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8933280899924341741
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6328734306099860521}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5149ae96a9fad374c8689b457fa35492, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
