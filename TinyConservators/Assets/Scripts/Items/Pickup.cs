@@ -1,14 +1,17 @@
 using UnityEngine;
 
 
-public class Fruit : MonoBehaviour, IEatable
+public class Pickup : MonoBehaviour, IEatable
 {
     
     [SerializeField] int pointsValue;
+    [SerializeField] float baseLifeTime;
+    [SerializeField] float lifeTimeVariaton;
 
     void Start()
     {
         ChooseColor();
+        Invoke("DestroyAfterSetTime", Random.Range(baseLifeTime - lifeTimeVariaton, baseLifeTime + lifeTimeVariaton));
     }
 
     public void Eat(GameObject eater)
@@ -44,6 +47,12 @@ public class Fruit : MonoBehaviour, IEatable
         string clipName = clips[Random.Range(0, clips.Length)].name;
 
         colorAnimation.Play(clipName);
+    }
+
+    void DestroyAfterSetTime()
+    {
+        //Pop effect?
+        Destroy(gameObject);
     }
 }
 
