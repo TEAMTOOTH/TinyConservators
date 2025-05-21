@@ -27,6 +27,8 @@ public class Boss : MonoBehaviour
 
     int minionAttackAmount;
 
+    bool lastRound;
+
     public BossStates State
     {
         get => state;
@@ -80,13 +82,15 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void InitializeAttackRound(float timeToNextAttack, GameObject owner, int amountOfMinions, float minimumTime, float maximumTime, float attackTime)
+    public void InitializeAttackRound(float timeToNextAttack, GameObject owner, int amountOfMinions, float minimumTime, float maximumTime, float attackTime, bool lastRound)
     {
         this.owner = owner;
         minionAttackAmount = amountOfMinions;
         GetComponent<BossAttack>().SetMaxEatingTime(attackTime);
         minimumAttackWaitTime = minimumTime;
         maximumAttackWaitTime = maximumTime;
+
+        this.lastRound = lastRound;
 
         ReadyNextAttack(timeToNextAttack);
        
@@ -99,7 +103,8 @@ public class Boss : MonoBehaviour
         {
             yield return new WaitForSeconds(timeToNextAttack);
             State = BossStates.attack;
-            GetComponentInChildren<Animator>().Play("BossHungry");
+            //GetComponentInChildren<Animator>().Play("BossHungry");
+            GetComponentInChildren<Animator>().Play("BossBat");
         }
     }
     
@@ -118,11 +123,10 @@ public class Boss : MonoBehaviour
             currentMinions.Add(m[i]);
         }
 
-
         StartCoroutine(MoveToAttackPoint());
         IEnumerator MoveToAttackPoint()
         {
-            GetComponent<BossMovement>().Move(attackMoveTime, Vector3.zero, attackSpot.transform.position);
+            GetComponent<BossMovement>().Move(attackMoveTime, GetComponent<BossMovement>().GetFurthestAwayScatterPoint(attackSpot.transform.position).transform.position, attackSpot.transform.position);
             yield return new WaitForSeconds(attackMoveTime);
             //Do get ready to eat visual?
             State = BossStates.eating;
@@ -133,19 +137,30 @@ public class Boss : MonoBehaviour
     {
         float leaveTime = 0.5f;
         GetComponentInChildren<BossDamage>().AllowCollisions(false);
-        LeaveScreen(leaveTime, true);
-
         GetComponent<BossAttack>().InterruptAttack();
-        GetComponentInChildren<Animator>().Play("BossHurt");
-
-
+        
         foreach (Enemy e in currentMinions)
         {
-            if(e != null)
+            if (e != null)
             {
                 e.InstantDissapear();
             }
         }
+
+        if (lastRound)
+        {
+            GetComponentInChildren<Animator>().Play("BossHurt"); //Should be boss escaping. Or scream face
+            LeaveLevel(1.5f);
+        }
+        else
+        {
+            GetComponentInChildren<Animator>().Play("BossHurt");
+            LeaveScreen(leaveTime, true);
+        }
+        
+
+
+        
 
         
 
@@ -156,23 +171,7 @@ public class Boss : MonoBehaviour
 
     void LeaveScreen(float time, bool hasBeenChasedAway)
     {
-        GameObject[] scatterPoints = GameObject.FindGameObjectsWithTag("ScatterPoint");
-
-        GameObject closest = null;
-        float shortestDistance = Mathf.Infinity;
-        Vector3 currentPosition = transform.position;
-
-        foreach (GameObject obj in scatterPoints)
-        {
-            if (obj == null) continue;
-
-            float distance = Vector3.Distance(currentPosition, obj.transform.position);
-            if (distance < shortestDistance)
-            {
-                shortestDistance = distance;
-                closest = obj;
-            }
-        }
+        GameObject closest = GetComponent<BossMovement>().GetClosestScatterPoint(transform.position);
 
         GetComponent<BossMovement>().Move(time, transform.position, closest.transform.position);
 
@@ -194,7 +193,21 @@ public class Boss : MonoBehaviour
             }
             
         }
+    }
 
+    void LeaveLevel(float time)
+    {
+        GetComponent<BossMovement>().MoveTowardsScreen(time);
+        StartCoroutine(Move());
+        IEnumerator Move()
+        {
+            yield return new WaitForSeconds(time);
+            if (owner != null)
+            {
+                owner.GetComponent<ILevelFlowComponent>()?.FinishSection();
+            }
+            gameObject.SetActive(false);
+        }
     }
 }
 

@@ -78,11 +78,21 @@ public class Minion : MonoBehaviour, IEatable
         animations.Play("MinionSpit");
     }
 
+    public void Consumed(GameObject consumer)
+    {
+        owner = consumer;
+        gameObject.SetActive(true);
+
+        TurnIntoProjectile();
+        Die();
+    }
+
     void TurnIntoProjectile()
     {
         eatable = false;
         transform.parent = null;
         gameObject.SetActive(true);
+        
     }
 
     void ProjectileCollision(GameObject collidedObject)
@@ -90,7 +100,6 @@ public class Minion : MonoBehaviour, IEatable
         IDamageReceiver damageObject = collidedObject.GetComponent<IDamageReceiver>();
         if (damageObject != null && collidedObject != owner && !hasDied)
         {
-            Debug.Log(collidedObject);
             damageObject.Hurt();
         }
         Die();
@@ -149,7 +158,6 @@ public class Minion : MonoBehaviour, IEatable
     public void Die()
     {
         hasDied = true;
-        Debug.Log("Minion died");
         StartCoroutine(die());
         IEnumerator die()
         {

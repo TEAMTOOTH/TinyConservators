@@ -8,6 +8,10 @@ public class Eat : MonoBehaviour
 {
     [SerializeField] float spittingForce;
     [SerializeField] Vector2 spitOffset;
+    [SerializeField] float mouthTime;
+    [SerializeField] bool swallow;
+
+    IEnumerator mouthTimer;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IEatable eatObject = collision.GetComponent<IEatable>();
@@ -19,13 +23,14 @@ public class Eat : MonoBehaviour
                 if (eatObject.Spittable())
                 {
                     GetComponentInParent<Player>().AnimationTransition(1,2,0.1f);
+                    mouthTimer = MouthTimeExceeded();
+                    StartCoroutine(mouthTimer);
                 }
                 else
                 {
                     GetComponentInParent<Player>().AnimationTransition(1, 0, 0.1f);
                 }
             }
-            
         }
     }
 
@@ -46,6 +51,12 @@ public class Eat : MonoBehaviour
         {
             knockout.PauseKnockout(.2f);
         }
+
+        if(mouthTimer != null)
+        {
+            StopCoroutine(mouthTimer);
+            mouthTimer = null;
+        }
         eatObject.SpitOut(transform.parent.gameObject);
         GetComponentInParent<Player>().AnimationTransition(1, 0, 0.1f);
         MonoBehaviour mb = eatObject as MonoBehaviour;
@@ -63,8 +74,50 @@ public class Eat : MonoBehaviour
                 
             }
         }
-        
+    }
 
+    void Burp()
+    {
+        //Debug.Break();
+        IEatable eatObject = transform.parent.GetComponentInChildren<IEatable>(true);
+        IKnockoutable knockout = GetComponentInParent<IKnockoutable>();
+        if (knockout != null)
+        {
+            knockout.PauseKnockout(.2f);
+        }
+
+        GetComponentInParent<Player>().AnimationTransition(0, 0, 0.1f); //Do a burp animation
+
+        MonoBehaviour mb = eatObject as MonoBehaviour;
+
+        if (mb != null)
+        {
+            GameObject g = mb.gameObject;
+            
+            int direction = GetComponentInParent<WalkingMovement>().GetDirection();
+            g.transform.position += (Vector3)(Vector2.right + spitOffset) * direction;
+        }
+        eatObject.Consumed(transform.parent.gameObject);
+    }
+
+    IEnumerator MouthTimeExceeded() 
+    {
+        float time = 0;
+        while(time < mouthTime)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
+        if (swallow)
+        {
+            Burp();
+        }
+        else
+        {
+            Spit();
+        }
+        mouthTimer = null;
+        
     }
 
     
