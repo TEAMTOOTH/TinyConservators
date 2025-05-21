@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 23a8830ecdd49410d9a594cacbba8842
+guid: 639acaf42dcd5466caea7405b725b613
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3106693037015316169
-    second: count-intro-fly-by_0
-  - first:
-      213: 7772545841610368570
-    second: count-intro-fly-by_1
-  - first:
-      213: 8956767333296409520
-    second: count-intro-fly-by_2
-  - first:
-      213: 594050437783679710
-    second: count-intro-fly-by_3
-  - first:
-      213: 771513174515062139
-    second: count-intro-fly-by_4
+      213: 247934742265291397
+    second: Story-screen-02_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: count-intro-fly-by_0
+      name: Story-screen-02_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 21
-        width: 452
-        height: 468
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,96 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 739c58e842fc2e4d0800000000000000
-      internalID: -3106693037015316169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: count-intro-fly-by_1
-      rect:
-        serializedVersion: 2
-        x: 566
-        y: 145
-        width: 226
-        height: 216
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a3620a12341addb60800000000000000
-      internalID: 7772545841610368570
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: count-intro-fly-by_2
-      rect:
-        serializedVersion: 2
-        x: 848
-        y: 217
-        width: 226
-        height: 216
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0bb84f44f64dc4c70800000000000000
-      internalID: 8956767333296409520
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: count-intro-fly-by_3
-      rect:
-        serializedVersion: 2
-        x: 1093
-        y: 120
-        width: 226
-        height: 216
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ed2f2cac9bd7e3800800000000000000
-      internalID: 594050437783679710
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: count-intro-fly-by_4
-      rect:
-        serializedVersion: 2
-        x: 1656
-        y: 104
-        width: 226
-        height: 216
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b7511820527f4ba00800000000000000
-      internalID: 771513174515062139
+      spriteID: 5826330a557d07300800000000000000
+      internalID: 247934742265291397
       vertices: []
       indices: 
       edges: []
