@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7937467636385290354}
   - component: {fileID: 4171263059369809168}
   m_Layer: 11
-  m_Name: PickupColorPrefab
+  m_Name: PickupColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,10 +139,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
+  m_Mass: 0.3
+  m_LinearDamping: 0.05
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -169,6 +169,7 @@ MonoBehaviour:
   pointsValue: 100
   baseLifeTime: 8
   lifeTimeVariaton: 2
+  spittable: 0
 --- !u!95 &4171263059369809168
 Animator:
   serializedVersion: 7
