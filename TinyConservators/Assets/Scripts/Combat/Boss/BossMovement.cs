@@ -5,10 +5,11 @@ using static UnityEngine.UI.ScrollRect;
 
 public class BossMovement : MonoBehaviour
 {
+    GameObject[] scatterPoints;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        scatterPoints = GameObject.FindGameObjectsWithTag("ScatterPoint");
     }
 
     // Update is called once per frame
@@ -28,39 +29,88 @@ public class BossMovement : MonoBehaviour
 
     }
 
-    /*public void Move(float movementTime, Vector3 startPos, Vector3 endPos)
+    public GameObject GetRandomScatterPoint()
     {
+        if(scatterPoints.Length > 0)
+        {
+            return scatterPoints[Random.Range(0, scatterPoints.Length)];
+        }
+
+        return null;
+    }
+
+
+
+    public GameObject GetFurthestAwayScatterPoint(Vector3 from)
+    {
+        GameObject furthest = null;
+        float longestDistance = 0f;
+
+        foreach (GameObject obj in scatterPoints)
+        {
+            if (obj == null) continue;
+
+            float distance = Vector3.Distance(from, obj.transform.position);
+            if (distance > longestDistance)
+            {
+                longestDistance = distance;
+                furthest = obj;
+            }
+        }
+        return furthest;
+    }
+
+    public GameObject GetClosestScatterPoint(Vector3 from)
+    {
+
+        GameObject closest = null;
+        float shortestDistance = Mathf.Infinity;
+        
+
+        foreach (GameObject obj in scatterPoints)
+        {
+            if (obj == null) continue;
+
+            float distance = Vector3.Distance(from, obj.transform.position);
+            if (distance < shortestDistance)
+            {
+                shortestDistance = distance;
+                closest = obj;
+            }
+        }
+        return closest;
+    }
+
+    public void MoveTowardsScreen(float moveTime)
+    {
+        Vector3 startPos = transform.position;
+        Vector3 startScale = transform.localScale;
+        Vector3 endPos = new Vector3(2, -35, 0);
+        Vector3 endScale = new Vector3(100, 100, 1);
+
         StartCoroutine(MakeMove());
+
         IEnumerator MakeMove()
         {
             float time = 0f;
-
-            float distance = Vector2.Distance(startPos, endPos);
-
-
-            while (time < movementTime)
+            while (time < moveTime)
             {
                 time += Time.deltaTime;
+                transform.localScale = new Vector3();
 
-                //float curveValue = moveCurve.Evaluate(time / movementTime);
-                //float overshootFactor = curveValue - 1f;
-
-                // Lerp from start to end with overshoot
-                //Vector3 basePosition = Vector3.Lerp(startPos, endPos, Mathf.Clamp01(curveValue));
-                Vector3 basePosition = Vector3.Lerp(startPos, endPos, time / movementTime);
-                //float bounce = Mathf.Sin(overshootFactor * Mathf.PI) * 50f;
-                float bounce = 1f;
-
-                //Vector3 finalPosition = basePosition + Vector3.up * bounce;
-                //transform.position = finalPosition;
+                Vector3 basePosition = Vector3.Lerp(startPos, endPos, time / moveTime);
                 transform.position = basePosition;
-
+                Vector3 baseScale = Vector3.Lerp(startScale, endScale, time / moveTime);
+                transform.localScale = baseScale;
                 yield return null;
             }
 
             transform.position = endPos;
+            transform.localScale = endScale;
+            
+            
         }
-    }*/
+    }
 
     public void Move(float baseMoveTime, Vector3 startPos, Vector3 endPos)
     {
@@ -74,32 +124,20 @@ public class BossMovement : MonoBehaviour
 
             float distance = Vector2.Distance(startPos, endPos);
 
-            // Adjust movementTime based on distance (closer = slower)
-            float maxDistance = 10f; // distance from center to furthest edge
-            //float minTime = 0.5f;
-            //float maxTime = 3f;
-
-            float minTime = baseMoveTime - 1f;
-            float maxTime = baseMoveTime + 1f;
-
-            //float movementTime = Mathf.Lerp(maxTime, minTime, distance / maxDistance);
-            float movementTime = Mathf.Lerp(minTime, maxTime, distance / maxDistance);
-
-            while (time < movementTime)
+            while (time < baseMoveTime)
             {
                 time += Time.deltaTime;
-                float t = Mathf.Clamp01(time / movementTime);
-                Vector3 basePosition = Vector3.Lerp(startPos, endPos, t);
+                
+                Vector3 basePosition = Vector3.Lerp(startPos, endPos, time/baseMoveTime);
                 transform.position = basePosition;
 
                 yield return null;
             }
 
             transform.position = endPos;
-
-            BossDamage b = GetComponentInChildren<BossDamage>();
-
             
         }
     }
+
+   
 }

@@ -13,6 +13,8 @@ public class BossAttackLevelFlow : MonoBehaviour, ILevelFlowComponent
     
     
     [SerializeField] float maxAttackTime;
+    
+    [SerializeField] bool lastAttack;
 
     
     LevelFlowManager owner;
@@ -24,6 +26,6 @@ public class BossAttackLevelFlow : MonoBehaviour, ILevelFlowComponent
     public void StartSection(LevelFlowManager flowManager)
     {
         owner = flowManager;
-        boss.InitializeAttackRound(timeBeforeInitialAttack, gameObject, amountOfAccompaningMinions, minimumRepeatTime, maximumRepeatTime, maxAttackTime);
+        boss.InitializeAttackRound(timeBeforeInitialAttack, gameObject, amountOfAccompaningMinions, minimumRepeatTime, maximumRepeatTime, maxAttackTime, lastAttack);
     }
 }

@@ -77,16 +77,6 @@ public class BossAttack : MonoBehaviour
                 
                 currentAttackPoint.Damage(time/maxEatTime);
 
-                //Debug.Log(time);
-
-                /*
-                if (damageTimer >= damageInterval)
-                {
-                    currentAttackPoint.ProgressVisual();
-                    Debug.Log("Damage painting");
-                    damageTimer = 0f;
-                }*/
-
                 if (time > maxEatTime)
                 {
                     //Debug.Log("Heading off");

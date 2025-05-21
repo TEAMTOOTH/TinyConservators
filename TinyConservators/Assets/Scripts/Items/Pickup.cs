@@ -60,5 +60,10 @@ public class Pickup : MonoBehaviour, IEatable
     {
         return spittable;
     }
+
+    public void Consumed(GameObject consumer)
+    {
+        throw new System.NotImplementedException();
+    }
 }
 
