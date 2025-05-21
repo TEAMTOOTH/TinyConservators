@@ -82,7 +82,7 @@ public class BossAttack : MonoBehaviour
                     //Debug.Log("Heading off");
                     eating = false;
                     GetComponent<Boss>().State = BossStates.walkOff;
-                    GetComponentInChildren<Animator>().Play("BossNormal");
+                    GetComponentInChildren<Animator>().Play("BossFull");
                     bubble.PopBubble();
                     GetComponentInChildren<BossDamage>().AllowCollisions(false);
 

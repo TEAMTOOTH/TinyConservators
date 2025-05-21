@@ -7,6 +7,7 @@ public class BossPopUpLevelFlow : MonoBehaviour, ILevelFlowComponent
     [SerializeField] Sprite popUpGraphic;
     [SerializeField] float movementLength;
     [SerializeField] float waitLength;
+    [SerializeField] AudioClip shout;
 
    
     LevelFlowManager owner;
@@ -20,7 +21,7 @@ public class BossPopUpLevelFlow : MonoBehaviour, ILevelFlowComponent
     {
         owner = flowManager;
         
-        popUpVisual.PopUp(movementLength, waitLength, null, gameObject);
+        popUpVisual.PopUp(movementLength, waitLength, null, gameObject, shout);
         popUpVisual.SetVisual(popUpGraphic);
     }
 
