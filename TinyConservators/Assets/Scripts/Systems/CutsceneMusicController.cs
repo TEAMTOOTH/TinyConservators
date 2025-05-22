@@ -15,7 +15,8 @@ public class CutsceneMusicController : MonoBehaviour
 
         if (sounds.Length < 1)
             return;
-        
+
+        PlayClip(sounds[0], 0);
         
 
 
@@ -37,6 +38,16 @@ public class CutsceneMusicController : MonoBehaviour
             source.clip = sounds[0];
             source.Play();
             yield return new WaitForSeconds(timings[0]);
+
+            source.clip = sounds[1];
+            source.Play();
+            yield return new WaitForSeconds(timings[1]);
+
+            source.clip = sounds[2];
+            source.Play();
+            yield return new WaitForSeconds(timings[2]);
+            
+            
         }
     }
 }

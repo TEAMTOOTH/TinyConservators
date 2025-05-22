@@ -8,8 +8,20 @@ public class PercentageGetter : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StatTracker s = GameObject.FindGameObjectWithTag("StatTracker").GetComponent<StatTracker>();
-        GetComponent<TextMeshProUGUI>().text = $"{s.GetDamagePercentage().ToString("P")}%";
+        StatTracker s;
+        GameObject g = GameObject.FindGameObjectWithTag("StatTracker");
+
+        if (g != null)
+        {
+            s = g.GetComponent<StatTracker>();
+            GetComponent<TextMeshProUGUI>().text = $"{(s.GetDamagePercentage() * 100):F2}%";
+        }
+        else 
+        {
+            GetComponent<TextMeshProUGUI>().text = $"{100.00:F2}%";
+        }
+        
+        
     }
 
     // Update is called once per frame
