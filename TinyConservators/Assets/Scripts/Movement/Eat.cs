@@ -86,7 +86,7 @@ public class Eat : MonoBehaviour
             knockout.PauseKnockout(.2f);
         }
 
-        GetComponentInParent<Player>().AnimationTransition(0, 0, 0.1f); //Do a burp animation
+        GetComponentInParent<Player>().AnimationTransition(4, 0, 0.2f); //Do a burp animation
 
         MonoBehaviour mb = eatObject as MonoBehaviour;
 

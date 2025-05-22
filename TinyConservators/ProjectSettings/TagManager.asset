@@ -16,6 +16,7 @@ TagManager:
   - CharacterBuilder
   - AttackPoint
   - StatTracker
+  - LevelFlow
   layers:
   - Default
   - TransparentFX

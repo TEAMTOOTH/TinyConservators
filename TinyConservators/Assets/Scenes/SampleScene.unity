@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 202198759}
   - component: {fileID: 202198760}
   m_Layer: 0
-  m_Name: LevelFlow3.25
+  m_Name: LevelFlow3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -463,6 +463,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToHide: {fileID: 688983035}
+  fadeOut: 1
+  fadeOutTime: 2
 --- !u!1001 &223857152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -877,7 +879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &294645140
 Transform:
   m_ObjectHideFlags: 0
@@ -2971,7 +2973,7 @@ MonoBehaviour:
   minimumAttackWaitTime: 10
   maximumAttackWaitTime: 15
   bossVisual: {fileID: 1464882786}
-  attackMoveTime: 2
+  attackMoveTime: 4
   startPos: {x: 11.6, y: -9}
 --- !u!114 &933216545
 MonoBehaviour:
@@ -3090,7 +3092,7 @@ GameObject:
   - component: {fileID: 976780831}
   - component: {fileID: 976780832}
   m_Layer: 0
-  m_Name: LevelFlow3.35
+  m_Name: LevelFlow3.25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3681,7 +3683,7 @@ GameObject:
   - component: {fileID: 1039694400}
   - component: {fileID: 1039694401}
   m_Layer: 0
-  m_Name: LevelFlow3
+  m_Name: LevelFlow2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4209,7 +4211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1086446914
 Transform:
   m_ObjectHideFlags: 0
@@ -4451,7 +4453,7 @@ GameObject:
   - component: {fileID: 1178552289}
   m_Layer: 0
   m_Name: LevelFlows
-  m_TagString: Untagged
+  m_TagString: LevelFlow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4558,7 +4560,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1240250232
 Transform:
   m_ObjectHideFlags: 0
@@ -5824,7 +5826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1647588667
 Transform:
   m_ObjectHideFlags: 0
@@ -6702,7 +6704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1945729778
 Transform:
   m_ObjectHideFlags: 0

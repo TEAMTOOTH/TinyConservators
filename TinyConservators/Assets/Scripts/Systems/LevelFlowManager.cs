@@ -30,4 +30,15 @@ public class LevelFlowManager : MonoBehaviour
         }
         
     }
+
+    public void JumpToFlow(int flowIndex)
+    {
+        levelFlowIndex = flowIndex - 1;
+        ProgressFlow();
+    }
+
+    public int GetAmountOfFlows()
+    {
+        return levelFlows.Length;
+    }
 }

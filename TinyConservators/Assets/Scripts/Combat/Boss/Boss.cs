@@ -75,7 +75,7 @@ public class Boss : MonoBehaviour
                 Hurt();
                 break;
             case BossStates.walkOff:
-                LeaveScreen(3f, false);
+                LeaveScreen(1f, 3f, false);
                 break;
             default:
                 break;
@@ -112,6 +112,8 @@ public class Boss : MonoBehaviour
     {
         //bossVisual.transform.localScale = new Vector3(bossAttackSize, bossAttackSize, bossAttackSize);
         GameObject attackSpot = GetComponent<BossMovement>().FindAttackSpot();
+        if (attackSpot == null)
+            return;
 
         currentMinions.RemoveAll(obj => obj == null);
 
@@ -136,6 +138,7 @@ public class Boss : MonoBehaviour
     void Hurt()
     {
         float leaveTime = 0.5f;
+        float pauseBeforeLeaving = 2f;
         GetComponentInChildren<BossDamage>().AllowCollisions(false);
         GetComponent<BossAttack>().InterruptAttack();
         
@@ -155,7 +158,7 @@ public class Boss : MonoBehaviour
         else
         {
             GetComponentInChildren<Animator>().Play("BossHurt");
-            LeaveScreen(leaveTime, true);
+            LeaveScreen(pauseBeforeLeaving,leaveTime, true);
         }
         
 
@@ -169,18 +172,22 @@ public class Boss : MonoBehaviour
 
     }
 
-    void LeaveScreen(float time, bool hasBeenChasedAway)
+    void LeaveScreen(float initialWaitTime, float time, bool hasBeenChasedAway)
     {
         GameObject closest = GetComponent<BossMovement>().GetClosestScatterPoint(transform.position);
 
-        GetComponent<BossMovement>().Move(time, transform.position, closest.transform.position);
+        
 
         StartCoroutine(Move());
         IEnumerator Move()
         {
+            yield return new WaitForSeconds(initialWaitTime);
+            GetComponent<BossMovement>().Move(time, transform.position, closest.transform.position);
             yield return new WaitForSeconds(time);
             if (hasBeenChasedAway)
             {
+                
+
                 if (owner != null)
                 {
                     owner.GetComponent<ILevelFlowComponent>()?.FinishSection();
