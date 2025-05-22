@@ -59,16 +59,23 @@ public class BossAttack : MonoBehaviour
         eating = true;
 
         float damageToPoint = 0;
-        GetComponentInChildren<Animator>().Play("BossAttack");
-        GetComponentInChildren<BossDamage>().AllowCollisions(true);
-        bubble.StartShowing();
+        
+        
+        
 
         StartCoroutine(Eat());
         //Spawn bubble and decal.
         IEnumerator Eat()
         {
             //Debug.Log("Eating");
-            
+            GetComponentInChildren<Animator>().Play("BossPoof");
+            yield return new WaitForSeconds(.25f);
+            GetComponentInChildren<Animator>().Play("BossAttack");
+            GetComponentInChildren<BossDamage>().AllowCollisions(true);
+            bubble.StartShowing();
+
+
+
             while (eating)
             {
                 time += Time.deltaTime;

@@ -23,10 +23,12 @@ public class BossMovement : MonoBehaviour
         AttackPoint attackSpot = GetComponent<BossAttack>().ChooseNextAttackPoint();
         if (attackSpot == null)
         {
+            LevelFlowManager lFM = GameObject.FindGameObjectWithTag("LevelFlow").GetComponent<LevelFlowManager>();
+            lFM.JumpToFlow(lFM.GetAmountOfFlows() - 1);
             Debug.Log("Level lost");
+            return null;
         }
         return attackSpot.gameObject;
-
     }
 
     public GameObject GetRandomScatterPoint()
