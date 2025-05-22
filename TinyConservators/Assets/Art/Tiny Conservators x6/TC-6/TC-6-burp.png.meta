@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b6df21597b6b14f479f9159256e96fb6
+guid: aaf8ea59b0aca4980b49c9d4a6bcea65
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1500919262607377758
-    second: TC-5-suck_0
+      213: -6000123403062010323
+    second: TC-6-burp_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,37 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TC-5-suck_0
+      name: TC-6-burp_0
       rect:
         serializedVersion: 2
         x: 253
@@ -141,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e55014cfd1654d410800000000000000
-      internalID: 1500919262607377758
+      spriteID: d2e1bff0e874bbca0800000000000000
+      internalID: -6000123403062010323
       vertices: []
       indices: 
       edges: []
@@ -161,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TC-5-suck_0: 1500919262607377758
+      TC-6-burp_0: -6000123403062010323
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
