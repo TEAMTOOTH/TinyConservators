@@ -10,18 +10,26 @@ public class AttackBubbleVisual : MonoBehaviour
     float bubbleMaxSize;
 
     float originalScale;
-    
+
+    AudioSource bubbleAudio;
 
     private void Start()
     {
         bubbleVisual = GetComponent<SpriteRenderer>();
         originalScale = transform.localScale.x;
+        bubbleAudio = GetComponent<AudioSource>();
     }
     public void StartShowing()
     {
         bubbleVisual.enabled = true;
         bubbleMinSize = transform.localScale.x - bubbleVariaton;
         bubbleMaxSize = transform.localScale.x + bubbleVariaton;
+
+        
+        if(bubbleAudio != null)
+        {
+            bubbleAudio.Play();
+        }
     }
     
     public void ChangeBubbleSize(float time, float totalTime)
@@ -35,5 +43,6 @@ public class AttackBubbleVisual : MonoBehaviour
     {
         bubbleVisual.enabled = false;
         transform.localScale = new Vector3(originalScale, originalScale, originalScale);
+        bubbleAudio.Stop();
     }
 }
