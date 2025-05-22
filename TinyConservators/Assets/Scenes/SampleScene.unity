@@ -514,29 +514,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7418715057217133891, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
-      propertyPath: m_Name
-      value: EatCollider
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637168446804068845, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
-      propertyPath: swallow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637168446804068845, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
-      propertyPath: mouthTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637168446804068845, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
-      propertyPath: spitOffset.x
-      value: 0.01
+    - target: {fileID: 5967419696846133560, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4777534917301986821, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
 --- !u!1 &242518253
 GameObject:
@@ -6426,7 +6411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 250}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1832273518

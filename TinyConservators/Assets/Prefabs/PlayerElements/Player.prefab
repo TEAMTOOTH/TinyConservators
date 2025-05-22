@@ -884,7 +884,7 @@ GameObject:
   - component: {fileID: 6723105964748060014}
   - component: {fileID: 7637168446804068845}
   m_Layer: 0
-  m_Name: EatColliderTest
+  m_Name: EatCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -954,3 +954,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spittingForce: 1000
+  spitOffset: {x: 0.01, y: 0}
+  mouthTime: 5
+  swallow: 1

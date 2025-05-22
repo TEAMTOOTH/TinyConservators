@@ -149,8 +149,8 @@ public class Boss : MonoBehaviour
 
         if (lastRound)
         {
-            GetComponentInChildren<Animator>().Play("BossHurt"); //Should be boss escaping. Or scream face
-            LeaveLevel(1.5f);
+            GetComponentInChildren<Animator>().Play("BossDefeat"); //Should be boss escaping. Or scream face
+            LeaveLevel(3f);
         }
         else
         {
