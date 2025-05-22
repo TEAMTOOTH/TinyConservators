@@ -85,7 +85,7 @@ public class BossMovement : MonoBehaviour
     {
         Vector3 startPos = transform.position;
         Vector3 startScale = transform.localScale;
-        Vector3 endPos = new Vector3(2, -35, 0);
+        Vector3 endPos = new Vector3(-8, -37, 0);
         Vector3 endScale = new Vector3(100, 100, 1);
 
         StartCoroutine(MakeMove());
