@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelFlowManager : MonoBehaviour
 {
@@ -33,8 +34,9 @@ public class LevelFlowManager : MonoBehaviour
 
     public void JumpToFlow(int flowIndex)
     {
-        levelFlowIndex = flowIndex - 1;
-        ProgressFlow();
+        //levelFlowIndex = flowIndex - 1;
+        //ProgressFlow();
+        SceneManager.LoadScene(4);
     }
 
     public int GetAmountOfFlows()

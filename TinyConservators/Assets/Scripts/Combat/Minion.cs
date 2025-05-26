@@ -201,6 +201,11 @@ public class Minion : MonoBehaviour, IEatable
         return eatable;
     }
 
+    public void SetEatable(bool state)
+    {
+        eatable = state;
+    }
+
     public bool Spittable()
     {
         return spittable;

@@ -65,5 +65,10 @@ public class Pickup : MonoBehaviour, IEatable
     {
         throw new System.NotImplementedException();
     }
+
+    public void SetEatable(bool state)
+    {
+        throw new System.NotImplementedException();
+    }
 }
 
