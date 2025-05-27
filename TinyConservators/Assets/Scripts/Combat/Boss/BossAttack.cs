@@ -14,6 +14,11 @@ public class BossAttack : MonoBehaviour
     float maxEatTime;
     bool eating;
 
+    //Boss protection
+    int amountOfProtection;
+    float speedOfProtection;
+    float sizeOfProtection;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -73,6 +78,7 @@ public class BossAttack : MonoBehaviour
             GetComponentInChildren<Animator>().Play("BossAttack");
             GetComponentInChildren<BossDamage>().AllowCollisions(true);
             bubble.StartShowing();
+            GetComponent<BossItemManager>().SpawnObjects(amountOfProtection, speedOfProtection, sizeOfProtection);
 
 
 
@@ -92,6 +98,7 @@ public class BossAttack : MonoBehaviour
                     GetComponentInChildren<Animator>().Play("BossFull");
                     bubble.PopBubble();
                     GetComponentInChildren<BossDamage>().AllowCollisions(false);
+                    GetComponent<BossItemManager>().DespawnObjects();
 
                 }
                 yield return null;
@@ -106,6 +113,7 @@ public class BossAttack : MonoBehaviour
     public void InterruptAttack()
     {
         bubble.PopBubble();
+        GetComponent<BossItemManager>().DespawnObjects();
         StopAllCoroutines();
 
     }
@@ -113,5 +121,12 @@ public class BossAttack : MonoBehaviour
     public void SetMaxEatingTime(float maxEatingTime)
     {
         maxEatTime = maxEatingTime;
+    }
+
+    public void SetBossProtectionParameters(int amount, float speed, float size)
+    {
+        amountOfProtection = amount;
+        speedOfProtection = speed;
+        sizeOfProtection = size;
     }
 }

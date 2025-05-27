@@ -22,6 +22,7 @@ public class EnemyKnockout : MonoBehaviour, IKnockoutable
     {
         if (canGetKnockedOut)
         {
+            /*
             GetComponent<Enemy>().SetReceiveDamage(false);
             statusEnumerator = RecoverCountdown();
             StartCoroutine(statusEnumerator);
@@ -31,6 +32,9 @@ public class EnemyKnockout : MonoBehaviour, IKnockoutable
             rb2D.bodyType = RigidbodyType2D.Dynamic;
             rb2D.freezeRotation = false;
             isKnockedOut = true;
+            */
+            IDamageReceiver damage = GetComponent<IDamageReceiver>();
+            damage.Hurt();
         }
     }
 

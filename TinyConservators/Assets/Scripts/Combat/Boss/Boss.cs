@@ -82,11 +82,13 @@ public class Boss : MonoBehaviour, IDamageReceiver
         }
     }
 
-    public void InitializeAttackRound(float timeToNextAttack, GameObject owner, int amountOfMinions, float minimumTime, float maximumTime, float attackTime, bool lastRound)
+    public void InitializeAttackRound(float timeToNextAttack, GameObject owner, int amountOfMinions, float minimumTime, float maximumTime, float attackTime, bool lastRound, int amountOfProtection, float speedOfProtection, float sizeOfProtection)
     {
         this.owner = owner;
         minionAttackAmount = amountOfMinions;
-        GetComponent<BossAttack>().SetMaxEatingTime(attackTime);
+        BossAttack bossAttack = GetComponent<BossAttack>();
+        bossAttack.SetMaxEatingTime(attackTime);
+        bossAttack.SetBossProtectionParameters(amountOfProtection, speedOfProtection, sizeOfProtection);
         minimumAttackWaitTime = minimumTime;
         maximumAttackWaitTime = maximumTime;
 

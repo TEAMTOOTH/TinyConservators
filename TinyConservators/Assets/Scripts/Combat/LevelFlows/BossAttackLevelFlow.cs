@@ -16,7 +16,12 @@ public class BossAttackLevelFlow : MonoBehaviour, ILevelFlowComponent
     
     [SerializeField] bool lastAttack;
 
-    
+
+    [Header("Boss parameters")]
+    [SerializeField] int amountOfProtectionItems;
+    [SerializeField] float totalTimeOfRevolutionOfProtectionItems;
+    [SerializeField] float radiusOfProtectionCircle;
+
     LevelFlowManager owner;
     public void FinishSection()
     {
@@ -26,6 +31,7 @@ public class BossAttackLevelFlow : MonoBehaviour, ILevelFlowComponent
     public void StartSection(LevelFlowManager flowManager)
     {
         owner = flowManager;
-        boss.InitializeAttackRound(timeBeforeInitialAttack, gameObject, amountOfAccompaningMinions, minimumRepeatTime, maximumRepeatTime, maxAttackTime, lastAttack);
+        boss.InitializeAttackRound(timeBeforeInitialAttack, gameObject, amountOfAccompaningMinions, minimumRepeatTime, maximumRepeatTime, maxAttackTime, lastAttack, amountOfProtectionItems, totalTimeOfRevolutionOfProtectionItems, radiusOfProtectionCircle);
     }
 }
+
