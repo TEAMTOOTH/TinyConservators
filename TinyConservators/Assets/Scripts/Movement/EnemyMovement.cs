@@ -35,8 +35,8 @@ public class EnemyMovement : MonoBehaviour
 
     void FindTarget()
     {
-        float searchWidth = 10;
-        float searchHeight = 6;
+        float searchWidth = 15;
+        float searchHeight = 12;
         float shortestDistance = searchWidth+searchHeight;
 
         GameObject targetObject = gameObject;

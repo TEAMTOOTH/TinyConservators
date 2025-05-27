@@ -76,29 +76,7 @@ public class Player : MonoBehaviour, IDamageReceiver
 
     public void Hurt()
     {
-        //Debug.Log("Hurt called in player");
-        
-        //SetVisual
-
-        //This is probably really poor, but putting this in for test in the 19/22 of may
-        if (GetComponentInChildren<Eat>().IsCarryingFood())
-        {
-            StartCoroutine(SpitThenKnockout());
-            IEnumerator SpitThenKnockout()
-            {
-                GetComponentInChildren<Eat>().Spit();
-                yield return new WaitForSeconds(.15f);
-
-                GetComponent<IKnockoutable>().Knockout();
-                //playerVisuals.UpdatePart(3);
-            }
-        }
-        else
-        {
-            GetComponent<IKnockoutable>().Knockout();
-        }
-        
-        
+        GetComponent<IKnockoutable>().Knockout();   
     }
 
     public void SetMoveState(bool state)

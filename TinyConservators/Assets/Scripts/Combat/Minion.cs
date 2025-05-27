@@ -81,8 +81,7 @@ public class Minion : MonoBehaviour, IEatable
     public void Consumed(GameObject consumer)
     {
         owner = consumer;
-        gameObject.SetActive(true);
-
+        //gameObject.SetActive(true);
         TurnIntoProjectile();
         Die();
     }
@@ -91,8 +90,9 @@ public class Minion : MonoBehaviour, IEatable
     {
         eatable = false;
         transform.parent = null;
+
         gameObject.SetActive(true);
-        
+          
     }
 
     void ProjectileCollision(GameObject collidedObject)
@@ -137,9 +137,6 @@ public class Minion : MonoBehaviour, IEatable
         // Apply force (adjust forceMagnitude to suit your needs)
         
         rb.AddForce(direction * throwOffForce, ForceMode2D.Impulse);
-
-
-        
     }
 
     public void GetBackOnMount()
@@ -161,11 +158,13 @@ public class Minion : MonoBehaviour, IEatable
         StartCoroutine(die());
         IEnumerator die()
         {
-            
+
             //Do whatever you need of things to happen here
+            GetComponent<CapsuleCollider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             animations.Play("MinionExplode");
-            GetComponent<PickupSpawner>().SpawnPickups();
+            //GetComponent<PickupSpawner>().SpawnPickups();
             if (mount != null)
             {
                 mount.RiderDied();

@@ -9,28 +9,32 @@ public class Pickup : MonoBehaviour, IEatable
     [SerializeField] float lifeTimeVariaton;
     [SerializeField] bool spittable;
 
+    bool eatable = false;
+
     void Start()
     {
         ChooseColor();
+        Invoke("AllowEating", 1f);
         Invoke("DestroyAfterSetTime", Random.Range(baseLifeTime - lifeTimeVariaton, baseLifeTime + lifeTimeVariaton));
     }
 
     public void Eat(GameObject eater)
     {
-        PointsReceiver pointsReceiver = eater.GetComponent<PointsReceiver>();
-
-        if(pointsReceiver != null)
+        if (eatable)
         {
-            pointsReceiver.AddPoints(pointsValue);
+            PointsReceiver pointsReceiver = eater.GetComponent<PointsReceiver>();
+
+            if (pointsReceiver != null)
+            {
+                pointsReceiver.AddPoints(pointsValue);
+            }
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
-
     }
 
     public bool Eatable()
     {
-        return true;
+        return eatable;
     }
 
     public void SpitOut(GameObject spitter)
@@ -56,6 +60,11 @@ public class Pickup : MonoBehaviour, IEatable
         Destroy(gameObject);
     }
 
+    void AllowEating()
+    {
+        eatable = true;
+    }
+
     public bool Spittable()
     {
         return spittable;
@@ -68,7 +77,7 @@ public class Pickup : MonoBehaviour, IEatable
 
     public void SetEatable(bool state)
     {
-        throw new System.NotImplementedException();
+        eatable = state;
     }
 }
 

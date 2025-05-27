@@ -12,7 +12,7 @@ public class PickupSpawner : MonoBehaviour
     {
         //Debug.Log("SpawningPickups");
         int amount = Random.Range(minimumAmount, maximumAmount);
-        Debug.Log("SpawningPickups: " + amount);
+        //Debug.Log("SpawningPickups: " + amount);
         for (int i = 0; i < amount; i++)
         {
             GameObject spawnedObject = Instantiate(spawnObject, transform.position, Quaternion.identity);

@@ -19,7 +19,7 @@ public class LevelFlowManager : MonoBehaviour
     public void ProgressFlow()
     {
         levelFlowIndex++;
-        Debug.Log("Progressing level flow " + levelFlows[levelFlowIndex]);
+        //Debug.Log("Progressing level flow " + levelFlows[levelFlowIndex]);
 
         if(levelFlowIndex < levelFlows.Length)
         {

@@ -24,15 +24,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SecondaryAction",
-                    "type": "Button",
-                    "id": "e105885e-d9cb-4bfb-8a0a-39314b4f15d0",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "DebugConfirm",
                     "type": "Button",
                     "id": "ef4113a4-3f43-4459-acbd-0149c8c6cbab",
@@ -183,28 +174,6 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "PrimaryAction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c8050484-e638-4a7d-bec2-ad5606437f78",
-                    "path": "<Keyboard>/m",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard",
-                    "action": "SecondaryAction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "510db968-f016-4675-b149-f0153c8a95b4",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "SecondaryAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

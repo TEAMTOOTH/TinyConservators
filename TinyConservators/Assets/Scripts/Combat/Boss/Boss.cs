@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class Boss : MonoBehaviour, IDamageReceiver
 {
     [SerializeField] float minimumAttackWaitTime;
     [SerializeField] float maximumAttackWaitTime;
@@ -150,6 +150,8 @@ public class Boss : MonoBehaviour
             }
         }
 
+        SpawnAccruedDamage();
+
         if (lastRound)
         {
             GetComponentInChildren<Animator>().Play("BossDefeat"); //Should be boss escaping. Or scream face
@@ -215,6 +217,16 @@ public class Boss : MonoBehaviour
             }
             gameObject.SetActive(false);
         }
+    }
+
+    void SpawnAccruedDamage()
+    {
+        GetComponent<PickupSpawner>().SpawnPickups();
+    }
+
+    void IDamageReceiver.Hurt()
+    {
+        GetComponentInParent<Boss>().State = BossStates.hurt;
     }
 }
 
