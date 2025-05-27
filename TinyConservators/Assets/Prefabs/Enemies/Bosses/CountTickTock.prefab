@@ -427,7 +427,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73290b807ebd9414a9c9431e4b2a346c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTag: Player
+  enemyTags:
+  - Player
 --- !u!1 &4957879500577462791
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +442,7 @@ GameObject:
   - component: {fileID: 4042760364304361409}
   - component: {fileID: 7583132106063888533}
   - component: {fileID: 4904907215725465996}
+  - component: {fileID: 844783138235538951}
   m_Layer: 0
   m_Name: CountTickTock
   m_TagString: Boss
@@ -525,3 +527,16 @@ MonoBehaviour:
   minimumAmount: 7
   maximumAmount: 12
   throwOutForce: 5
+--- !u!114 &844783138235538951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4957879500577462791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5a4a62affba4a4ab5da7e480b7b469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 986033884968341864, guid: a7a090e3906c7004e9d73ab58d73f7e7, type: 3}

@@ -191,6 +191,7 @@ MonoBehaviour:
   - {fileID: -9111161092224608492, guid: aef452685b85583439a87833724b4a31, type: 3}
   - {fileID: -2775199508951366110, guid: 51d17786aa674af45a340aef26a1a500, type: 3}
   - {fileID: -8368550531233629319, guid: e9148bf86a680164f83bfb32c7a383a7, type: 3}
+  - {fileID: -8368550531233629319, guid: e9148bf86a680164f83bfb32c7a383a7, type: 3}
   partIndex: 0
 --- !u!1 &4777534917301986821
 GameObject:
@@ -449,7 +450,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73290b807ebd9414a9c9431e4b2a346c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTag: Enemy
+  enemyTags:
+  - Enemy
+  - Player
 --- !u!1 &5967419696846133560
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,22 +581,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0e829ad1-4ef4-45ac-955a-6b0ca1a96501
     m_ActionName: 'Player/PrimaryAction[/Keyboard/m]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3221399604692902498}
-        m_TargetAssemblyTypeName: DashMovement, Assembly-CSharp
-        m_MethodName: Dash
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: e105885e-d9cb-4bfb-8a0a-39314b4f15d0
-    m_ActionName: 'Player/SecondaryAction[/Keyboard/enter]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 552621708593372396}
@@ -955,5 +942,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spittingForce: 1000
   spitOffset: {x: 0.01, y: 0}
-  mouthTime: 5
+  mouthTime: 0
   swallow: 1

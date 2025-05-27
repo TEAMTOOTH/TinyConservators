@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PickupSpawner : MonoBehaviour
@@ -8,15 +9,17 @@ public class PickupSpawner : MonoBehaviour
 
     [SerializeField] float throwOutForce;
 
-    public void SpawnPickups()
+    public GameObject[] SpawnPickups()
     {
         //Debug.Log("SpawningPickups");
         int amount = Random.Range(minimumAmount, maximumAmount);
+        List<GameObject> spawnedObjects = new List<GameObject>();
         //Debug.Log("SpawningPickups: " + amount);
         for (int i = 0; i < amount; i++)
         {
             GameObject spawnedObject = Instantiate(spawnObject, transform.position, Quaternion.identity);
-
+            spawnedObjects.Add(spawnedObject);
+            
             Rigidbody2D rb = spawnedObject.GetComponent<Rigidbody2D>();
 
             float arcAngle = 360f;
@@ -31,6 +34,6 @@ public class PickupSpawner : MonoBehaviour
             rb.AddForce(direction * throwOutForce, ForceMode2D.Impulse);
         }
 
-        
+        return spawnedObjects.ToArray();
     }
 }

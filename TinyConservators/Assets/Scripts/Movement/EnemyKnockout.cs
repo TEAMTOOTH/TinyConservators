@@ -2,7 +2,7 @@ using Pathfinding;
 using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
-using static UnityEngine.Rendering.DebugUI;
+
 
 public class EnemyKnockout : MonoBehaviour, IKnockoutable
 {
@@ -22,17 +22,6 @@ public class EnemyKnockout : MonoBehaviour, IKnockoutable
     {
         if (canGetKnockedOut)
         {
-            /*
-            GetComponent<Enemy>().SetReceiveDamage(false);
-            statusEnumerator = RecoverCountdown();
-            StartCoroutine(statusEnumerator);
-
-            GetComponent<EnemyMovement>().SetCanMove(false);
-            GetComponent<AIPath>().enabled = false;
-            rb2D.bodyType = RigidbodyType2D.Dynamic;
-            rb2D.freezeRotation = false;
-            isKnockedOut = true;
-            */
             IDamageReceiver damage = GetComponent<IDamageReceiver>();
             damage.Hurt();
         }

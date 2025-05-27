@@ -9,6 +9,8 @@ public class Minion : MonoBehaviour, IEatable
 
     [SerializeField] bool spittable; //Want to have access in editor
 
+    [SerializeField] int pointsForEating = 100;
+    
     Enemy mount;
 
     MinionStates state = MinionStates.knockedOut;
@@ -81,6 +83,11 @@ public class Minion : MonoBehaviour, IEatable
     public void Consumed(GameObject consumer)
     {
         owner = consumer;
+        PointsReceiver pr = consumer.GetComponent<PointsReceiver>();
+        if(pr != null)
+        {
+            pr.AddPoints(pointsForEating);
+        }
         //gameObject.SetActive(true);
         TurnIntoProjectile();
         Die();
@@ -92,7 +99,6 @@ public class Minion : MonoBehaviour, IEatable
         transform.parent = null;
 
         gameObject.SetActive(true);
-          
     }
 
     void ProjectileCollision(GameObject collidedObject)

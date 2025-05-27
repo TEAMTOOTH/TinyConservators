@@ -9,6 +9,8 @@ public class BossAttack : MonoBehaviour
     [SerializeField] AttackBubbleVisual bubble; 
 
     List<AttackPoint> availibleAttackPoints;
+    List<AttackPoint> mostRecentlyAttackedPoints;
+
     AttackPoint currentAttackPoint;
 
     float maxEatTime;
@@ -22,7 +24,8 @@ public class BossAttack : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        availibleAttackPoints = new List<AttackPoint>();   
+        availibleAttackPoints = new List<AttackPoint>();
+        mostRecentlyAttackedPoints = new List<AttackPoint>();   
         var aP = attackSpots.GetComponentsInChildren<AttackPoint>();
         for(int i = 0; i < aP.Length; i++)
         {
@@ -50,10 +53,8 @@ public class BossAttack : MonoBehaviour
             availibleAttackPoints.Remove(chosenAttackPoint);
         }
         currentAttackPoint = chosenAttackPoint;
+        mostRecentlyAttackedPoints.Add(chosenAttackPoint);
         return chosenAttackPoint;
-
-
-        
     }
 
     public void Attack()
@@ -64,9 +65,6 @@ public class BossAttack : MonoBehaviour
         eating = true;
 
         float damageToPoint = 0;
-        
-        
-        
 
         StartCoroutine(Eat());
         //Spawn bubble and decal.
@@ -103,9 +101,6 @@ public class BossAttack : MonoBehaviour
                 }
                 yield return null;
 
-                //Do damage
-
-
             }        
         } 
     }
@@ -115,7 +110,6 @@ public class BossAttack : MonoBehaviour
         bubble.PopBubble();
         GetComponent<BossItemManager>().DespawnObjects();
         StopAllCoroutines();
-
     }
 
     public void SetMaxEatingTime(float maxEatingTime)
@@ -128,5 +122,15 @@ public class BossAttack : MonoBehaviour
         amountOfProtection = amount;
         speedOfProtection = speed;
         sizeOfProtection = size;
+    }
+
+    public void ClearMostRecentlyAttackedPoints()
+    {
+        mostRecentlyAttackedPoints = new List<AttackPoint>();
+    }
+
+    public List<AttackPoint> GetMostRecentlyAttackedPoints()
+    {
+        return mostRecentlyAttackedPoints;
     }
 }

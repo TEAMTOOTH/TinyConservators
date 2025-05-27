@@ -43,6 +43,9 @@ public class ClockMovement : MonoBehaviour
         this.num = num; //How many points a circle should have, higher = smoother.
         this.radius = radius; //How big the circle is
 
+        if (totalTravelTime <= 0)
+            return;
+
         GenerateCircle();
         rb = GetComponent<Rigidbody2D>();
 
