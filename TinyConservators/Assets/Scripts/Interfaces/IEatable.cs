@@ -10,5 +10,7 @@ public interface IEatable
 
     public bool Eatable();
 
+    public void SetEatable(bool state);
+
     public bool Spittable();
 }

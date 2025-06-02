@@ -80,6 +80,7 @@ public class Eat : MonoBehaviour
     {
         //Debug.Break();
         IEatable eatObject = transform.parent.GetComponentInChildren<IEatable>(true);
+        eatObject.SetEatable(false); //Emergency fix
         IKnockoutable knockout = GetComponentInParent<IKnockoutable>();
         if (knockout != null)
         {

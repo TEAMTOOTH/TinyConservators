@@ -88,7 +88,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,6 +127,32 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -475,7 +501,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -484,7 +510,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Protect-the-scream_0: 8926660334411681266
+      Protect-the-scream_1: 3900070905094237587
+      Protect-the-scream_10: -4914374301358917910
+      Protect-the-scream_11: -3917428994370738264
+      Protect-the-scream_12: 5921417394507920496
+      Protect-the-scream_13: 8290443989471138255
+      Protect-the-scream_14: -4145701466354124391
+      Protect-the-scream_2: 6272931507999190476
+      Protect-the-scream_3: -848132453426832260
+      Protect-the-scream_4: -5560596105473458223
+      Protect-the-scream_5: 2940573066056000479
+      Protect-the-scream_6: -664006925705979739
+      Protect-the-scream_7: -4233739042441658783
+      Protect-the-scream_8: -4764731105317209007
+      Protect-the-scream_9: 2039660679467319455
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
