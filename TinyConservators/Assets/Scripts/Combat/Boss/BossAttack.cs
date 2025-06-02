@@ -131,6 +131,12 @@ public class BossAttack : MonoBehaviour
 
     public List<AttackPoint> GetMostRecentlyAttackedPoints()
     {
+        if(mostRecentlyAttackedPoints.Count > 2)
+        {
+            List<AttackPoint> twoLatestAttackPoints = new List<AttackPoint> { mostRecentlyAttackedPoints[mostRecentlyAttackedPoints.Count - 2], mostRecentlyAttackedPoints[mostRecentlyAttackedPoints.Count - 1] };
+            return twoLatestAttackPoints;
+
+        }
         return mostRecentlyAttackedPoints;
     }
 }

@@ -1,13 +1,15 @@
 using UnityEngine;
 
 
-public class Pickup : MonoBehaviour, IEatable
+public class Pickup : MonoBehaviour, IEatable, IFixer
 {
     
     [SerializeField] int pointsValue;
     [SerializeField] float baseLifeTime;
     [SerializeField] float lifeTimeVariaton;
     [SerializeField] bool spittable;
+
+    AttackPoint damageOwner;
 
     bool eatable = false;
 
@@ -78,6 +80,16 @@ public class Pickup : MonoBehaviour, IEatable
     public void SetEatable(bool state)
     {
         eatable = state;
+    }
+
+    public void SetOwner(GameObject objectToFix)
+    {
+        damageOwner = objectToFix.GetComponent<AttackPoint>();
+    }
+
+    public void Fix()
+    {
+        throw new System.NotImplementedException();
     }
 }
 

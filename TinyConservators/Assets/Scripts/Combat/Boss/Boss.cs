@@ -151,8 +151,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
                 e.InstantDissapear();
             }
         }
-
-        SpawnAccruedDamage();
+        SpawnAccruedDamage(GetComponent<BossAttack>().GetMostRecentlyAttackedPoints());
 
         if (lastRound)
         {
@@ -221,9 +220,14 @@ public class Boss : MonoBehaviour, IDamageReceiver
         }
     }
 
-    void SpawnAccruedDamage()
+    void SpawnAccruedDamage(List<AttackPoint> damagePoints)
     {
+        if(damagePoints.Count < 2)
+        {
+            //GetComponent<PickupSpawner>().SpawnPickups();
+        }
         GetComponent<PickupSpawner>().SpawnPickups();
+
     }
 
     void IDamageReceiver.Hurt()
