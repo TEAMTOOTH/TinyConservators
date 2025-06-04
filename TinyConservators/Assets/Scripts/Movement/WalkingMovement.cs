@@ -62,7 +62,7 @@ public class WalkingMovement : MonoBehaviour
             if (Mathf.Sign(velocity.x) != directionX && velocity.x != 0)
             {
                 // Apply stronger deceleration when switching directionXs
-                velocity.x = Mathf.MoveTowards(velocity.x, 0, (horizontalSpeedIncrease /* 2*/) * Time.deltaTime);
+                velocity.x = Mathf.MoveTowards(velocity.x, 0, horizontalSpeedIncrease * Time.deltaTime);
             }
             else
             {

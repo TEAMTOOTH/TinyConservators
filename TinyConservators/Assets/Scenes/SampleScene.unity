@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &15484584
 Transform:
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   popUpVisual: {fileID: 76135544}
   popUpGraphic: {fileID: 8577819524643950525, guid: 7cf4308dbff9a409fa3d74358abd0aa7, type: 3}
   movementLength: 1
-  waitLength: 3
+  waitLength: 2
   shout: {fileID: 8300000, guid: ee28dc00700ed4645a9de48b6269eb92, type: 3}
 --- !u!4 &17492212 stripped
 Transform:
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d2e6b175fdbf294bbc613c01d0e54ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfEnemiesToSpawn: 7
+  amountOfEnemiesToSpawn: 5
 --- !u!4 &143962063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6793743527882762316, guid: 644c9b907b7b3754187b6028ade9ed98, type: 3}
@@ -1155,7 +1155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18ab7bf1b08f5f438a4fd2da41b67bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: 10
+  length: 2
 --- !u!1 &352228447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,7 +1804,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &457206957
 Transform:
   m_ObjectHideFlags: 0
@@ -1832,7 +1832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d2e6b175fdbf294bbc613c01d0e54ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfEnemiesToSpawn: 5
+  amountOfEnemiesToSpawn: 4
 --- !u!1 &469295883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2473,7 +2473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &581549254
 Transform:
   m_ObjectHideFlags: 0
@@ -5260,7 +5260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1478166420
 Transform:
   m_ObjectHideFlags: 0
@@ -5290,7 +5290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss: {fileID: 933216544}
   amountOfAccompaningMinions: 0
-  timeBeforeInitialAttack: 2
+  timeBeforeInitialAttack: 1
   minimumRepeatTime: 3
   maximumRepeatTime: 5
   maxAttackTime: 8
@@ -5314,7 +5314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1510535346
 Transform:
   m_ObjectHideFlags: 0
@@ -5342,7 +5342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18ab7bf1b08f5f438a4fd2da41b67bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: 10
+  length: 2
 --- !u!4 &1535838875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2999789344313050365, guid: cc857d9051231104fb6f6f89e6ee26fe, type: 3}
@@ -5816,7 +5816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1644830902
 Transform:
   m_ObjectHideFlags: 0
@@ -6114,7 +6114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18ab7bf1b08f5f438a4fd2da41b67bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: 10
+  length: 2
 --- !u!1001 &1730848329
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -645,8 +645,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40bfcd3539b9e142a1a8b541e243fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFlightSpeed: 6
-  impulseForce: 8
+  maxFlightSpeed: 5
+  impulseForce: 5
   amountOfFlapsPerFly: 1000
   flapCooldown: 0.1
 --- !u!114 &3221399604692902498
@@ -725,7 +725,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1.6
+  m_GravityScale: 0.8
   m_Material: {fileID: 6200000, guid: 9a3024a208665f244b6eeba3f9d1ddb1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
