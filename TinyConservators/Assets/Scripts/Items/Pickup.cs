@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 
@@ -8,9 +9,13 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
     [SerializeField] float baseLifeTime;
     [SerializeField] float lifeTimeVariaton;
     [SerializeField] bool spittable;
+    [SerializeField] bool flyBackSpeed;
+    [Range(0,1)]
+    [SerializeField] float amountOfDamageFixedPerPickup;
 
     AttackPoint damageOwner;
 
+    bool fixing = false;
     bool eatable = false;
 
     void Start()
@@ -30,7 +35,15 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
             {
                 pointsReceiver.AddPoints(pointsValue);
             }
-            Destroy(gameObject);
+            if(damageOwner != null)
+            {
+                Fix();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            
         }
     }
 
@@ -59,7 +72,11 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
     void DestroyAfterSetTime()
     {
         //Pop effect?
-        Destroy(gameObject);
+        if (!fixing)
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
     void AllowEating()
@@ -89,7 +106,43 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
 
     public void Fix()
     {
-        throw new System.NotImplementedException();
+        StartCoroutine(TravelToDamagePoint());
+        IEnumerator TravelToDamagePoint()
+        {
+            fixing = true;
+            SetEatable(false);
+            float time = 0f;
+           
+            //float moveTime = 1f;
+
+            float speed = .1f;
+
+            Vector2 startPos = transform.position;
+            Vector2 currentPos = startPos;
+            Vector2 endPos = damageOwner.transform.position;
+
+            while (Vector2.Distance(currentPos, endPos) > 0.1f)
+            {
+                time += Time.deltaTime;
+                //transform.localScale = new Vector3();
+
+                Vector3 basePosition = Vector2.MoveTowards(transform.position, endPos, speed);
+                currentPos = basePosition;
+                transform.position = basePosition;
+                
+               
+                //Vector3 baseScale = Vector3.Lerp(startScale, endScale, time / moveTime);
+                //transform.localScale = baseScale;
+                yield return null;
+            }
+
+            transform.position = endPos;
+            //transform.localScale = endScale;
+            damageOwner.FixDamage(amountOfDamageFixedPerPickup);
+            Destroy(gameObject);
+        }
+        
+
     }
 }
 

@@ -74,7 +74,7 @@ public class Player : MonoBehaviour, IDamageReceiver
         }
     }
 
-    public void Hurt()
+    public void Hurt(GameObject hurter)
     {
         GetComponent<IKnockoutable>().Knockout();   
     }

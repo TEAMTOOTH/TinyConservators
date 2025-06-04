@@ -66,10 +66,10 @@ public class PickupSpawner : MonoBehaviour
             GameObject spawnedObject = Instantiate(spawnObject, transform.position, Quaternion.identity);
             spawnedObjects.Add(spawnedObject);
 
-            if (i < amount / 2)
-            {
-                spawnedObject.GetComponent<IFixer>().SetOwner(fixObject);
-            }
+            //if (i < amount / 2)
+            //{
+            spawnedObject.GetComponent<IFixer>().SetOwner(fixObject);
+            //}
 
             Rigidbody2D rb = spawnedObject.GetComponent<Rigidbody2D>();
 

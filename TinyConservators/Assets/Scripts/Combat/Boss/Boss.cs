@@ -8,6 +8,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
     [SerializeField] float minimumAttackWaitTime;
     [SerializeField] float maximumAttackWaitTime;
 
+    [SerializeField] int pointsForKnockingOut;
 
     [SerializeField] GameObject bossVisual;
 
@@ -72,7 +73,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
                 GetComponent<BossAttack>().Attack();
                 break;
             case BossStates.hurt:
-                Hurt();
+                //Hurt(null); Not great for code consistency, but saves alot of uneccecary variables and middle storage.
                 break;
             case BossStates.walkOff:
                 LeaveScreen(1f, 3f, false);
@@ -137,13 +138,18 @@ public class Boss : MonoBehaviour, IDamageReceiver
         }
     }
 
-    void Hurt()
+    void Hurt(GameObject hurter)
     {
         float leaveTime = 0.5f;
         float pauseBeforeLeaving = 2f;
         GetComponentInChildren<BossDamage>().AllowCollisions(false);
         GetComponent<BossAttack>().InterruptAttack();
         
+        if(hurter != null)
+        {
+            hurter.GetComponent<PointsReceiver>().AddPoints(pointsForKnockingOut);
+        }
+
         foreach (Enemy e in currentMinions)
         {
             if (e != null)
@@ -151,7 +157,8 @@ public class Boss : MonoBehaviour, IDamageReceiver
                 e.InstantDissapear();
             }
         }
-        SpawnAccruedDamage(GetComponent<BossAttack>().GetMostRecentlyAttackedPoints());
+        
+        
 
         if (lastRound)
         {
@@ -186,7 +193,15 @@ public class Boss : MonoBehaviour, IDamageReceiver
         {
             yield return new WaitForSeconds(initialWaitTime);
             GetComponent<BossMovement>().Move(time, transform.position, closest.transform.position);
+
+            if (hasBeenChasedAway)
+            {
+                SpawnAccruedDamage(GetComponent<BossAttack>().GetMostRecentlyAttackedPoints());
+                GetComponent<BossAttack>().ClearMostRecentlyAttackedPoints();
+            }
+            
             yield return new WaitForSeconds(time);
+            
             if (hasBeenChasedAway)
             {
                 
@@ -212,27 +227,44 @@ public class Boss : MonoBehaviour, IDamageReceiver
         IEnumerator Move()
         {
             yield return new WaitForSeconds(time);
+            SpawnAccruedDamage(GetComponent<BossAttack>().GetMostRecentlyAttackedPoints());
+            GetComponent<BossAttack>().ClearMostRecentlyAttackedPoints();
             if (owner != null)
             {
                 owner.GetComponent<ILevelFlowComponent>()?.FinishSection();
             }
+            
             gameObject.SetActive(false);
         }
     }
 
-    void SpawnAccruedDamage(List<AttackPoint> damagePoints)
+    void SpawnAccruedDamage(List<AttackPoint> damagePoints) //Pretty messy decision tree, but keeping it small, so should be fine. If it gets any bigger, time to rethink!
     {
-        if(damagePoints.Count < 2)
+        Debug.Log(damagePoints.Count);
+        if(damagePoints.Count == 0)//Should never really trigger, but better to be safe than sorry.
         {
-            //GetComponent<PickupSpawner>().SpawnPickups();
+            GetComponent<PickupSpawner>().SpawnPickups();
         }
-        GetComponent<PickupSpawner>().SpawnPickups();
+        else if(damagePoints.Count == 1)
+        {
+            GetComponent<PickupSpawner>().SpawnPickups(damagePoints[0].gameObject);
+        }
+        else
+        {
+            List<GameObject> gos = new List<GameObject>();
 
+            foreach (AttackPoint a in damagePoints)
+            {
+                gos.Add(a.gameObject);
+            }
+            GetComponent<PickupSpawner>().SpawnPickups(gos);
+        }
     }
 
-    void IDamageReceiver.Hurt()
+    void IDamageReceiver.Hurt(GameObject gameObject)
     {
-        GetComponentInParent<Boss>().State = BossStates.hurt;
+        State = BossStates.hurt;
+        Hurt(gameObject);
     }
 }
 

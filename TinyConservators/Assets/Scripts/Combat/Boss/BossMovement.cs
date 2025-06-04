@@ -26,6 +26,7 @@ public class BossMovement : MonoBehaviour
             LevelFlowManager lFM = GameObject.FindGameObjectWithTag("LevelFlow").GetComponent<LevelFlowManager>();
             lFM.JumpToFlow(lFM.GetAmountOfFlows() - 1);
             Debug.Log("Level lost");
+
             return null;
         }
         return attackSpot.gameObject;

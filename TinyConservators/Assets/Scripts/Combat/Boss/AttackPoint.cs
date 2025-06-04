@@ -38,6 +38,16 @@ public class AttackPoint : MonoBehaviour
         visual.sprite = visuals[index];
     }
 
+    public void FixDamage(float amount)
+    {
+        damagePercentage -= amount;
+        if(amount < 0)
+        {
+            amount = 0;
+        }
+        Damage(damagePercentage);
+    }
+
     public int GetAmountOfVisualDamageSteps()
     {
         return visuals.Length;

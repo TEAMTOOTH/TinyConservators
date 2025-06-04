@@ -10,7 +10,7 @@ public class WeakPoint : MonoBehaviour
         {
             //Debug.Log($"KnockedOut by {collision.tag} in weakpoint");
             IDamageReceiver damage = GetComponentInParent<IDamageReceiver>();
-            damage.Hurt();
+            damage.Hurt(collision.gameObject);
         }
     }
 

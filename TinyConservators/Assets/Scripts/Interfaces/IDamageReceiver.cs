@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IDamageReceiver
 {
-    public void Hurt();
+    public void Hurt(GameObject gameObject);
 }

@@ -482,6 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimumAttackWaitTime: 10
   maximumAttackWaitTime: 15
+  pointsForKnockingOut: 1000
   bossVisual: {fileID: 1563531638924834166}
   attackMoveTime: 4
   startPos: {x: 11.6, y: -9}
@@ -524,7 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 4111976845852578208, guid: 27a9cc5516635114ebc6bb8ac1e33f79, type: 3}
-  minimumAmount: 7
+  minimumAmount: 12
   maximumAmount: 12
   throwOutForce: 5
 --- !u!114 &844783138235538951

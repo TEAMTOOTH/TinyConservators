@@ -23,7 +23,7 @@ public class EnemyKnockout : MonoBehaviour, IKnockoutable
         if (canGetKnockedOut)
         {
             IDamageReceiver damage = GetComponent<IDamageReceiver>();
-            damage.Hurt();
+            damage.Hurt(null);
         }
     }
 

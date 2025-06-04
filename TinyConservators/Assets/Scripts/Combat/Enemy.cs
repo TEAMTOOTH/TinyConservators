@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour, IDamageReceiver
 
     public event Action<EnemyStates, EnemyStates> OnEnemyStateChanged;
 
-    public void Hurt()
+    public void Hurt(GameObject hurter)
     {
         if (receiveDamage)
         {
@@ -179,7 +179,7 @@ public class Enemy : MonoBehaviour, IDamageReceiver
         if(damageObject != null && collidedObject != owner)
         {
             //Debug.Log(collidedObject);
-            damageObject.Hurt();
+            damageObject.Hurt(collidedObject);
         }
         
         //Die();

@@ -170,6 +170,7 @@ MonoBehaviour:
   baseLifeTime: 8
   lifeTimeVariaton: 2
   spittable: 0
+  amountOfDamageFixedPerPickup: 0.1
 --- !u!95 &4171263059369809168
 Animator:
   serializedVersion: 7

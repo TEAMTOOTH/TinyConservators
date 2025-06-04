@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d2e6b175fdbf294bbc613c01d0e54ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfEnemiesToSpawn: 5
+  amountOfEnemiesToSpawn: 7
 --- !u!4 &143962063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6793743527882762316, guid: 644c9b907b7b3754187b6028ade9ed98, type: 3}
@@ -434,7 +434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &202198759
 Transform:
   m_ObjectHideFlags: 0
@@ -970,7 +970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8748453298099580558, guid: 644c9b907b7b3754187b6028ade9ed98, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1035,7 +1035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8748453298099580558, guid: 644c9b907b7b3754187b6028ade9ed98, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1104,7 +1104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8748453298099580558, guid: 644c9b907b7b3754187b6028ade9ed98, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1155,7 +1155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18ab7bf1b08f5f438a4fd2da41b67bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: 5
+  length: 10
 --- !u!1 &352228447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,13 +1530,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 933216544}
-  amountOfAccompaningMinions: 3
+  amountOfAccompaningMinions: 0
   timeBeforeInitialAttack: 2
   minimumRepeatTime: 2
   maximumRepeatTime: 4
   maxAttackTime: 10
   lastAttack: 0
-  amountOfProtectionItems: 0
+  amountOfProtectionItems: 2
   totalTimeOfRevolutionOfProtectionItems: 2
   radiusOfProtectionCircle: 2
 --- !u!1 &411444035
@@ -2059,7 +2059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8748453298099580558, guid: 644c9b907b7b3754187b6028ade9ed98, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2758,7 +2758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &688983036
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2874,11 +2874,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 933216544}
-  amountOfAccompaningMinions: 6
+  amountOfAccompaningMinions: 0
   timeBeforeInitialAttack: 3
   minimumRepeatTime: 3
   maximumRepeatTime: 4
-  maxAttackTime: 6
+  maxAttackTime: 8
   lastAttack: 1
   amountOfProtectionItems: 7
   totalTimeOfRevolutionOfProtectionItems: 3
@@ -3194,7 +3194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &976780831
 Transform:
   m_ObjectHideFlags: 0
@@ -3685,7 +3685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 378791223853318268, guid: cc857d9051231104fb6f6f89e6ee26fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2999789344313050365, guid: cc857d9051231104fb6f6f89e6ee26fe, type: 3}
       propertyPath: m_LocalScale.y
@@ -3832,7 +3832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1054254255
 Transform:
   m_ObjectHideFlags: 0
@@ -4073,7 +4073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8748453298099580558, guid: 644c9b907b7b3754187b6028ade9ed98, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4539,7 +4539,7 @@ MonoBehaviour:
   popUpGraphic: {fileID: -5210334267256708629, guid: c4a5b67ce9cab434e98eb308992b5e4f, type: 3}
   movementLength: 0.5
   waitLength: 3
-  shout: {fileID: 8300000, guid: a816430c0f0a25a429b9815b9850f9a0, type: 3}
+  shout: {fileID: 0}
 --- !u!1 &1178552287
 GameObject:
   m_ObjectHideFlags: 0
@@ -5235,13 +5235,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5967419696846133560, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4777534917301986821, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
 --- !u!1 &1478166419
 GameObject:
@@ -5288,14 +5289,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 933216544}
-  amountOfAccompaningMinions: 4
+  amountOfAccompaningMinions: 0
   timeBeforeInitialAttack: 2
   minimumRepeatTime: 3
   maximumRepeatTime: 5
   maxAttackTime: 8
   lastAttack: 0
-  amountOfProtectionItems: 2
-  totalTimeOfRevolutionOfProtectionItems: 2
+  amountOfProtectionItems: 4
+  totalTimeOfRevolutionOfProtectionItems: 3
   radiusOfProtectionCircle: 2
 --- !u!1 &1510535345
 GameObject:
@@ -5734,7 +5735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 378791223853318268, guid: cc857d9051231104fb6f6f89e6ee26fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2999789344313050365, guid: cc857d9051231104fb6f6f89e6ee26fe, type: 3}
       propertyPath: m_LocalScale.y
@@ -5847,7 +5848,7 @@ MonoBehaviour:
   popUpGraphic: {fileID: -5210334267256708629, guid: c4a5b67ce9cab434e98eb308992b5e4f, type: 3}
   movementLength: 1
   waitLength: 2
-  shout: {fileID: 8300000, guid: a816430c0f0a25a429b9815b9850f9a0, type: 3}
+  shout: {fileID: 0}
 --- !u!1 &1647588666
 GameObject:
   m_ObjectHideFlags: 0
@@ -6015,7 +6016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8748453298099580558, guid: 644c9b907b7b3754187b6028ade9ed98, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6411,7 +6412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 378791223853318268, guid: cc857d9051231104fb6f6f89e6ee26fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2999789344313050365, guid: cc857d9051231104fb6f6f89e6ee26fe, type: 3}
       propertyPath: m_LocalScale.y
@@ -7101,7 +7102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1979231071
 Transform:
   m_ObjectHideFlags: 0
@@ -7144,7 +7145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 378791223853318268, guid: cc857d9051231104fb6f6f89e6ee26fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2999789344313050365, guid: cc857d9051231104fb6f6f89e6ee26fe, type: 3}
       propertyPath: m_LocalScale.y
@@ -7584,7 +7585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8748453298099580558, guid: 644c9b907b7b3754187b6028ade9ed98, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7605,7 +7606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 378791223853318268, guid: cc857d9051231104fb6f6f89e6ee26fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2999789344313050365, guid: cc857d9051231104fb6f6f89e6ee26fe, type: 3}
       propertyPath: m_LocalScale.y

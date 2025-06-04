@@ -106,7 +106,7 @@ public class Minion : MonoBehaviour, IEatable
         IDamageReceiver damageObject = collidedObject.GetComponent<IDamageReceiver>();
         if (damageObject != null && collidedObject != owner && !hasDied)
         {
-            damageObject.Hurt();
+            damageObject.Hurt(collidedObject);
         }
         Die();
     }

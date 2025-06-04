@@ -18,6 +18,8 @@ public class IntroScreenInterstitial : MonoBehaviour, IInterstitial
         //Starting to load the scene async, so it is ready when the scene finishes
         GetComponent<SceneLoader>().LoadScene(length);
 
+        //IEnumerator DoorsClosing
+
         
     }
     public void EndInterstitial()
