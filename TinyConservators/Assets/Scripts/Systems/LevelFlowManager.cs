@@ -41,7 +41,7 @@ public class LevelFlowManager : MonoBehaviour
         {
             g.GetComponent<StatTracker>().SetStats();
         }
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
     }
     
     public int GetAmountOfFlows()

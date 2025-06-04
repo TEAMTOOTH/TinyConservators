@@ -109,6 +109,8 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
         StartCoroutine(TravelToDamagePoint());
         IEnumerator TravelToDamagePoint()
         {
+            GetComponent<SoundController>().Play();
+
             fixing = true;
             SetEatable(false);
             float time = 0f;

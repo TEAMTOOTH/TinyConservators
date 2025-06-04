@@ -144,6 +144,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
         float pauseBeforeLeaving = 2f;
         GetComponentInChildren<BossDamage>().AllowCollisions(false);
         GetComponent<BossAttack>().InterruptAttack();
+        GetComponent<SoundController>().PlayClip(0);
         
         if(hurter != null)
         {
@@ -167,7 +168,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
         }
         else
         {
-            GetComponentInChildren<Animator>().Play("BossHurt");
+            GetComponentInChildren<Animator>().Play("BossStaggered");
             LeaveScreen(pauseBeforeLeaving,leaveTime, true);
         }
         
@@ -192,20 +193,23 @@ public class Boss : MonoBehaviour, IDamageReceiver
         IEnumerator Move()
         {
             yield return new WaitForSeconds(initialWaitTime);
+            GetComponentInChildren<Animator>().Play("BossPoof");
+            yield return new WaitForSeconds(.25f);
+            GetComponentInChildren<Animator>().Play("BossHurt");
             GetComponent<BossMovement>().Move(time, transform.position, closest.transform.position);
 
             if (hasBeenChasedAway)
             {
                 SpawnAccruedDamage(GetComponent<BossAttack>().GetMostRecentlyAttackedPoints());
                 GetComponent<BossAttack>().ClearMostRecentlyAttackedPoints();
+                
+
             }
             
             yield return new WaitForSeconds(time);
             
             if (hasBeenChasedAway)
             {
-                
-
                 if (owner != null)
                 {
                     owner.GetComponent<ILevelFlowComponent>()?.FinishSection();
@@ -226,8 +230,8 @@ public class Boss : MonoBehaviour, IDamageReceiver
         StartCoroutine(Move());
         IEnumerator Move()
         {
-            yield return new WaitForSeconds(time);
             SpawnAccruedDamage(GetComponent<BossAttack>().GetMostRecentlyAttackedPoints());
+            yield return new WaitForSeconds(time);
             GetComponent<BossAttack>().ClearMostRecentlyAttackedPoints();
             if (owner != null)
             {
