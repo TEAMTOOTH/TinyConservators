@@ -18,6 +18,7 @@ public class PercentageGetter : MonoBehaviour
         }
         else 
         {
+            Debug.Log("Setting text to 100%");
             GetComponent<TextMeshProUGUI>().text = $"{100.00:F2}%";
         }
         

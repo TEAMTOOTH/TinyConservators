@@ -21,7 +21,7 @@ public class DashMovement : MonoBehaviour
             Eat eat = GetComponentInChildren<Eat>();
             if (eat.IsCarryingFood())
             {
-                eat.Spit();
+                //eat.Spit();
             }
             else
             {

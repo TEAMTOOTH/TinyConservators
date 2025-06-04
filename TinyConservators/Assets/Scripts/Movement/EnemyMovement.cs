@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
     public void StartMoving()
     {
         SetCanMove(true);
-        rb2D.bodyType = RigidbodyType2D.Kinematic;
+        //rb2D.bodyType = RigidbodyType2D.Kinematic;
         transform.rotation = Quaternion.identity;
         GetComponent<AIPath>().enabled = true;
         rb2D.freezeRotation = true;
@@ -35,8 +35,8 @@ public class EnemyMovement : MonoBehaviour
 
     void FindTarget()
     {
-        float searchWidth = 10;
-        float searchHeight = 6;
+        float searchWidth = 15;
+        float searchHeight = 12;
         float shortestDistance = searchWidth+searchHeight;
 
         GameObject targetObject = gameObject;

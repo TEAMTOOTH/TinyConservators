@@ -57,6 +57,7 @@ public class Eat : MonoBehaviour
             StopCoroutine(mouthTimer);
             mouthTimer = null;
         }
+        
         eatObject.SpitOut(transform.parent.gameObject);
         GetComponentInParent<Player>().AnimationTransition(1, 0, 0.1f);
         MonoBehaviour mb = eatObject as MonoBehaviour;
@@ -115,7 +116,7 @@ public class Eat : MonoBehaviour
         }
         else
         {
-            Spit();
+            //Spit();
         }
         mouthTimer = null;
         

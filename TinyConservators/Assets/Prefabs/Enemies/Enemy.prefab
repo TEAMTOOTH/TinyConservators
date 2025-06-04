@@ -77,15 +77,15 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610061580652934218}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_AngularDamping: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: 62d2709ffdb41dd4e819854fcdbfd2a2, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -95,7 +95,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &6678753778093242419
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -130,9 +130,9 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.042349935}
-  m_Size: {x: 0.5, y: 0.5970328}
-  m_Direction: 0
+  m_Offset: {x: 0.010540683, y: -0.10106714}
+  m_Size: {x: 0.7920816, y: 0.6626048}
+  m_Direction: 1
 --- !u!114 &5857061939748716096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,7 +444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73290b807ebd9414a9c9431e4b2a346c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTag: Player
+  enemyTags:
+  - Player
 --- !u!1 &5325836417991307246
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@
                 {
                     "name": "SecondaryAction",
                     "type": "Button",
-                    "id": "e105885e-d9cb-4bfb-8a0a-39314b4f15d0",
+                    "id": "8c597714-5af1-49ce-995e-c93499110849",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -188,28 +188,6 @@
                 },
                 {
                     "name": "",
-                    "id": "c8050484-e638-4a7d-bec2-ad5606437f78",
-                    "path": "<Keyboard>/m",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard",
-                    "action": "SecondaryAction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "510db968-f016-4675-b149-f0153c8a95b4",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "SecondaryAction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "26506d98-9de8-4dd0-bc38-d5899482b53f",
                     "path": "<Keyboard>/backspace",
                     "interactions": "",
@@ -227,6 +205,28 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "DebugConfirm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9a96e19e-2b66-4acb-a74d-ebc31a32b1bd",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "SecondaryAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f22b6767-8e1a-4989-8087-64f1fbdc0c87",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SecondaryAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

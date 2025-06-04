@@ -40,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
             GameObject e = Instantiate(enemiesToSpawn[enemyIndex], enemySpawnPoints[positionIndex].transform.position, Quaternion.identity);
             enemiesSpawned[i] = e.GetComponent<Enemy>();
 
-            Debug.Log("Spawned enemy");
+            //Debug.Log("Spawned enemy");
 
         }
         return enemiesSpawned;
@@ -63,7 +63,7 @@ public class EnemySpawner : MonoBehaviour
             var g = Instantiate(enemiesToSpawn[enemyIndex], enemySpawnPoints[positionIndex].transform.position, Quaternion.identity);
 
             g.GetComponent<Enemy>().SetOwner(owner);
-            Debug.Log("Spawned enemy");
+            //Debug.Log("Spawned enemy");
         }
     }
 

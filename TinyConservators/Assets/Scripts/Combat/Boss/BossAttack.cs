@@ -9,15 +9,23 @@ public class BossAttack : MonoBehaviour
     [SerializeField] AttackBubbleVisual bubble; 
 
     List<AttackPoint> availibleAttackPoints;
+    List<AttackPoint> mostRecentlyAttackedPoints;
+
     AttackPoint currentAttackPoint;
 
     float maxEatTime;
     bool eating;
 
+    //Boss protection
+    int amountOfProtection;
+    float speedOfProtection;
+    float sizeOfProtection;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        availibleAttackPoints = new List<AttackPoint>();   
+        availibleAttackPoints = new List<AttackPoint>();
+        mostRecentlyAttackedPoints = new List<AttackPoint>();   
         var aP = attackSpots.GetComponentsInChildren<AttackPoint>();
         for(int i = 0; i < aP.Length; i++)
         {
@@ -45,10 +53,8 @@ public class BossAttack : MonoBehaviour
             availibleAttackPoints.Remove(chosenAttackPoint);
         }
         currentAttackPoint = chosenAttackPoint;
+        mostRecentlyAttackedPoints.Add(chosenAttackPoint);
         return chosenAttackPoint;
-
-
-        
     }
 
     public void Attack()
@@ -59,9 +65,6 @@ public class BossAttack : MonoBehaviour
         eating = true;
 
         float damageToPoint = 0;
-        
-        
-        
 
         StartCoroutine(Eat());
         //Spawn bubble and decal.
@@ -73,6 +76,7 @@ public class BossAttack : MonoBehaviour
             GetComponentInChildren<Animator>().Play("BossAttack");
             GetComponentInChildren<BossDamage>().AllowCollisions(true);
             bubble.StartShowing();
+            GetComponent<BossItemManager>().SpawnObjects(amountOfProtection, speedOfProtection, sizeOfProtection);
 
 
 
@@ -92,12 +96,10 @@ public class BossAttack : MonoBehaviour
                     GetComponentInChildren<Animator>().Play("BossFull");
                     bubble.PopBubble();
                     GetComponentInChildren<BossDamage>().AllowCollisions(false);
+                    GetComponent<BossItemManager>().DespawnObjects();
 
                 }
                 yield return null;
-
-                //Do damage
-
 
             }        
         } 
@@ -106,12 +108,35 @@ public class BossAttack : MonoBehaviour
     public void InterruptAttack()
     {
         bubble.PopBubble();
+        GetComponent<BossItemManager>().DespawnObjects();
         StopAllCoroutines();
-
     }
 
     public void SetMaxEatingTime(float maxEatingTime)
     {
         maxEatTime = maxEatingTime;
+    }
+
+    public void SetBossProtectionParameters(int amount, float speed, float size)
+    {
+        amountOfProtection = amount;
+        speedOfProtection = speed;
+        sizeOfProtection = size;
+    }
+
+    public void ClearMostRecentlyAttackedPoints()
+    {
+        mostRecentlyAttackedPoints = new List<AttackPoint>();
+    }
+
+    public List<AttackPoint> GetMostRecentlyAttackedPoints()
+    {
+        if(mostRecentlyAttackedPoints.Count > 2)
+        {
+            List<AttackPoint> twoLatestAttackPoints = new List<AttackPoint> { mostRecentlyAttackedPoints[mostRecentlyAttackedPoints.Count - 2], mostRecentlyAttackedPoints[mostRecentlyAttackedPoints.Count - 1] };
+            return twoLatestAttackPoints;
+
+        }
+        return mostRecentlyAttackedPoints;
     }
 }

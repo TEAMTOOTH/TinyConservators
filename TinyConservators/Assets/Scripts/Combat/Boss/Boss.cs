@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class Boss : MonoBehaviour, IDamageReceiver
 {
     [SerializeField] float minimumAttackWaitTime;
     [SerializeField] float maximumAttackWaitTime;
 
+    [SerializeField] int pointsForKnockingOut;
 
     [SerializeField] GameObject bossVisual;
 
@@ -72,7 +73,7 @@ public class Boss : MonoBehaviour
                 GetComponent<BossAttack>().Attack();
                 break;
             case BossStates.hurt:
-                Hurt();
+                //Hurt(null); Not great for code consistency, but saves alot of uneccecary variables and middle storage.
                 break;
             case BossStates.walkOff:
                 LeaveScreen(1f, 3f, false);
@@ -82,11 +83,13 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void InitializeAttackRound(float timeToNextAttack, GameObject owner, int amountOfMinions, float minimumTime, float maximumTime, float attackTime, bool lastRound)
+    public void InitializeAttackRound(float timeToNextAttack, GameObject owner, int amountOfMinions, float minimumTime, float maximumTime, float attackTime, bool lastRound, int amountOfProtection, float speedOfProtection, float sizeOfProtection)
     {
         this.owner = owner;
         minionAttackAmount = amountOfMinions;
-        GetComponent<BossAttack>().SetMaxEatingTime(attackTime);
+        BossAttack bossAttack = GetComponent<BossAttack>();
+        bossAttack.SetMaxEatingTime(attackTime);
+        bossAttack.SetBossProtectionParameters(amountOfProtection, speedOfProtection, sizeOfProtection);
         minimumAttackWaitTime = minimumTime;
         maximumAttackWaitTime = maximumTime;
 
@@ -135,13 +138,18 @@ public class Boss : MonoBehaviour
         }
     }
 
-    void Hurt()
+    void Hurt(GameObject hurter)
     {
         float leaveTime = 0.5f;
         float pauseBeforeLeaving = 2f;
         GetComponentInChildren<BossDamage>().AllowCollisions(false);
         GetComponent<BossAttack>().InterruptAttack();
         
+        if(hurter != null)
+        {
+            hurter.GetComponent<PointsReceiver>().AddPoints(pointsForKnockingOut);
+        }
+
         foreach (Enemy e in currentMinions)
         {
             if (e != null)
@@ -149,6 +157,8 @@ public class Boss : MonoBehaviour
                 e.InstantDissapear();
             }
         }
+        
+        
 
         if (lastRound)
         {
@@ -183,7 +193,15 @@ public class Boss : MonoBehaviour
         {
             yield return new WaitForSeconds(initialWaitTime);
             GetComponent<BossMovement>().Move(time, transform.position, closest.transform.position);
+
+            if (hasBeenChasedAway)
+            {
+                SpawnAccruedDamage(GetComponent<BossAttack>().GetMostRecentlyAttackedPoints());
+                GetComponent<BossAttack>().ClearMostRecentlyAttackedPoints();
+            }
+            
             yield return new WaitForSeconds(time);
+            
             if (hasBeenChasedAway)
             {
                 
@@ -209,12 +227,44 @@ public class Boss : MonoBehaviour
         IEnumerator Move()
         {
             yield return new WaitForSeconds(time);
+            SpawnAccruedDamage(GetComponent<BossAttack>().GetMostRecentlyAttackedPoints());
+            GetComponent<BossAttack>().ClearMostRecentlyAttackedPoints();
             if (owner != null)
             {
                 owner.GetComponent<ILevelFlowComponent>()?.FinishSection();
             }
+            
             gameObject.SetActive(false);
         }
+    }
+
+    void SpawnAccruedDamage(List<AttackPoint> damagePoints) //Pretty messy decision tree, but keeping it small, so should be fine. If it gets any bigger, time to rethink!
+    {
+        Debug.Log(damagePoints.Count);
+        if(damagePoints.Count == 0)//Should never really trigger, but better to be safe than sorry.
+        {
+            GetComponent<PickupSpawner>().SpawnPickups();
+        }
+        else if(damagePoints.Count == 1)
+        {
+            GetComponent<PickupSpawner>().SpawnPickups(damagePoints[0].gameObject);
+        }
+        else
+        {
+            List<GameObject> gos = new List<GameObject>();
+
+            foreach (AttackPoint a in damagePoints)
+            {
+                gos.Add(a.gameObject);
+            }
+            GetComponent<PickupSpawner>().SpawnPickups(gos);
+        }
+    }
+
+    void IDamageReceiver.Hurt(GameObject gameObject)
+    {
+        State = BossStates.hurt;
+        Hurt(gameObject);
     }
 }
 

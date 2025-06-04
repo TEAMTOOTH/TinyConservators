@@ -28,7 +28,7 @@ public class VisualController : MonoBehaviour
     }
 
     /// <summary>
-    /// IncrediblySimplified for test. Not how I want it in the final one.
+    /// IncrediblySimplified for test. Not how I want it in the final one. Really needs to be fixed before launch.
     /// </summary>
     /// <param name="name"></param>
     /// <param name="visualIndex"></param>

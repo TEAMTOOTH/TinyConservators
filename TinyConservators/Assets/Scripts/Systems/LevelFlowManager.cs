@@ -19,7 +19,7 @@ public class LevelFlowManager : MonoBehaviour
     public void ProgressFlow()
     {
         levelFlowIndex++;
-        Debug.Log("Progressing level flow " + levelFlows[levelFlowIndex]);
+        //Debug.Log("Progressing level flow " + levelFlows[levelFlowIndex]);
 
         if(levelFlowIndex < levelFlows.Length)
         {
@@ -36,9 +36,14 @@ public class LevelFlowManager : MonoBehaviour
     {
         //levelFlowIndex = flowIndex - 1;
         //ProgressFlow();
+        GameObject g = GameObject.FindGameObjectWithTag("StatTracker");
+        if (g != null)
+        {
+            g.GetComponent<StatTracker>().SetStats();
+        }
         SceneManager.LoadScene(4);
     }
-
+    
     public int GetAmountOfFlows()
     {
         return levelFlows.Length;
