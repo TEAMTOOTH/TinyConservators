@@ -115,6 +115,7 @@ MonoBehaviour:
   dieTime: 0.75
   throwOffForce: 5
   spittable: 1
+  pointsForEating: 100
 --- !u!114 &1443921039839903273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962fdc49fad58b3459e5d99e3aff8c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockOutTime: 5
+  knockOutTime: 8
 --- !u!1 &6328734306099860521
 GameObject:
   m_ObjectHideFlags: 0

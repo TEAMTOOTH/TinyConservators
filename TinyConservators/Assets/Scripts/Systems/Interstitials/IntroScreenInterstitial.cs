@@ -14,7 +14,7 @@ public class IntroScreenInterstitial : MonoBehaviour, IInterstitial
         //currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         //Debug.Log(currentSceneIndex);
         //Maybe just move the camera in
-
+        GetComponent<SynchronizedLerpMover>().StartLerp();
         //Starting to load the scene async, so it is ready when the scene finishes
         GetComponent<SceneLoader>().LoadScene(length);
 
