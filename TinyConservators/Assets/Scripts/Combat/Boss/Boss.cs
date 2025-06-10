@@ -195,15 +195,18 @@ public class Boss : MonoBehaviour, IDamageReceiver
             yield return new WaitForSeconds(initialWaitTime);
             GetComponentInChildren<Animator>().Play("BossPoof");
             yield return new WaitForSeconds(.25f);
-            GetComponentInChildren<Animator>().Play("BossHurt");
+            
             GetComponent<BossMovement>().Move(time, transform.position, closest.transform.position);
 
             if (hasBeenChasedAway)
             {
                 SpawnAccruedDamage(GetComponent<BossAttack>().GetMostRecentlyAttackedPoints());
                 GetComponent<BossAttack>().ClearMostRecentlyAttackedPoints();
-                
-
+                GetComponentInChildren<Animator>().Play("BossHurt");
+            }
+            else
+            {
+                GetComponentInChildren<Animator>().Play("BossFull");
             }
             
             yield return new WaitForSeconds(time);

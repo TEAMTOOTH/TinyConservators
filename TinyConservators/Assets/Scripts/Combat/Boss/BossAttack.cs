@@ -72,6 +72,7 @@ public class BossAttack : MonoBehaviour
         {
             //Debug.Log("Eating");
             GetComponentInChildren<Animator>().Play("BossPoof");
+            GetComponent<RadialPush2D>().PushAway();
             yield return new WaitForSeconds(.25f);
             GetComponentInChildren<Animator>().Play("BossAttack");
             GetComponentInChildren<BossDamage>().AllowCollisions(true);
