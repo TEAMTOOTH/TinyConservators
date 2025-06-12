@@ -74,80 +74,18 @@ public class SpiralMover : MonoBehaviour, IVisualMove
         elapsedTime = 0f;
     }
 
-    /*public void Move(float time)
-    {
-        // Always reset the timer
-        elapsedTime = 0f;
-
-        // Determine direction and setup
-        if (reverse)
-        {
-            initialPosition = endPoint != null ? endPoint.position : transform.position;
-            finalPosition = startPoint != null ? startPoint.position : transform.position;
-        }
-        else
-        {
-            initialPosition = startPoint != null ? startPoint.position : transform.position;
-            finalPosition = endPoint != null ? endPoint.position : transform.position;
-        }
-
-        transform.position = initialPosition;
-        initialScale = transform.localScale;
-
-        StartCoroutine(move());
-
-        IEnumerator move()
-        {
-            while (elapsedTime < time)
-            {
-                elapsedTime += Time.deltaTime;
-                float t = Mathf.Clamp01(elapsedTime / time);
-
-                // Adjust progress depending on direction
-                float progress = reverse ? 1f - t : t;
-
-                // Interpolate position
-                Vector3 linearPos = Vector3.Lerp(initialPosition, finalPosition, progress);
-
-                // Spiral offset in X/Y only
-                float angle = progress * Mathf.PI * 2f * spiralFrequency;
-                float radius = progress * spiralGrowth;
-                float offsetX = Mathf.Cos(angle) * radius;
-                float offsetY = Mathf.Sin(angle) * radius;
-
-                Vector3 spiralPos = new Vector3(linearPos.x + offsetX, linearPos.y + offsetY, linearPos.z);
-                transform.position = spiralPos;
-
-                // Interpolate scale
-                Vector3 fromScale = reverse ? targetScale : initialScale;
-                Vector3 toScale = reverse ? initialScale : targetScale;
-                transform.localScale = Vector3.Lerp(fromScale, toScale, progress);
-
-                yield return null;
-            }
-
-            // Ensure final values are set exactly
-            transform.position = finalPosition;
-            transform.localScale = reverse ? initialScale : targetScale;
-        }
-    }*/
-
     public void Move(float time)
     {
         elapsedTime = 0f;
 
-        if (reverse)
-        {
-            initialPosition = endPoint != null ? endPoint.position : transform.position;
-            finalPosition = startPoint != null ? startPoint.position : transform.position;
-        }
-        else
-        {
-            initialPosition = startPoint != null ? startPoint.position : transform.position;
-            finalPosition = endPoint != null ? endPoint.position : transform.position;
-        }
+        
+
+
+        initialPosition = startPoint != null ? startPoint.position : transform.position;
+        finalPosition = endPoint != null ? endPoint.position : transform.position;
 
         transform.position = initialPosition;
+
         initialScale = transform.localScale;
 
         StartCoroutine(move());
@@ -163,6 +101,7 @@ public class SpiralMover : MonoBehaviour, IVisualMove
 
                 // Interpolate base position
                 Vector3 linearPos = Vector3.Lerp(initialPosition, finalPosition, progress);
+                
 
                 // Spiral offset that fades out as it approaches the destination
                 float angle = progress * Mathf.PI * 2f * spiralFrequency;
@@ -182,8 +121,10 @@ public class SpiralMover : MonoBehaviour, IVisualMove
             }
 
             // Final cleanup to ensure exact match
-            transform.position = finalPosition;
-            transform.localScale = reverse ? initialScale : targetScale;
+            //transform.position = finalPosition;
+            transform.position = reverse ? initialPosition : finalPosition;
+            //transform.localScale = reverse ? initialScale : targetScale;
+            transform.localScale = targetScale;
         }
     }
 }
