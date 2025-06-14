@@ -12,12 +12,13 @@ public class Boss : MonoBehaviour, IDamageReceiver
 
     [SerializeField] GameObject bossVisual;
 
+    [SerializeField] Vector2 attackStartPos;
+
     [Header("Attack timing")]
     [SerializeField] float attackMoveTime;
 
 
-    [Header("For test")]
-    [SerializeField] Vector2 startPos;
+    
 
     GameObject owner;
 
@@ -49,7 +50,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
     void Start()
     {
         OnBossStateChanged += (from, to) => StateChanged(from, to);
-        transform.position = startPos;
+        //transform.position = startPos;
         currentMinions = new List<Enemy>();
         //InvokeRepeating("RepeatingPopUp", 0f, 5f);
         State = BossStates.idle;
@@ -107,7 +108,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
             yield return new WaitForSeconds(timeToNextAttack);
             State = BossStates.attack;
             //GetComponentInChildren<Animator>().Play("BossHungry");
-            GetComponentInChildren<Animator>().Play("BossBat");
+            PlayAnimationIfHasState("BossBat");
         }
     }
     
@@ -131,7 +132,8 @@ public class Boss : MonoBehaviour, IDamageReceiver
         StartCoroutine(MoveToAttackPoint());
         IEnumerator MoveToAttackPoint()
         {
-            GetComponent<BossMovement>().Move(attackMoveTime, GetComponent<BossMovement>().GetFurthestAwayScatterPoint(attackSpot.transform.position).transform.position, attackSpot.transform.position);
+            //GetComponent<BossMovement>().Move(attackMoveTime, GetComponent<BossMovement>().GetFurthestAwayScatterPoint(attackSpot.transform.position).transform.position, attackSpot.transform.position);
+            GetComponent<BossMovement>().Move(attackMoveTime, attackStartPos, attackSpot.transform.position);
             yield return new WaitForSeconds(attackMoveTime);
             //Do get ready to eat visual?
             State = BossStates.eating;
@@ -144,7 +146,13 @@ public class Boss : MonoBehaviour, IDamageReceiver
         float pauseBeforeLeaving = 2f;
         GetComponentInChildren<BossDamage>().AllowCollisions(false);
         GetComponent<BossAttack>().InterruptAttack();
-        GetComponent<SoundController>().PlayClip(0);
+
+        //This part is hopefully temporary
+        SoundController sc = GetComponent<SoundController>();
+        if (sc != null)
+        {
+            GetComponent<SoundController>().PlayClip(0);
+        }
         
         if(hurter != null)
         {
@@ -163,12 +171,13 @@ public class Boss : MonoBehaviour, IDamageReceiver
 
         if (lastRound)
         {
-            GetComponentInChildren<Animator>().Play("BossDefeat"); //Should be boss escaping. Or scream face
+            //Should be boss escaping. Or scream face
+            PlayAnimationIfHasState("BossDefeat");
             LeaveLevel(3f);
         }
         else
         {
-            GetComponentInChildren<Animator>().Play("BossStaggered");
+            PlayAnimationIfHasState("BossStaggered");
             LeaveScreen(pauseBeforeLeaving,leaveTime, true);
         }
         
@@ -193,7 +202,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
         IEnumerator Move()
         {
             yield return new WaitForSeconds(initialWaitTime);
-            GetComponentInChildren<Animator>().Play("BossPoof");
+            PlayAnimationIfHasState("BossPoof");
             yield return new WaitForSeconds(.25f);
             
             GetComponent<BossMovement>().Move(time, transform.position, closest.transform.position);
@@ -202,11 +211,11 @@ public class Boss : MonoBehaviour, IDamageReceiver
             {
                 SpawnAccruedDamage(GetComponent<BossAttack>().GetMostRecentlyAttackedPoints());
                 GetComponent<BossAttack>().ClearMostRecentlyAttackedPoints();
-                GetComponentInChildren<Animator>().Play("BossHurt");
+                PlayAnimationIfHasState("BossHurt");
             }
             else
             {
-                GetComponentInChildren<Animator>().Play("BossFull");
+                PlayAnimationIfHasState("BossFull");
             }
             
             yield return new WaitForSeconds(time);
@@ -272,6 +281,23 @@ public class Boss : MonoBehaviour, IDamageReceiver
     {
         State = BossStates.hurt;
         Hurt(gameObject);
+    }
+
+    public void PlayAnimationIfHasState(string state)
+    {
+        var anim = GetComponentInChildren<Animator>();
+
+        if(anim != null)
+        {
+            var stateId = Animator.StringToHash(state);
+            var hasState = GetComponentInChildren<Animator>().HasState(0, stateId);
+
+            if (hasState)
+            {
+                anim.Play(state);
+            }
+        }
+        
     }
 }
 

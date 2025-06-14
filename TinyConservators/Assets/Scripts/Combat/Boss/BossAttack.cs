@@ -46,15 +46,15 @@ public class BossAttack : MonoBehaviour
 
     public AttackPoint ChooseNextAttackPoint()
     {
-        
+
         /*AttackPoint chosenAttackPoint = null;
         if(availibleAttackPoints.Count > 0)
         {
             chosenAttackPoint = availibleAttackPoints[Random.Range(0, availibleAttackPoints.Count)];
             availibleAttackPoints.Remove(chosenAttackPoint);
-        }
-        currentAttackPoint = chosenAttackPoint;
-        mostRecentlyAttackedPoints.Add(chosenAttackPoint);*/
+        }*/
+        currentAttackPoint = availibleAttackPoints[0];
+        //mostRecentlyAttackedPoints.Add(chosenAttackPoint);
         return availibleAttackPoints[0];
     }
 
@@ -72,12 +72,14 @@ public class BossAttack : MonoBehaviour
         IEnumerator Eat()
         {
             //Debug.Log("Eating");
-            GetComponentInChildren<Animator>().Play("BossPoof");
+            //GetComponentInChildren<Animator>().Play("BossPoof");
+            GetComponent<Boss>().PlayAnimationIfHasState("BossPoof");
             GetComponent<RadialPush2D>().PushAway();
             yield return new WaitForSeconds(.25f);
-            GetComponentInChildren<Animator>().Play("BossAttack");
+            //GetComponentInChildren<Animator>().Play("BossAttack");
+            GetComponent<Boss>().PlayAnimationIfHasState("BossAttack");
             GetComponentInChildren<BossDamage>().AllowCollisions(true);
-            bubble.StartShowing();
+            //bubble.StartShowing();
             GetComponent<BossItemManager>().SpawnObjects(amountOfProtection, speedOfProtection, sizeOfProtection);
 
 
@@ -86,7 +88,7 @@ public class BossAttack : MonoBehaviour
             {
                 time += Time.deltaTime;
                 //damageTimer += Time.deltaTime;
-                bubble.ChangeBubbleSize(time, maxEatTime);
+                //bubble.ChangeBubbleSize(time, maxEatTime);
                 
                 currentAttackPoint.Damage(time/maxEatTime);
 
@@ -95,10 +97,12 @@ public class BossAttack : MonoBehaviour
                     //Debug.Log("Heading off");
                     eating = false;
                     GetComponent<Boss>().State = BossStates.walkOff;
-                    GetComponentInChildren<Animator>().Play("BossPoof");
+                    //GetComponentInChildren<Animator>().Play("BossPoof");
+                    GetComponent<Boss>().PlayAnimationIfHasState("BossPoof");
                     yield return new WaitForSeconds(.25f);
-                    GetComponentInChildren<Animator>().Play("BossFull");
-                    bubble.PopBubble();
+                    //GetComponentInChildren<Animator>().Play("BossFull");
+                    GetComponent<Boss>().PlayAnimationIfHasState("BossFull");
+                    //bubble.PopBubble();
                     GetComponentInChildren<BossDamage>().AllowCollisions(false);
                     GetComponent<BossItemManager>().DespawnObjects();
 
@@ -111,7 +115,7 @@ public class BossAttack : MonoBehaviour
 
     public void InterruptAttack()
     {
-        bubble.PopBubble();
+        //bubble.PopBubble();
         GetComponent<BossItemManager>().DespawnObjects();
         StopAllCoroutines();
     }
