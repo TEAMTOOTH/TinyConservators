@@ -5,6 +5,7 @@ public class MoveVisual : MonoBehaviour, ILevelFlowComponent
     [SerializeField] GameObject visualMove;
     [SerializeField] float moveTime;
     [SerializeField] int moveIndex;
+    [SerializeField] bool parallell;
     
 
     IVisualMove [] move;
@@ -23,6 +24,13 @@ public class MoveVisual : MonoBehaviour, ILevelFlowComponent
 
         move[moveIndex].Move(moveTime);
 
-        Invoke("FinishSection", moveTime);
+        if (parallell)
+        {
+            FinishSection();
+        }
+        else
+        {
+            Invoke("FinishSection", moveTime);
+        }
     }
 }

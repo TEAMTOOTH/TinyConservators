@@ -46,15 +46,16 @@ public class BossAttack : MonoBehaviour
 
     public AttackPoint ChooseNextAttackPoint()
     {
-        AttackPoint chosenAttackPoint = null;
+        
+        /*AttackPoint chosenAttackPoint = null;
         if(availibleAttackPoints.Count > 0)
         {
             chosenAttackPoint = availibleAttackPoints[Random.Range(0, availibleAttackPoints.Count)];
             availibleAttackPoints.Remove(chosenAttackPoint);
         }
         currentAttackPoint = chosenAttackPoint;
-        mostRecentlyAttackedPoints.Add(chosenAttackPoint);
-        return chosenAttackPoint;
+        mostRecentlyAttackedPoints.Add(chosenAttackPoint);*/
+        return availibleAttackPoints[0];
     }
 
     public void Attack()
