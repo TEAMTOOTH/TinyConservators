@@ -77,6 +77,7 @@ public class Player : MonoBehaviour, IDamageReceiver
     public void Hurt(GameObject hurter)
     {
         GetComponent<IKnockoutable>().Knockout();
+
         GetComponent<SoundController>().PlayClip(0);
     }
 
