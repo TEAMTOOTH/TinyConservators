@@ -3,6 +3,7 @@ using UnityEngine;
 public class AttackPoint : MonoBehaviour
 {
     [SerializeField] Sprite[] visuals;
+    [SerializeField] float damagePerStep;
 
     SpriteRenderer visual;
     int damageProgress;
@@ -52,7 +53,6 @@ public class AttackPoint : MonoBehaviour
         {
             totalDamage = damageStep;
             DamagePainting();
-            Debug.Log(damageStep);
         }
         
 
@@ -80,12 +80,11 @@ public class AttackPoint : MonoBehaviour
 
     void DamagePainting()
     {
-        damageToPainting +=  0.034f;
+        damageToPainting +=  damagePerStep;
         //damageToPainting += .1f;
 
         int index = Mathf.FloorToInt(damageToPainting * damageSteps);
         index = Mathf.Clamp(index, 0, visuals.Length - 1);
-        Debug.Log("Index " + index);
         visual.sprite = visuals[index];
         
     }

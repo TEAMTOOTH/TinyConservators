@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &188306224
 Transform:
   m_ObjectHideFlags: 0
@@ -271,7 +271,7 @@ Transform:
   m_GameObject: {fileID: 364489458}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14, y: -2, z: 0}
+  m_LocalPosition: {x: 14, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -386,8 +386,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 1216931699}
-  moveTime: 3
-  moveIndex: 0
+  moveTime: 2
+  moveIndex: 1
+  parallell: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,6 +702,7 @@ MonoBehaviour:
   visualMove: {fileID: 519420028}
   moveTime: 2
   moveIndex: 0
+  parallell: 0
 --- !u!1 &799125869
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +750,7 @@ MonoBehaviour:
   visualMove: {fileID: 364489458}
   moveTime: 3
   moveIndex: 0
+  parallell: 0
 --- !u!1 &1050024354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1042,7 @@ GameObject:
   - component: {fileID: 1216931702}
   - component: {fileID: 1216931701}
   - component: {fileID: 1216931700}
+  - component: {fileID: 1216931705}
   - component: {fileID: 1216931703}
   - component: {fileID: 1216931704}
   m_Layer: 0
@@ -1131,8 +1135,8 @@ Transform:
   m_GameObject: {fileID: 1216931699}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.37, y: -1.98, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalPosition: {x: 0, y: -9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1149,7 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54395545a46fc704589d5f03117f7c45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPosition: {x: -13, y: -3, z: 0}
+  endPosition: {x: -13, y: 0, z: 0}
 --- !u!95 &1216931704
 Animator:
   serializedVersion: 7
@@ -1172,6 +1176,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1216931705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216931699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54395545a46fc704589d5f03117f7c45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1244142861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,6 +1532,7 @@ MonoBehaviour:
   visualMove: {fileID: 410174203}
   moveTime: 1
   moveIndex: 0
+  parallell: 0
 --- !u!1 &1945892187
 GameObject:
   m_ObjectHideFlags: 0

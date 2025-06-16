@@ -79,7 +79,12 @@ public class BossAttack : MonoBehaviour
             //GetComponentInChildren<Animator>().Play("BossAttack");
             GetComponent<Boss>().PlayAnimationIfHasState("BossAttack");
             GetComponentInChildren<BossDamage>().AllowCollisions(true);
-            //bubble.StartShowing();
+            
+            if(bubble != null)
+            {
+                bubble.StartShowing();
+            }
+            
             GetComponent<BossItemManager>().SpawnObjects(amountOfProtection, speedOfProtection, sizeOfProtection);
             currentAttackPoint.NewAttack();
 
@@ -89,7 +94,11 @@ public class BossAttack : MonoBehaviour
             {
                 time += Time.deltaTime;
                 //damageTimer += Time.deltaTime;
-                //bubble.ChangeBubbleSize(time, maxEatTime);
+                
+                if(bubble != null)
+                {
+                    bubble.ChangeBubbleSize(time, maxEatTime);
+                }
                 
                 currentAttackPoint.Damage(time/maxEatTime);
 
@@ -103,7 +112,12 @@ public class BossAttack : MonoBehaviour
                     yield return new WaitForSeconds(.25f);
                     //GetComponentInChildren<Animator>().Play("BossFull");
                     GetComponent<Boss>().PlayAnimationIfHasState("BossFull");
-                    //bubble.PopBubble();
+
+                    if (bubble != null)
+                    {
+                        bubble.PopBubble();
+                    }
+
                     GetComponentInChildren<BossDamage>().AllowCollisions(false);
                     GetComponent<BossItemManager>().DespawnObjects();
 
@@ -117,7 +131,13 @@ public class BossAttack : MonoBehaviour
 
     public void InterruptAttack()
     {
-        //bubble.PopBubble();
+        
+        if (bubble != null)
+        {
+            bubble.PopBubble();
+        }
+
+
         GetComponent<BossItemManager>().DespawnObjects();
         StopAllCoroutines();
     }

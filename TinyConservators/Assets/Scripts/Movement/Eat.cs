@@ -15,7 +15,7 @@ public class Eat : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IEatable eatObject = collision.GetComponent<IEatable>();
-        if(eatObject != null && !IsCarryingFood())
+        if(eatObject != null && !IsCarryingFood() && !GetComponentInParent<IKnockoutable>().IsKnockedOut())
         {
             if (eatObject.Eatable())
             {

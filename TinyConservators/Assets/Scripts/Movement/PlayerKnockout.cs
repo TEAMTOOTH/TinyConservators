@@ -23,6 +23,7 @@ public class PlayerKnockout : MonoBehaviour, IKnockoutable
             StartCoroutine(statusEnumerator);
 
             GetComponent<Player>().SetMoveState(false);
+            gameObject.layer = LayerMask.NameToLayer("Knockout");
             isKnockedOut = true;
             GetComponent<VisualController>().UpdatePart(3);
         }
@@ -49,6 +50,7 @@ public class PlayerKnockout : MonoBehaviour, IKnockoutable
     {
         GetComponent<Player>().SetMoveState(true);
         GetComponent<VisualController>().UpdatePart(0);
+        gameObject.layer = LayerMask.NameToLayer("Player");
         isKnockedOut = false;
     }
 
