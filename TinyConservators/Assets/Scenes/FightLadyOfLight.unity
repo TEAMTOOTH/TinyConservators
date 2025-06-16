@@ -1529,7 +1529,7 @@ MonoBehaviour:
   timeBeforeInitialAttack: 2
   minimumRepeatTime: 2
   maximumRepeatTime: 4
-  maxAttackTime: 10
+  maxAttackTime: 15
   lastAttack: 0
   amountOfProtectionItems: 0
   totalTimeOfRevolutionOfProtectionItems: 2
@@ -3386,10 +3386,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2744516091044318814, guid: 54213237a1f4e784eaf9474aa1079c0f, type: 3}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 986033884968341864, guid: 18da558d6d490544fad7c8db03ee94b1, type: 3}
     - target: {fileID: 3106494231304081321, guid: 54213237a1f4e784eaf9474aa1079c0f, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2677811852021164017, guid: 7c1e24f42240aa14685e300ba8d1bffc, type: 3}
+    - target: {fileID: 3106494231304081321, guid: 54213237a1f4e784eaf9474aa1079c0f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4941448689794339020, guid: 54213237a1f4e784eaf9474aa1079c0f, type: 3}
       propertyPath: attackSpots
       value: 
@@ -3880,7 +3888,7 @@ MonoBehaviour:
   timeBeforeInitialAttack: 2
   minimumRepeatTime: 2
   maximumRepeatTime: 4
-  maxAttackTime: 10
+  maxAttackTime: 15
   lastAttack: 0
   amountOfProtectionItems: 2
   totalTimeOfRevolutionOfProtectionItems: 3
@@ -5595,10 +5603,10 @@ MonoBehaviour:
   timeBeforeInitialAttack: 1
   minimumRepeatTime: 3
   maximumRepeatTime: 5
-  maxAttackTime: 8
+  maxAttackTime: 15
   lastAttack: 1
   amountOfProtectionItems: 4
-  totalTimeOfRevolutionOfProtectionItems: 3
+  totalTimeOfRevolutionOfProtectionItems: 4
   radiusOfProtectionCircle: 2
 --- !u!1 &1510535345
 GameObject:
