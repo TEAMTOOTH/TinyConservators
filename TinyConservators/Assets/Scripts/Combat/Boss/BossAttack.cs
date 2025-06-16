@@ -81,6 +81,7 @@ public class BossAttack : MonoBehaviour
             GetComponentInChildren<BossDamage>().AllowCollisions(true);
             //bubble.StartShowing();
             GetComponent<BossItemManager>().SpawnObjects(amountOfProtection, speedOfProtection, sizeOfProtection);
+            currentAttackPoint.NewAttack();
 
 
 
@@ -105,6 +106,7 @@ public class BossAttack : MonoBehaviour
                     //bubble.PopBubble();
                     GetComponentInChildren<BossDamage>().AllowCollisions(false);
                     GetComponent<BossItemManager>().DespawnObjects();
+
 
                 }
                 yield return null;

@@ -17,9 +17,6 @@ public class Boss : MonoBehaviour, IDamageReceiver
     [Header("Attack timing")]
     [SerializeField] float attackMoveTime;
 
-
-    
-
     GameObject owner;
 
     BossStates state;
@@ -210,7 +207,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
             if (hasBeenChasedAway)
             {
                 SpawnAccruedDamage(GetComponent<BossAttack>().GetMostRecentlyAttackedPoints());
-                GetComponent<BossAttack>().ClearMostRecentlyAttackedPoints();
+                
                 PlayAnimationIfHasState("BossHurt");
             }
             else
@@ -220,19 +217,13 @@ public class Boss : MonoBehaviour, IDamageReceiver
             
             yield return new WaitForSeconds(time);
             
-            if (hasBeenChasedAway)
-            {
-                if (owner != null)
-                {
-                    owner.GetComponent<ILevelFlowComponent>()?.FinishSection();
-                    owner = null;
-                }
-            }
-            else
-            {
-                State = BossStates.readying;
-            }
             
+            if (owner != null)
+            {
+                owner.GetComponent<ILevelFlowComponent>()?.FinishSection();
+                owner = null;
+            }
+             
         }
     }
 
