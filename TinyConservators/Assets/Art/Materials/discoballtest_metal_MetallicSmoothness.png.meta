@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      discoballtest_metal_MetallicSmoothness_0: 1588524872196341627
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

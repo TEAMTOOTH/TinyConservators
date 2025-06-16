@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      clock_test_mapped_red_arms_AlbedoTransparency_0: 4620619763988798676
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

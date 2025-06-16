@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      clock_test_mapped_bell_yellow_AlbedoTransparency_0: 2164925055349552020
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
