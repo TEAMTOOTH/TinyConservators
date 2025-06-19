@@ -106,7 +106,7 @@ public class AttackPoint : MonoBehaviour
 
     public float GetAmountOfDamage()
     {
-        return damagePercentage;
+        return damageToPainting;
     }
 
 }

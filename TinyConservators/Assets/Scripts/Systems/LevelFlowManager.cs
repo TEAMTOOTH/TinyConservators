@@ -39,7 +39,7 @@ public class LevelFlowManager : MonoBehaviour
         GameObject g = GameObject.FindGameObjectWithTag("StatTracker");
         if (g != null)
         {
-            g.GetComponent<StatTracker>().SetStats();
+            g.GetComponent<StatTracker>().SetStats(0);
         }
         SceneManager.LoadScene(3);
     }
