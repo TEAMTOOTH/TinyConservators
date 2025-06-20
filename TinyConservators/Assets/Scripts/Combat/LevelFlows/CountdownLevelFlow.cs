@@ -5,8 +5,11 @@ using System.Collections;
 public class CountdownLevelFlow : MonoBehaviour, ILevelFlowComponent
 {
 
-    [SerializeField] TextMeshProUGUI countDownText;
+    //[SerializeField] TextMeshProUGUI countDownText;
+    [SerializeField] TMP_Text countDownText;
     [SerializeField] int countDownAmount;
+
+    [SerializeField] bool parallell;
 
     LevelFlowManager owner;
     public void FinishSection()
@@ -21,6 +24,12 @@ public class CountdownLevelFlow : MonoBehaviour, ILevelFlowComponent
         countDownText.gameObject.SetActive(true);
         countDownText.text = countDownAmount.ToString();
         CountDown();
+
+        if (parallell)
+        {
+            FinishSection();
+        }
+
         
     }
 
@@ -43,6 +52,7 @@ public class CountdownLevelFlow : MonoBehaviour, ILevelFlowComponent
                     countDownText.text = Mathf.Round(totalCountDown).ToString();
                 }
                 yield return null;
+
             }
             
             
@@ -53,7 +63,12 @@ public class CountdownLevelFlow : MonoBehaviour, ILevelFlowComponent
             //}
             
             countDownText.gameObject.SetActive(false);
-            FinishSection();
+
+            if (!parallell)
+            {
+                FinishSection();
+            }
+            
         }
     }
 
