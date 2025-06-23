@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class Level : MonoBehaviour
 {
     [SerializeField] float levelLength;
+    [SerializeField] bool spawnPlayersVisually;
 
     IInterstitial interstitial;
     public UnityEvent onStart;
@@ -33,10 +34,12 @@ public class Level : MonoBehaviour
             yield return new WaitForSeconds(interstitial.GetLength());
             interstitial.EndInterstitial();
         }*/
-        
-        onStart.Invoke();
 
-        FreezePlayers(false, players);
+        //yield return new WaitForSeconds(3f);
+        
+        //onStart.Invoke();
+
+        
         //yield return new WaitForSeconds(levelLength);
         //onEnd.Invoke();
         
@@ -68,7 +71,15 @@ public class Level : MonoBehaviour
     {
         for(int i = 0; i < players.Length; i++)
         {
-            players[i].transform.position = spawnPoints[i].transform.position;
+            //players[i].transform.parent = spawnPoints[i].transform;
+            players[i].transform.localPosition = spawnPoints[i].transform.position;
+
+            if(spawnPlayersVisually)
+                spawnPoints[i].GetComponent<SpawnPoint>().Spawn(players[i]);
+            
+            
+
+            //players[i].GetComponent<Player>().ShowVisual(false);
         }
     } 
 }

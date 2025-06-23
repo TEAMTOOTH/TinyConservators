@@ -188,6 +188,17 @@
                 },
                 {
                     "name": "",
+                    "id": "55e40de1-a838-4889-bf0b-86dde8500b3f",
+                    "path": "<WebGLGamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";NesGamePad",
+                    "action": "PrimaryAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "26506d98-9de8-4dd0-bc38-d5899482b53f",
                     "path": "<Keyboard>/backspace",
                     "interactions": "",
@@ -255,6 +266,11 @@
                     "isOR": false
                 }
             ]
+        },
+        {
+            "name": "NesGamePad",
+            "bindingGroup": "NesGamePad",
+            "devices": []
         }
     ]
 }

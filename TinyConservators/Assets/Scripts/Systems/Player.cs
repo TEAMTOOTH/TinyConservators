@@ -15,7 +15,7 @@ public class Player : MonoBehaviour, IDamageReceiver
         //Randomize players before allowing players to customize.
         Debug.Log("Initialize");
 
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
 
         OnPlayerStateChanged += (from, to) => StateChanged(from, to);
 
@@ -117,8 +117,8 @@ public class Player : MonoBehaviour, IDamageReceiver
     //Only a callback for testing, integrate this with the customizer!
     public void DoneCustomizing()
     {
-        State = PlayerStates.moving;
-        GetComponentInChildren<CharacterCustomizer>().enabled = false;
+        //State = PlayerStates.moving;
+        //GetComponentInChildren<CharacterCustomizer>().enabled = false;
     }
 
     public void Customize()
@@ -141,6 +141,11 @@ public class Player : MonoBehaviour, IDamageReceiver
             yield return new WaitForSeconds(time);
             GetComponentInParent<VisualController>().UpdatePart(to);
         }
+    }
+
+    public void ShowVisual(bool state)
+    {
+        GetComponentInChildren<SpriteRenderer>().enabled = state;
     }
 
     //Not sure what this is?
