@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 using System.Globalization;
 
-public class PercentageGetter : MonoBehaviour
+public class PercentageGetterInWorld : MonoBehaviour
 {
     [SerializeField] int statToGet;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,20 +15,14 @@ public class PercentageGetter : MonoBehaviour
         if (g != null)
         {
             s = g.GetComponent<StatTracker>();
-            GetComponent<TextMeshProUGUI>().text = $"{(s.GetDamagePercentage(statToGet) * 100):F2}%";
+            GetComponent<TextMeshPro>().text = $"{(s.GetDamagePercentage(statToGet) * 100):F2}%";
         }
         else 
         {
             Debug.Log("Setting text to 100%");
-            GetComponent<TextMeshProUGUI>().text = $"{100.00:F2}%";
+            GetComponent<TextMeshPro>().text = $"{100.00:F2}%";
         }
         
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 }

@@ -74,7 +74,11 @@ public class BossAttack : MonoBehaviour
             //Debug.Log("Eating");
             //GetComponentInChildren<Animator>().Play("BossPoof");
             GetComponent<Boss>().PlayAnimationIfHasState("BossPoof");
-            GetComponent<RadialPush2D>().PushAway();
+
+            if(GetComponent<RadialPush2D>() != null)
+            {
+                GetComponent<RadialPush2D>().PushAway();
+            }
             yield return new WaitForSeconds(.25f);
             //GetComponentInChildren<Animator>().Play("BossAttack");
             GetComponent<Boss>().PlayAnimationIfHasState("BossAttack");

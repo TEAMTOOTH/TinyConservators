@@ -601,19 +601,7 @@ MonoBehaviour:
     m_ActionId: ef4113a4-3f43-4459-acbd-0149c8c6cbab
     m_ActionName: 'Player/DebugConfirm[/Keyboard/delete]'
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5716680796236877587}
-        m_TargetAssemblyTypeName: FlyingMovement, Assembly-CSharp
-        m_MethodName: HoldToFly
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 8c597714-5af1-49ce-995e-c93499110849
     m_ActionName: 'Player/SecondaryAction[/Keyboard/m]'
   m_NeverAutoSwitchControlSchemes: 0

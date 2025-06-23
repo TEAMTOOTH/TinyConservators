@@ -78,9 +78,6 @@ public class SpiralMover : MonoBehaviour, IVisualMove
     {
         elapsedTime = 0f;
 
-        
-
-
         initialPosition = startPoint != null ? startPoint.position : transform.position;
         finalPosition = endPoint != null ? endPoint.position : transform.position;
 

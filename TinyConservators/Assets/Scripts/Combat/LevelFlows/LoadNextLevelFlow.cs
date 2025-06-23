@@ -4,6 +4,7 @@ using UnityEngine;
 public class LoadNextLevelFlow : MonoBehaviour, ILevelFlowComponent
 {
     [SerializeField] float loadLength;
+    [SerializeField] int levelNumberForStats;
     public void FinishSection()
     {
         GetComponent<SceneLoader>().LoadScene(loadLength);
@@ -14,7 +15,7 @@ public class LoadNextLevelFlow : MonoBehaviour, ILevelFlowComponent
         GameObject g = GameObject.FindGameObjectWithTag("StatTracker");
         if(g != null)
         {
-            g.GetComponent<StatTracker>().SetStats();
+            g.GetComponent<StatTracker>().SetStats(levelNumberForStats);
         }
 
         FinishSection();

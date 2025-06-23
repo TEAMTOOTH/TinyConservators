@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CharacterCreationScene.unity
     guid: a1c5f85b31e005f47976a64e2a8b94c4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/InterstitialScene.unity
     guid: ff0188b1ecb21244397fe6ea711716a7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FightCount.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InterstitialAllOfThem.unity
     guid: 1110e58a94d874e46ab0bc5377eac4cd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FightFinal.unity
     guid: cb575fc4c775cfa419795cb90136cce6
   - enabled: 1
