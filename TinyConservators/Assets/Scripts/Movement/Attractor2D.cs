@@ -53,8 +53,16 @@ public class Attractor2D : MonoBehaviour, IVisualMove
         IEnumerator SetAttract()
         {
             attract = true;
+            if(GetComponent<VisualTurnOffCollider>() != null)
+            {
+                GetComponent<VisualTurnOffCollider>().shouldBeEnabled = true;
+            }
             yield return new WaitForSeconds(time);
             attract = false;
+            if (GetComponent<VisualTurnOffCollider>() != null)
+            {
+                GetComponent<VisualTurnOffCollider>().shouldBeEnabled = false;
+            }
         }
     }
 }

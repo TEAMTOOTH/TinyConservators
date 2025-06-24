@@ -15,14 +15,16 @@ public class Level : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     IEnumerator Start()
     {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        FreezePlayers(true, players);
+        //GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        //FreezePlayers(true, players);
 
          
-        spawnPoints = GetComponentsInChildren<SpawnPoint>();
-        PutPlayersIntoPosition(players);
+        //spawnPoints = GetComponentsInChildren<SpawnPoint>();
+        
 
-        GameObject g = GameObject.FindGameObjectWithTag("Interstitial");
+        //PutPlayersIntoPosition(players);
+
+        //GameObject g = GameObject.FindGameObjectWithTag("Interstitial");
 
         yield return null;
 
@@ -51,35 +53,4 @@ public class Level : MonoBehaviour
         return spawnPoints;
     }
 
-    void FreezePlayers(bool state, GameObject[] players)
-    {
-        for(int i = 0; i < players.Length; i++)
-        {
-            if (state)
-            {
-                players[i].GetComponent<Player>().State = PlayerStates.paused;
-            }
-            else
-            {
-                players[i].GetComponent<Player>().State = PlayerStates.moving;
-            }
-            
-        }
-    }
-
-    void PutPlayersIntoPosition(GameObject[] players)
-    {
-        for(int i = 0; i < players.Length; i++)
-        {
-            //players[i].transform.parent = spawnPoints[i].transform;
-            players[i].transform.localPosition = spawnPoints[i].transform.position;
-
-            if(spawnPlayersVisually)
-                spawnPoints[i].GetComponent<SpawnPoint>().Spawn(players[i]);
-            
-            
-
-            //players[i].GetComponent<Player>().ShowVisual(false);
-        }
-    } 
 }

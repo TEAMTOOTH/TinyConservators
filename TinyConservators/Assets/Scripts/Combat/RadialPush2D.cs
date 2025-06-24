@@ -17,10 +17,10 @@ public class RadialPush2D : MonoBehaviour
             Rigidbody2D rb = col.attachedRigidbody;
             if (rb != null && rb != GetComponent<Rigidbody2D>())
             {
+                rb.GetComponent<IKnockoutable>().Knockout();
                 Vector2 direction = (rb.position - (Vector2)transform.position).normalized;
                 rb.AddForce(direction * force, ForceMode2D.Impulse);
             }
-            Debug.Log(col);
         }
     }
 
@@ -29,7 +29,7 @@ public class RadialPush2D : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            PushAway();
+            //PushAway();
         }
     }
 

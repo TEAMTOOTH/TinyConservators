@@ -24,7 +24,6 @@ public class PlayerSpawnManager : MonoBehaviour
         Player p = player.GetComponent<Player>();
         if(p != null)
         {
-            
             StartCoroutine(wakeUpPlayer());
             IEnumerator wakeUpPlayer()
             {
@@ -37,7 +36,6 @@ public class PlayerSpawnManager : MonoBehaviour
                 sleepingPlayers[id].SetActive(false);
                 p.ShowVisual(true);
                 p.FullFreeze(false);
-
 
             }
             amountOfPlayersJoined++;

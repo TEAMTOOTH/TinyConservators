@@ -121,6 +121,17 @@ public class Player : MonoBehaviour, IDamageReceiver
         //GetComponentInChildren<CharacterCustomizer>().enabled = false;
     }
 
+    public void PauseMovement(float time)
+    {
+        StartCoroutine(PM());
+        IEnumerator PM ()
+        {
+            SetMoveState(false);
+            yield return new WaitForSeconds(time);
+            SetMoveState(true);
+        }
+    }
+
     public void Customize()
     {
         FullFreeze(true);
