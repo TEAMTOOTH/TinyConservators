@@ -27,7 +27,7 @@ public class SpawnPoint : MonoBehaviour
         player.GetComponent<Player>().PauseMovement(1f);
 
         player.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 0);
-        player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1 * pushForce, 0), ForceMode2D.Impulse);
+        player.GetComponent<Rigidbody2D>().AddForce(new Vector2(GetScreenSide() * -1 * pushForce, 0), ForceMode2D.Impulse);
         
     }
 
