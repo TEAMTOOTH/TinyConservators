@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -172,7 +173,25 @@ public class Player : MonoBehaviour, IDamageReceiver
     {
         return playerId;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Platform"))
+        {
+            PlayGroundHitParticleSystem();
+        }
+    }
+
+    void PlayGroundHitParticleSystem()
+    {
+        ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
+        if (particleSystem != null)
+            {
+                particleSystem.Play();
+            }
+    }
 }
+
 
 public enum PlayerStates
 {
