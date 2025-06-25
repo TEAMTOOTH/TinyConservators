@@ -12,17 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterCreationScene.unity
     guid: a1c5f85b31e005f47976a64e2a8b94c4
   - enabled: 1
-    path: Assets/Scenes/FightLadyOfLight.unity
-    guid: cbe2d5f334d01c14dbbed542cfd81118
-  - enabled: 0
-    path: Assets/Scenes/InterstitialScene.unity
-    guid: ff0188b1ecb21244397fe6ea711716a7
-  - enabled: 0
-    path: Assets/Scenes/FightCount.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/Scenes/InterstitialLadyOfLight.unity
     guid: 752ab06278f18bb44856f5aaf89bf17d
+  - enabled: 1
+    path: Assets/Scenes/FightLadyOfLight.unity
+    guid: cbe2d5f334d01c14dbbed542cfd81118
   - enabled: 1
     path: Assets/Scenes/InterstitialDampAndDry.unity
     guid: 884a90efb9e07af499916b2ec8aac45a
@@ -32,12 +26,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InterstitialAllOfThem.unity
     guid: 1110e58a94d874e46ab0bc5377eac4cd
-  - enabled: 0
-    path: Assets/Scenes/FightFinal.unity
-    guid: cb575fc4c775cfa419795cb90136cce6
+  - enabled: 1
+    path: Assets/Scenes/FightAllOfThem.unity
+    guid: 5fc2f2f803c6fdf4d9148749c9a8173e
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: 07bff2dd380a8d54880af1ec83926fd5
+  - enabled: 0
+    path: Assets/Scenes/InterstitialScene.unity
+    guid: ff0188b1ecb21244397fe6ea711716a7
+  - enabled: 0
+    path: Assets/Scenes/FightCount.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 0
+    path: Assets/Scenes/FightFinal.unity
+    guid: cb575fc4c775cfa419795cb90136cce6
   - enabled: 0
     path: Assets/Scenes/TestScene.unity
     guid: 6e8bd946db75e2d448e5710586c01592
