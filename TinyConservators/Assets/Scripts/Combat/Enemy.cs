@@ -39,6 +39,17 @@ public class Enemy : MonoBehaviour, IDamageReceiver
     {
         if (receiveDamage)
         {
+
+            ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
+
+            if (ps != null)
+            {
+                ps.Play();
+            }
+            else
+            {
+                Debug.Log("Could not find PS");
+            }
             State = EnemyStates.scatter;
             goblinVisual.SetActive(false);
             GetComponent<EnemyMovement>().ChangeSpeed(6f);
