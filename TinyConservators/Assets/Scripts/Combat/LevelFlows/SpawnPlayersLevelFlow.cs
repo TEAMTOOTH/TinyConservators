@@ -13,8 +13,6 @@ public class SpawnPlayersLevelFlow : MonoBehaviour, ILevelFlowComponent
         owner.ProgressFlow();
     }
 
-
-
     public void StartSection(LevelFlowManager flowManager)
     {
         owner = flowManager;

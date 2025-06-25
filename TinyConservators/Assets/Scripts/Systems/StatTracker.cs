@@ -13,7 +13,7 @@ public class StatTracker : MonoBehaviour
     {
         GameObject[] g = GameObject.FindGameObjectsWithTag("AttackPoint");
 
-        Debug.Log("Attackpoints" + g.Length);
+        //Debug.Log("Attackpoints" + g.Length);
 
         for(int i = 0; i < g.Length; i++)
         {

@@ -17,6 +17,9 @@ TagManager:
   - AttackPoint
   - StatTracker
   - LevelFlow
+  - FxTemporaire
+  - PlayerManager
+  - SpawnPoints
   layers:
   - Default
   - TransparentFX
