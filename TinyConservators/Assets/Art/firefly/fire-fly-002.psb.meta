@@ -5947,7 +5947,7 @@ ScriptedImporter:
     - name: antenna right lower
       guid: 5ce7df4e903e240df84b65e151080aa8
       position: {x: 176.52516, y: -50.685673, z: 0}
-      rotation: {x: 0, y: 0, z: 0.0013593178, w: 0.9999991}
+      rotation: {x: 0, y: 0, z: 0.0013593177, w: 0.9999991}
       length: 61.217564
       parentId: 1
       color:
@@ -6132,15 +6132,6 @@ ScriptedImporter:
         height: 100
       spriteId: 8800070c3b9a64d2da0d38390df2ede5
       bones: 0c0000000d000000
-      parentGroup: 0
-      order: 0
-    - spritePosition:
-        x: 714
-        y: 447
-        width: 141
-        height: 50
-      spriteId: 43810e4071b95452b9a367756cf6e18e
-      bones: 
       parentGroup: 0
       order: 0
     dimension: {x: 0, y: 0}
