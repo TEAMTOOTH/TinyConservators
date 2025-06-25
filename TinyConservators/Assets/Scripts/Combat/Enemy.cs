@@ -40,16 +40,7 @@ public class Enemy : MonoBehaviour, IDamageReceiver
         if (receiveDamage)
         {
 
-            ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
-
-            if (ps != null)
-            {
-                ps.Play();
-            }
-            else
-            {
-                Debug.Log("Could not find PS");
-            }
+            PlayParticleSystemInPlace();
             State = EnemyStates.scatter;
             goblinVisual.SetActive(false);
             GetComponent<EnemyMovement>().ChangeSpeed(6f);
@@ -209,6 +200,25 @@ public class Enemy : MonoBehaviour, IDamageReceiver
             }
             
         }
+    }
+
+    void PlayParticleSystemInPlace()
+    {
+        ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
+
+        if (ps != null)
+        {
+            ps.transform.parent = null;
+            ps.Play();
+            StartCoroutine(ReAttach());
+            IEnumerator ReAttach()
+            {
+                yield return new WaitForSeconds(1);
+                ps.transform.parent = transform;
+                ps.transform.localPosition = Vector2.zero;
+            }
+        }
+
     }
 
     //Maybe uneccecary obfuscation, but following code standard of the class

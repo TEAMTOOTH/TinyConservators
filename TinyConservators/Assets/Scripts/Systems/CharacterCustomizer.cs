@@ -40,7 +40,7 @@ public class CharacterCustomizer : MonoBehaviour
             
             if(GetComponentInParent<Player>().State == PlayerStates.customizing) 
             {
-                Debug.Log("Pressed selection button");
+                //Debug.Log("Pressed selection button");
                 GetComponentInParent<Player>().DoneCustomizing();
             }
         }

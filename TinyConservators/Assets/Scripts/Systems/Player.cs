@@ -21,7 +21,7 @@ public class Player : MonoBehaviour, IDamageReceiver
 
         playerId = id;
         
-        State = PlayerStates.customizing;
+        //State = PlayerStates.customizing;
 
         playerVisuals = GetComponent<VisualController>();
         
@@ -166,6 +166,11 @@ public class Player : MonoBehaviour, IDamageReceiver
         {
             GameObject.FindGameObjectWithTag("Interstitial").GetComponent<IInterstitial>().StartInterstitial();
         }
+    }
+
+    public int GetPlayerId()
+    {
+        return playerId;
     }
 }
 

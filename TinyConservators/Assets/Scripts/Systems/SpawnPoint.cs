@@ -22,13 +22,28 @@ public class SpawnPoint : MonoBehaviour
     {
         GameObject player = p;
 
-        player.transform.position = spawnPoint.position;
+        int playerId = p.GetComponent<Player>().GetPlayerId();
+
+        //Getting the player ID so that the players dont spawn inside eachother, but have an offset based on their playerID;
+
+
+        if(playerId > 2)
+        {
+            playerId -= 3;
+        }
+
+        int spawnOffset = playerId - 1;
+        //Debug.Log(p.GetComponent<Player>().GetPlayerId() + ", " + gameObject.name + " : " + spawnOffset);
+
+        player.transform.position = spawnPoint.position + new Vector3(0, spawnOffset);
+        p.GetComponent<Player>().GetPlayerId();
         player.GetComponent<Player>().FullFreeze(false);
         player.GetComponent<Player>().PauseMovement(1f);
+        player.GetComponent<Player>().ShowVisual(true);
 
         player.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 0);
         player.GetComponent<Rigidbody2D>().AddForce(new Vector2(GetScreenSide() * -1 * pushForce, 0), ForceMode2D.Impulse);
-        
+
     }
 
 
