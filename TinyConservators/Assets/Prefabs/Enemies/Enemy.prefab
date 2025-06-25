@@ -40,7 +40,7 @@ Transform:
   - {fileID: 7088011004963992078}
   - {fileID: 6630529746921258820}
   - {fileID: 3559138036469704184}
-  - {fileID: 665076675582277253}
+  - {fileID: 5204729355386797592}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1268559990732100298
@@ -534,7 +534,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &634069999083169767
+--- !u!1001 &5317784954108620666
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -544,7 +544,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 141433446842962269, guid: 720ea82936a2cb54d8582fa2dcb907c2, type: 3}
       propertyPath: m_Name
-      value: CFXR3 Hit Misc F Smoke 1
+      value: CFXR3 EnemyKnockOut
       objectReference: {fileID: 0}
     - target: {fileID: 141433446842962274, guid: 720ea82936a2cb54d8582fa2dcb907c2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -591,8 +591,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 720ea82936a2cb54d8582fa2dcb907c2, type: 3}
---- !u!4 &665076675582277253 stripped
+--- !u!4 &5204729355386797592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 141433446842962274, guid: 720ea82936a2cb54d8582fa2dcb907c2, type: 3}
-  m_PrefabInstance: {fileID: 634069999083169767}
+  m_PrefabInstance: {fileID: 5317784954108620666}
   m_PrefabAsset: {fileID: 0}
