@@ -1078,7 +1078,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowJoining: 0
-  joinManager: {fileID: 715078640}
 --- !u!1 &539803148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,7 +1598,7 @@ GameObject:
   - component: {fileID: 715078641}
   m_Layer: 0
   m_Name: PlayerJoining
-  m_TagString: Untagged
+  m_TagString: PlayerJoinManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

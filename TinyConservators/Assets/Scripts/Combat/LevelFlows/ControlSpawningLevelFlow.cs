@@ -4,16 +4,22 @@ using UnityEngine.InputSystem;
 public class ControlSpawningLevelFlow : MonoBehaviour, ILevelFlowComponent
 {
     [SerializeField] bool allowJoining;
-    [SerializeField] GameObject joinManager; 
+    GameObject joinManager; 
     
     PlayerInputManager pIM;
     PlayerSpawnManager pSM;
 
 
     LevelFlowManager owner;
+
+    void Start()
+    {
+        joinManager = GameObject.FindGameObjectWithTag("PlayerJoinManager");
+    }
+
     public void FinishSection()
     {
-        throw new System.NotImplementedException();
+        owner.ProgressFlow();
     }
 
     public void StartSection(LevelFlowManager flowManager)
@@ -31,6 +37,8 @@ public class ControlSpawningLevelFlow : MonoBehaviour, ILevelFlowComponent
         {
             pIM.DisableJoining();
         }
-        
+
+        pSM.SetInGame(true); // A bit dirty, but as far as I know it won't really affect anything later on, so why make it complicated.
+        FinishSection();
     }
 }
