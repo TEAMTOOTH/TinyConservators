@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: cfxr proc glow soft invert ab
+  m_Name: cfxr proc glow soft hdr ab 1
   m_Shader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -29,7 +29,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: e387f662afce60c4cbf4689043469d34, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0d7252197ff069a4bbb1d96808719b88, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -71,12 +71,12 @@ Material:
     - _DstBlendAlpha: 10
     - _FlipbookBlending: 0
     - _FlipbookMode: 0
-    - _GlowMax: 0
+    - _GlowMax: 1.5
     - _GlowMid: 2
-    - _GlowMin: 1.5
-    - _Glow_Pow: 0
-    - _HdrBoost: 0
-    - _HdrMultiply: 1
+    - _GlowMin: 0
+    - _Glow_Pow: 2
+    - _HdrBoost: 1
+    - _HdrMultiply: 6
     - _InvertDissolveTex: 0
     - _MaxValue: 2
     - _Mode: 0
@@ -106,7 +106,7 @@ Material:
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &8247394047587598275
+--- !u!114 &2070892993487663264
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
