@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FightAllOfThem.unity
     guid: 5fc2f2f803c6fdf4d9148749c9a8173e
   - enabled: 1
+    path: Assets/Scenes/InterstitialEnd.unity
+    guid: f0c8e619b632ed644acc7160e704bdb2
+  - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: 07bff2dd380a8d54880af1ec83926fd5
   - enabled: 0

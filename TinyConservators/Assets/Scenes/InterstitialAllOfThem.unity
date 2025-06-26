@@ -119,53 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &188306223
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 188306224}
-  - component: {fileID: 188306225}
-  m_Layer: 0
-  m_Name: Part 0.5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &188306224
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188306223}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1110465864}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &188306225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188306223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76a84937bf22cf48822c6154ac646e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationObject: {fileID: 1216931699}
-  timeBeforeNextNode: 0
-  nameOfAnimation: BossDefeat
 --- !u!1 &364489458
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +385,7 @@ GameObject:
   - component: {fileID: 500443307}
   - component: {fileID: 500443308}
   m_Layer: 0
-  m_Name: Part 2
+  m_Name: LevelFlowDDFlyOutOfPainting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -844,7 +797,7 @@ GameObject:
   - component: {fileID: 613945345}
   - component: {fileID: 613945346}
   m_Layer: 0
-  m_Name: Part 2.25
+  m_Name: LevelFlowMoveCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -976,7 +929,7 @@ GameObject:
   - component: {fileID: 629493642}
   - component: {fileID: 629493643}
   m_Layer: 0
-  m_Name: Part 9
+  m_Name: LevelFlowZoomInCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1025,7 +978,7 @@ GameObject:
   - component: {fileID: 676331825}
   - component: {fileID: 676331824}
   m_Layer: 0
-  m_Name: Part 10
+  m_Name: LevelFlowLoadNextLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1083,7 +1036,7 @@ GameObject:
   - component: {fileID: 703153727}
   - component: {fileID: 703153728}
   m_Layer: 0
-  m_Name: Part 2.8
+  m_Name: LevelFlowTeleportAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1149,54 +1102,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &799125869
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 799125870}
-  - component: {fileID: 799125871}
-  m_Layer: 0
-  m_Name: Part 7
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &799125870
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799125869}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1110465864}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &799125871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799125869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a71e32793b43fd479ae6ca1d79573b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visualMove: {fileID: 964631798}
-  moveTime: 3
-  moveIndex: 0
-  parallell: 0
 --- !u!1 &939271724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1235,7 @@ GameObject:
   - component: {fileID: 1050024355}
   - component: {fileID: 1050024356}
   m_Layer: 0
-  m_Name: Part 2.7
+  m_Name: LevelFlowTimePassed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1375,7 +1280,7 @@ GameObject:
   - component: {fileID: 1064575247}
   - component: {fileID: 1064575248}
   m_Layer: 0
-  m_Name: Part 5
+  m_Name: LevelFlowMoveTTLLDDintoPainting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1454,7 +1359,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 188306224}
   - {fileID: 1205543841}
   - {fileID: 500443307}
   - {fileID: 1925834450}
@@ -1471,8 +1375,6 @@ Transform:
   - {fileID: 1784928982}
   - {fileID: 1064575247}
   - {fileID: 1252498232}
-  - {fileID: 799125870}
-  - {fileID: 1975372199}
   - {fileID: 629493642}
   - {fileID: 676331823}
   m_Father: {fileID: 0}
@@ -1597,7 +1499,7 @@ GameObject:
   - component: {fileID: 1205543841}
   - component: {fileID: 1205543842}
   m_Layer: 0
-  m_Name: Part 1
+  m_Name: LevelFlowTimePassed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1987,7 +1889,7 @@ GameObject:
   - component: {fileID: 1252498232}
   - component: {fileID: 1252498233}
   m_Layer: 0
-  m_Name: Part 6
+  m_Name: LevelFlowDeactivateAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2034,7 +1936,7 @@ GameObject:
   - component: {fileID: 1331240463}
   - component: {fileID: 1331240464}
   m_Layer: 0
-  m_Name: Part 2.325
+  m_Name: LevelFlowTeleportDD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2080,7 +1982,7 @@ GameObject:
   - component: {fileID: 1475428870}
   - component: {fileID: 1475428871}
   m_Layer: 0
-  m_Name: Part 2.5
+  m_Name: LevelFlowJointAnchorLLAndDD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2129,7 +2031,7 @@ GameObject:
   - component: {fileID: 1550800709}
   - component: {fileID: 1550800710}
   m_Layer: 0
-  m_Name: Part 2.7
+  m_Name: LevelFlowUnparentLLAndDD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2349,7 +2251,7 @@ GameObject:
   - component: {fileID: 1742201478}
   - component: {fileID: 1742201479}
   m_Layer: 0
-  m_Name: Part 2.3
+  m_Name: LevelFlowTimePassed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2394,7 +2296,7 @@ GameObject:
   - component: {fileID: 1784928982}
   - component: {fileID: 1784928983}
   m_Layer: 0
-  m_Name: Part 4
+  m_Name: LevelFlowJoinTTLLDD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2565,7 +2467,7 @@ GameObject:
   - component: {fileID: 1905436524}
   - component: {fileID: 1905436525}
   m_Layer: 0
-  m_Name: Part 2.35
+  m_Name: LevelFlowMoveDD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2613,7 +2515,7 @@ GameObject:
   - component: {fileID: 1925834450}
   - component: {fileID: 1925834451}
   m_Layer: 0
-  m_Name: Part 2.1
+  m_Name: LevelFlowPlayBossAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2660,7 +2562,7 @@ GameObject:
   - component: {fileID: 1945769336}
   - component: {fileID: 1945769337}
   m_Layer: 0
-  m_Name: Part 2.6
+  m_Name: LevelFlowMoveLLAndDD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2784,53 +2686,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1975372198
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1975372199}
-  - component: {fileID: 1975372200}
-  m_Layer: 0
-  m_Name: Part 8
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1975372199
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975372198}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1110465864}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1975372200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975372198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a2a83856e2a3f14a8197d543918ddc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectsToChange:
-  - {fileID: 964631798}
-  active: 0
 --- !u!1 &1998316754
 GameObject:
   m_ObjectHideFlags: 0
@@ -2842,7 +2697,7 @@ GameObject:
   - component: {fileID: 1998316755}
   - component: {fileID: 1998316756}
   m_Layer: 0
-  m_Name: Part 2.4
+  m_Name: LevelFlowTeleportLadyOfLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
