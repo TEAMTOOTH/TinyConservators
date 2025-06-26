@@ -11,8 +11,11 @@ public class Boss : MonoBehaviour, IDamageReceiver
     [SerializeField] int pointsForKnockingOut;
 
     [SerializeField] GameObject bossVisual;
+    [SerializeField] GameObject bossMaze;
 
     [SerializeField] Vector2 attackStartPos;
+
+    [SerializeField] int levelIndex; //Naughty naughty, but at this point, it should be fine :D
 
     [Header("Attack timing")]
     [SerializeField] float attackMoveTime;
@@ -71,7 +74,6 @@ public class Boss : MonoBehaviour, IDamageReceiver
                 GetComponent<BossAttack>().Attack();
                 break;
             case BossStates.hurt:
-                //Hurt(null); Not great for code consistency, but saves alot of uneccecary variables and middle storage.
                 break;
             case BossStates.walkOff:
                 LeaveScreen(1f, 3f, false);
@@ -111,6 +113,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
     
     void Attack()
     {
+        //gameObject.layer = LayerMask.NameToLayer("Default");
         //bossVisual.transform.localScale = new Vector3(bossAttackSize, bossAttackSize, bossAttackSize);
         GameObject attackSpot = GetComponent<BossMovement>().FindAttackSpot();
         if (attackSpot == null)
@@ -144,6 +147,15 @@ public class Boss : MonoBehaviour, IDamageReceiver
         GetComponentInChildren<BossDamage>().AllowCollisions(false);
         GetComponent<BossAttack>().InterruptAttack();
 
+        //For better flow, "destroy" maze here
+        if(bossMaze != null)
+        {
+            bossMaze.SetActive(false);
+        }
+        
+
+        //gameObject.layer = LayerMask.NameToLayer("Knockout");
+
         //This part is hopefully temporary
         SoundController sc = GetComponent<SoundController>();
         if (sc != null)
@@ -170,6 +182,12 @@ public class Boss : MonoBehaviour, IDamageReceiver
         {
             //Should be boss escaping. Or scream face
             PlayAnimationIfHasState("BossDefeat");
+            GameObject g = GameObject.FindGameObjectWithTag("StatTracker");
+            if(g != null)
+            {
+                g.GetComponent<StatTracker>().SetBossInterstitialState(levelIndex, true);
+            }
+
             LeaveLevel(3f);
         }
         else
