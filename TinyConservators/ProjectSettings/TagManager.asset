@@ -20,6 +20,7 @@ TagManager:
   - FxTemporaire
   - PlayerManager
   - SpawnPoints
+  - PlayerJoinManager
   layers:
   - Default
   - TransparentFX
