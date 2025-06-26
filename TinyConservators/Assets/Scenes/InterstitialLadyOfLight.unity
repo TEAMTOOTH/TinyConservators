@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 188306224}
   - component: {fileID: 188306225}
   m_Layer: 0
-  m_Name: Part 0.5
+  m_Name: MusicStartLevelFlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
