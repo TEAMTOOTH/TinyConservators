@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2b4271f62e6de43ad9735194d5810a1b
+guid: 9e3a112279b9d48cdb1ee67c5a899657
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7943335064237349251
-    second: green-health-bar_0
+      213: -5829785964462689690
+    second: Boss-bubble23_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: green-health-bar_0
+      name: Boss-bubble23_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1796
-        height: 13
+        x: 24
+        y: 24
+        width: 953
+        height: 953
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 38995c3c7256c3e60800000000000000
-      internalID: 7943335064237349251
+      spriteID: 662b4a78d80781fa0800000000000000
+      internalID: -5829785964462689690
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      green-health-bar_0: 7943335064237349251
+      Boss-bubble23_0: -5829785964462689690
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

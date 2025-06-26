@@ -403,9 +403,9 @@ TextureImporter:
       name: health-bar-base_12
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 1794
+        width: 1796
         height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
