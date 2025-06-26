@@ -91,12 +91,17 @@ public class AttackPoint : MonoBehaviour
 
     public void FixDamage(float amount)
     {
-        damagePercentage -= amount;
-        if(amount < 0)
+        damageToPainting -= amount;
+        
+        if(damageToPainting < 0)
         {
-            amount = 0;
+            damageToPainting = 0;
         }
-        Damage(damagePercentage);
+
+        int index = Mathf.FloorToInt(damageToPainting * damageSteps);
+        index = Mathf.Clamp(index, 0, visuals.Length - 1);
+        visual.sprite = visuals[index];
+        //Damage(damagePercentage);
     }
 
     public int GetAmountOfVisualDamageSteps()

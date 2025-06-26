@@ -25,20 +25,29 @@ public class ControlSpawningLevelFlow : MonoBehaviour, ILevelFlowComponent
     public void StartSection(LevelFlowManager flowManager)
     {
         owner = flowManager;
-        pIM = joinManager.GetComponent<PlayerInputManager>();
-        pSM = joinManager.GetComponent<PlayerSpawnManager>();
-
-        if (allowJoining)
+        
+        if (joinManager != null)
         {
-            pIM.EnableJoining();
-            pSM.FindSpawnPoints();
+            pIM = joinManager.GetComponent<PlayerInputManager>();
+            pSM = joinManager.GetComponent<PlayerSpawnManager>();
+
+            if (allowJoining)
+            {
+                pIM.EnableJoining();
+                pSM.FindSpawnPoints();
+            }
+            else
+            {
+                pIM.DisableJoining();
+            }
+
+            pSM.SetInGame(true); // A bit dirty, but as far as I know it won't really affect anything later on, so why make it complicated.
         }
         else
         {
-            pIM.DisableJoining();
+            Debug.LogWarning("Could not find join manager! Skipping the join logic");
         }
-
-        pSM.SetInGame(true); // A bit dirty, but as far as I know it won't really affect anything later on, so why make it complicated.
+        
         FinishSection();
     }
 }

@@ -10,7 +10,6 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
     [SerializeField] float lifeTimeVariaton;
     [SerializeField] bool spittable;
     [SerializeField] bool flyBackSpeed;
-    [Range(0,1)]
     [SerializeField] float amountOfDamageFixedPerPickup;
 
     AttackPoint damageOwner;
@@ -21,7 +20,7 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
     void Start()
     {
         ChooseColor();
-        Invoke("AllowEating", 1f);
+        Invoke("AllowEating", .5f);
         Invoke("DestroyAfterSetTime", Random.Range(baseLifeTime - lifeTimeVariaton, baseLifeTime + lifeTimeVariaton));
     }
 
@@ -82,6 +81,7 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
     void AllowEating()
     {
         eatable = true;
+        GetComponent<Collider2D>().enabled = true;
     }
 
     public bool Spittable()
@@ -113,9 +113,63 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
 
             fixing = true;
             SetEatable(false);
+
+
+
+
+            float moveDuration = 0.6f;
             float time = 0f;
-           
-            //float moveTime = 1f;
+
+            Vector2 startPos = transform.position;
+            Vector2 endPos = damageOwner.transform.position;
+
+            // Calculate direction and midpoint
+            Vector2 direction = endPos - startPos;
+            Vector2 midPoint = (startPos + endPos) / 2f;
+
+            // Create large perpendicular offset for the whip arc
+            Vector2 offset = Vector2.Perpendicular(direction).normalized * 10f;
+            offset *= Random.value > 0.5f ? 1 : -1;
+
+            Vector2 controlPoint = midPoint + offset;
+
+            // Clamp control point to keep it on screen (orthographic + static camera)
+            Camera cam = Camera.main;
+            Vector2 screenMin = cam.ViewportToWorldPoint(Vector3.zero);
+            Vector2 screenMax = cam.ViewportToWorldPoint(Vector3.one);
+
+            // Keep a 1-unit margin inside screen edges
+            float margin = 1f;
+            controlPoint.x = Mathf.Clamp(controlPoint.x, screenMin.x + margin, screenMax.x - margin);
+            controlPoint.y = Mathf.Clamp(controlPoint.y, screenMin.y + margin, screenMax.y - margin);
+
+            // Animate along Bezier curve with strong acceleration
+            while (time < moveDuration)
+            {
+                time += Time.deltaTime;
+                float t = time / moveDuration;
+
+                // Aggressive acceleration for whip feel
+                float easedT = Mathf.Pow(t, 4);
+
+                // Quadratic Bezier curve formula
+                Vector2 pos = Mathf.Pow(1 - easedT, 2) * startPos +
+                              2 * (1 - easedT) * easedT * controlPoint +
+                              Mathf.Pow(easedT, 2) * endPos;
+
+                transform.position = pos;
+
+                yield return null;
+            }
+
+            transform.position = endPos;
+
+
+            //Play particle system
+
+
+
+            /*
 
             float speed = .1f;
 
@@ -139,12 +193,33 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
             }
 
             transform.position = endPos;
+            */
+
             //transform.localScale = endScale;
             damageOwner.FixDamage(amountOfDamageFixedPerPickup);
-            Destroy(gameObject);
+            Sparkle();
+            //Destroy(gameObject);
         }
         
 
+    }
+
+    void Sparkle()
+    {
+        StartCoroutine(SparkleAndDestroy());
+        IEnumerator SparkleAndDestroy()
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            if (GetComponentInChildren<ParticleSystem>() != null)
+            {
+                GetComponentInChildren<ParticleSystem>().Play();
+            }
+
+            yield return new WaitForSeconds(1f);
+            Destroy(gameObject);
+            
+        }
     }
 }
 

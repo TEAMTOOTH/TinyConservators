@@ -46,6 +46,7 @@ public class PlayerSpawnManager : MonoBehaviour
         //(playerInput);
         //Debug.Log(playerInput.gameObject);
         //Debug.Break();
+        Debug.Log(pm.GetAmountOfPlayers());
         SetUpPlayer(playerInput.gameObject, pm.GetAmountOfPlayers());
         
     }
@@ -60,6 +61,7 @@ public class PlayerSpawnManager : MonoBehaviour
         Player p = player.GetComponent<Player>();
         if(p != null)
         {
+
             if (!inGame)
             {
                 StartCoroutine(wakeUpPlayer());
@@ -69,6 +71,8 @@ public class PlayerSpawnManager : MonoBehaviour
                     p.transform.position = spawnPoints[id].transform.position;
                     p.FullFreeze(true);
                     p.ShowVisual(false);
+                    pm.OnPlayerJoined(player.GetComponent<Player>());
+
                     sleepingPlayers[id].GetComponent<Animator>().Play("WakeUp");
                     yield return new WaitForSeconds(wakeUpTime);
                     sleepingPlayers[id].SetActive(false);
@@ -79,11 +83,13 @@ public class PlayerSpawnManager : MonoBehaviour
             }
             else
             {
+
                 p.Initialize(id);
                 p.transform.position = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
                 p.FullFreeze(false);
+                pm.OnPlayerJoined(player.GetComponent<Player>());
             }
-            pm.OnPlayerJoined(player.GetComponent<Player>());
+            
         }
         else
         {

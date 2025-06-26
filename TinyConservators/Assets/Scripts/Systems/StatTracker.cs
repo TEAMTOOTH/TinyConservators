@@ -3,9 +3,11 @@ using UnityEngine;
 public class StatTracker : MonoBehaviour
 {
     float[] damagePercentages;
+    bool[] bossInterstitialStates;
     private void Awake()
     {
         damagePercentages = new float[3];
+        bossInterstitialStates = new bool[3];
         DontDestroyOnLoad(gameObject);
     }
     
@@ -19,6 +21,16 @@ public class StatTracker : MonoBehaviour
         {
             damagePercentages[levelNumber] += g[i].GetComponent<AttackPoint>().GetAmountOfDamage();
         }
+    }
+
+    public void SetBossInterstitialState(int levelNumber, bool state)
+    {
+        bossInterstitialStates[levelNumber] = state;
+    }
+
+    public bool GetBossInterstitialState(int levelNumber)
+    {
+        return bossInterstitialStates[levelNumber];
     }
 
     public float GetDamagePercentage(int levelNumber)

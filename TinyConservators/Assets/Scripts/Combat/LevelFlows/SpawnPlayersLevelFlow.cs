@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
+
 
 public class SpawnPlayersLevelFlow : MonoBehaviour, ILevelFlowComponent
 {
@@ -44,19 +44,23 @@ public class SpawnPlayersLevelFlow : MonoBehaviour, ILevelFlowComponent
     {
         for (int i = 0; i < players.Length; i++)
         {
-            if (i < players.Length / 2)
+            if (visualSpawn)
             {
-                players[i].transform.localPosition = spawnPoints[0].transform.position;
-                if(visualSpawn)
+                if (i < players.Length / 2)
+                {
+                    players[i].transform.localPosition = spawnPoints[0].transform.position;
                     spawnPoints[0].GetComponent<SpawnPoint>().Spawn(players[i]);
+                }
+                else
+                {
+                    players[i].transform.localPosition = spawnPoints[1].transform.position;
+                    spawnPoints[1].GetComponent<SpawnPoint>().Spawn(players[i]);
+                }
             }
             else
             {
-                players[i].transform.localPosition = spawnPoints[1].transform.position;
-                if (visualSpawn)
-                    spawnPoints[1].GetComponent<SpawnPoint>().Spawn(players[i]);
+                players[i].transform.position = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)].transform.position;
             }
-            
         }
     }
 }
