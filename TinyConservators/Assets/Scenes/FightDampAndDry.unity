@@ -1961,7 +1961,7 @@ GameObject:
   - component: {fileID: 351506662}
   - component: {fileID: 351506663}
   m_Layer: 0
-  m_Name: LevelFlow14.5
+  m_Name: LevelFlowTimePassed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2662,7 +2662,7 @@ GameObject:
   - component: {fileID: 421144596}
   - component: {fileID: 421144595}
   m_Layer: 0
-  m_Name: LevelFlow15
+  m_Name: LevelFlowLoadNextLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3780,51 +3780,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &582467373
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 582467374}
-  - component: {fileID: 582467375}
-  m_Layer: 0
-  m_Name: LevelFlowTimePassed
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &582467374
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582467373}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1178552288}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &582467375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582467373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a18ab7bf1b08f5f438a4fd2da41b67bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  length: 5
 --- !u!1 &601713406 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 378791223853318268, guid: cc857d9051231104fb6f6f89e6ee26fe, type: 3}
@@ -7059,7 +7014,6 @@ Transform:
   - {fileID: 112724158}
   - {fileID: 393989599}
   - {fileID: 1517371383}
-  - {fileID: 582467374}
   - {fileID: 566999957}
   - {fileID: 91993277}
   - {fileID: 723739909}

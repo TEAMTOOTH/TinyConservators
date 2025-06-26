@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 465554424}
   - component: {fileID: 465554423}
   m_Layer: 0
-  m_Name: Part 10
+  m_Name: LevelFlowLoadNextLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -730,7 +730,7 @@ GameObject:
   - component: {fileID: 500443307}
   - component: {fileID: 500443308}
   m_Layer: 0
-  m_Name: Part 2.05
+  m_Name: LevelFlowLadyOfLightEscape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1101,7 +1101,7 @@ GameObject:
   - component: {fileID: 613945345}
   - component: {fileID: 613945346}
   m_Layer: 0
-  m_Name: Part 2.25
+  m_Name: LevelFlowMoveCountTT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1233,7 +1233,7 @@ GameObject:
   - component: {fileID: 629493642}
   - component: {fileID: 629493643}
   m_Layer: 0
-  m_Name: Part 9
+  m_Name: LevelFlowMoveCameraIn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1445,7 +1445,7 @@ GameObject:
   - component: {fileID: 799125870}
   - component: {fileID: 799125871}
   m_Layer: 0
-  m_Name: Part 7
+  m_Name: LevelFlowDDIntoPainting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1580,7 +1580,7 @@ GameObject:
   - component: {fileID: 839520988}
   - component: {fileID: 839520989}
   m_Layer: 0
-  m_Name: Part 2
+  m_Name: LevelFlowMoveCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1737,7 +1737,7 @@ GameObject:
   - component: {fileID: 1050024355}
   - component: {fileID: 1050024356}
   m_Layer: 0
-  m_Name: Part 2.5
+  m_Name: LevelFlowTimePassedCountRap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1782,7 +1782,7 @@ GameObject:
   - component: {fileID: 1064575247}
   - component: {fileID: 1064575248}
   m_Layer: 0
-  m_Name: Part 5
+  m_Name: LevelFlowTimePassedDDSong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1886,7 +1886,7 @@ GameObject:
   - component: {fileID: 1205543841}
   - component: {fileID: 1205543842}
   m_Layer: 0
-  m_Name: Part 1
+  m_Name: LevelFlowTimePassed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2134,7 +2134,7 @@ GameObject:
   - component: {fileID: 1475428870}
   - component: {fileID: 1475428871}
   m_Layer: 0
-  m_Name: Part 2.75
+  m_Name: LevelFlowParentTTAndDD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2471,7 +2471,7 @@ GameObject:
   - component: {fileID: 1784928982}
   - component: {fileID: 1784928983}
   m_Layer: 0
-  m_Name: Part 4
+  m_Name: LevelFlowUnparentTTAndDD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2641,7 +2641,7 @@ GameObject:
   - component: {fileID: 1925834450}
   - component: {fileID: 1925834451}
   m_Layer: 0
-  m_Name: Part 2.1
+  m_Name: LevelFlowPlayAnimationCountTickTock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2688,7 +2688,7 @@ GameObject:
   - component: {fileID: 1945769336}
   - component: {fileID: 1945769337}
   m_Layer: 0
-  m_Name: Part 3
+  m_Name: LevelFlowMoveTTAndDD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2823,7 +2823,7 @@ GameObject:
   - component: {fileID: 1975372199}
   - component: {fileID: 1975372200}
   m_Layer: 0
-  m_Name: Part 8
+  m_Name: LevelFlowHideDD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -219,7 +219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &29124631
 Transform:
   m_ObjectHideFlags: 0
@@ -431,7 +431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &93705740
 Transform:
   m_ObjectHideFlags: 0
@@ -1478,7 +1478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &370129107
 Transform:
   m_ObjectHideFlags: 0
@@ -1639,7 +1639,7 @@ GameObject:
   - component: {fileID: 385920365}
   - component: {fileID: 385920366}
   m_Layer: 0
-  m_Name: LevelFlow3.05
+  m_Name: LevelFlowShowInstructionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1686,7 +1686,7 @@ GameObject:
   - component: {fileID: 393989599}
   - component: {fileID: 393989600}
   m_Layer: 0
-  m_Name: LevelFlowAttack
+  m_Name: LevelFlowBossAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1725,7 +1725,7 @@ MonoBehaviour:
   minimumRepeatTime: 2
   maximumRepeatTime: 4
   maxAttackTime: 15
-  lastAttack: 1
+  lastAttack: 0
   amountOfProtectionItems: 0
   totalTimeOfRevolutionOfProtectionItems: 2
   radiusOfProtectionCircle: 2
@@ -1860,7 +1860,7 @@ GameObject:
   - component: {fileID: 421144596}
   - component: {fileID: 421144595}
   m_Layer: 0
-  m_Name: LevelFlow15
+  m_Name: LevelFlowLoadNextLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2101,12 +2101,12 @@ GameObject:
   - component: {fileID: 457206957}
   - component: {fileID: 457206958}
   m_Layer: 0
-  m_Name: LevelFlow8
+  m_Name: LevelFlowSpawnEnemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &457206957
 Transform:
   m_ObjectHideFlags: 0
@@ -2230,7 +2230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &492867808
 Transform:
   m_ObjectHideFlags: 0
@@ -2447,7 +2447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &499264826
 Transform:
   m_ObjectHideFlags: 0
@@ -2632,7 +2632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &538824779
 Transform:
   m_ObjectHideFlags: 0
@@ -2947,12 +2947,12 @@ GameObject:
   - component: {fileID: 581549254}
   - component: {fileID: 581549255}
   m_Layer: 0
-  m_Name: LevelFlow8.5
+  m_Name: LevelFlowTimePassed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &581549254
 Transform:
   m_ObjectHideFlags: 0
@@ -3129,7 +3129,7 @@ GameObject:
   - component: {fileID: 637638505}
   - component: {fileID: 637638506}
   m_Layer: 0
-  m_Name: LevelFlow3.005
+  m_Name: LevelFlowTimePassed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3870,7 +3870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &923035606
 Transform:
   m_ObjectHideFlags: 0
@@ -4676,12 +4676,12 @@ GameObject:
   - component: {fileID: 1005427960}
   - component: {fileID: 1005427961}
   m_Layer: 0
-  m_Name: LevelFlowAttack
+  m_Name: LevelFlowBossAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1005427960
 Transform:
   m_ObjectHideFlags: 0
@@ -4868,7 +4868,7 @@ GameObject:
   - component: {fileID: 1039694400}
   - component: {fileID: 1039694401}
   m_Layer: 0
-  m_Name: LevelFlow2
+  m_Name: LevelFlowSpawnEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5572,7 +5572,6 @@ Transform:
   - {fileID: 1656887225}
   - {fileID: 1039694400}
   - {fileID: 287511111}
-  - {fileID: 1415423017}
   - {fileID: 393989599}
   - {fileID: 1684666607}
   - {fileID: 1550652590}
@@ -6368,53 +6367,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2061556109}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1415423016
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1415423017}
-  - component: {fileID: 1415423018}
-  m_Layer: 0
-  m_Name: LevelFlowSpawnDark
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1415423017
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415423016}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1178552288}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1415423018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415423016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a2a83856e2a3f14a8197d543918ddc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectsToChange:
-  - {fileID: 361344589}
-  active: 1
 --- !u!1001 &1456618162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6491,12 +6443,12 @@ GameObject:
   - component: {fileID: 1478166420}
   - component: {fileID: 1478166421}
   m_Layer: 0
-  m_Name: LevelFlow10
+  m_Name: LevelFlowBossAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1478166420
 Transform:
   m_ObjectHideFlags: 0
@@ -6676,12 +6628,12 @@ GameObject:
   - component: {fileID: 1510535346}
   - component: {fileID: 1510535347}
   m_Layer: 0
-  m_Name: LevelFlow10.5
+  m_Name: LevelFlowTimePassed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1510535346
 Transform:
   m_ObjectHideFlags: 0
@@ -6726,12 +6678,12 @@ GameObject:
   - component: {fileID: 1550652590}
   - component: {fileID: 1550652591}
   m_Layer: 0
-  m_Name: LevelFlow4
+  m_Name: LevelFlowSpawnEnemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1550652590
 Transform:
   m_ObjectHideFlags: 0
@@ -6927,12 +6879,12 @@ GameObject:
   - component: {fileID: 1567713725}
   - component: {fileID: 1567713726}
   m_Layer: 0
-  m_Name: LevelFlow4.5
+  m_Name: LevelFlowTimePassed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1567713725
 Transform:
   m_ObjectHideFlags: 0
@@ -7360,7 +7312,7 @@ GameObject:
   - component: {fileID: 1656887225}
   - component: {fileID: 1656887226}
   m_Layer: 0
-  m_Name: LevelFlow3.15
+  m_Name: LevelFlowStopShowingInstructionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7407,12 +7359,12 @@ GameObject:
   - component: {fileID: 1684666607}
   - component: {fileID: 1684666608}
   m_Layer: 0
-  m_Name: LevelFlow7.5
+  m_Name: LevelFlowTimePassed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1684666607
 Transform:
   m_ObjectHideFlags: 0
@@ -7739,7 +7691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1790088770
 Transform:
   m_ObjectHideFlags: 0
@@ -9009,7 +8961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2128757533
 Transform:
   m_ObjectHideFlags: 0

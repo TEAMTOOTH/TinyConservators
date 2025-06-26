@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 460465291}
   - component: {fileID: 460465292}
   m_Layer: 0
-  m_Name: Part 4
+  m_Name: LevelFlowFadeInCountdownText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 500443307}
   - component: {fileID: 500443308}
   m_Layer: 0
-  m_Name: Part 2
+  m_Name: LevelFlowMoveShipOutOfPainting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1153,7 +1153,7 @@ GameObject:
   - component: {fileID: 676331825}
   - component: {fileID: 676331824}
   m_Layer: 0
-  m_Name: Part 10
+  m_Name: LevelFlowLoadNextLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1211,7 +1211,7 @@ GameObject:
   - component: {fileID: 740928270}
   - component: {fileID: 740928272}
   m_Layer: 0
-  m_Name: Part 3
+  m_Name: LevelFlowFadeInGameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1658,7 +1658,7 @@ GameObject:
   - component: {fileID: 1205543841}
   - component: {fileID: 1205543842}
   m_Layer: 0
-  m_Name: Part 1
+  m_Name: LevelFlowTimePassed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
