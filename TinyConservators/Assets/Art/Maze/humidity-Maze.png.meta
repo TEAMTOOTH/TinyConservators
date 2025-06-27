@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: -2124780143174390030
     second: humidity-Maze_0
+  - first:
+      213: 8659791008383139624
+    second: humidity-Maze_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,10 +106,10 @@ TextureImporter:
       name: humidity-Maze_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 45
-        width: 863
-        height: 913
+        x: 452
+        y: 613
+        width: 1062
+        height: 917
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,6 +120,28 @@ TextureImporter:
       bones: []
       spriteID: 2fe6944a7b34382e0800000000000000
       internalID: -2124780143174390030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: humidity-Maze_1
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 599
+        width: 677
+        height: 594
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82f7cc36a02cd2870800000000000000
+      internalID: 8659791008383139624
       vertices: []
       indices: 
       edges: []

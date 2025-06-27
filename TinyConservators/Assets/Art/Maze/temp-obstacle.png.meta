@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: cf852741eea7040b5b26129380b1c6bc
+guid: b1605a5d7ed674bfd88c888390b5518f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6552585302542301418
-    second: temp-Maze_0
-  - first:
-      213: 2466305892230072527
-    second: temp-Maze_1
+      213: -4656559704043408366
+    second: temp-obstacle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: temp-Maze_0
+      name: temp-obstacle_0
       rect:
         serializedVersion: 2
-        x: 452
-        y: 613
-        width: 1062
-        height: 917
+        x: 150
+        y: 57
+        width: 198
+        height: 388
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6174589626a8015a0800000000000000
-      internalID: -6552585302542301418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: temp-Maze_1
-      rect:
-        serializedVersion: 2
-        x: 453
-        y: 600
-        width: 677
-        height: 593
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc883d554241a3220800000000000000
-      internalID: 2466305892230072527
+      spriteID: 2143815ee93906fb0800000000000000
+      internalID: -4656559704043408366
       vertices: []
       indices: 
       edges: []
