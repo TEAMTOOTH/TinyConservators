@@ -116,9 +116,12 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{c0f4f947-5584-4a04-b4ba-4969f6265aa2}">
+<<<<<<< Updated upstream
 		<property name="volume">
 			<value>-2</value>
 		</property>
+=======
+>>>>>>> Stashed changes
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
