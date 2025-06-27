@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TCStatic6
+  m_Controller: {fileID: 9100000, guid: b4a074a12a532a64cbc33230bb39de91, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 2d28f5cc18f58b2409774c3356a4545d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3ee8f3cf6b9b7414eaa5820f42351c65, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f2422ab53a285b94c90ba758be76a073, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 541a91e070d059244ac6edaddb0ac221, type: 2}
