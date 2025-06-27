@@ -11483,6 +11483,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedVillains
       objectReference: {fileID: 0}
+    - target: {fileID: 407287080957527650, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1982894750223044496, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11527,6 +11531,22 @@ PrefabInstance:
       propertyPath: attackSpots
       value: 
       objectReference: {fileID: 782506228}
+    - target: {fileID: 5126416437444419109, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 85c7b730420bb4bb6a05d0524ce2e6cb, type: 3}
+    - target: {fileID: 6135150400036561653, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135150400036561653, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135150400036561653, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.266
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
