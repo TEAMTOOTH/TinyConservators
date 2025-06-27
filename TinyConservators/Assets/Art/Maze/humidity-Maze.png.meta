@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      humidity-Maze_0: -2124780143174390030
+      humidity-Maze_1: 8659791008383139624
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

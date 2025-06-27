@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      humidity-obstacle_0: 7018403142038933917
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
