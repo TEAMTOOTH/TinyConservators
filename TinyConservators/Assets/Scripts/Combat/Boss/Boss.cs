@@ -12,6 +12,8 @@ public class Boss : MonoBehaviour, IDamageReceiver
 
     [SerializeField] GameObject bossVisual;
     [SerializeField] GameObject bossMaze;
+    
+    [SerializeField] GameObject attackSpotPosition;
 
     [SerializeField] Vector2 attackStartPos;
 
@@ -19,6 +21,8 @@ public class Boss : MonoBehaviour, IDamageReceiver
 
     [Header("Attack timing")]
     [SerializeField] float attackMoveTime;
+
+    
 
     GameObject owner;
 
