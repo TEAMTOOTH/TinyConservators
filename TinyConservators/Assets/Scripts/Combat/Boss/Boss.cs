@@ -11,7 +11,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
     [SerializeField] int pointsForKnockingOut;
 
     [SerializeField] GameObject bossVisual;
-    [SerializeField] GameObject bossMaze;
+    [SerializeField] GameObject[] bossMazes;
     
     [SerializeField] GameObject attackSpotPosition;
 
@@ -22,7 +22,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
     [Header("Attack timing")]
     [SerializeField] float attackMoveTime;
 
-    
+    int mazeIndex = 0;
 
     GameObject owner;
 
@@ -152,9 +152,10 @@ public class Boss : MonoBehaviour, IDamageReceiver
         GetComponent<BossAttack>().InterruptAttack();
 
         //For better flow, "destroy" maze here
-        if(bossMaze != null)
+        if(bossMazes[mazeIndex] != null)
         {
-            bossMaze.SetActive(false);
+            bossMazes[mazeIndex].SetActive(false);
+            mazeIndex++;
         }
         
 
