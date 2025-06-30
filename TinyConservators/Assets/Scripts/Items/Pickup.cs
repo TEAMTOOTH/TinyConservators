@@ -11,6 +11,7 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
     [SerializeField] bool spittable;
     [SerializeField] bool flyBackSpeed;
     [SerializeField] float amountOfDamageFixedPerPickup;
+    [SerializeField] float radiusOfLandingSpot;
 
     AttackPoint damageOwner;
 
@@ -121,7 +122,9 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
             float time = 0f;
 
             Vector2 startPos = transform.position;
-            Vector2 endPos = damageOwner.transform.position;
+            //Vector2 endPos = damageOwner.transform.position;
+
+            Vector2 endPos = (Vector2)damageOwner.transform.position + Random.insideUnitCircle * radiusOfLandingSpot;
 
             // Calculate direction and midpoint
             Vector2 direction = endPos - startPos;

@@ -1,3 +1,5 @@
+using System;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class AttackPoint : MonoBehaviour
@@ -18,6 +20,8 @@ public class AttackPoint : MonoBehaviour
     int totalDamage = 0;
 
     float damageToPainting = 0;
+
+    int oldDamageIndex = 0;
 
     private void Start()
     {
@@ -85,8 +89,9 @@ public class AttackPoint : MonoBehaviour
 
         int index = Mathf.FloorToInt(damageToPainting * damageSteps);
         index = Mathf.Clamp(index, 0, visuals.Length - 1);
-        visual.sprite = visuals[index];
-        
+        TryToChangeDamageIndex(index);
+
+
     }
 
     public void FixDamage(float amount)
@@ -100,8 +105,32 @@ public class AttackPoint : MonoBehaviour
 
         int index = Mathf.FloorToInt(damageToPainting * damageSteps);
         index = Mathf.Clamp(index, 0, visuals.Length - 1);
-        visual.sprite = visuals[index];
+        TryToChangeDamageIndex(index);
         //Damage(damagePercentage);
+    }
+
+    private void TryToChangeDamageIndex(int newIndex)
+    {
+        if(newIndex > oldDamageIndex)
+        {
+            visual.sprite = visuals[newIndex];
+            //Debug.Log("New damage step");
+            //Call some sort of negative effect in addition to screen shake.
+            CinemachineImpulseSource cm = GetComponent<CinemachineImpulseSource>();
+            if(cm != null)
+            {
+                cm.GenerateImpulseWithForce(0.2f);
+                //Debug.Log("Shake the screen");
+            }
+
+            oldDamageIndex = newIndex;
+        }
+        else if(newIndex < oldDamageIndex)
+        {
+            //Call some positive effect
+            visual.sprite = visuals[newIndex];
+            oldDamageIndex = newIndex;
+        }
     }
 
     public int GetAmountOfVisualDamageSteps()
