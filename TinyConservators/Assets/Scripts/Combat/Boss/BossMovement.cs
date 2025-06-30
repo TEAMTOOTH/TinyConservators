@@ -127,6 +127,8 @@ public class BossMovement : MonoBehaviour
 
             float distance = Vector2.Distance(startPos, endPos);
 
+            Debug.Log("Endpos : "+endPos);
+
             while (time < baseMoveTime)
             {
                 time += Time.deltaTime;
@@ -136,7 +138,7 @@ public class BossMovement : MonoBehaviour
 
                 yield return null;
             }
-
+            
             transform.position = endPos;
             
         }

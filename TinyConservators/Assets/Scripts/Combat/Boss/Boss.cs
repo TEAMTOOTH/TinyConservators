@@ -137,7 +137,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
         IEnumerator MoveToAttackPoint()
         {
             //GetComponent<BossMovement>().Move(attackMoveTime, GetComponent<BossMovement>().GetFurthestAwayScatterPoint(attackSpot.transform.position).transform.position, attackSpot.transform.position);
-            GetComponent<BossMovement>().Move(attackMoveTime, attackStartPos, attackSpot.transform.position);
+            GetComponent<BossMovement>().Move(attackMoveTime, attackStartPos, attackSpotPosition.transform.position);
             yield return new WaitForSeconds(attackMoveTime);
             //Do get ready to eat visual?
             State = BossStates.eating;

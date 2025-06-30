@@ -146,7 +146,7 @@ Rigidbody2D:
   m_LinearDamping: 0.05
   m_AngularDamping: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fd796bcd3c6845f489a0be5eff715bc4, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -170,11 +170,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsValue: 100
-  baseLifeTime: 8
-  lifeTimeVariaton: 2
+  baseLifeTime: 12
+  lifeTimeVariaton: 1
   spittable: 0
   flyBackSpeed: 0
   amountOfDamageFixedPerPickup: 0.017
+  radiusOfLandingSpot: 3
 --- !u!95 &4171263059369809168
 Animator:
   serializedVersion: 7
