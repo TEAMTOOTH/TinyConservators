@@ -122,7 +122,9 @@ public class Minion : MonoBehaviour, IEatable
             eatable = true;
             //GetComponentInChildren<SpriteRenderer>().sprite = knockedOutGoblin;
             animations.Play("MinionKnockedOut");
-        } 
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
     }
 
     void ThrowOff()
@@ -130,7 +132,7 @@ public class Minion : MonoBehaviour, IEatable
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
         float arcAngle = 22.5f;
-
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         //GetComponentInChildren<SpriteRenderer>().sprite = fallingGoblin;
         animations.Play("MinionFalling");
 

@@ -174,7 +174,7 @@ MonoBehaviour:
   lifeTimeVariaton: 1
   spittable: 0
   flyBackSpeed: 0
-  amountOfDamageFixedPerPickup: 0.017
+  amountOfDamageFixedPerPickup: 0.0208
   radiusOfLandingSpot: 3
 --- !u!95 &4171263059369809168
 Animator:
