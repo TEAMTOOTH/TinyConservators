@@ -16,7 +16,7 @@ public class AttackPoint : MonoBehaviour
 
     float damageInterval;
 
-    int damageSteps = 6;
+    int damageSteps;
 
     int totalDamage = 0;
 
@@ -28,9 +28,10 @@ public class AttackPoint : MonoBehaviour
 
     private void Start()
     {
+        damageSteps = visuals.Length - 1;
         visual = GetComponent<SpriteRenderer>();
 
-        damageInterval = visuals.Length;
+        //damageInterval = visuals.Length;
 
         origHealthBarSize = healthBar.transform.localScale;
 
@@ -108,6 +109,7 @@ public class AttackPoint : MonoBehaviour
 
         int index = Mathf.FloorToInt(damageToPainting * damageSteps);
         index = Mathf.Clamp(index, 0, visuals.Length - 1);
+        Debug.Log("DamageIndex is : " + index);
         TryToChangeDamageIndex(index);
         //CalculateHealthBarLook();
         //Damage(damagePercentage);
