@@ -5,6 +5,7 @@ public class RadialPush2D : MonoBehaviour
     [Header("Push Settings")]
     [SerializeField] private float radius = 5f;
     [SerializeField] private float force = 10f;
+    [SerializeField] private bool knockOut;
     [SerializeField] private LayerMask affectedLayers;
 
     public void PushAway()
@@ -17,7 +18,32 @@ public class RadialPush2D : MonoBehaviour
             Rigidbody2D rb = col.attachedRigidbody;
             if (rb != null && rb != GetComponent<Rigidbody2D>())
             {
-                rb.GetComponent<IKnockoutable>().Knockout();
+                if (knockOut)
+                {
+                    rb.GetComponent<IKnockoutable>().Knockout();
+                }
+
+                Vector2 direction = (rb.position - (Vector2)transform.position).normalized;
+                rb.AddForce(direction * force, ForceMode2D.Impulse);
+            }
+        }
+    }
+
+    public void PushAway(float radius, float force, bool knockOut)
+    {
+        // Get all colliders within radius
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius, affectedLayers);
+
+        foreach (Collider2D col in colliders)
+        {
+            Rigidbody2D rb = col.attachedRigidbody;
+            if (rb != null && rb != GetComponent<Rigidbody2D>())
+            {
+                if (knockOut)
+                {
+                    rb.GetComponent<IKnockoutable>().Knockout();
+                }
+
                 Vector2 direction = (rb.position - (Vector2)transform.position).normalized;
                 rb.AddForce(direction * force, ForceMode2D.Impulse);
             }
@@ -38,5 +64,14 @@ public class RadialPush2D : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, radius);
+    }
+
+    public void SetPushSettings(float radius, float force, bool knockOut)
+    {
+        this.radius = radius;
+        this.force = force;
+
+        this.knockOut = knockOut;
+
     }
 }

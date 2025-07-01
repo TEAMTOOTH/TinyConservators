@@ -37,6 +37,10 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
             }
             if(damageOwner != null)
             {
+                if(eater.GetComponent<Player>() != null)
+                {
+                    transform.position = eater.GetComponent<Player>().GetColorExpulsionPoint();
+                }
                 Fix();
             }
             else
@@ -114,6 +118,8 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
 
             fixing = true;
             SetEatable(false);
+            gameObject.layer = LayerMask.NameToLayer("NoCollision");
+
 
 
 

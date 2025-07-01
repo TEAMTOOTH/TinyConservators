@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour, IDamageReceiver
 {
     [SerializeField] Sprite[] playerSprites; //This is only for testing!
+    //[SerializeField] GameObject colorExpulsionPoint;
+    [SerializeField] Vector3 colorExpulsionOffset;
     int playerId;
     PlayerStates state = PlayerStates.paused;
 
@@ -189,6 +191,13 @@ public class Player : MonoBehaviour, IDamageReceiver
             {
                 particleSystem.Play();
             }
+    }
+
+    public Vector3 GetColorExpulsionPoint()
+    {
+        Debug.Log(GetComponent<WalkingMovement>().GetDirection() + ", " + transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()));
+        Vector3 returnVector = new Vector3(transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()), transform.position.y, transform.position.z);
+        return returnVector;
     }
 }
 

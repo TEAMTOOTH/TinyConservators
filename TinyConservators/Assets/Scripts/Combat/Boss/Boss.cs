@@ -10,6 +10,8 @@ public class Boss : MonoBehaviour, IDamageReceiver
 
     [SerializeField] int pointsForKnockingOut;
 
+    [SerializeField] GameObject protectionBubble;
+
     [SerializeField] GameObject bossVisual;
     [SerializeField] GameObject[] bossMazes;
     
@@ -136,10 +138,12 @@ public class Boss : MonoBehaviour, IDamageReceiver
         StartCoroutine(MoveToAttackPoint());
         IEnumerator MoveToAttackPoint()
         {
+            protectionBubble.SetActive(true);
             //GetComponent<BossMovement>().Move(attackMoveTime, GetComponent<BossMovement>().GetFurthestAwayScatterPoint(attackSpot.transform.position).transform.position, attackSpot.transform.position);
             GetComponent<BossMovement>().Move(attackMoveTime, attackStartPos, attackSpotPosition.transform.position);
             yield return new WaitForSeconds(attackMoveTime);
             //Do get ready to eat visual?
+            protectionBubble.SetActive(false);
             State = BossStates.eating;
         }
     }
@@ -150,13 +154,17 @@ public class Boss : MonoBehaviour, IDamageReceiver
         float pauseBeforeLeaving = 2f;
         GetComponentInChildren<BossDamage>().AllowCollisions(false);
         GetComponent<BossAttack>().InterruptAttack();
-
+        GetComponent<RadialPush2D>().PushAway(2f, 10f, false);
         //For better flow, "destroy" maze here
-        if(bossMazes[mazeIndex] != null)
+        if(bossMazes.Length > 0) 
         {
-            bossMazes[mazeIndex].SetActive(false);
-            mazeIndex++;
+            if (bossMazes[mazeIndex] != null)
+            {
+                bossMazes[mazeIndex].SetActive(false);
+                mazeIndex++;
+            }
         }
+        
         
 
         //gameObject.layer = LayerMask.NameToLayer("Knockout");

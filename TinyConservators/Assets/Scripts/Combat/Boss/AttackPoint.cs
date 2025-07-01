@@ -6,6 +6,7 @@ public class AttackPoint : MonoBehaviour
 {
     [SerializeField] Sprite[] visuals;
     [SerializeField] float damagePerStep;
+    [SerializeField] GameObject healthBar; //Use the actual bar here, so the green part
 
     SpriteRenderer visual;
     int damageProgress;
@@ -23,13 +24,15 @@ public class AttackPoint : MonoBehaviour
 
     int oldDamageIndex = 0;
 
+    Vector3 origHealthBarSize;
+
     private void Start()
     {
         visual = GetComponent<SpriteRenderer>();
 
         damageInterval = visuals.Length;
 
-        
+        origHealthBarSize = healthBar.transform.localScale;
 
     }
 
@@ -86,7 +89,7 @@ public class AttackPoint : MonoBehaviour
     {
         damageToPainting +=  damagePerStep;
         //damageToPainting += .1f;
-
+        
         int index = Mathf.FloorToInt(damageToPainting * damageSteps);
         index = Mathf.Clamp(index, 0, visuals.Length - 1);
         TryToChangeDamageIndex(index);
@@ -106,6 +109,7 @@ public class AttackPoint : MonoBehaviour
         int index = Mathf.FloorToInt(damageToPainting * damageSteps);
         index = Mathf.Clamp(index, 0, visuals.Length - 1);
         TryToChangeDamageIndex(index);
+        //CalculateHealthBarLook();
         //Damage(damagePercentage);
     }
 
@@ -120,6 +124,7 @@ public class AttackPoint : MonoBehaviour
             if(cm != null)
             {
                 cm.GenerateImpulseWithForce(0.2f);
+                CalculateHealthBarLook();
                 //Debug.Log("Shake the screen");
             }
 
@@ -127,10 +132,17 @@ public class AttackPoint : MonoBehaviour
         }
         else if(newIndex < oldDamageIndex)
         {
+            CalculateHealthBarLook();
             //Call some positive effect
             visual.sprite = visuals[newIndex];
             oldDamageIndex = newIndex;
         }
+    }
+
+    void CalculateHealthBarLook()
+    {
+        float healthBarSize = Mathf.Clamp(1 - damageToPainting, 0, origHealthBarSize.x);
+        healthBar.transform.localScale = new Vector3(healthBarSize, origHealthBarSize.y, origHealthBarSize.z);
     }
 
     public int GetAmountOfVisualDamageSteps()
