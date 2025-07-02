@@ -9,8 +9,6 @@ public class TitleScreenManager : MonoBehaviour
     }
     public void StartGame()
     {
-
-        Debug.Log("Player joined");
-        GameObject.FindGameObjectWithTag("Interstitial").GetComponent<IInterstitial>().StartInterstitial();
+        GameObject.FindGameObjectWithTag("LevelFlow").GetComponent<LevelFlowManager>().ProgressFlow();
     }
 }
