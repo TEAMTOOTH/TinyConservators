@@ -5706,26 +5706,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AttractorRightBlowParticleSystem
       objectReference: {fileID: 0}
-    - target: {fileID: 184047238975229059, guid: ecacc987ce1f1cf409104b4c6b24dd82, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5212208001103597714, guid: ecacc987ce1f1cf409104b4c6b24dd82, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5212208001103597714, guid: ecacc987ce1f1cf409104b4c6b24dd82, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5212208001103597714, guid: ecacc987ce1f1cf409104b4c6b24dd82, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5212208001103597714, guid: ecacc987ce1f1cf409104b4c6b24dd82, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5336387842448500956, guid: ecacc987ce1f1cf409104b4c6b24dd82, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.26
@@ -5872,10 +5852,6 @@ PrefabInstance:
     - target: {fileID: 4531075009935410753, guid: 366eef914149aec4e8faef7617bcdc43, type: 3}
       propertyPath: m_Name
       value: AttractorLeftSuckParticleSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 4531075009935410753, guid: 366eef914149aec4e8faef7617bcdc43, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6743,10 +6719,6 @@ PrefabInstance:
     - target: {fileID: 2897673051769576535, guid: 8e16987154116a24ea042820bd641c2f, type: 3}
       propertyPath: m_Name
       value: AttractorRightSuckParticleSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 2897673051769576535, guid: 8e16987154116a24ea042820bd641c2f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8605,25 +8577,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 976921372}
     m_Modifications:
-    - target: {fileID: 1605932820436641749, guid: 56b78db617449704f904be649bdffcb9, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1605932820436641749, guid: 56b78db617449704f904be649bdffcb9, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1605932820436641749, guid: 56b78db617449704f904be649bdffcb9, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 3916938579480590930, guid: 56b78db617449704f904be649bdffcb9, type: 3}
       propertyPath: m_Name
       value: AttractorLeftBlowParticleSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 3916938579480590930, guid: 56b78db617449704f904be649bdffcb9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6979575121613548169, guid: 56b78db617449704f904be649bdffcb9, type: 3}
       propertyPath: m_LocalPosition.x
