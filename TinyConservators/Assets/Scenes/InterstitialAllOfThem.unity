@@ -2922,13 +2922,29 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2669638344916505145, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2781429445721383646, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909203260212566974, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909203260212566974, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 7009278
       objectReference: {fileID: 0}
     - target: {fileID: 3108240902330083836, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
       propertyPath: m_Name
       value: DamagePercentages
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335229959120169610, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4585178382434932248, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
       propertyPath: m_Color.a
@@ -2958,17 +2974,17 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
 --- !u!1 &1556633267 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 814998700206382631, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
+  m_CorrespondingSourceObject: {fileID: 491628329558662021, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
   m_PrefabInstance: {fileID: 1556633266}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1556633268 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1932437276050050315, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
+  m_CorrespondingSourceObject: {fileID: 9034490088490499559, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
   m_PrefabInstance: {fileID: 1556633266}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1556633269 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3695259250787952656, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1922593121117110078, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
   m_PrefabInstance: {fileID: 1556633266}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1622453657
