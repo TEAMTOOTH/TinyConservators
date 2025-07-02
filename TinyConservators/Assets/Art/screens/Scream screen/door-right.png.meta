@@ -103,9 +103,9 @@ TextureImporter:
       name: door-right_0
       rect:
         serializedVersion: 2
-        x: 133
+        x: 240
         y: 0
-        width: 867
+        width: 760
         height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
