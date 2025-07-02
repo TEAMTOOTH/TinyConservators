@@ -3127,7 +3127,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -4605,6 +4605,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5356659650620601451, guid: e045995ff8cbaae4c9c032c3005003cb, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b5cb4e802d9bf7e459ddc7e38689b977, type: 2}
     - target: {fileID: 6020470988942783018, guid: e045995ff8cbaae4c9c032c3005003cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4613,6 +4617,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6032561815644741996, guid: e045995ff8cbaae4c9c032c3005003cb, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b5cb4e802d9bf7e459ddc7e38689b977, type: 2}
     - target: {fileID: 7107659281305404668, guid: e045995ff8cbaae4c9c032c3005003cb, type: 3}
       propertyPath: m_LocalScale.x
       value: 9
