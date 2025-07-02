@@ -2727,6 +2727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 418513264}
   - component: {fileID: 418513265}
+  - component: {fileID: 418513266}
   m_Layer: 0
   m_Name: joined-maze
   m_TagString: Untagged
@@ -2804,6 +2805,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &418513266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418513263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606c82eb880cab74e8e100b096238fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &421144593
 GameObject:
   m_ObjectHideFlags: 0
@@ -8147,6 +8160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1227673473}
   - component: {fileID: 1227673474}
+  - component: {fileID: 1227673475}
   m_Layer: 0
   m_Name: joined-maze
   m_TagString: Untagged
@@ -8224,6 +8238,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1227673475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227673472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606c82eb880cab74e8e100b096238fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1243147632
 GameObject:
   m_ObjectHideFlags: 0
@@ -10705,6 +10731,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1583264226}
   - component: {fileID: 1583264227}
+  - component: {fileID: 1583264228}
   m_Layer: 0
   m_Name: joined-maze
   m_TagString: Untagged
@@ -10782,6 +10809,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1583264228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583264225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606c82eb880cab74e8e100b096238fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1594603681
 PrefabInstance:
   m_ObjectHideFlags: 0

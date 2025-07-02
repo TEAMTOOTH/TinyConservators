@@ -160,8 +160,8 @@ public class Boss : MonoBehaviour, IDamageReceiver
         {
             if (bossMazes[mazeIndex] != null)
             {
-                bossMazes[mazeIndex].SetActive(false);
-                mazeIndex++;
+                FadeMaze(bossMazes[mazeIndex]);
+                
             }
         }
         
@@ -218,6 +218,22 @@ public class Boss : MonoBehaviour, IDamageReceiver
         //currentMinions.
 
 
+    }
+
+    void FadeMaze(GameObject mazeToFade)
+    {
+        mazeToFade.GetComponentInChildren<SpriteFader>().FadeTo(0f, 3f);
+
+        TouchKnockout[] colliders = mazeToFade.GetComponentsInChildren<TouchKnockout>();
+        Debug.Log("TouchKnockout is " + colliders.Length);
+
+        for(int i = 0; i < colliders.Length; i++)
+        {
+            colliders[i].gameObject.SetActive(false);
+        }
+
+        //mazeToFade.SetActive(false);
+        mazeIndex++;
     }
 
     void LeaveScreen(float initialWaitTime, float time, bool hasBeenChasedAway)

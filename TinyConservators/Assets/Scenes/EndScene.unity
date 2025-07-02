@@ -1484,9 +1484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Count tick tock
-
-    will return'
+  m_text: "Count \ntick tockula\nwill return"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb7cae6cede35bd4fa354e6e9e2e95f5, type: 2}
   m_sharedMaterial: {fileID: -358564749075985156, guid: bb7cae6cede35bd4fa354e6e9e2e95f5, type: 2}
