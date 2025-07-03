@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4ed5bb041843647b19c947468f7e73d3
+guid: 98b0225a703354fd48a7f4ff70a07867
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8886287253311909436
-    second: humidity-happy-02_0
+      213: -4868256670539316856
+    second: humidity-happy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: humidity-happy-02_0
+      name: humidity-happy_0
       rect:
         serializedVersion: 2
         x: 590
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c1134e13d09da480800000000000000
-      internalID: -8886287253311909436
+      spriteID: 881041de95a707cb0800000000000000
+      internalID: -4868256670539316856
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      humidity-happy-02_0: -8886287253311909436
+      humidity-happy_0: -4868256670539316856
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

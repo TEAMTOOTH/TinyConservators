@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ad145050bbc2d4ca18e928438a67d917
+guid: b14a6772e4c214f81a9422f2686d3b29
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3875099551289137765
-    second: humidity-idle-00_0
+      213: -4747048360764546545
+    second: humidity-idle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: humidity-idle-00_0
+      name: humidity-idle_0
       rect:
         serializedVersion: 2
         x: 518
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 56a5ddfb28e17c530800000000000000
-      internalID: 3875099551289137765
+      spriteID: f026705baa81f1eb0800000000000000
+      internalID: -4747048360764546545
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      humidity-idle-00_0: 3875099551289137765
+      humidity-idle_0: -4747048360764546545
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
