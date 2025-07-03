@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8a60274750a76478894386c9b77d97cf
+guid: ad145050bbc2d4ca18e928438a67d917
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4124976137246354798
-    second: humidity-hurt-001_0
+      213: 3875099551289137765
+    second: humidity-idle-00_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: humidity-hurt-001_0
+      name: humidity-idle-00_0
       rect:
         serializedVersion: 2
-        x: 343
-        y: 596
-        width: 1854
-        height: 1258
+        x: 518
+        y: 546
+        width: 1485
+        height: 1408
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e6d288711fbde3930800000000000000
-      internalID: 4124976137246354798
+      spriteID: 56a5ddfb28e17c530800000000000000
+      internalID: 3875099551289137765
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      humidity-hurt-001_0: 4124976137246354798
+      humidity-idle-00_0: 3875099551289137765
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
