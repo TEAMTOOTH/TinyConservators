@@ -30,8 +30,6 @@ public class Player : MonoBehaviour, IDamageReceiver
         
         //This is temp for testing
         GetComponentInChildren<CharacterCustomizer>().Initialize(id);
-        
-
 
     }
 
@@ -47,6 +45,7 @@ public class Player : MonoBehaviour, IDamageReceiver
                 state = value;
                 OnPlayerStateChanged?.Invoke(oldState, state);
             }
+
         }
     }
 
@@ -93,7 +92,6 @@ public class Player : MonoBehaviour, IDamageReceiver
         GetComponent<FlyingMovement>().enabled = state;
         
         //GetComponent<PlayerInput>().enabled = state;
-        
         
     }
 
@@ -198,6 +196,11 @@ public class Player : MonoBehaviour, IDamageReceiver
         Debug.Log(GetComponent<WalkingMovement>().GetDirection() + ", " + transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()));
         Vector3 returnVector = new Vector3(transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()), transform.position.y, transform.position.z);
         return returnVector;
+    }
+
+    public void PlayPoof()
+    {
+        GetComponentsInChildren<ParticleSystem>()[1]?.Play(); //BAD, but for now it should work, should not be a set index, should be more dynamic. But fast fix for a small problem.
     }
 }
 

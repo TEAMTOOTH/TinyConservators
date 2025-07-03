@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be63bf97f38737245981a318fe95635c, type: 3}
   m_Name: AttackTwo
   m_EditorClassIdentifier: 
-  amount: 4
-  revolutionTime: 6
-  size: 5
+  amount: 8
+  revolutionTime: 8
+  size: 3.5
