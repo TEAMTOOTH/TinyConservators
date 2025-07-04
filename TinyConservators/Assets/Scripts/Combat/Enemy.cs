@@ -42,7 +42,10 @@ public class Enemy : MonoBehaviour, IDamageReceiver
 
             PlayParticleSystemInPlace();
             State = EnemyStates.scatter;
-            goblinVisual.SetActive(false);
+            if(goblinVisual != null)
+                goblinVisual.SetActive(false);
+            
+            GetComponentInChildren<Animator>()?.SetBool("isMounted", false);
             GetComponent<EnemyMovement>().ChangeSpeed(6f);
         }
     }
@@ -137,8 +140,10 @@ public class Enemy : MonoBehaviour, IDamageReceiver
     public void Recover()
     {
         State = EnemyStates.flying;
-        goblinVisual.SetActive(true);
+        if(goblinVisual != null)
+            goblinVisual.SetActive(true);
         GetComponent<EnemyMovement>().SetLookForTarget(true);
+        GetComponentInChildren<Animator>()?.SetBool("isMounted", true);
         gameObject.layer = LayerMask.NameToLayer("Enemy");
     }
 

@@ -37,4 +37,21 @@ public class VisualController : MonoBehaviour
         //this is also terrible!!!
         sprites[0].GetComponent<CustomizePart>().SetPart(visualIndex);
     }
+
+    public void PlayAnimationIfHasState(string state)
+    {
+        var anim = GetComponentInChildren<Animator>();
+
+        if (anim != null)
+        {
+            var stateId = Animator.StringToHash(state);
+            var hasState = GetComponentInChildren<Animator>().HasState(0, stateId);
+
+            if (hasState)
+            {
+                anim.Play(state);
+            }
+        }
+
+    }
 }

@@ -1250,6 +1250,54 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 3
   parallell: 1
+--- !u!1 &758665509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 758665510}
+  - component: {fileID: 758665511}
+  m_Layer: 0
+  m_Name: LevelFlowFadeInDamage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &758665510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758665509}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1578359452}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &758665511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758665509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab02bb25c58d2c42a519dc400683176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFade: {fileID: 986224595}
+  fadeIn: 1
+  fadeDuration: 2
+  parallell: 0
 --- !u!1 &780164569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,6 +1846,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endScale: {x: 4, y: 4, z: 4}
+--- !u!1 &986224595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7895818399644905220, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
+  m_PrefabInstance: {fileID: 1007834059556242781}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1089683025
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,6 +2455,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 758665510}
   - {fileID: 179262603}
   - {fileID: 1200336314}
   - {fileID: 422215351}
@@ -3175,6 +3229,10 @@ PrefabInstance:
     - target: {fileID: 3108240902330083836, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
       propertyPath: m_Name
       value: DamagePercentages
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739193756289153630, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4585178382434932248, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
       propertyPath: m_Color.a

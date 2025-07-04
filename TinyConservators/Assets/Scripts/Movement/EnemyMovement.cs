@@ -6,11 +6,14 @@ public class EnemyMovement : MonoBehaviour
     bool canMove = true;
     Rigidbody2D rb2D;
     bool lookForTarget = true;
+
+    GameObject[] hoverPoints;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        hoverPoints = GameObject.FindGameObjectsWithTag("HoverPoint");
     }
 
     // Update is called once per frame
@@ -20,8 +23,6 @@ public class EnemyMovement : MonoBehaviour
         {
             FindTarget();
         }
-        
-        
     }
 
     public void StartMoving()
@@ -39,26 +40,30 @@ public class EnemyMovement : MonoBehaviour
         float searchHeight = 12;
         float shortestDistance = searchWidth+searchHeight;
 
-        GameObject targetObject = gameObject;
+        GameObject targetObject = GetFurthestAwayPoint(transform.position, hoverPoints);
 
         Collider2D[] objectsFound = Physics2D.OverlapAreaAll(new Vector2(-searchWidth, -searchHeight), new Vector2(searchWidth, searchHeight));
-        for(int i = 0; i < objectsFound.Length; i++)
+        if (lookForTarget)
         {
-            if (objectsFound[i].gameObject.CompareTag("Player"))
+            for (int i = 0; i < objectsFound.Length; i++)
             {
-                IKnockoutable knockout = objectsFound[i].GetComponent<IKnockoutable>();
-                if (knockout != null && !knockout.IsKnockedOut())
+                if (objectsFound[i].gameObject.CompareTag("Player"))
                 {
-                    float distance = Vector3.Distance(transform.position, objectsFound[i].transform.position);
-                    if (shortestDistance > distance)
+                    IKnockoutable knockout = objectsFound[i].GetComponent<IKnockoutable>();
+                    if (knockout != null && !knockout.IsKnockedOut())
                     {
-                        shortestDistance = distance;
-                        targetObject = objectsFound[i].gameObject;
+                        float distance = Vector3.Distance(transform.position, objectsFound[i].transform.position);
+                        if (shortestDistance > distance)
+                        {
+                            shortestDistance = distance;
+                            targetObject = objectsFound[i].gameObject;
+                        }
                     }
                 }
             }
+            SetNewTarget(targetObject);
         }
-        SetNewTarget(targetObject);
+        
     }
 
     public void SetNewTarget(GameObject newTarget)
@@ -69,6 +74,25 @@ public class EnemyMovement : MonoBehaviour
     public void SetCanMove(bool state)
     {
         canMove = state;
+    }
+
+    public GameObject GetFurthestAwayPoint(Vector3 from, GameObject[] list)
+    {
+        GameObject furthest = null;
+        float longestDistance = 0f;
+
+        foreach (GameObject obj in hoverPoints)
+        {
+            if (obj == null) continue;
+
+            float distance = Vector3.Distance(from, obj.transform.position);
+            if (distance > longestDistance)
+            {
+                longestDistance = distance;
+                furthest = obj;
+            }
+        }
+        return furthest;
     }
 
     public void SetLookForTarget(bool state)

@@ -88,6 +88,7 @@ public class PlayerSpawnManager : MonoBehaviour
                 p.transform.position = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
                 p.FullFreeze(false);
                 pm.OnPlayerJoined(player.GetComponent<Player>());
+                player.GetComponent<Player>().PlayPoof();
             }
             
         }

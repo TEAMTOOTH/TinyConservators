@@ -8,6 +8,7 @@ public class PickupSpawner : MonoBehaviour
     [SerializeField] int maximumAmount;
 
     [SerializeField] float throwOutForce;
+    [SerializeField] int colorIndex;
 
     /// <summary>
     /// Just spawn color without damage tie ins.
@@ -65,7 +66,7 @@ public class PickupSpawner : MonoBehaviour
         {
             GameObject spawnedObject = Instantiate(spawnObject, transform.position, Quaternion.identity);
             spawnedObjects.Add(spawnedObject);
-
+            spawnedObject.GetComponent<Pickup>()?.Spawn(colorIndex);
             //if (i < amount / 2)
             //{
             spawnedObject.GetComponent<IFixer>().SetOwner(fixObject);

@@ -18,11 +18,15 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
     bool fixing = false;
     bool eatable = false;
 
-    void Start()
+    public void Spawn(int colorIndex)
     {
-        ChooseColor();
+        ChooseColor(colorIndex);
         Invoke("AllowEating", .5f);
         Invoke("DestroyAfterSetTime", Random.Range(baseLifeTime - lifeTimeVariaton, baseLifeTime + lifeTimeVariaton));
+    }
+    void Start()
+    {
+        
     }
 
     public void Eat(GameObject eater)
@@ -69,6 +73,18 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
         if (clips.Length == 0) return;
 
         string clipName = clips[Random.Range(0, clips.Length)].name;
+
+        colorAnimation.Play(clipName);
+    }
+
+    void ChooseColor(int index)
+    {
+        Animator colorAnimation = GetComponent<Animator>();
+        AnimationClip[] clips = colorAnimation.runtimeAnimatorController.animationClips;
+
+        if (clips.Length == 0) return;
+
+        string clipName = clips[index].name;
 
         colorAnimation.Play(clipName);
     }
