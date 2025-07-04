@@ -5,6 +5,8 @@ public class AttackBubbleVisual : MonoBehaviour
     [SerializeField] float bubbleVariaton;
     
     SpriteRenderer bubbleVisual;
+
+    ParticleSystem suckingParticles;
     
     float bubbleMinSize;
     float bubbleMaxSize;
@@ -18,6 +20,7 @@ public class AttackBubbleVisual : MonoBehaviour
         bubbleVisual = GetComponent<SpriteRenderer>();
         originalScale = transform.localScale.x;
         bubbleAudio = GetComponent<AudioSource>();
+        suckingParticles = GetComponentInChildren<ParticleSystem>();
     }
     public void StartShowing()
     {
@@ -25,8 +28,9 @@ public class AttackBubbleVisual : MonoBehaviour
         bubbleMinSize = transform.localScale.x - bubbleVariaton;
         bubbleMaxSize = transform.localScale.x + bubbleVariaton;
 
-        
-        if(bubbleAudio != null)
+        suckingParticles.Play();
+
+        if (bubbleAudio != null)
         {
             bubbleAudio.Play();
         }
@@ -44,5 +48,6 @@ public class AttackBubbleVisual : MonoBehaviour
         bubbleVisual.enabled = false;
         transform.localScale = new Vector3(originalScale, originalScale, originalScale);
         bubbleAudio.Stop();
+        suckingParticles.Stop();
     }
 }
