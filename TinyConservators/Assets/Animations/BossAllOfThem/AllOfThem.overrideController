@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Temperature
+  m_Name: AllOfThem
   m_Controller: {fileID: 9100000, guid: b6eac7cee8cb3c8438c5c2e01804349a, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: c76ca2046267c574e9df0300ae6aab93, type: 2}
