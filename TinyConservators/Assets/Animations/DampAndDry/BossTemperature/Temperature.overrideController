@@ -8,4 +8,14 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Temperature
   m_Controller: {fileID: 9100000, guid: b6eac7cee8cb3c8438c5c2e01804349a, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: c76ca2046267c574e9df0300ae6aab93, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 78070bb1a519dd848a120f38089a369d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 891b919a5e76e7149a4fd7ddc97f1008, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 850ca907ab0dcc54e896981e6b123214, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f8f0c62680ae587479a115669dddba23, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 08b923ef3d02dad47aa8feb2a75ec588, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5aa2c0276d0ef664cbb7ebb61573bc68, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 32916cba9a453ba4fb4b526b1c243016, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 39ef9d12e9ef3594c9dc243b6a0902b2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c9d780601ce85754d9482fbe09711fcf, type: 2}

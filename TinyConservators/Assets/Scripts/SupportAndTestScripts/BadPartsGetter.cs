@@ -6,7 +6,8 @@ public class BadPartsGetter : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        characters = GetComponentsInChildren<BadCharacterBuilder>();    
+        characters = GetComponentsInChildren<BadCharacterBuilder>();
+        GameObject.FindGameObjectWithTag("DontDestroyManager").GetComponent<DontDestroyOnLoadManager>().AddDontDestroyObject(gameObject);
     }
 
     public Sprite[] GetMyColororedBodyParts(int colorIndex)

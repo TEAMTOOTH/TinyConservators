@@ -339,7 +339,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
 
                 if (hasState)
                 {
-                    Debug.Log("Play: " + state);
+                    
                     anim[i].Play(state);
                 }
                 else

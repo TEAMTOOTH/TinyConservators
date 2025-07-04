@@ -11,7 +11,7 @@ public class PlayerSpawnFlowManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        GameObject.FindGameObjectWithTag("DontDestroyManager").GetComponent<DontDestroyOnLoadManager>().AddDontDestroyObject(gameObject);
         psm = GetComponent<PlayerSpawnManager>();
         jMIG = GetComponent<JoinManagerInGame>();
     }
