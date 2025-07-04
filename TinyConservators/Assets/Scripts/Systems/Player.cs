@@ -9,6 +9,7 @@ public class Player : MonoBehaviour, IDamageReceiver
     [SerializeField] Sprite[] playerSprites; //This is only for testing!
     //[SerializeField] GameObject colorExpulsionPoint;
     [SerializeField] Vector3 colorExpulsionOffset;
+    [SerializeField] ParticleSystem expulsionFart;
     int playerId;
     PlayerStates state = PlayerStates.paused;
 
@@ -193,7 +194,8 @@ public class Player : MonoBehaviour, IDamageReceiver
 
     public Vector3 GetColorExpulsionPoint()
     {
-        Debug.Log(GetComponent<WalkingMovement>().GetDirection() + ", " + transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()));
+        //Debug.Log(GetComponent<WalkingMovement>().GetDirection() + ", " + transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()));
+        expulsionFart.Play();
         Vector3 returnVector = new Vector3(transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()), transform.position.y, transform.position.z);
         return returnVector;
     }
