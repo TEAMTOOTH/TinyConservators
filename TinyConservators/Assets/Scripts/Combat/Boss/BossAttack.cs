@@ -124,6 +124,7 @@ public class BossAttack : MonoBehaviour
 
                     GetComponentInChildren<BossDamage>().AllowCollisions(false);
                     GetComponent<BossItemManager>().DespawnObjects();
+                    GetComponent<Boss>().FadeCurrentMaze();
 
 
                 }
@@ -141,6 +142,7 @@ public class BossAttack : MonoBehaviour
             bubble.PopBubble();
         }
 
+        GetComponent<Boss>().FadeCurrentMaze();
 
         GetComponent<BossItemManager>().DespawnObjects();
         StopAllCoroutines();

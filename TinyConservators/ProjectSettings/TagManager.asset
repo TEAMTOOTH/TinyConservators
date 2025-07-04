@@ -22,6 +22,7 @@ TagManager:
   - SpawnPoints
   - PlayerJoinManager
   - HoverPoint
+  - DontDestroyManager
   layers:
   - Default
   - TransparentFX

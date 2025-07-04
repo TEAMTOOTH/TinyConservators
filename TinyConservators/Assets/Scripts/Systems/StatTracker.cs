@@ -4,11 +4,11 @@ public class StatTracker : MonoBehaviour
 {
     float[] damagePercentages;
     bool[] bossInterstitialStates;
-    private void Awake()
+    private void Start()
     {
         damagePercentages = new float[3];
         bossInterstitialStates = new bool[3];
-        DontDestroyOnLoad(gameObject);
+        GameObject.FindGameObjectWithTag("DontDestroyManager").GetComponent<DontDestroyOnLoadManager>().AddDontDestroyObject(gameObject);
     }
     
     public void SetStats(int levelNumber)

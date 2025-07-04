@@ -14,7 +14,7 @@ public class PlayerSpawnManager : MonoBehaviour
     private void Start()
     {
         pm = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
-        DontDestroyOnLoad(gameObject);
+        GameObject.FindGameObjectWithTag("DontDestroyManager").GetComponent<DontDestroyOnLoadManager>().AddDontDestroyObject(gameObject);
         //FindSpawnPoints();
         //Debug.Log("Player spawn manager is in start");
     }

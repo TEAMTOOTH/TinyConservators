@@ -6,9 +6,9 @@ public class PlayerManager : MonoBehaviour
     int amountOfPlayersJoined;
     List<Player> players = new List<Player>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        GameObject.FindGameObjectWithTag("DontDestroyManager").GetComponent<DontDestroyOnLoadManager>().AddDontDestroyObject(gameObject);
     }
 
     // Update is called once per frame

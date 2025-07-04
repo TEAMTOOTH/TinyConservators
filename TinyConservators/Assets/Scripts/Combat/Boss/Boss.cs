@@ -122,9 +122,13 @@ public class Boss : MonoBehaviour, IDamageReceiver
         //gameObject.layer = LayerMask.NameToLayer("Default");
         //bossVisual.transform.localScale = new Vector3(bossAttackSize, bossAttackSize, bossAttackSize);
         GameObject attackSpot = GetComponent<BossMovement>().FindAttackSpot();
+
+        PlayAnimationIfHasState("BossNormal");
+
+
         if (attackSpot == null)
             return;
-
+        
         currentMinions.RemoveAll(obj => obj == null);
 
         int amountToSpawnForRound = minionAttackAmount - currentMinions.Count;
@@ -156,16 +160,10 @@ public class Boss : MonoBehaviour, IDamageReceiver
         GetComponent<BossAttack>().InterruptAttack();
         GetComponent<RadialPush2D>().PushAway(2f, 10f, false);
         //For better flow, "destroy" maze here
-        if(bossMazes.Length > 0) 
-        {
-            if (bossMazes[mazeIndex] != null)
-            {
-                FadeMaze(bossMazes[mazeIndex]);
-                
-            }
-        }
-        
-        
+
+        //FadeCurrentMaze();
+
+
 
         //gameObject.layer = LayerMask.NameToLayer("Knockout");
 
@@ -220,12 +218,19 @@ public class Boss : MonoBehaviour, IDamageReceiver
 
     }
 
-    void FadeMaze(GameObject mazeToFade)
+    public void FadeCurrentMaze()
     {
-        mazeToFade.GetComponentInChildren<SpriteFader>().FadeTo(0f, 3f);
+        if (bossMazes.Length <= 0)
+            return;
 
-        TouchKnockout[] colliders = mazeToFade.GetComponentsInChildren<TouchKnockout>();
-        Debug.Log("TouchKnockout is " + colliders.Length);
+        if (bossMazes[mazeIndex] == null)
+            return;
+
+
+        bossMazes[mazeIndex].GetComponentInChildren<SpriteFader>().FadeTo(0f, 3f);
+
+        TouchKnockout[] colliders = bossMazes[mazeIndex].GetComponentsInChildren<TouchKnockout>();
+        //Debug.Log("TouchKnockout is " + colliders.Length);
 
         for(int i = 0; i < colliders.Length; i++)
         {
@@ -323,19 +328,26 @@ public class Boss : MonoBehaviour, IDamageReceiver
 
     public void PlayAnimationIfHasState(string state)
     {
-        var anim = GetComponentInChildren<Animator>();
+        var anim = GetComponentsInChildren<Animator>();
 
-        if(anim != null)
+        if(anim.Length > 0)
         {
             var stateId = Animator.StringToHash(state);
-            var hasState = GetComponentInChildren<Animator>().HasState(0, stateId);
-
-            if (hasState)
+            for (int i = 0; i < anim.Length; i++)
             {
-                anim.Play(state);
+                var hasState = GetComponentInChildren<Animator>().HasState(0, stateId);
+
+                if (hasState)
+                {
+                    
+                    anim[i].Play(state);
+                }
+                else
+                {
+                    Debug.Log("Does not have the state: " + state);
+                }
             }
         }
-        
     }
 }
 

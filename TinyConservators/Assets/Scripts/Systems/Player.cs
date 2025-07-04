@@ -18,7 +18,7 @@ public class Player : MonoBehaviour, IDamageReceiver
         //Randomize players before allowing players to customize.
         Debug.Log("Initialize");
 
-        DontDestroyOnLoad(gameObject);
+        GameObject.FindGameObjectWithTag("DontDestroyManager").GetComponent<DontDestroyOnLoadManager>().AddDontDestroyObject(gameObject);
 
         OnPlayerStateChanged += (from, to) => StateChanged(from, to);
 
