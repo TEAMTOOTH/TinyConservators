@@ -680,6 +680,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021526670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &154467188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 154467189}
+  - component: {fileID: 154467190}
+  m_Layer: 0
+  m_Name: LevelFlowPlayAnimationIdleGroup (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &154467189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154467188}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1178552288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &154467190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154467188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76a84937bf22cf48822c6154ac646e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationObject: {fileID: 832919153}
+  timeBeforeNextNode: 0
+  nameOfAnimation: BossNormal
 --- !u!1 &160889444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,6 +1280,53 @@ Transform:
   - {fileID: 1077789064}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &304885549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 304885550}
+  - component: {fileID: 304885551}
+  m_Layer: 0
+  m_Name: LevelFlowPlayAnimationIdleGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &304885550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304885549}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1178552288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &304885551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304885549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76a84937bf22cf48822c6154ac646e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationObject: {fileID: 832919153}
+  timeBeforeNextNode: 0
+  nameOfAnimation: BossNormal
 --- !u!1001 &311447132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5125,7 +5219,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -20
-  m_Sprite: {fileID: 4337860249159905599, guid: 2f235821a607f45e894860bca723f3ed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb1647b2f84b64ed1876993c443e7701, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5164,13 +5258,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visuals:
-  - {fileID: 21300000, guid: ca4a652a89d734c71ae90c84da631e38, type: 3}
-  - {fileID: 21300000, guid: d9b0117c63def4cd29e5364005fe818c, type: 3}
-  - {fileID: 21300000, guid: 85a17d0f06fb1478aa37a17f69ad2c7b, type: 3}
-  - {fileID: 21300000, guid: 1488b61cc6c924a01a2b353bb4c52bce, type: 3}
-  - {fileID: 21300000, guid: a24bac27df5c04b7bbc9998372c14f15, type: 3}
-  - {fileID: 21300000, guid: 81bfe41c8d5844557afefd7ac1cca6d7, type: 3}
-  - {fileID: 21300000, guid: 299e9a55fde74474c9e7bed6d6c1e9ec, type: 3}
+  - {fileID: 21300000, guid: fb1647b2f84b64ed1876993c443e7701, type: 3}
+  - {fileID: 21300000, guid: a774404462115464ab19098830ab794c, type: 3}
+  - {fileID: 21300000, guid: e888e0bcae29044619f911e037cc8364, type: 3}
+  - {fileID: 21300000, guid: 1272d151eefc14c909785cdbf48bb5cf, type: 3}
+  - {fileID: 21300000, guid: 13fe16908e7e34897adfaf81340db9c6, type: 3}
+  - {fileID: 21300000, guid: d136452ba066a48ffa683643249909c0, type: 3}
+  - {fileID: 21300000, guid: 55320598ffb174431b521450ea765f67, type: 3}
+  - {fileID: 21300000, guid: 877730bebb47b4336b51ccd163ae8e8c, type: 3}
+  - {fileID: 21300000, guid: cde85f187f8dc44b28a58fb0c5c876a6, type: 3}
+  - {fileID: 21300000, guid: 36a3b3ce461f14e288e27d27429e1102, type: 3}
   damagePerStep: 0.034
   healthBar: {fileID: 1881702638}
 --- !u!114 &782506232
@@ -5474,6 +5571,11 @@ MonoBehaviour:
   objectsToChange:
   - {fileID: 15369871}
   active: 0
+--- !u!1 &832919153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6063309915656254627, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
+  m_PrefabInstance: {fileID: 2073458777}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &835319372
 GameObject:
   m_ObjectHideFlags: 0
@@ -8504,6 +8606,7 @@ Transform:
   - {fileID: 634351258}
   - {fileID: 2027472577}
   - {fileID: 1928721485}
+  - {fileID: 304885550}
   - {fileID: 2107660697}
   - {fileID: 1411180159}
   - {fileID: 976212456}
@@ -8518,6 +8621,7 @@ Transform:
   - {fileID: 1705542598}
   - {fileID: 1318559342}
   - {fileID: 588296791}
+  - {fileID: 1384454856}
   - {fileID: 91993277}
   - {fileID: 723739909}
   - {fileID: 1394104461}
@@ -8533,6 +8637,7 @@ Transform:
   - {fileID: 1987866878}
   - {fileID: 1459888317}
   - {fileID: 1516234541}
+  - {fileID: 154467189}
   - {fileID: 737890064}
   - {fileID: 1759477138}
   - {fileID: 1904480568}
@@ -9890,6 +9995,53 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 22, y: 2.75}
   m_EdgeRadius: 0
+--- !u!1 &1384454855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1384454856}
+  - component: {fileID: 1384454857}
+  m_Layer: 0
+  m_Name: LevelFlowPlayAnimationIdleGroup (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1384454856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384454855}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1178552288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1384454857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384454855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76a84937bf22cf48822c6154ac646e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationObject: {fileID: 832919153}
+  timeBeforeNextNode: 0
+  nameOfAnimation: BossNormal
 --- !u!1 &1394104460
 GameObject:
   m_ObjectHideFlags: 0

@@ -805,6 +805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 590090487}
   - component: {fileID: 590090488}
+  - component: {fileID: 590090489}
   m_Layer: 0
   m_Name: CombinedVillains
   m_TagString: Untagged
@@ -871,7 +872,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 85c7b730420bb4bb6a05d0524ce2e6cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 98c78e2a840404956a84d6fe720fe338, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -882,6 +883,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &590090489
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590090486}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: faa0144e0b32cc8469d919d4d7e1ce87, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &613945344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,6 +1248,8 @@ GameObject:
   m_Component:
   - component: {fileID: 718719323}
   - component: {fileID: 718719324}
+  - component: {fileID: 718719325}
+  - component: {fileID: 718719326}
   m_Layer: 0
   m_Name: humidity-idle-001_0
   m_TagString: Untagged
@@ -1241,7 +1266,7 @@ Transform:
   m_GameObject: {fileID: 718719322}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.09500027, y: -0.018997192, z: 0}
+  m_LocalPosition: {x: -0.1, y: -0.018997192, z: 0}
   m_LocalScale: {x: 0.0150000015, y: 0.0150000015, z: 0.0150000015}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1291,17 +1316,55 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 40
-  m_Sprite: {fileID: 1852808972271316222, guid: f844686cf0e9146aaad3380e5a7678e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b14a6772e4c214f81a9422f2686d3b29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 11.93, y: 13.72}
+  m_Size: {x: 25, y: 25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &718719325
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718719322}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b6eac7cee8cb3c8438c5c2e01804349a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &718719326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718719322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50fcc017e8913154db2e21badbc012bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statToGet: 1
+  animationStates:
+  - BossSad
+  - BossHappy
 --- !u!1 &780164569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2844,6 +2907,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1622453658}
   - component: {fileID: 1622453659}
+  - component: {fileID: 1622453660}
+  - component: {fileID: 1622453661}
   m_Layer: 0
   m_Name: temp-idle-001_0
   m_TagString: Untagged
@@ -2860,7 +2925,7 @@ Transform:
   m_GameObject: {fileID: 1622453657}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.10499954, y: -0.018997192, z: 0}
+  m_LocalPosition: {x: 0.1, y: -0.018997192, z: 0}
   m_LocalScale: {x: 0.0150000015, y: 0.0150000015, z: 0.0150000015}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2910,17 +2975,55 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 40
-  m_Sprite: {fileID: -1273693854323370140, guid: be946600f223d44848529f9ec44a5e1b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bcbfb679f1dae4ac49b17d17185a3211, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 13.13, y: 14.620001}
+  m_Size: {x: 25, y: 25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1622453660
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622453657}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: f65734b14eac56a4eaf7e5372ca92d1f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1622453661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622453657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50fcc017e8913154db2e21badbc012bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statToGet: 1
+  animationStates:
+  - BossSad
+  - BossHappy
 --- !u!1 &1632156919
 GameObject:
   m_ObjectHideFlags: 0

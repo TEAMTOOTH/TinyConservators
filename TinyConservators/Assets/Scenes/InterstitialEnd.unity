@@ -1861,6 +1861,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1089683026}
   - component: {fileID: 1089683027}
+  - component: {fileID: 1089683029}
+  - component: {fileID: 1089683028}
   m_Layer: 0
   m_Name: CombinedVillains
   m_TagString: Untagged
@@ -1927,7 +1929,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 85c7b730420bb4bb6a05d0524ce2e6cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 98c78e2a840404956a84d6fe720fe338, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1938,6 +1940,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1089683028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089683025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50fcc017e8913154db2e21badbc012bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statToGet: 2
+  animationStates:
+  - BossHappy
+  - BossHurt
+--- !u!95 &1089683029
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089683025}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: faa0144e0b32cc8469d919d4d7e1ce87, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1110465862
 GameObject:
   m_ObjectHideFlags: 0
@@ -2395,6 +2435,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   length: 3
+--- !u!1 &1452122823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1452122824}
+  m_Layer: 0
+  m_Name: CheckPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1452122824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452122823}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 3, z: -0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1555984942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3226,6 +3297,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2819089431087060295, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c673775ba7e9c45dba54438da8079632, type: 3}
     - target: {fileID: 3108240902330083836, guid: d4ceb85521b451741bd8c5162676bf91, type: 3}
       propertyPath: m_Name
       value: DamagePercentages
@@ -3301,3 +3376,4 @@ SceneRoots:
   - {fileID: 850538970}
   - {fileID: 1007834059556242781}
   - {fileID: 1902279821}
+  - {fileID: 1452122824}
