@@ -1954,8 +1954,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statToGet: 2
   animationStates:
+  - BossDefeat
   - BossHappy
-  - BossHurt
 --- !u!95 &1089683029
 Animator:
   serializedVersion: 7

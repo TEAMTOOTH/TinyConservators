@@ -3907,7 +3907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDownText: {fileID: 1952435444}
-  countDownAmount: 10
+  countDownAmount: 30
   parallell: 0
 --- !u!1 &1605883051
 GameObject:

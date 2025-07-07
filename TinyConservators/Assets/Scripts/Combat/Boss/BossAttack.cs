@@ -60,78 +60,71 @@ public class BossAttack : MonoBehaviour
 
     public void Attack()
     {
-        float time = 0;
-        float damageTimer = 0;
-        float damageInterval = maxEatTime / currentAttackPoint.GetAmountOfVisualDamageSteps();
-        eating = true;
-
-        float damageToPoint = 0;
-
         StartCoroutine(Eat());
-        //Spawn bubble and decal.
+
         IEnumerator Eat()
         {
-            //Debug.Log("Eating");
-            //GetComponentInChildren<Animator>().Play("BossPoof");
+            // Setup phase
             GetComponent<Boss>().PlayAnimationIfHasState("BossPoof");
+            GetComponent<RadialPush2D>()?.PushAway();
 
-            if(GetComponent<RadialPush2D>() != null)
-            {
-                GetComponent<RadialPush2D>().PushAway();
-            }
-            yield return new WaitForSeconds(.25f);
-            //GetComponentInChildren<Animator>().Play("BossAttack");
+            yield return new WaitForSeconds(0.25f);
+
             GetComponent<Boss>().PlayAnimationIfHasState("BossAttack");
             GetComponentInChildren<BossDamage>().AllowCollisions(true);
-            
-            if(bubble != null)
-            {
+
+            if (bubble != null)
                 bubble.StartShowing();
-            }
-            
+
             GetComponent<BossItemManager>().SpawnObjects(amountOfProtection, speedOfProtection, sizeOfProtection);
+
             currentAttackPoint.NewAttack();
 
+            // Calculate dynamic intervals
+            int damageSteps = (currentAttackPoint.GetAmountOfVisualDamageSteps() - 1) / 3;
+            Debug.Log("Damage steps: " + damageSteps);
+            float damageInterval = maxEatTime / damageSteps;
+            int damageCalls = 0;
+            float elapsed = 0f;
 
+            eating = true;
 
+            // Eating phase loop
             while (eating)
             {
-                time += Time.deltaTime;
-                //damageTimer += Time.deltaTime;
-                
-                if(bubble != null)
-                {
-                    bubble.ChangeBubbleSize(time, maxEatTime);
-                }
-                
-                currentAttackPoint.Damage(time/maxEatTime);
+                elapsed += Time.deltaTime;
 
-                if (time > maxEatTime)
+                if (bubble != null)
+                    bubble.ChangeBubbleSize(elapsed, maxEatTime);
+
+                // Trigger next damage step if passed
+                if (damageCalls < damageSteps && elapsed >= damageInterval * (damageCalls + 1))
                 {
-                    //Debug.Log("Heading off");
+                    currentAttackPoint.Damage();
+                    damageCalls++;
+                }
+
+                // End phase
+                if (elapsed >= maxEatTime)
+                {
                     eating = false;
+
                     GetComponent<Boss>().State = BossStates.walkOff;
-                    //GetComponentInChildren<Animator>().Play("BossPoof");
                     GetComponent<Boss>().PlayAnimationIfHasState("BossPoof");
-                    yield return new WaitForSeconds(.25f);
-                    //GetComponentInChildren<Animator>().Play("BossFull");
+                    yield return new WaitForSeconds(0.25f);
                     GetComponent<Boss>().PlayAnimationIfHasState("BossFull");
 
                     if (bubble != null)
-                    {
                         bubble.PopBubble();
-                    }
 
                     GetComponentInChildren<BossDamage>().AllowCollisions(false);
                     GetComponent<BossItemManager>().DespawnObjects();
                     GetComponent<Boss>().FadeCurrentMaze();
-
-
                 }
-                yield return null;
 
-            }        
-        } 
+                yield return null;
+            }
+        }
     }
 
     public void InterruptAttack()

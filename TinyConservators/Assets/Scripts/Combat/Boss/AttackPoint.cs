@@ -5,147 +5,120 @@ using UnityEngine;
 public class AttackPoint : MonoBehaviour
 {
     [SerializeField] Sprite[] visuals;
-    [SerializeField] float damagePerStep;
-    [SerializeField] GameObject healthBar; //Use the actual bar here, so the green part
+    [SerializeField] GameObject healthBar;
+    [SerializeField] GameObject fixParticleSystem;
 
     SpriteRenderer visual;
-    int damageProgress;
-    float damagePercentage = 0;
+    int damageSteps; // total steps of visible damage
 
-    float health;
-
-    float damageInterval;
-
-    int damageSteps;
-
-    int totalDamage = 0;
-
-    float damageToPainting = 0;
-
+    float damageToPainting = 0f; // between 0-1
     int oldDamageIndex = 0;
+
+    int damageIndex = 0;
+
+    float hackyFixAmount = 0;
 
     Vector3 origHealthBarSize;
 
     private void Start()
     {
-        damageSteps = visuals.Length - 1;
         visual = GetComponent<SpriteRenderer>();
-
-        //damageInterval = visuals.Length;
-
         origHealthBarSize = healthBar.transform.localScale;
-
+        damageSteps = visuals.Length - 1;
+        //UpdateVisuals();
+        //CalculateHealthBarLook();
     }
 
     public void NewAttack()
     {
-        totalDamage = 0;
-    }
-
-    public void ProgressVisual()
-    {
-        damageProgress++;
-        if(damageProgress < visuals.Length)
-        {
-            visual.sprite = visuals[damageProgress];
-        }
-
-    }
-
-    public void Damage(float percentageOfDamage)
-    {
-        int damageStep = Mathf.FloorToInt(percentageOfDamage * 10);
-
-        //Debug.Log("total damage = " + totalDamage + ", damageStep" + damageStep);
-        if(totalDamage != damageStep)
-        {
-            totalDamage = damageStep;
-            DamagePainting();
-        }
-        
-
-        /*
-        // Clamp input between 0–1
-        percentageOfDamage = Mathf.Clamp01(percentageOfDamage);
-
-        // Convert percentage into step-based damage
-        float stepSize = 1f / damageSteps;
-
-        // Multiply by percentage of full damage to apply steps
-        float damageToAdd = percentageOfDamage * damageSteps * stepSize;
-
-        // Add damage, clamped to 1
-        damagePercentage = Mathf.Min(damagePercentage + damageToAdd, 1f);
-
-        Debug.Log(damagePercentage);
-        // Optional: drive visuals
-        // int index = Mathf.FloorToInt(damagePercentage * damageSteps);
-        // index = Mathf.Clamp(index, 0, visuals.Length - 1);
-        // visual.sprite = visuals[index];
-
-        // Debug.Log($"Damage %: {damagePercentage}");*/
-    }
-
-    void DamagePainting()
-    {
-        damageToPainting +=  damagePerStep;
-        //damageToPainting += .1f;
-        
-        int index = Mathf.FloorToInt(damageToPainting * damageSteps);
-        index = Mathf.Clamp(index, 0, visuals.Length - 1);
-        TryToChangeDamageIndex(index);
-
-
-    }
-
-    public void FixDamage(float amount)
-    {
-        damageToPainting -= amount;
-        
-        if(damageToPainting < 0)
-        {
-            damageToPainting = 0;
-        }
-
-        int index = Mathf.FloorToInt(damageToPainting * damageSteps);
-        index = Mathf.Clamp(index, 0, visuals.Length - 1);
-        Debug.Log("DamageIndex is : " + index);
-        TryToChangeDamageIndex(index);
+        damageToPainting = 0;
+        oldDamageIndex = 0;
+        //UpdateVisuals();
         //CalculateHealthBarLook();
-        //Damage(damagePercentage);
     }
 
-    private void TryToChangeDamageIndex(int newIndex)
+    public void Damage()
     {
-        if(newIndex > oldDamageIndex)
+        damageIndex++;
+        
+        UpdateVisuals();
+        CalculateHealthBarLook();
+    }
+
+    void UpdateVisuals()
+    {
+        // Determine step index based on total damage (0-1 range mapped to steps)
+        //int newIndex = Mathf.FloorToInt(damageToPainting * damageSteps);
+        //newIndex = Mathf.Clamp(newIndex, 0, visuals.Length - 1);
+        int newIndex = damageIndex;
+
+        if (newIndex > oldDamageIndex)
         {
             visual.sprite = visuals[newIndex];
-            //Debug.Log("New damage step");
-            //Call some sort of negative effect in addition to screen shake.
+
             CinemachineImpulseSource cm = GetComponent<CinemachineImpulseSource>();
-            if(cm != null)
+            if (cm != null)
             {
                 cm.GenerateImpulseWithForce(0.2f);
-                CalculateHealthBarLook();
-                //Debug.Log("Shake the screen");
             }
 
             oldDamageIndex = newIndex;
         }
         else if(newIndex < oldDamageIndex)
         {
-            CalculateHealthBarLook();
-            //Call some positive effect
             visual.sprite = visuals[newIndex];
-            oldDamageIndex = newIndex;
+            fixParticleSystem.GetComponent<ParticleSystem>()?.Play();
+            //Do a little sparkle
         }
     }
 
     void CalculateHealthBarLook()
     {
-        float healthBarSize = Mathf.Clamp(1 - damageToPainting, 0, origHealthBarSize.x);
-        healthBar.transform.localScale = new Vector3(healthBarSize, origHealthBarSize.y, origHealthBarSize.z);
+        //float scaleX = Mathf.Clamp(1f - damageToPainting, 0f, 1f);
+        //float scaleX = Mathf.Clamp01(damageIndex / damageSteps);
+        //Debug.Log(scaleX);
+        //healthBar.transform.localScale = new Vector3(scaleX * origHealthBarSize.x, origHealthBarSize.y, origHealthBarSize.z);
+
+        float scaleX = 1f - Mathf.Clamp01((float)damageIndex / damageSteps);
+
+        healthBar.transform.localScale = new Vector3(
+            scaleX * origHealthBarSize.x,
+            origHealthBarSize.y,
+            origHealthBarSize.z
+            );
+
     }
+
+    //Doing a hacky fix, where each painting dot will heal 1 level
+    public void FixDamage(float amount)
+    {
+        hackyFixAmount += amount;
+        
+        if(hackyFixAmount >= 1.3f)
+        {
+            if(damageIndex > 0)
+            {
+                damageIndex--;
+            }
+            
+
+            UpdateVisuals();
+            CalculateHealthBarLook();
+
+            hackyFixAmount = 0;
+        }
+        //damageIndex--;
+        
+    }
+
+    /*public void FixDamage(float amount)
+    {
+        damageToPainting -= amount;
+        damageToPainting = Mathf.Clamp01(damageToPainting);
+        //damageIndex--;
+        UpdateVisuals();
+        CalculateHealthBarLook();
+    }*/
 
     public int GetAmountOfVisualDamageSteps()
     {
@@ -154,7 +127,7 @@ public class AttackPoint : MonoBehaviour
 
     public float GetAmountOfDamage()
     {
-        return damageToPainting;
+        return Mathf.Clamp01((float)damageIndex / damageSteps);
     }
 
 }

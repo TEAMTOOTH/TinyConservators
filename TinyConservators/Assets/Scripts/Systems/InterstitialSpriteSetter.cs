@@ -25,8 +25,10 @@ public class InterstitialSpriteSetter : MonoBehaviour
             {
                 GetComponent<Animator>().Play(animationStates[1]);
             }
+            
+        }
+        //GetComponent<Animator>().Play(animationStates[1]);
 
-        } 
     }
     
 }

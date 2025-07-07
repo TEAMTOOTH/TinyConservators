@@ -224,7 +224,8 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
             */
 
             //transform.localScale = endScale;
-            damageOwner.FixDamage(amountOfDamageFixedPerPickup);
+            //damageOwner.FixDamage(amountOfDamageFixedPerPickup);
+            damageOwner.FixDamage(.33f);
             Sparkle();
             //Destroy(gameObject);
         }

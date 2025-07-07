@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statToGet: 1
   animationStates:
-  - BossSad
+  - BossDefeat
   - BossHappy
 --- !u!1 &780164569
 GameObject:
@@ -3158,7 +3158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statToGet: 1
   animationStates:
-  - BossSad
+  - BossDefeat
   - BossHappy
 --- !u!1 &1632156919
 GameObject:
