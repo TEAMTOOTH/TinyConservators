@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{dac96f24-28dc-4cdb-a0c8-70ede03650c2}">
+		<property name="assetPath">
+			<value>Power Outage Hit.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.4545578231292513</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b4a97ad3-fc95-4a31-8d6d-7a312d5221cd}</destination>
+		</relationship>
+	</object>
+</objects>

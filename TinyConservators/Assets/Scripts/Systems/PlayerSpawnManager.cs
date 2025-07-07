@@ -48,7 +48,10 @@ public class PlayerSpawnManager : MonoBehaviour
         //Debug.Break();
         Debug.Log(pm.GetAmountOfPlayers());
         SetUpPlayer(playerInput.gameObject, pm.GetAmountOfPlayers());
-        
+
+        // play player join SFX
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/playerJoin");
+
     }
 
     public void SetInGame(bool inGame)

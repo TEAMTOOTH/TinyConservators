@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{4d1ca549-488b-4de0-a782-7c02b59575b9}">
+		<property name="assetPath">
+			<value>Tiny Conservators lady of lightfinal instrumental loopable.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>87.272743764172333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b4a97ad3-fc95-4a31-8d6d-7a312d5221cd}</destination>
+		</relationship>
+	</object>
+</objects>

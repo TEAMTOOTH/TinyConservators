@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{7a6f8c67-c471-4b5b-9e3b-f7fb549f085d}">
 		<property name="assetPath">
 			<value>Little Conservators Start Music section1.wav</value>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{084e4c32-b658-47f5-ad2d-7a100ade6fa7}">
+		<property name="name">
+			<value>whichBossFight</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ee7774b9-ffef-4b0a-858e-b821869286b8}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{3ae1d980-67cb-4f94-9fd0-22fbf40bc3b1}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{3ae1d980-67cb-4f94-9fd0-22fbf40bc3b1}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>ladyOfLight</value>
+			<value>DJs</value>
+			<value>allOfThem</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

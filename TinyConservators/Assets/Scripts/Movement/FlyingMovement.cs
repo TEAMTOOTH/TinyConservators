@@ -43,6 +43,9 @@ public class FlyingMovement : MonoBehaviour
                 }
                 amountOfFlaps--;
 
+                //flap SFX
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/flap");
+
                 StartCoroutine(ResetCanFlap());
                 IEnumerator ResetCanFlap()
                 {

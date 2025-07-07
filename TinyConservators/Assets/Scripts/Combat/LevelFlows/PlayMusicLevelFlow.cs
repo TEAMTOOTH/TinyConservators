@@ -14,8 +14,12 @@ public class PlayMusicLevelFlow : MonoBehaviour, ILevelFlowComponent
         owner = flowManager;
 
         //Code for starting music here
-        musicSelector = FMODUnity.RuntimeManager.CreateInstance("event:/music/musicWithLyrics");
+        musicSelector = FMODUnity.RuntimeManager.CreateInstance("event:/music/mainMusicFlow");
         musicSelector.start();
+
+        // Reset cutscene music trigger - this makes the music skip to the cutscene audio
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("cutsceneGo", 0);
+
         FinishSection();
     }
 }

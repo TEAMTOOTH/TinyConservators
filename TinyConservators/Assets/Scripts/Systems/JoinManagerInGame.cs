@@ -20,6 +20,10 @@ public class JoinManagerInGame : MonoBehaviour
         //(playerInput);
         //Debug.Log(playerInput.gameObject);
         //Debug.Break();
+
+        // player join SFX
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/playerJoin");
+
         SetUpPlayer(playerInput.gameObject, pm.GetAmountOfPlayers());
     }
 

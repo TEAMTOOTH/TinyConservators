@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{9efc6285-f7e1-477f-bbb5-dd01f915a09f}">
 		<property name="name">
 			<value>musicWithLyrics</value>
@@ -69,8 +69,8 @@
 	</object>
 	<object class="Timeline" id="{b5246727-68cd-4f86-940f-0acffd8cfaef}">
 		<relationship name="modules">
-			<destination>{d1a02a25-497f-49db-8ca7-25ca488cdca2}</destination>
 			<destination>{b472205c-4525-4d1f-afd2-752c5d733fff}</destination>
+			<destination>{d1a02a25-497f-49db-8ca7-25ca488cdca2}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{4bc18e77-e969-400d-9f03-ff2069bde58f}</destination>

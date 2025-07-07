@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{7459992c-64ed-4e2a-81c3-75f13a6ef9b4}">
+		<property name="assetPath">
+			<value>Tiny Conservators DJ DND section instrumental.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>78.545464852607708</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b4a97ad3-fc95-4a31-8d6d-7a312d5221cd}</destination>
+		</relationship>
+	</object>
+</objects>

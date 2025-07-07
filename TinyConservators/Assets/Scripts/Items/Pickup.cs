@@ -38,6 +38,9 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
             if (pointsReceiver != null)
             {
                 pointsReceiver.AddPoints(pointsValue);
+
+                // Play eat SFX
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/tinyEgg");
             }
             if(damageOwner != null)
             {
@@ -239,6 +242,9 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
             if (GetComponentInChildren<ParticleSystem>() != null)
             {
                 GetComponentInChildren<ParticleSystem>().Play();
+
+                //Play sparkle SFX
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/sparkleClean");
             }
 
             yield return new WaitForSeconds(1f);

@@ -186,8 +186,30 @@ public class Boss : MonoBehaviour, IDamageReceiver
                 e.InstantDissapear();
             }
         }
+
+
+
         
-        
+        //Turn off the boss voice layer
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("bossVoice", 0);
+
+        //let's try putting boss hurt SFX here
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/bossHurt");
+
+
+        StartCoroutine(PassTime());
+        IEnumerator PassTime()
+        {
+            float time = 0;
+            while (time < 5)
+            {
+                time += Time.deltaTime;
+                yield return null;
+            }
+
+            // Reset the boss voice volume
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("bossVoice", 1);
+        }
 
         if (lastRound)
         {

@@ -25,6 +25,7 @@ public class EnemyKnockout : MonoBehaviour, IKnockoutable
 
             IDamageReceiver damage = GetComponent<IDamageReceiver>();
             damage.Hurt(null);
+
         }
     }
 

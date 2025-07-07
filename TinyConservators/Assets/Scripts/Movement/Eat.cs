@@ -20,6 +20,10 @@ public class Eat : MonoBehaviour
             if (eatObject.Eatable())
             {
                 eatObject.Eat(transform.parent.gameObject);
+
+                // monster chomp SFX
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/monsterChomp");
+
                 if (eatObject.Spittable())
                 {
                     GetComponentInParent<Player>().AnimationTransition(1,2,0.1f);

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{de1c1004-7f67-4df3-895f-22fc352fce11}">
+		<property name="assetPath">
+			<value>ladyoflight eeow.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.0909297052154194</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b4a97ad3-fc95-4a31-8d6d-7a312d5221cd}</destination>
+		</relationship>
+	</object>
+</objects>

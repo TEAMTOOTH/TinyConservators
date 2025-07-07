@@ -26,6 +26,9 @@ public class PlayerKnockout : MonoBehaviour, IKnockoutable
             gameObject.layer = LayerMask.NameToLayer("Knockout");
             isKnockedOut = true;
             GetComponent<VisualController>().UpdatePart(3);
+
+            // player hurt SFX
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/tinyHurt");
         }
     }
 

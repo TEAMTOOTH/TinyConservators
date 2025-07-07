@@ -136,6 +136,9 @@ public class Minion : MonoBehaviour, IEatable
         //GetComponentInChildren<SpriteRenderer>().sprite = fallingGoblin;
         animations.Play("MinionFalling");
 
+        //SFX minion hurt
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/minionHurt");
+
         // Get a random angle in degrees from -22.5 to +22.5
         float randomAngle = UnityEngine.Random.Range(-arcAngle, arcAngle);
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{5f5a2890-cf8a-4ba8-be84-109c7b40cb72}">
+		<property name="name">
+			<value>bossVoice</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ee7774b9-ffef-4b0a-858e-b821869286b8}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{057a475c-31bc-405d-a440-5851b4601aed}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{057a475c-31bc-405d-a440-5851b4601aed}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{1fbba720-a7e7-4c20-a003-e7d3af9ea75a}</destination>
+		</relationship>
+	</object>
+	<object class="SeekModulator" id="{1fbba720-a7e7-4c20-a003-e7d3af9ea75a}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
+		<property name="speedAscending">
+			<value>1.3999999761581421</value>
+		</property>
+		<property name="asymmetric">
+			<value>true</value>
+		</property>
+	</object>
+</objects>
