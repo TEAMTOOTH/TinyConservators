@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 528344198}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 1
   parallell: 1
 --- !u!1 &354054230
@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 854786494}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 1
   parallell: 1
 --- !u!1 &483999833
@@ -1264,7 +1264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 854786494}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 0
   parallell: 0
 --- !u!1 &761105510
@@ -1981,7 +1981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 528344198}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 0
   parallell: 1
 --- !u!1001 &1005084388

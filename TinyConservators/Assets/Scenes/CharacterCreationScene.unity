@@ -1385,7 +1385,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.39467004, b: 0.51572317, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.48363346, b: 0.6320754, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3542,7 +3542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 406553673}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 0
   parallell: 1
 --- !u!1 &1412138799
@@ -4291,7 +4291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 708937935}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 0
   parallell: 0
 --- !u!1 &1735474282

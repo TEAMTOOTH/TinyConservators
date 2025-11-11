@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 976921371}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 1
   parallell: 1
 --- !u!1 &29124630
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 976921371}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 0
   parallell: 1
 --- !u!1 &76135542
@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 2070973106}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 0
   parallell: 0
 --- !u!1 &111719523
@@ -3383,7 +3383,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562783663}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -5608,7 +5608,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982720437}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -7661,7 +7661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 976921371}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 0
   parallell: 1
 --- !u!1 &1240250231
@@ -9144,7 +9144,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572141484}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -10066,7 +10066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 2070973106}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 1
   parallell: 1
 --- !u!1 &1783295551
@@ -10772,7 +10772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 2070973106}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 0
   parallell: 0
 --- !u!1 &1842761207
@@ -11183,7 +11183,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957318205}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
