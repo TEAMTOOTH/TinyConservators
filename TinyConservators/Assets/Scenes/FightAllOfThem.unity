@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 1238386860}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 0
   parallell: 1
 --- !u!1 &15369871
@@ -1965,7 +1965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 1563184042}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 0
   parallell: 0
 --- !u!1 &410052175
@@ -2477,7 +2477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 1563184042}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 1
   parallell: 1
 --- !u!1 &469295883
@@ -4118,7 +4118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 1563184042}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 0
   parallell: 0
 --- !u!1 &634351257
@@ -4258,7 +4258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 1238386860}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 0
   parallell: 1
 --- !u!4 &654969709 stripped
@@ -8665,9 +8665,9 @@ Transform:
   - {fileID: 327709832}
   - {fileID: 1341001907}
   - {fileID: 707838701}
+  - {fileID: 1896050285}
   - {fileID: 1934122446}
   - {fileID: 455850453}
-  - {fileID: 1896050285}
   - {fileID: 1970750921}
   - {fileID: 997721308}
   - {fileID: 424587587}
@@ -13906,7 +13906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 1238386860}
-  moveTime: 3
+  moveTime: 1
   moveIndex: 1
   parallell: 1
 --- !u!1 &1940369666
