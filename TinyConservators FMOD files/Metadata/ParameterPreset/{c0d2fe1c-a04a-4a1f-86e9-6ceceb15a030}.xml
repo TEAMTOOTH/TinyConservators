@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="ParameterPreset" id="{d0d989a2-1dee-468b-8e2f-be16da638b87}">
+	<object class="ParameterPreset" id="{c0d2fe1c-a04a-4a1f-86e9-6ceceb15a030}">
 		<property name="name">
 			<value>ladyIsSinging</value>
 		</property>
@@ -8,10 +8,10 @@
 			<destination>{ee7774b9-ffef-4b0a-858e-b821869286b8}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{1b553aba-997f-4292-b856-2846f8a72acf}</destination>
+			<destination>{ea753765-d388-4745-ab39-e602c114b77e}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{1b553aba-997f-4292-b856-2846f8a72acf}">
+	<object class="GameParameter" id="{ea753765-d388-4745-ab39-e602c114b77e}">
 		<property name="parameterType">
 			<value>2</value>
 		</property>

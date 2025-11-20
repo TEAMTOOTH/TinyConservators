@@ -81,9 +81,6 @@
 		<property name="commandType">
 			<value>3</value>
 		</property>
-		<relationship name="commandTarget">
-			<destination>{1b553aba-997f-4292-b856-2846f8a72acf}</destination>
-		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{d60ecc98-5198-410a-8348-cff4376148de}">
 		<relationship name="effects">

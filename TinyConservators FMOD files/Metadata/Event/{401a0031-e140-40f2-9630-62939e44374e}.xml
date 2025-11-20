@@ -93,7 +93,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="commandTarget">
-			<destination>{1b553aba-997f-4292-b856-2846f8a72acf}</destination>
+			<destination>{ea753765-d388-4745-ab39-e602c114b77e}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{532eb7af-dcd7-45ed-96a9-5363370c5938}">

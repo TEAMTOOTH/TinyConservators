@@ -84,9 +84,6 @@
 		<property name="targetValue">
 			<value>1</value>
 		</property>
-		<relationship name="commandTarget">
-			<destination>{1b553aba-997f-4292-b856-2846f8a72acf}</destination>
-		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{0dab4970-8514-4964-a9e8-16df768e6f7d}">
 		<relationship name="effects">
