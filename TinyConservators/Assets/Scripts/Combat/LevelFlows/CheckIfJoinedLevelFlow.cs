@@ -1,16 +1,32 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
-public class CheckIfJoinedLevelFlow : MonoBehaviour
+public class CheckIfJoinedLevelFlow : MonoBehaviour, ILevelFlowComponent
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    LevelFlowManager owner;
+    
+    public void FinishSection()
     {
-        
+        owner.ProgressFlow();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartSection(LevelFlowManager flowManager)
     {
-        
+        owner = flowManager;
+        PlayerInputManager pIM = GameObject.FindGameObjectWithTag("PlayerJoinManager").GetComponent<PlayerInputManager>();
+
+        if(pIM != null)
+        {
+            if(pIM.playerCount > 0)
+            {
+                FinishSection();
+                return;
+                
+            }
+        }
+        GameObject.FindGameObjectWithTag("DontDestroyManager")?.GetComponent<DontDestroyOnLoadManager>().DestroyAllDontDestroyObjects();
+        SceneManager.LoadScene("StartScene");
+
     }
 }
