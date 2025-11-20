@@ -21,14 +21,19 @@ public class ListenForMusicCueLevelFlow : MonoBehaviour, ILevelFlowComponent
         Debug.Log("In ListenForMusicLevelFlow");
 
 
-        FMODUnity.RuntimeManager.StudioSystem.getParameterByName("ladyIsSinging", out float result);
+        
         float timer = 0;
+        float pollingTime = 0f;
         while (timer < 30)
         {
-            
             timer += Time.deltaTime;
-
-            Debug.Log(timer + " " + result);
+            pollingTime += Time.deltaTime;
+            if(pollingTime > .25f)
+            {
+                FMODUnity.RuntimeManager.StudioSystem.getParameterByName("ladyIsSinging", out float result);
+                Debug.Log(timer + " " + result);
+                pollingTime = 0;
+            }
 
             yield return null;
         }
