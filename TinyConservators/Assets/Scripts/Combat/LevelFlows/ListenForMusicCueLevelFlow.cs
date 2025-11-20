@@ -24,19 +24,27 @@ public class ListenForMusicCueLevelFlow : MonoBehaviour, ILevelFlowComponent
         
         float timer = 0;
         float pollingTime = 0f;
-        while (timer < 30)
+
+        float result;
+        while (timer < 10)
         {
             timer += Time.deltaTime;
             pollingTime += Time.deltaTime;
             if(pollingTime > .25f)
             {
-                FMODUnity.RuntimeManager.StudioSystem.getParameterByName("ladyIsSinging", out float result);
-                Debug.Log(timer + " " + result);
+                FMODUnity.RuntimeManager.StudioSystem.getParameterByName("ladyIsSinging", out result);
+                if(result == 1)
+                {
+                    Debug.Log("Triggered");
+                }
+                //Debug.Log(result);
                 pollingTime = 0;
             }
 
             yield return null;
         }
+        FMODUnity.RuntimeManager.StudioSystem.getParameterByName("ladyIsSinging", out result);
+        Debug.Log(result);
         FinishSection();
         Debug.Log("Trigger lady");
     }
