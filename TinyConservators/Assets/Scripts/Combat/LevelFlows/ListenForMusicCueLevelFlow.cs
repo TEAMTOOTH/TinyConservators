@@ -20,9 +20,9 @@ public class ListenForMusicCueLevelFlow : MonoBehaviour, ILevelFlowComponent
     {
         Debug.Log("In ListenForMusicLevelFlow");
 
-        FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("ladyIsSinging", out FMOD.Studio.PARAMETER_DESCRIPTION desc);
+        //FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("ladyIsSinging", out FMOD.Studio.PARAMETER_DESCRIPTION desc);
 
-        Debug.Log(desc.id);
+        //Debug.Log(desc.id);
 
        
 
@@ -36,8 +36,8 @@ public class ListenForMusicCueLevelFlow : MonoBehaviour, ILevelFlowComponent
             pollingTime += Time.deltaTime;
             if(pollingTime > .25f)
             {
-                FMODUnity.RuntimeManager.StudioSystem.getParameterByID(desc.id, out result);
-                FMODUnity.RuntimeManager.StudioSystem.getParameterByName("ladyIsSinging", out result);
+                //FMODUnity.RuntimeManager.StudioSystem.getParameterByID(desc.id, out result);
+                FMODUnity.RuntimeManager.StudioSystem.getParameterByName("ladyIsSinging", out float initialValue, out result);
                 if(result == 1)
                 {
                     Debug.Log("Triggered");
