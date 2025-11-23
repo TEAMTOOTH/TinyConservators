@@ -13,7 +13,7 @@ public class LevelFlowManager : MonoBehaviour
         levelFlows = GetComponentsInChildren<ILevelFlowComponent>();
 
         levelFlows[0].StartSection(this);
-        Debug.Log("Starting level flow " + levelFlows[0]);
+        //Debug.Log("Starting level flow " + levelFlows[0]);
     }
 
     public void ProgressFlow()

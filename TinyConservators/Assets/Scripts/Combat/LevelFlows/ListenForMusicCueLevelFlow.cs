@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class ListenForMusicCueLevelFlow : MonoBehaviour, ILevelFlowComponent
 {
+    //Editor variables
+    [SerializeField] string eventName;
+    [SerializeField] float pollingRate;
+    [SerializeField] float waitTimeBeforeBackupSkip;
+
     LevelFlowManager owner;
     public void FinishSection()
     {
@@ -18,40 +23,28 @@ public class ListenForMusicCueLevelFlow : MonoBehaviour, ILevelFlowComponent
 
     IEnumerator Listener()
     {
-        Debug.Log("In ListenForMusicLevelFlow");
-
-        //FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("ladyIsSinging", out FMOD.Studio.PARAMETER_DESCRIPTION desc);
-
-        //Debug.Log(desc.id);
-
-       
-
         float timer = 0;
         float pollingTime = 0f;
 
         float result;
-        while (timer < 10)
+        while (timer < waitTimeBeforeBackupSkip)
         {
             timer += Time.deltaTime;
             pollingTime += Time.deltaTime;
-            if(pollingTime > .25f)
+            if(pollingTime > pollingRate)
             {
                 //FMODUnity.RuntimeManager.StudioSystem.getParameterByID(desc.id, out result);
-                FMODUnity.RuntimeManager.StudioSystem.getParameterByName("ladyIsSinging", out float initialValue, out result);
+                FMODUnity.RuntimeManager.StudioSystem.getParameterByName(eventName, out _, out result);
                 if(result == 1)
                 {
-                    Debug.Log("Triggered");
+                    break;
                 }
-                Debug.Log(result);
                 pollingTime = 0;
             }
 
             yield return null;
         }
-        FMODUnity.RuntimeManager.StudioSystem.getParameterByName("ladyIsSinging", out result);
-        Debug.Log(result);
         FinishSection();
-        Debug.Log("Trigger lady");
     }
 
 }

@@ -610,6 +610,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ec0e8f00f44294881dbf3fb20518cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventName: ladyIsSinging
+  pollingRate: 0.1
+  waitTimeBeforeBackupSkip: 30
 --- !u!1 &493062252
 GameObject:
   m_ObjectHideFlags: 0
