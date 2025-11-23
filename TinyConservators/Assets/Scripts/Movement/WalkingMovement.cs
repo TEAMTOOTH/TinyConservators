@@ -12,6 +12,12 @@ public class WalkingMovement : MonoBehaviour
 
     [SerializeField] Vector2 targetVelocity;
     [SerializeField] float horizontalSpeedIncrease = 50;
+
+    [SerializeField] float acceleration = 4f;    // lower = floatier
+    [SerializeField] float deceleration = 1f;    // lower = floatier
+    [SerializeField] float reverseDrag = 0.5f;   // more drag when reversing
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,6 +43,8 @@ public class WalkingMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
 
+
+    /*
     //Take in input and apply it to the player/Handle all the game feel in terms of left/right movement within this class
     void HandleMovement()
     {
@@ -58,11 +66,13 @@ public class WalkingMovement : MonoBehaviour
             float directionX = Mathf.Sign(movementInput.x);
             float inputMagnitudeX = Mathf.Abs(movementInput.x); // Get how far the stick is pushed (0 to 1)
 
+
+            
             // If changing directionX, allow a small slide before reversing
             if (Mathf.Sign(velocity.x) != directionX && velocity.x != 0)
             {
                 // Apply stronger deceleration when switching directionXs
-                velocity.x = Mathf.MoveTowards(velocity.x, 0, horizontalSpeedIncrease * Time.deltaTime);
+                velocity.x = Mathf.MoveTowards(velocity.x, 0, horizontalSpeedIncrease/5 * Time.deltaTime);
             }
             else
             {
@@ -77,7 +87,71 @@ public class WalkingMovement : MonoBehaviour
         else
         {
             // Apply deceleration when no input is given
-            velocity.x = Mathf.MoveTowards(velocity.x, 0, horizontalSpeedIncrease * Time.deltaTime);
+            velocity.x = Mathf.MoveTowards(velocity.x, 0, horizontalSpeedIncrease/5 * Time.deltaTime);
+        }
+        
+                // Accelerate based on input magnitude (makes it smoother for controllers)
+                float targetSpeed = targetVelocity.x * inputMagnitudeX;
+                if (Mathf.Abs(velocity.x) < targetSpeed)
+                    velocity.x += directionX * horizontalSpeedIncrease * inputMagnitudeX * Time.deltaTime;
+                else
+                    velocity.x = directionX * targetSpeed;
+     
+        }
+        else
+        {
+            // Apply deceleration when no input is given
+            velocity.x = Mathf.MoveTowards(velocity.x, 0, horizontalSpeedIncrease / 5 * Time.deltaTime);
+        }
+    }
+*/
+
+    void HandleMovement()
+    {
+        if (!canMove)
+            return;
+
+        float input = movementInput.x;
+
+        if (input != 0)
+        {
+            float direction = Mathf.Sign(input);
+            float targetSpeed = targetVelocity.x * Mathf.Abs(input);
+
+            if(input < 0)
+            {
+                this.direction = -1;
+            }
+            else
+            {
+                this.direction = 1;
+            }
+
+            // Soft resistance when switching direction
+            if (Mathf.Sign(velocity.x) != direction)
+            {
+                velocity.x = Mathf.MoveTowards(
+                    velocity.x,
+                    0,
+                    deceleration * reverseDrag * Time.deltaTime
+                );
+            }
+
+            // Smooth floaty acceleration
+            velocity.x = Mathf.MoveTowards(
+                velocity.x,
+                direction * targetSpeed,
+                acceleration * Time.deltaTime
+            );
+        }
+        else
+        {
+            // Very slow floaty deceleration
+            velocity.x = Mathf.MoveTowards(
+                velocity.x,
+                0,
+                deceleration * Time.deltaTime
+            );
         }
     }
 

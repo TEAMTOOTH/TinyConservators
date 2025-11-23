@@ -46,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
         return enemiesSpawned;
     }
 
-    public void SpawnEnemies(int amount, GameObject owner)
+    public Enemy[] SpawnEnemies(int amount, GameObject owner)
     {
         IndexRandomizer indexRandom = new IndexRandomizer();
 
@@ -54,6 +54,7 @@ public class EnemySpawner : MonoBehaviour
         int enemyIndex = Random.Range(0, enemiesToSpawn.Length);
         int positionIndex = Random.Range(0, enemySpawnPoints.Length);
 
+        Enemy[] enemiesSpawned = new Enemy[amount];
 
         for (int i = 0; i < amount; i++)
         {
@@ -62,9 +63,12 @@ public class EnemySpawner : MonoBehaviour
 
             var g = Instantiate(enemiesToSpawn[enemyIndex], enemySpawnPoints[positionIndex].transform.position, Quaternion.identity);
 
-            g.GetComponent<Enemy>().SetOwner(owner);
+            enemiesSpawned[i] = g.GetComponent<Enemy>();
+            enemiesSpawned[i].SetOwner(owner);
+            //g.GetComponent<Enemy>().SetOwner(owner);
             //Debug.Log("Spawned enemy");
         }
+        return enemiesSpawned;
     }
 
     public void EndSpawning()
