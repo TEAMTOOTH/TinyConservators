@@ -10,6 +10,10 @@ public class FadeSpriteLevelFlow : MonoBehaviour, ILevelFlowComponent
     [SerializeField] private bool fadeIn = true;              // Toggle this to fade in/out
     [SerializeField] private float fadeDuration = 1f;         // Duration of fade in seconds
     [SerializeField] private bool parallell;         
+    
+    [Header("Fade in and out on one event")]
+    [SerializeField] private bool fadeInAndOut;         
+    [SerializeField] private float timeOfExistence;         
 
     private LevelFlowManager owner;
 
@@ -87,6 +91,15 @@ public class FadeSpriteLevelFlow : MonoBehaviour, ILevelFlowComponent
 
     public void FinishSection()
     {
+        if (fadeInAndOut)
+        {
+            StartCoroutine(WaitForFadeOut());
+            IEnumerator WaitForFadeOut()
+            {
+                yield return new WaitForSeconds(timeOfExistence);
+                StartFade(false);
+            }
+        }
         owner.ProgressFlow();
     }
 
