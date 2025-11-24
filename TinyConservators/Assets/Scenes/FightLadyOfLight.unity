@@ -10646,6 +10646,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7577190368559429210, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
+      propertyPath: reverseDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577190368559429210, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
+      propertyPath: deceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577190368559429210, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
+      propertyPath: horizontalSpeedIncrease
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
