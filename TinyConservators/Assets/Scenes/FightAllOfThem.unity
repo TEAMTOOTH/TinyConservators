@@ -8336,6 +8336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpots: {fileID: 782506228}
   bubble: {fileID: 0}
+  damageStepsPerAttack: 0
 --- !u!114 &1125268993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8734,8 +8735,8 @@ Transform:
   - {fileID: 410052176}
   - {fileID: 112724158}
   - {fileID: 393989599}
-  - {fileID: 1517371383}
   - {fileID: 707279691}
+  - {fileID: 1517371383}
   - {fileID: 582467374}
   - {fileID: 1705542598}
   - {fileID: 1318559342}
@@ -10126,7 +10127,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.9627508}
+  m_Offset: {x: 0, y: -1.0547602}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10136,7 +10137,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 22, y: 2.75}
+  m_Size: {x: 22, y: 2.5659814}
   m_EdgeRadius: 0
 --- !u!1 &1384454855
 GameObject:
@@ -10653,6 +10654,10 @@ PrefabInstance:
     - target: {fileID: 5967419696846133560, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967419696846133560, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15319,6 +15324,10 @@ PrefabInstance:
       propertyPath: attackSpots
       value: 
       objectReference: {fileID: 782506228}
+    - target: {fileID: 2930508527253700928, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
+      propertyPath: damageStepsPerAttack
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5126416437444419109, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
       propertyPath: m_Size.x
       value: 12.5
