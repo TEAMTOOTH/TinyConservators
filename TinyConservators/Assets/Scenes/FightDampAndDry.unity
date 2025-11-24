@@ -2856,7 +2856,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4777534917301986821, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 7262862617474497723, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
 --- !u!1 &378680358
 GameObject:
@@ -8365,6 +8371,7 @@ MonoBehaviour:
   attackSpots: {fileID: 782506228}
   bubble: {fileID: 0}
   damageStepsPerAttack: 4
+  damageVisualSpawner: {fileID: 1214515549}
 --- !u!114 &1125268993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8463,6 +8470,10 @@ MonoBehaviour:
   maximumAmount: 12
   throwOutForce: 2
   colorIndex: 0
+  waitTimeBeforeEaten: 0
+  center: {x: 0, y: 0}
+  width: 10
+  height: 5
 --- !u!1 &1126728793
 GameObject:
   m_ObjectHideFlags: 0
@@ -9371,6 +9382,59 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1214515548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1214515550}
+  - component: {fileID: 1214515549}
+  m_Layer: 0
+  m_Name: FakePaintDamageSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1214515549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214515548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd02a1dfa7f057428ad338e3f6b87d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnObject: {fileID: 4111976845852578208, guid: 4809020fd2a6848419cb42f078b518fc, type: 3}
+  minimumAmount: 12
+  maximumAmount: 12
+  throwOutForce: 0.1
+  colorIndex: 0
+  waitTimeBeforeEaten: 0.5
+  center: {x: 0, y: 0}
+  width: 20
+  height: 10
+--- !u!4 &1214515550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214515548}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1221602523
 GameObject:
   m_ObjectHideFlags: 0
@@ -16771,6 +16835,7 @@ SceneRoots:
   - {fileID: 176755844}
   - {fileID: 812593837}
   - {fileID: 1125268991}
+  - {fileID: 1214515550}
   - {fileID: 15369872}
   - {fileID: 723543521}
   - {fileID: 174004230}

@@ -2469,6 +2469,59 @@ MonoBehaviour:
   moveTime: 1
   moveIndex: 1
   parallell: 1
+--- !u!1 &458196993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 458196995}
+  - component: {fileID: 458196994}
+  m_Layer: 0
+  m_Name: FakePaintDamageSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &458196994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458196993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd02a1dfa7f057428ad338e3f6b87d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnObject: {fileID: 4111976845852578208, guid: 4809020fd2a6848419cb42f078b518fc, type: 3}
+  minimumAmount: 12
+  maximumAmount: 12
+  throwOutForce: 0.1
+  colorIndex: 2
+  waitTimeBeforeEaten: 0.5
+  center: {x: 0, y: 0}
+  width: 20
+  height: 10
+--- !u!4 &458196995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458196993}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &469295883
 GameObject:
   m_ObjectHideFlags: 0
@@ -8337,6 +8390,7 @@ MonoBehaviour:
   attackSpots: {fileID: 782506228}
   bubble: {fileID: 0}
   damageStepsPerAttack: 0
+  damageVisualSpawner: {fileID: 0}
 --- !u!114 &1125268993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8432,6 +8486,10 @@ MonoBehaviour:
   maximumAmount: 12
   throwOutForce: 5
   colorIndex: 0
+  waitTimeBeforeEaten: 0
+  center: {x: 0, y: 0}
+  width: 10
+  height: 5
 --- !u!1 &1128893983
 GameObject:
   m_ObjectHideFlags: 0
@@ -10657,7 +10715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5967419696846133560, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15325,6 +15383,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 782506228}
     - target: {fileID: 2930508527253700928, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
+      propertyPath: damageVisualSpawner
+      value: 
+      objectReference: {fileID: 458196994}
+    - target: {fileID: 2930508527253700928, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
       propertyPath: damageStepsPerAttack
       value: 4
       objectReference: {fileID: 0}
@@ -16133,3 +16195,4 @@ SceneRoots:
   - {fileID: 2021526670}
   - {fileID: 728381781}
   - {fileID: 1482108140}
+  - {fileID: 458196995}

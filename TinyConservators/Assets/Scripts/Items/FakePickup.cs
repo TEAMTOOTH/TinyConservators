@@ -1,73 +1,25 @@
 using System.Collections;
 using UnityEngine;
 
-
-public class Pickup : MonoBehaviour, IEatable, IFixer
+public class FakePickup : MonoBehaviour
 {
-    
-    [SerializeField] int pointsValue;
-    [SerializeField] float baseLifeTime;
-    [SerializeField] float lifeTimeVariaton;
-    [SerializeField] bool spittable;
-    [SerializeField] bool flyBackSpeed;
-    [SerializeField] float amountOfDamageFixedPerPickup;
-    [SerializeField] float radiusOfLandingSpot;
-    [SerializeField] bool fix = true;
-
     AttackPoint damageOwner;
+    [SerializeField] float radiusOfExitSpot;
 
-    bool fixing = false;
-    bool eatable = false;
-
-    public void Spawn(int colorIndex)
+    [SerializeField] Vector2 endPosition;
+    public void Spawn(int colorIndex, float timeToEat)
     {
         ChooseColor(colorIndex);
-        Invoke("AllowEating", .5f);
-        Invoke("DestroyAfterSetTime", Random.Range(baseLifeTime - lifeTimeVariaton, baseLifeTime + lifeTimeVariaton));
+        StartCoroutine(WaitBeforeFix(timeToEat));
     }
-    void Start()
+
+    IEnumerator WaitBeforeFix(float timeToEat)
     {
-        
+        yield return new WaitForSeconds(timeToEat);
+        Fix();
     }
 
-    public void Eat(GameObject eater)
-    {
-        if (eatable)
-        {
-            PointsReceiver pointsReceiver = eater.GetComponent<PointsReceiver>();
-
-            if (pointsReceiver != null)
-            {
-                pointsReceiver.AddPoints(pointsValue);
-
-                // Play eat SFX
-                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/tinyEgg");
-            }
-            if(damageOwner != null)
-            {
-                if(eater.GetComponent<Player>() != null)
-                {
-                    transform.position = eater.GetComponent<Player>().GetColorExpulsionPoint();
-                }
-                Fix();
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-            
-        }
-    }
-
-    public bool Eatable()
-    {
-        return eatable;
-    }
-
-    public void SpitOut(GameObject spitter)
-    {
-        throw new System.NotImplementedException();
-    }
+   
 
     void ChooseColor()
     {
@@ -93,39 +45,19 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
         colorAnimation.Play(clipName);
     }
 
-    void DestroyAfterSetTime()
-    {
-        //Pop effect?
-        if (!fixing)
-        {
-            Destroy(gameObject);
-        }
-    }
 
-    void AllowEating()
-    {
-        eatable = true;
-        GetComponent<Collider2D>().enabled = true;
-    }
 
-    public bool Spittable()
-    {
-        return spittable;
-    }
-
-    public void Consumed(GameObject consumer)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void SetEatable(bool state)
-    {
-        eatable = state;
-    }
 
     public void SetOwner(GameObject objectToFix)
     {
         damageOwner = objectToFix.GetComponent<AttackPoint>();
+
+    }
+
+    public void SetEndPosition(Vector2 endPosition)
+    {
+        this.endPosition = endPosition;
+
     }
 
     public void Fix()
@@ -135,22 +67,18 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
         {
             GetComponent<SoundController>().Play();
 
-            fixing = true;
-            SetEatable(false);
+         
             gameObject.layer = LayerMask.NameToLayer("NoCollision");
-
-
-
 
 
             float moveDuration = 0.6f;
             float time = 0f;
 
-            Vector2 startPos = transform.position;
+            Vector2 endPos = Vector2.zero;
             //Vector2 endPos = damageOwner.transform.position;
 
-            Vector2 endPos = (Vector2)damageOwner.transform.position + Random.insideUnitCircle * radiusOfLandingSpot;
-
+            Vector2 startPos = transform.position;
+            
             // Calculate direction and midpoint
             Vector2 direction = endPos - startPos;
             Vector2 midPoint = (startPos + endPos) / 2f;
@@ -191,14 +119,11 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
             }
 
             transform.position = endPos;
-            
-            damageOwner.FixDamage(.33f);
-            Sparkle();
-           
-            
+
+            Destroy(gameObject);
             //Destroy(gameObject);
         }
-        
+
 
     }
 
@@ -219,8 +144,8 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
 
             yield return new WaitForSeconds(1f);
             Destroy(gameObject);
-            
+
         }
     }
-}
 
+}

@@ -8,6 +8,8 @@ public class BossAttack : MonoBehaviour
     [SerializeField] GameObject attackSpots;
     [SerializeField] AttackBubbleVisual bubble;
     [SerializeField] int damageStepsPerAttack;
+    
+    [SerializeField] PickupSpawner damageVisualSpawner;
 
     List<AttackPoint> availibleAttackPoints;
     List<AttackPoint> mostRecentlyAttackedPoints;
@@ -82,7 +84,8 @@ public class BossAttack : MonoBehaviour
             currentAttackPoint.NewAttack();
 
             currentAttackPoint.Damage(damageStepsPerAttack);
-            
+            damageVisualSpawner.SpawnFakePickups();
+
             // Calculate dynamic intervals
             int damageSteps = (currentAttackPoint.GetAmountOfVisualDamageSteps() - 1) / 3;
             Debug.Log("Damage steps: " + damageSteps);
