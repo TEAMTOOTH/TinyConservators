@@ -45,6 +45,14 @@ public class AttackPoint : MonoBehaviour
         CalculateHealthBarLook();
     }
 
+    public void Damage(int damageSteps)
+    {
+        damageIndex += damageSteps;
+
+        UpdateVisuals();
+        CalculateHealthBarLook();
+    }
+
     void UpdateVisuals()
     {
         // Determine step index based on total damage (0-1 range mapped to steps)

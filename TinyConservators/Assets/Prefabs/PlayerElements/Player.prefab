@@ -625,10 +625,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetVelocity: {x: 2.75, y: 0}
-  horizontalSpeedIncrease: 30
+  horizontalSpeedIncrease: 10
   acceleration: 6
-  deceleration: 3
-  reverseDrag: 1.5
+  deceleration: 2
+  reverseDrag: 0
 --- !u!114 &5716680796236877587
 MonoBehaviour:
   m_ObjectHideFlags: 0

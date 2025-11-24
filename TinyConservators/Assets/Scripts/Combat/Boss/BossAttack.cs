@@ -6,7 +6,10 @@ using UnityEngine;
 public class BossAttack : MonoBehaviour
 {
     [SerializeField] GameObject attackSpots;
-    [SerializeField] AttackBubbleVisual bubble; 
+    [SerializeField] AttackBubbleVisual bubble;
+    [SerializeField] int damageStepsPerAttack;
+    
+    [SerializeField] PickupSpawner damageVisualSpawner;
 
     List<AttackPoint> availibleAttackPoints;
     List<AttackPoint> mostRecentlyAttackedPoints;
@@ -66,7 +69,7 @@ public class BossAttack : MonoBehaviour
         {
             // Setup phase
             GetComponent<Boss>().PlayAnimationIfHasState("BossPoof");
-            GetComponent<RadialPush2D>()?.PushAway();
+            //GetComponent<RadialPush2D>()?.PushAway();
 
             yield return new WaitForSeconds(0.25f);
 
@@ -79,6 +82,9 @@ public class BossAttack : MonoBehaviour
             GetComponent<BossItemManager>().SpawnObjects(amountOfProtection, speedOfProtection, sizeOfProtection);
 
             currentAttackPoint.NewAttack();
+
+            currentAttackPoint.Damage(damageStepsPerAttack);
+            damageVisualSpawner.SpawnFakePickups();
 
             // Calculate dynamic intervals
             int damageSteps = (currentAttackPoint.GetAmountOfVisualDamageSteps() - 1) / 3;
@@ -98,17 +104,18 @@ public class BossAttack : MonoBehaviour
                     bubble.ChangeBubbleSize(elapsed, maxEatTime);
 
                 // Trigger next damage step if passed
-                if (damageCalls < damageSteps && elapsed >= damageInterval * (damageCalls + 1))
-                {
-                    currentAttackPoint.Damage();
-                    damageCalls++;
-                }
+                //if (damageCalls < damageSteps && elapsed >= damageInterval * (damageCalls + 1))
+                //{
+                //    currentAttackPoint.Damage();
+                //    damageCalls++;
+                //}
 
                 // End phase
                 if (elapsed >= maxEatTime)
                 {
                     eating = false;
 
+                    GetComponent<BossItemManager>().DespawnObjects();
                     GetComponent<Boss>().State = BossStates.walkOff;
                     GetComponent<Boss>().PlayAnimationIfHasState("BossPoof");
                     yield return new WaitForSeconds(0.25f);
