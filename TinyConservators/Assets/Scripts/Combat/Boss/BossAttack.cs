@@ -11,6 +11,8 @@ public class BossAttack : MonoBehaviour
     
     [SerializeField] PickupSpawner damageVisualSpawner;
 
+    [SerializeField] BossAttackOverlord bossItemManagers;
+
     List<AttackPoint> availibleAttackPoints;
     List<AttackPoint> mostRecentlyAttackedPoints;
 
@@ -23,6 +25,8 @@ public class BossAttack : MonoBehaviour
     int amountOfProtection;
     float speedOfProtection;
     float sizeOfProtection;
+
+    int amountOfTimesAttacked = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -79,7 +83,10 @@ public class BossAttack : MonoBehaviour
             if (bubble != null)
                 bubble.StartShowing();
 
-            GetComponent<BossItemManager>().SpawnObjects(amountOfProtection, speedOfProtection, sizeOfProtection);
+
+            bossItemManagers.Attack(amountOfTimesAttacked);
+            
+            
 
             currentAttackPoint.NewAttack();
 
@@ -127,6 +134,8 @@ public class BossAttack : MonoBehaviour
                     GetComponentInChildren<BossDamage>().AllowCollisions(false);
                     GetComponent<BossItemManager>().DespawnObjects();
                     GetComponent<Boss>().FadeCurrentMaze();
+                    bossItemManagers.Despawn(amountOfTimesAttacked);
+                    amountOfTimesAttacked++;
                 }
 
                 yield return null;
@@ -145,6 +154,9 @@ public class BossAttack : MonoBehaviour
         GetComponent<Boss>().FadeCurrentMaze();
 
         GetComponent<BossItemManager>().DespawnObjects();
+        bossItemManagers.Despawn(amountOfTimesAttacked);
+        amountOfTimesAttacked++;
+
         StopAllCoroutines();
     }
 

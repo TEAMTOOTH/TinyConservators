@@ -1183,7 +1183,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 271415851}
+  - component: {fileID: 271415854}
   - component: {fileID: 271415850}
+  - component: {fileID: 271415853}
+  - component: {fileID: 271415852}
   m_Layer: 0
   m_Name: SpawnerOfClocks2
   m_TagString: Untagged
@@ -1203,7 +1206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5a4a62affba4a4ab5da7e480b7b469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 986033884968341864, guid: a7a090e3906c7004e9d73ab58d73f7e7, type: 3}
+  damageObjectInformation: {fileID: 11400000, guid: bb225e1f1f58ba547ab2c5f934aa0434, type: 2}
 --- !u!4 &271415851
 Transform:
   m_ObjectHideFlags: 0
@@ -1212,13 +1215,51 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271415849}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.75, z: -0.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1794561096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &271415852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271415849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5a4a62affba4a4ab5da7e480b7b469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageObjectInformation: {fileID: 11400000, guid: 46b99624ec9a13f42bd8a9fe3056ba08, type: 2}
+--- !u!114 &271415853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271415849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5a4a62affba4a4ab5da7e480b7b469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageObjectInformation: {fileID: 11400000, guid: e00834cd6a0a8fe4db6ae1ec248a6911, type: 2}
+--- !u!114 &271415854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271415849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71a445928987e441b3de7d9ac0a479c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &277674220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7129643366565660931, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
@@ -1808,57 +1849,6 @@ MonoBehaviour:
   amountOfProtectionItems: 0
   totalTimeOfRevolutionOfProtectionItems: 0
   radiusOfProtectionCircle: 0
---- !u!1 &398079738
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 398079739}
-  - component: {fileID: 398079740}
-  m_Layer: 0
-  m_Name: LevelFlowSpawnDamageObjects (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &398079739
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398079738}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1178552288}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &398079740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398079738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f55b1ca0fbe61ba498746b83d4e37d12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectSpawner:
-  - {fileID: 804335902}
-  - {fileID: 906314768}
-  despawn: 0
-  attackInformation:
-  - {fileID: 11400000, guid: bb225e1f1f58ba547ab2c5f934aa0434, type: 2}
-  - {fileID: 11400000, guid: e00834cd6a0a8fe4db6ae1ec248a6911, type: 2}
 --- !u!1 &399370145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,55 +1947,6 @@ MonoBehaviour:
   moveTime: 1
   moveIndex: 0
   parallell: 0
---- !u!1 &410052175
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 410052176}
-  - component: {fileID: 410052177}
-  m_Layer: 0
-  m_Name: LevelFlowSpawnDamageObjects
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &410052176
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410052175}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1178552288}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &410052177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410052175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f55b1ca0fbe61ba498746b83d4e37d12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectSpawner:
-  - {fileID: 804335902}
-  despawn: 0
-  attackInformation:
-  - {fileID: 11400000, guid: bb225e1f1f58ba547ab2c5f934aa0434, type: 2}
 --- !u!1 &411444035
 GameObject:
   m_ObjectHideFlags: 0
@@ -4946,55 +4887,6 @@ MonoBehaviour:
   - {fileID: 1611450007}
   - {fileID: 2077398597}
   active: 1
---- !u!1 &707279690
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 707279691}
-  - component: {fileID: 707279692}
-  m_Layer: 0
-  m_Name: LevelFlowSpawnDamageObjects
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &707279691
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707279690}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1178552288}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &707279692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707279690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f55b1ca0fbe61ba498746b83d4e37d12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectSpawner:
-  - {fileID: 804335902}
-  despawn: 1
-  attackInformation:
-  - {fileID: 11400000, guid: bb225e1f1f58ba547ab2c5f934aa0434, type: 2}
 --- !u!1 &707838700
 GameObject:
   m_ObjectHideFlags: 0
@@ -5578,6 +5470,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 804335903}
+  - component: {fileID: 804335904}
   - component: {fileID: 804335902}
   m_Layer: 0
   m_Name: SpawnerOfClocks
@@ -5598,7 +5491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5a4a62affba4a4ab5da7e480b7b469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 986033884968341864, guid: a7a090e3906c7004e9d73ab58d73f7e7, type: 3}
+  damageObjectInformation: {fileID: 11400000, guid: bb225e1f1f58ba547ab2c5f934aa0434, type: 2}
 --- !u!4 &804335903
 Transform:
   m_ObjectHideFlags: 0
@@ -5607,13 +5500,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804335901}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.75, z: -0.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1794561096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &804335904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804335901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71a445928987e441b3de7d9ac0a479c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &815502317 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2284897704738182420, guid: a7a090e3906c7004e9d73ab58d73f7e7, type: 3}
@@ -6085,6 +5990,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 906314769}
+  - component: {fileID: 906314771}
+  - component: {fileID: 906314770}
   - component: {fileID: 906314768}
   m_Layer: 0
   m_Name: SpawnerOfDiscoBalls
@@ -6105,7 +6012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5a4a62affba4a4ab5da7e480b7b469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 986033884968341864, guid: 18da558d6d490544fad7c8db03ee94b1, type: 3}
+  damageObjectInformation: {fileID: 11400000, guid: e00834cd6a0a8fe4db6ae1ec248a6911, type: 2}
 --- !u!4 &906314769
 Transform:
   m_ObjectHideFlags: 0
@@ -6114,13 +6021,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906314767}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.75, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1794561096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &906314770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906314767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5a4a62affba4a4ab5da7e480b7b469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageObjectInformation: {fileID: 11400000, guid: bb225e1f1f58ba547ab2c5f934aa0434, type: 2}
+--- !u!114 &906314771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906314767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71a445928987e441b3de7d9ac0a479c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &914467135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6203,59 +6135,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4364354964670000255, guid: 77e63dcc5e73fb645870ffe12cef0626, type: 3}
   m_PrefabInstance: {fileID: 914467135}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &928571965
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 928571966}
-  - component: {fileID: 928571967}
-  m_Layer: 0
-  m_Name: LevelFlowSpawnDamageObjects (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &928571966
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928571965}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1178552288}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &928571967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928571965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f55b1ca0fbe61ba498746b83d4e37d12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectSpawner:
-  - {fileID: 804335902}
-  - {fileID: 906314768}
-  - {fileID: 271415850}
-  despawn: 1
-  attackInformation:
-  - {fileID: 11400000, guid: bb225e1f1f58ba547ab2c5f934aa0434, type: 2}
-  - {fileID: 11400000, guid: e00834cd6a0a8fe4db6ae1ec248a6911, type: 2}
-  - {fileID: 11400000, guid: 46b99624ec9a13f42bd8a9fe3056ba08, type: 2}
 --- !u!1001 &929241392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8391,6 +8270,7 @@ MonoBehaviour:
   bubble: {fileID: 0}
   damageStepsPerAttack: 0
   damageVisualSpawner: {fileID: 0}
+  bossItemManagers: {fileID: 0}
 --- !u!114 &1125268993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8455,7 +8335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5a4a62affba4a4ab5da7e480b7b469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 0}
+  damageObjectInformation: {fileID: 0}
 --- !u!114 &1125268999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8790,10 +8670,8 @@ Transform:
   - {fileID: 976212456}
   - {fileID: 1711142974}
   - {fileID: 886424007}
-  - {fileID: 410052176}
   - {fileID: 112724158}
   - {fileID: 393989599}
-  - {fileID: 707279691}
   - {fileID: 1517371383}
   - {fileID: 582467374}
   - {fileID: 1705542598}
@@ -8810,10 +8688,8 @@ Transform:
   - {fileID: 1732799373}
   - {fileID: 1483418760}
   - {fileID: 646542672}
-  - {fileID: 398079739}
   - {fileID: 1009603329}
   - {fileID: 1306525316}
-  - {fileID: 1591841744}
   - {fileID: 478366094}
   - {fileID: 1987866878}
   - {fileID: 1459888317}
@@ -8828,10 +8704,8 @@ Transform:
   - {fileID: 801886691}
   - {fileID: 537706729}
   - {fileID: 1687223961}
-  - {fileID: 1472033762}
   - {fileID: 831756495}
   - {fileID: 172629502}
-  - {fileID: 928571966}
   - {fileID: 1857426681}
   - {fileID: 1017540055}
   - {fileID: 11825925}
@@ -10577,59 +10451,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameOfSFX: vincentPriceLaugh
---- !u!1 &1472033761
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1472033762}
-  - component: {fileID: 1472033763}
-  m_Layer: 0
-  m_Name: LevelFlowSpawnDamageObjects (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1472033762
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472033761}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1178552288}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1472033763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472033761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f55b1ca0fbe61ba498746b83d4e37d12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectSpawner:
-  - {fileID: 804335902}
-  - {fileID: 906314768}
-  - {fileID: 271415850}
-  despawn: 0
-  attackInformation:
-  - {fileID: 11400000, guid: bb225e1f1f58ba547ab2c5f934aa0434, type: 2}
-  - {fileID: 11400000, guid: e00834cd6a0a8fe4db6ae1ec248a6911, type: 2}
-  - {fileID: 11400000, guid: 46b99624ec9a13f42bd8a9fe3056ba08, type: 2}
 --- !u!1 &1473248827
 GameObject:
   m_ObjectHideFlags: 0
@@ -10720,13 +10541,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4777534917301986821, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 7262862617474497723, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
 --- !u!1 &1483418759
 GameObject:
@@ -11673,57 +11488,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1591841743
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1591841744}
-  - component: {fileID: 1591841745}
-  m_Layer: 0
-  m_Name: LevelFlowSpawnDamageObjects (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1591841744
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591841743}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1178552288}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1591841745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591841743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f55b1ca0fbe61ba498746b83d4e37d12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectSpawner:
-  - {fileID: 804335902}
-  - {fileID: 906314768}
-  despawn: 1
-  attackInformation:
-  - {fileID: 11400000, guid: bb225e1f1f58ba547ab2c5f934aa0434, type: 2}
-  - {fileID: 11400000, guid: e00834cd6a0a8fe4db6ae1ec248a6911, type: 2}
 --- !u!1001 &1611450005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13130,6 +12894,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1794561095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1794561096}
+  - component: {fileID: 1794561097}
+  m_Layer: 0
+  m_Name: BossAttacks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1794561096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794561095}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.75, z: -0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 804335903}
+  - {fileID: 906314769}
+  - {fileID: 271415851}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1794561097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794561095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 787acdefca923554587dc01c44525c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1829355781
 GameObject:
   m_ObjectHideFlags: 0
@@ -15383,6 +15194,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 782506228}
     - target: {fileID: 2930508527253700928, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
+      propertyPath: bossItemManagers
+      value: 
+      objectReference: {fileID: 1794561097}
+    - target: {fileID: 2930508527253700928, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
       propertyPath: damageVisualSpawner
       value: 
       objectReference: {fileID: 458196994}
@@ -16171,9 +15986,7 @@ SceneRoots:
   - {fileID: 1786223689}
   - {fileID: 972023301}
   - {fileID: 361344591}
-  - {fileID: 804335903}
-  - {fileID: 271415851}
-  - {fileID: 906314769}
+  - {fileID: 1794561096}
   - {fileID: 1730848329}
   - {fileID: 4298834560685741055}
   - {fileID: 2088406812}

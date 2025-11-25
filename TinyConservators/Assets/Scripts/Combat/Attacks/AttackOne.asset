@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be63bf97f38737245981a318fe95635c, type: 3}
   m_Name: AttackOne
   m_EditorClassIdentifier: 
+  damageObject: {fileID: 986033884968341864, guid: a7a090e3906c7004e9d73ab58d73f7e7, type: 3}
   amount: 8
   revolutionTime: 8
   size: 3
