@@ -10497,6 +10497,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: humidity-anim-sucking
       objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: 289dca8a1429b48aca6e56c5d9712fd4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 289dca8a1429b48aca6e56c5d9712fd4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
