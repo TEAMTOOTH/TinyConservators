@@ -5958,7 +5958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5a4a62affba4a4ab5da7e480b7b469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 986033884968341864, guid: a7a090e3906c7004e9d73ab58d73f7e7, type: 3}
+  damageObjectInformation: {fileID: 0}
 --- !u!4 &804335903
 Transform:
   m_ObjectHideFlags: 0
@@ -8399,6 +8399,7 @@ MonoBehaviour:
   bubble: {fileID: 0}
   damageStepsPerAttack: 4
   damageVisualSpawner: {fileID: 1214515549}
+  bossItemManagers: {fileID: 0}
 --- !u!114 &1125268993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8466,7 +8467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5a4a62affba4a4ab5da7e480b7b469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 0}
+  damageObjectInformation: {fileID: 0}
 --- !u!114 &1125268999
 MonoBehaviour:
   m_ObjectHideFlags: 0
