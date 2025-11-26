@@ -67,6 +67,8 @@ public class PlayerSpawnManager : MonoBehaviour
 
             if (!inGame)
             {
+
+                //Refactor to listen for tcp signal for color
                 StartCoroutine(wakeUpPlayer());
                 IEnumerator wakeUpPlayer()
                 {

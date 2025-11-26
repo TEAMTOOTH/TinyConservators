@@ -3561,7 +3561,7 @@ GameObject:
   - component: {fileID: 562783665}
   - component: {fileID: 562783664}
   m_Layer: 6
-  m_Name: Square (3)
+  m_Name: LevelCollider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6099,7 +6099,7 @@ GameObject:
   - component: {fileID: 982720439}
   - component: {fileID: 982720438}
   m_Layer: 6
-  m_Name: Square (1)
+  m_Name: LevelCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10121,7 +10121,7 @@ GameObject:
   - component: {fileID: 1572141486}
   - component: {fileID: 1572141485}
   m_Layer: 6
-  m_Name: Square
+  m_Name: LevelCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11627,14 +11627,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5967419696846133560, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4777534917301986821, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 7262862617474497723, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
 --- !u!1 &1832273516
 GameObject:
@@ -12219,7 +12221,7 @@ GameObject:
   - component: {fileID: 1957318207}
   - component: {fileID: 1957318206}
   m_Layer: 6
-  m_Name: Square (2)
+  m_Name: LevelCollider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

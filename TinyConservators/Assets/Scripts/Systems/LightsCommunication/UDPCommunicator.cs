@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Net;
@@ -10,7 +10,8 @@ using System.IO;
 
 public class UDPCommunicator : MonoBehaviour
 {
-    UdpClient udpClient;
+    UdpClient udpSender;
+    UdpClient udpReceiver;
     IPEndPoint ipEndPoint;
 
     string pathName = "Config.json";
@@ -37,13 +38,15 @@ public class UDPCommunicator : MonoBehaviour
 
     public void Awake()
     {
-
+        Debug.Log("In awake UDP communicator");
         //InvokeRepeating("SendUDPSignal", 1, 3);
         //SendTCPSignal();
         path = Application.dataPath + Path.AltDirectorySeparatorChar + "/" + pathName;
         persistentPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + pathName;
         string json;
         IPSave data;
+
+        Debug.Log(persistentPath);
         if (!File.Exists(persistentPath))
         {
 
@@ -60,16 +63,20 @@ public class UDPCommunicator : MonoBehaviour
         data = JsonUtility.FromJson<IPSave>(json);
 
 
+        //Sender
+        udpSender = new UdpClient();  // outbound only (does NOT bind)
+        //ipEndPoint = new IPEndPoint(IPAddress.Parse(data.iPAdress), 4704);
+        ipEndPoint = new IPEndPoint(IPAddress.Loopback, 4703);
 
 
-        udpClient = new UdpClient();
-        //ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 26950);
+        //Receiver
+        int listenPort = 4703;        // same port as sending, or change if needed
+        udpReceiver = new UdpClient(listenPort);   // bind here for incoming messages
 
-        //Debug.Log("in awake udp");
-        //10.101.60.201
-        ipEndPoint = new IPEndPoint(IPAddress.Parse(data.iPAdress), 4703);
-        //PlayerPrefs.Save();
-        //ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 4703);
+        Debug.Log($"UDP: Sending to {data.iPAdress}:4703, Listening on port {listenPort}");
+
+        //StartReceiving(4703);
+        ReceiveLoop();
     }
 
 
@@ -77,8 +84,8 @@ public class UDPCommunicator : MonoBehaviour
     void Start()
     {
 
-
     }
+
 
     bool HasNonASCIIChars(string str)
     {
@@ -103,7 +110,67 @@ public class UDPCommunicator : MonoBehaviour
         }
         //Debug.Log();
 
-        udpClient.Send(buffer, buffer.Length, ipEndPoint);
+        udpSender.Send(buffer, buffer.Length, ipEndPoint);
+    }
+
+    /*public void StartReceiving(int listenPort = 4703)
+    {
+        
+        udpReceiver = new UdpClient(listenPort);
+        ipEndPoint = new IPEndPoint(IPAddress.Any, listenPort);
+
+        Debug.Log($"UDP Receiver started on port {listenPort}");
+        ReceiveLoop();
+    }*/
+
+    private async void ReceiveLoop()
+    {
+        while (true)
+        {
+            UdpReceiveResult result = await udpReceiver.ReceiveAsync();
+            string msg = Encoding.ASCII.GetString(result.Buffer);
+
+            Debug.Log("Simulator → Received: " + msg);
+        }
+        /*
+        while (true)
+        {
+
+            try
+            {
+                Debug.Log("Before awaiting result");
+                UdpReceiveResult result = await udpReceiver.ReceiveAsync();
+
+                string received = Encoding.ASCII.GetString(result.Buffer);
+
+                Debug.Log(received);
+                // Handle message on main thread
+                UnityMainThreadDispatcher(received);
+            }
+            catch (ObjectDisposedException)
+            {
+                // Listener was closed intentionally
+                Debug.Log("Listener was closed intentionally");
+                break;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+                break;
+            }
+        }*/
+    }
+
+    private void UnityMainThreadDispatcher(string message)
+    {
+        // If you already use a dispatcher, plug it in here.
+        // Otherwise use this simple method:
+        UnityEngine.WSA.Application.InvokeOnAppThread(() =>
+        {
+            Debug.Log($"UDP RECEIVED: {message}");
+            // TODO: Handle your message here
+            //Send out an event with the color message or grab who joined last and apply color to them?
+        }, false);
     }
 
 }
