@@ -7551,7 +7551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5a4a62affba4a4ab5da7e480b7b469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageObjectInformation: {fileID: 11400000, guid: 5ca9e696666352048a887412e698d2fb, type: 2}
+  damageObjectInformation: {fileID: 11400000, guid: 96ae60cf4f2266542b1aa3d91230c2f7, type: 2}
 --- !u!114 &1086102201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8415,7 +8415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5a4a62affba4a4ab5da7e480b7b469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageObjectInformation: {fileID: 11400000, guid: 3cb1466a5ad4cd445b29864e059c6dfe, type: 2}
+  damageObjectInformation: {fileID: 11400000, guid: cb1272fa5184af04fa816300d5ed2a19, type: 2}
 --- !u!114 &1214841521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11634,13 +11634,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4777534917301986821, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 7262862617474497723, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
 --- !u!1 &1832273516
 GameObject:
@@ -12922,7 +12916,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1653867459241083877, guid: afff2395c02ef014ab02d7468221b6a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1653867459241083877, guid: afff2395c02ef014ab02d7468221b6a7, type: 3}
       propertyPath: m_LocalPosition.y
