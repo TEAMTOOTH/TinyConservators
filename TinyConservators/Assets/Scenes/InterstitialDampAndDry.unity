@@ -1795,6 +1795,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 1
   parallell: 1
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1 &930960133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,6 +1845,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 1
   parallell: 1
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1 &939271724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2400,6 +2404,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 1
   parallell: 0
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1 &1227880881
 GameObject:
   m_ObjectHideFlags: 0
@@ -2409,6 +2415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1227880882}
+  - component: {fileID: 1227880884}
   - component: {fileID: 1227880883}
   m_Layer: 0
   m_Name: playBossYellSFX
@@ -2442,6 +2449,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb108c63c480ba147a03a497c34a10e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1227880884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227880881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d2ad3bc97747a47b66175693f203bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1240939605
@@ -3041,6 +3060,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 2
   parallell: 0
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1 &1874219091
 GameObject:
   m_ObjectHideFlags: 0
@@ -3305,6 +3326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1975372199}
+  - component: {fileID: 1975372201}
   - component: {fileID: 1975372200}
   m_Layer: 0
   m_Name: LevelFlowHideDD
@@ -3343,6 +3365,18 @@ MonoBehaviour:
   objectsToChange:
   - {fileID: 964631798}
   active: 0
+--- !u!114 &1975372201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975372198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aca72f3d8bccd5488f32785819c5e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2063183660
 GameObject:
   m_ObjectHideFlags: 0

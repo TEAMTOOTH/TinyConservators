@@ -189,7 +189,10 @@ public class Boss : MonoBehaviour, IDamageReceiver
 
 
 
-        
+
+        // set boss got hit to true
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("bossGotHit", 1);
+
         //Turn off the boss voice layer
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("bossVoice", 0);
 
@@ -201,7 +204,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
         IEnumerator PassTime()
         {
             float time = 0;
-            while (time < 5)
+            while (time < 10)
             {
                 time += Time.deltaTime;
                 yield return null;
@@ -209,6 +212,9 @@ public class Boss : MonoBehaviour, IDamageReceiver
 
             // Reset the boss voice volume
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("bossVoice", 1);
+
+            // set boss got hit to back to false
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("bossGotHit", 0);
         }
 
         if (lastRound)

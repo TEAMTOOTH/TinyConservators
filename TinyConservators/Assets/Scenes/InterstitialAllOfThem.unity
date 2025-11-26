@@ -1046,6 +1046,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 629493642}
+  - component: {fileID: 629493644}
   - component: {fileID: 629493643}
   m_Layer: 0
   m_Name: LevelFlowZoomInCamera
@@ -1085,6 +1086,18 @@ MonoBehaviour:
   moveTime: 1
   moveIndex: 0
   parallell: 0
+--- !u!114 &629493644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629493641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aca72f3d8bccd5488f32785819c5e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &676331822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,6 +1107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 676331823}
+  - component: {fileID: 676331826}
   - component: {fileID: 676331825}
   - component: {fileID: 676331824}
   m_Layer: 0
@@ -1144,6 +1158,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31590737a5deea34da473ceb5dc545e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &676331826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676331822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d2ad3bc97747a47b66175693f203bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &686697068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,6 +1218,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 1
   parallell: 0
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1 &703153726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,6 +1799,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 1
   parallell: 1
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1 &1050024354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,6 +1855,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1051203756}
+  - component: {fileID: 1051203758}
   - component: {fileID: 1051203757}
   m_Layer: 0
   m_Name: playBossYellSFX
@@ -1858,6 +1889,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb108c63c480ba147a03a497c34a10e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1051203758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051203755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d2ad3bc97747a47b66175693f203bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1064575246
@@ -2123,6 +2166,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 1
   parallell: 1
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1001 &1198404104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3033,6 +3078,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 2
   parallell: 0
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1 &1622453657
 GameObject:
   m_ObjectHideFlags: 0

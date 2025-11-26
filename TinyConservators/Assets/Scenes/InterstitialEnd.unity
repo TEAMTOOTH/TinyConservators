@@ -343,6 +343,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 1
   parallell: 1
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1 &188306223
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +683,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 1
   parallell: 0
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1 &442831939
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +733,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 3
   parallell: 0
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1001 &451146777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -837,6 +843,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 3
   parallell: 1
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1 &500443306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,6 +1258,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 3
   parallell: 1
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1 &758665509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1308,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 2
   parallell: 0
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1 &780164569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2191,6 +2203,8 @@ MonoBehaviour:
   fadeIn: 1
   fadeDuration: 1
   parallell: 1
+  fadeInAndOut: 0
+  timeOfExistence: 0
 --- !u!1 &1205543840
 GameObject:
   m_ObjectHideFlags: 0
@@ -2507,6 +2521,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1570731574}
+  - component: {fileID: 1570731576}
   - component: {fileID: 1570731575}
   m_Layer: 0
   m_Name: playBossYellSFX
@@ -2540,6 +2555,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb108c63c480ba147a03a497c34a10e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1570731576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570731573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d2ad3bc97747a47b66175693f203bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1578359451
