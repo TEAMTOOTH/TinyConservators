@@ -11,6 +11,8 @@ public class BossAttack : MonoBehaviour
     
     [SerializeField] PickupSpawner damageVisualSpawner;
 
+    [SerializeField] BossAttackOverlord bossItemManagers;
+
     List<AttackPoint> availibleAttackPoints;
     List<AttackPoint> mostRecentlyAttackedPoints;
 
@@ -23,6 +25,8 @@ public class BossAttack : MonoBehaviour
     int amountOfProtection;
     float speedOfProtection;
     float sizeOfProtection;
+
+    int amountOfTimesAttacked = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -79,7 +83,9 @@ public class BossAttack : MonoBehaviour
             if (bubble != null)
                 bubble.StartShowing();
 
-            GetComponent<BossItemManager>().SpawnObjects(amountOfProtection, speedOfProtection, sizeOfProtection);
+            bossItemManagers?.Attack(amountOfTimesAttacked);
+            
+            
 
             currentAttackPoint.NewAttack();
 
@@ -115,7 +121,7 @@ public class BossAttack : MonoBehaviour
                 {
                     eating = false;
 
-                    GetComponent<BossItemManager>().DespawnObjects();
+                    bossItemManagers?.Despawn(amountOfTimesAttacked);
                     GetComponent<Boss>().State = BossStates.walkOff;
                     GetComponent<Boss>().PlayAnimationIfHasState("BossPoof");
                     yield return new WaitForSeconds(0.25f);
@@ -125,8 +131,8 @@ public class BossAttack : MonoBehaviour
                         bubble.PopBubble();
 
                     GetComponentInChildren<BossDamage>().AllowCollisions(false);
-                    GetComponent<BossItemManager>().DespawnObjects();
                     GetComponent<Boss>().FadeCurrentMaze();
+                    amountOfTimesAttacked++;
                 }
 
                 yield return null;
@@ -144,7 +150,9 @@ public class BossAttack : MonoBehaviour
 
         GetComponent<Boss>().FadeCurrentMaze();
 
-        GetComponent<BossItemManager>().DespawnObjects();
+        bossItemManagers?.Despawn(amountOfTimesAttacked);
+        amountOfTimesAttacked++;
+
         StopAllCoroutines();
     }
 

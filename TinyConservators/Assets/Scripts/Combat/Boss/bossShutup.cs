@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class turnOnBossVoice : MonoBehaviour, ILevelFlowComponent
+public class bossShutup : MonoBehaviour, ILevelFlowComponent
 {
     LevelFlowManager owner;
 
@@ -13,9 +13,12 @@ public class turnOnBossVoice : MonoBehaviour, ILevelFlowComponent
     {
         owner = flowManager;
 
-        //Turn off the boss voice layer
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("bossVoice", 1);
-        FinishSection();
+        // Prep to sharply mute boss voice
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("bossGotHit", 1);
 
+        //Turn off the boss voice layer
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("bossVoice", 0);
+        
+        FinishSection();
     }
 }

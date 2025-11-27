@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be63bf97f38737245981a318fe95635c, type: 3}
+  m_Name: TestOfNewObject
+  m_EditorClassIdentifier: 
+  damageObject: {fileID: 986033884968341864, guid: 18da558d6d490544fad7c8db03ee94b1, type: 3}
+  amount: 8
+  revolutionTime: 12
+  size: 2

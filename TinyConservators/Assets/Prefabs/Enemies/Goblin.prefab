@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1275319813948098079}
   - component: {fileID: 326678408316097099}
   - component: {fileID: 1443921039839903273}
+  - component: {fileID: 7219021515145364581}
   m_Layer: 8
   m_Name: Goblin
   m_TagString: Goblin
@@ -129,6 +130,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockOutTime: 8
+--- !u!114 &7219021515145364581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292657490118089590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a1837c5af828540a2c05bd092dca3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6328734306099860521
 GameObject:
   m_ObjectHideFlags: 0

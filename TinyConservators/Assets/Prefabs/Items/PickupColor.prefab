@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6264763248477795340}
   - component: {fileID: 7937467636385290354}
   - component: {fileID: 4171263059369809168}
+  - component: {fileID: -1228296981882786951}
   - component: {fileID: -1012072092737937832}
   - component: {fileID: -2615746219243764275}
   m_Layer: 11
@@ -176,6 +177,7 @@ MonoBehaviour:
   flyBackSpeed: 0
   amountOfDamageFixedPerPickup: 0.0208
   radiusOfLandingSpot: 3
+  fix: 1
 --- !u!95 &4171263059369809168
 Animator:
   serializedVersion: 7
@@ -198,6 +200,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-1228296981882786951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111976845852578208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a1837c5af828540a2c05bd092dca3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-1012072092737937832
 MonoBehaviour:
   m_ObjectHideFlags: 0

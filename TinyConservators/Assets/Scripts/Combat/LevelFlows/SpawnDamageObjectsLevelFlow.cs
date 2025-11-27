@@ -30,7 +30,7 @@ public class SpawnDamageObjectsLevelFlow : MonoBehaviour, ILevelFlowComponent
         {
             for(int i = 0; i < objectSpawner.Length; i++)
             {
-                objectSpawner[i].SpawnObjects(attackInformation[i].amount, attackInformation[i].revolutionTime, attackInformation[i].size);
+                //objectSpawner[i].SpawnObjects(attackInformation[i].amount, attackInformation[i].revolutionTime, attackInformation[i].size);
             }
         }
 
