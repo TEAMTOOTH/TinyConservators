@@ -18,9 +18,6 @@ public class Player : MonoBehaviour, IDamageReceiver
     VisualController playerVisuals;
     public void Initialize(int id)
     {
-        //Randomize players before allowing players to customize.
-        Debug.Log("Initialize");
-
         GameObject.FindGameObjectWithTag("DontDestroyManager").GetComponent<DontDestroyOnLoadManager>().AddDontDestroyObject(gameObject);
 
         OnPlayerStateChanged += (from, to) => StateChanged(from, to);
@@ -32,7 +29,7 @@ public class Player : MonoBehaviour, IDamageReceiver
         playerVisuals = GetComponent<VisualController>();
         
         //This is temp for testing
-        GetComponentInChildren<CharacterCustomizer>().Initialize(id);
+        //GetComponentInChildren<CharacterCustomizer>().Initialize(id);
 
     }
 

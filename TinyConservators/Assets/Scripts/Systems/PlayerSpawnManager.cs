@@ -78,9 +78,10 @@ public class PlayerSpawnManager : MonoBehaviour
                     p.ShowVisual(false);
                     pm.OnPlayerJoined(player.GetComponent<Player>());
 
-                    sleepingPlayers[id].GetComponent<Animator>().Play("WakeUp");
-                    yield return new WaitForSeconds(wakeUpTime);
-                    sleepingPlayers[id].SetActive(false);
+                    //sleepingPlayers[id].GetComponent<Animator>().Play("WakeUp");
+                    //yield return new WaitForSeconds(wakeUpTime);
+                    yield return null;
+                    //sleepingPlayers[id].SetActive(false);
                     p.ShowVisual(true);
                     p.FullFreeze(false);
 
