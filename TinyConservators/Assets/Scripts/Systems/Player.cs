@@ -16,6 +16,8 @@ public class Player : MonoBehaviour, IDamageReceiver
      
 
     VisualController playerVisuals;
+    bool grounded = false;
+
     public void Initialize(int id)
     {
         GameObject.FindGameObjectWithTag("DontDestroyManager").GetComponent<DontDestroyOnLoadManager>().AddDontDestroyObject(gameObject);
@@ -27,6 +29,7 @@ public class Player : MonoBehaviour, IDamageReceiver
         //State = PlayerStates.customizing;
 
         playerVisuals = GetComponent<VisualController>();
+        StartCoroutine(SpawnPause());
         
         //This is temp for testing
         //GetComponentInChildren<CharacterCustomizer>().Initialize(id);
@@ -94,6 +97,15 @@ public class Player : MonoBehaviour, IDamageReceiver
         
         //GetComponent<PlayerInput>().enabled = state;
         
+    }
+
+    IEnumerator SpawnPause()
+    {
+        while (!grounded)
+        {
+            yield return null;
+        }
+        SetMoveState(true);
     }
 
     void AllowMoving()
@@ -180,6 +192,7 @@ public class Player : MonoBehaviour, IDamageReceiver
         if (collision.transform.CompareTag("Platform"))
         {
             PlayGroundHitParticleSystem();
+            grounded = true;
         }
     }
 
@@ -203,6 +216,11 @@ public class Player : MonoBehaviour, IDamageReceiver
     public void PlayPoof()
     {
         GetComponentsInChildren<ParticleSystem>()[1]?.Play(); //BAD, but for now it should work, should not be a set index, should be more dynamic. But fast fix for a small problem.
+    }
+
+    public void SetGrounded(bool state)
+    {
+        grounded = state;
     }
 }
 

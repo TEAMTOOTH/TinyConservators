@@ -175,4 +175,5 @@ public class WalkingMovement : MonoBehaviour
     {
         canMove = state;
     }
+
 }

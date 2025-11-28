@@ -8,6 +8,7 @@ public class FlyingMovement : MonoBehaviour
     [SerializeField] float impulseForce;
     [SerializeField] int amountOfFlapsPerFly;
     [SerializeField] float flapCooldown;
+    [SerializeField] Player player;
     Rigidbody2D rb2D;
     int amountOfFlaps;
 
@@ -20,6 +21,7 @@ public class FlyingMovement : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         amountOfFlaps = amountOfFlapsPerFly;
+        player = GetComponent<Player>();
     }
 
     private void Update()
@@ -36,6 +38,7 @@ public class FlyingMovement : MonoBehaviour
         {
             if(amountOfFlaps > 0 && canFlap && allowedToFlap)
             {
+                player?.SetGrounded(false);
                 rb2D.AddForceY(impulseForce, ForceMode2D.Impulse);
                 if(rb2D.linearVelocityY > maxFlightSpeed)
                 {
