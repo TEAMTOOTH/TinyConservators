@@ -55,6 +55,7 @@ public class PlayerKnockout : MonoBehaviour, IKnockoutable
         GetComponent<VisualController>().UpdatePart(0);
         gameObject.layer = LayerMask.NameToLayer("Player");
         isKnockedOut = false;
+        GetComponent<PlayerCommunication>()?.SendMessage("recover");
     }
 
     IEnumerator RecoverCountdown()

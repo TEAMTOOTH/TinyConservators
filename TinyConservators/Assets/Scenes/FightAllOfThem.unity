@@ -7816,6 +7816,7 @@ MonoBehaviour:
   sleepingPlayers: []
   wakeUpTime: 0
   inGame: 0
+  initialSpawnForceFromTo: {x: 0, y: 0}
 --- !u!4 &1082138864
 Transform:
   m_ObjectHideFlags: 0
@@ -9105,7 +9106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fromPos: {x: 10, y: 0, z: 0}
   moveTime: 3
-  pushForce: 4
+  pushForce: 2
   spawnPoint: {fileID: 1557881742}
 --- !u!1 &1248689932
 GameObject:
@@ -11280,7 +11281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fromPos: {x: 10, y: 0, z: 0}
   moveTime: 3
-  pushForce: 4
+  pushForce: 2
   spawnPoint: {fileID: 2017714962}
 --- !u!1 &1567713724
 GameObject:

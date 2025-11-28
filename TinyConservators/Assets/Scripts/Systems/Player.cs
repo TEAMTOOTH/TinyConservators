@@ -13,7 +13,7 @@ public class Player : MonoBehaviour, IDamageReceiver
     int playerId;
     PlayerStates state = PlayerStates.paused;
 
-     
+    PlayerCommunication lightSignaler; 
 
     VisualController playerVisuals;
     bool grounded = false;
@@ -25,10 +25,13 @@ public class Player : MonoBehaviour, IDamageReceiver
         OnPlayerStateChanged += (from, to) => StateChanged(from, to);
 
         playerId = id;
-        
+
         //State = PlayerStates.customizing;
 
+        lightSignaler = GetComponent<PlayerCommunication>();
+
         playerVisuals = GetComponent<VisualController>();
+
         StartCoroutine(SpawnPause());
         
         //This is temp for testing
@@ -85,6 +88,7 @@ public class Player : MonoBehaviour, IDamageReceiver
         GetComponent<IKnockoutable>().Knockout();
 
         GetComponent<SoundController>().PlayClip(0);
+        lightSignaler.SendMessage("hurt");
     }
 
     public void SetMoveState(bool state)
@@ -209,6 +213,7 @@ public class Player : MonoBehaviour, IDamageReceiver
     {
         //Debug.Log(GetComponent<WalkingMovement>().GetDirection() + ", " + transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()));
         expulsionFart.Play();
+        lightSignaler.SendMessage("burp");
         Vector3 returnVector = new Vector3(transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()), transform.position.y, transform.position.z);
         return returnVector;
     }
