@@ -29,19 +29,21 @@ public class ListenForMusicCueLevelFlow : MonoBehaviour, ILevelFlowComponent
         float result;
         while (timer < waitTimeBeforeBackupSkip)
         {
+            
             timer += Time.deltaTime;
             pollingTime += Time.deltaTime;
             if(pollingTime > pollingRate)
             {
                 //FMODUnity.RuntimeManager.StudioSystem.getParameterByID(desc.id, out result);
                 FMODUnity.RuntimeManager.StudioSystem.getParameterByName(eventName, out _, out result);
-                if(result == 1)
+                Debug.Log("result: " + result);
+                if (result == 1)
                 {
                     break;
                 }
                 pollingTime = 0;
             }
-
+            
             yield return null;
         }
         FinishSection();
