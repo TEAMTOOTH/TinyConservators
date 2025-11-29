@@ -26,7 +26,12 @@ public class SubtitleDisplayer : MonoBehaviour
       }
   }
   
-  public IEnumerator Begin()
+  public void StartSubtitles()
+    {
+        StartCoroutine(BeginSubtitles());
+    }
+
+  public IEnumerator BeginSubtitles()
   {
     var currentlyDisplayingText = Text;
     var fadedOutText = Text2;
