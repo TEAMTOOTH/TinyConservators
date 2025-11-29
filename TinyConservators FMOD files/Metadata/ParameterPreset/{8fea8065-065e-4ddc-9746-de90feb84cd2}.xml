@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{8fea8065-065e-4ddc-9746-de90feb84cd2}">
+		<property name="name">
+			<value>countIsRapping</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ee7774b9-ffef-4b0a-858e-b821869286b8}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{3a7c329b-ca99-47fc-9c87-f7340020eb80}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{3a7c329b-ca99-47fc-9c87-f7340020eb80}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>false</value>
+			<value>true</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
