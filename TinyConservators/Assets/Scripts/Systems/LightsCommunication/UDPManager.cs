@@ -4,6 +4,10 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class UDPMessageUnityEvent : UnityEvent<string> { }
 
 public class UDPManager : MonoBehaviour
 {
@@ -18,6 +22,15 @@ public class UDPManager : MonoBehaviour
     private int receivedCount = 0;
     private int sentCount = 0;
 
+
+    public UDPMessageUnityEvent OnUPDMessageReceived;
+
+    public void TriggerUDPMessageReceived(string message)
+    {
+        // Invoke the UnityEvent, passing the parameters
+        OnUPDMessageReceived.Invoke(message);
+    }
+
     private void Awake()
     {
         // Initialize sender
@@ -30,6 +43,15 @@ public class UDPManager : MonoBehaviour
 
         // Start receive loop
         _ = ReceiveLoop();
+    }
+
+
+    
+
+
+    private void Start()
+    {
+        GameObject.FindGameObjectWithTag("DontDestroyManager")?.GetComponent<DontDestroyOnLoadManager>().AddDontDestroyObject(gameObject);
     }
 
     private async Task ReceiveLoop()
@@ -48,6 +70,8 @@ public class UDPManager : MonoBehaviour
                     $"Message: {message}\n" +
                     $"From: {result.RemoteEndPoint}"
                 );
+
+                TriggerUDPMessageReceived(message);
             }
         }
         catch (Exception ex)

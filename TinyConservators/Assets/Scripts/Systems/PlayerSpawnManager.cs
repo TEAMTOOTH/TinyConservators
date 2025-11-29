@@ -9,6 +9,7 @@ public class PlayerSpawnManager : MonoBehaviour
     [SerializeField] GameObject[] sleepingPlayers;
     [SerializeField] float wakeUpTime;
     [SerializeField] bool inGame;
+    [SerializeField] Vector2 initialSpawnForceFromTo;
     PlayerManager pm;
 
     private void Start()
@@ -26,12 +27,12 @@ public class PlayerSpawnManager : MonoBehaviour
 
     public void FindSpawnPoints() 
     {
-        spawnPoints = GameObject
+        /*spawnPoints = GameObject
         .FindGameObjectWithTag("SpawnPoints")
         .GetComponentsInChildren<Transform>()
         .Skip(1) // Optional: skip the parent object if needed
         .Select(t => t.gameObject)
-        .ToArray();
+        .ToArray();*/
         //spawnPoints = GameObject.FindGameObjectWithTag("SpawnPoints").GetComponentsInChildren<Transform>();
 
 
@@ -67,22 +68,47 @@ public class PlayerSpawnManager : MonoBehaviour
 
             if (!inGame)
             {
-
-                //Refactor to listen for tcp signal for color
                 StartCoroutine(wakeUpPlayer());
                 IEnumerator wakeUpPlayer()
                 {
                     p.Initialize(id);
-                    p.transform.position = spawnPoints[id].transform.position;
-                    p.FullFreeze(true);
-                    p.ShowVisual(false);
-                    pm.OnPlayerJoined(player.GetComponent<Player>());
 
-                    sleepingPlayers[id].GetComponent<Animator>().Play("WakeUp");
-                    yield return new WaitForSeconds(wakeUpTime);
-                    sleepingPlayers[id].SetActive(false);
                     p.ShowVisual(true);
                     p.FullFreeze(false);
+                    p.SetMoveState(false);
+                    Vector2 spawnForce = new Vector2(Random.Range(initialSpawnForceFromTo.x, initialSpawnForceFromTo.y), 0);
+
+                    if (id % 2 == 0)
+                    {
+                        p.transform.position = spawnPoints[1].transform.position;
+                        //player.GetComponent<Rigidbody2D>().AddForce(spawnForce);
+                        player.GetComponent<Rigidbody2D>().linearVelocity = spawnForce;
+                    }
+                    else
+                    {
+                        p.transform.position = spawnPoints[0].transform.position;
+                        //player.GetComponent<Rigidbody2D>().AddForce(spawnForce * -1);
+                        player.GetComponent<Rigidbody2D>().linearVelocity = spawnForce * -1;
+                    }
+
+                    //Debug.Break();
+                    
+                    //p.FullFreeze(true);
+                    //p.ShowVisual(false);
+                    pm.OnPlayerJoined(player.GetComponent<Player>());
+
+                    //sleepingPlayers[id].GetComponent<Animator>().Play("WakeUp");
+                    //yield return new WaitForSeconds(wakeUpTime);
+
+                    yield return new WaitForSeconds(0f);
+                    
+                    //sleepingPlayers[id].SetActive(false);
+
+                    
+
+
+
+
 
                 }
             }

@@ -13,26 +13,29 @@ public class Player : MonoBehaviour, IDamageReceiver
     int playerId;
     PlayerStates state = PlayerStates.paused;
 
-     
+    PlayerCommunication lightSignaler; 
 
     VisualController playerVisuals;
+    bool grounded = false;
+
     public void Initialize(int id)
     {
-        //Randomize players before allowing players to customize.
-        Debug.Log("Initialize");
-
         GameObject.FindGameObjectWithTag("DontDestroyManager").GetComponent<DontDestroyOnLoadManager>().AddDontDestroyObject(gameObject);
 
         OnPlayerStateChanged += (from, to) => StateChanged(from, to);
 
         playerId = id;
-        
+
         //State = PlayerStates.customizing;
 
+        lightSignaler = GetComponent<PlayerCommunication>();
+
         playerVisuals = GetComponent<VisualController>();
+
+        StartCoroutine(SpawnPause());
         
         //This is temp for testing
-        GetComponentInChildren<CharacterCustomizer>().Initialize(id);
+        //GetComponentInChildren<CharacterCustomizer>().Initialize(id);
 
     }
 
@@ -85,6 +88,7 @@ public class Player : MonoBehaviour, IDamageReceiver
         GetComponent<IKnockoutable>().Knockout();
 
         GetComponent<SoundController>().PlayClip(0);
+        lightSignaler.SendMessage("hurt");
     }
 
     public void SetMoveState(bool state)
@@ -97,6 +101,15 @@ public class Player : MonoBehaviour, IDamageReceiver
         
         //GetComponent<PlayerInput>().enabled = state;
         
+    }
+
+    IEnumerator SpawnPause()
+    {
+        while (!grounded)
+        {
+            yield return null;
+        }
+        SetMoveState(true);
     }
 
     void AllowMoving()
@@ -183,6 +196,7 @@ public class Player : MonoBehaviour, IDamageReceiver
         if (collision.transform.CompareTag("Platform"))
         {
             PlayGroundHitParticleSystem();
+            grounded = true;
         }
     }
 
@@ -199,6 +213,7 @@ public class Player : MonoBehaviour, IDamageReceiver
     {
         //Debug.Log(GetComponent<WalkingMovement>().GetDirection() + ", " + transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()));
         expulsionFart.Play();
+        lightSignaler.SendMessage("burp");
         Vector3 returnVector = new Vector3(transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()), transform.position.y, transform.position.z);
         return returnVector;
     }
@@ -206,6 +221,11 @@ public class Player : MonoBehaviour, IDamageReceiver
     public void PlayPoof()
     {
         GetComponentsInChildren<ParticleSystem>()[1]?.Play(); //BAD, but for now it should work, should not be a set index, should be more dynamic. But fast fix for a small problem.
+    }
+
+    public void SetGrounded(bool state)
+    {
+        grounded = state;
     }
 }
 

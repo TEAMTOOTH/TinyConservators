@@ -23,6 +23,7 @@ TagManager:
   - PlayerJoinManager
   - HoverPoint
   - DontDestroyManager
+  - UDPCommunicator
   layers:
   - Default
   - TransparentFX
