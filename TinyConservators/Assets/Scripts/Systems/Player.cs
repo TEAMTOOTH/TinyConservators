@@ -213,7 +213,7 @@ public class Player : MonoBehaviour, IDamageReceiver
     {
         //Debug.Log(GetComponent<WalkingMovement>().GetDirection() + ", " + transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()));
         expulsionFart.Play();
-        lightSignaler.SendMessage("burp");
+        lightSignaler?.SendMessage("burp");
         Vector3 returnVector = new Vector3(transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()), transform.position.y, transform.position.z);
         return returnVector;
     }
