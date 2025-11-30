@@ -72,12 +72,12 @@ public class BossAttack : MonoBehaviour
         IEnumerator Eat()
         {
             // Setup phase
-            GetComponent<Boss>().PlayAnimationIfHasState("BossPoof");
+            GetComponent<Boss>().PlayAnimationIfHasState("Normal");
             //GetComponent<RadialPush2D>()?.PushAway();
 
             yield return new WaitForSeconds(0.25f);
 
-            GetComponent<Boss>().PlayAnimationIfHasState("BossAttack");
+            GetComponent<Boss>().PlayAnimationIfHasState("Normal");
             GetComponentInChildren<BossDamage>().AllowCollisions(true);
 
             if (bubble != null)
@@ -123,9 +123,9 @@ public class BossAttack : MonoBehaviour
 
                     bossItemManagers?.Despawn(amountOfTimesAttacked);
                     GetComponent<Boss>().State = BossStates.walkOff;
-                    GetComponent<Boss>().PlayAnimationIfHasState("BossPoof");
+                    GetComponent<Boss>().PlayAnimationIfHasState("Normal");
                     yield return new WaitForSeconds(0.25f);
-                    GetComponent<Boss>().PlayAnimationIfHasState("BossFull");
+                    GetComponent<Boss>().PlayAnimationIfHasState("Normal");
 
                     if (bubble != null)
                         bubble.PopBubble();
