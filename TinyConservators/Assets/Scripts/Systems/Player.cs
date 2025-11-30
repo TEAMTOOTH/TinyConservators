@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -175,6 +176,7 @@ public class Player : MonoBehaviour, IDamageReceiver
     public void ShowVisual(bool state)
     {
         GetComponentInChildren<SpriteRenderer>().enabled = state;
+        GetComponentInChildren<TextMeshPro>().enabled = state;
     }
 
     //Not sure what this is?

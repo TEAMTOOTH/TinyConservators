@@ -3877,7 +3877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1375928477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3969,7 +3969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1397659150}
   m_Layer: 0
-  m_Name: TestAssetsDestroyBeforeLaunch
+  m_Name: DEBUGOBJECTSDESTROYBEFORELAUNCH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4399,7 +4399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDownText: {fileID: 1952435444}
-  countDownAmount: 60
+  countDownAmount: 30
   parallell: 0
 --- !u!1 &1605883051
 GameObject:
@@ -6180,6 +6180,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1397659150}
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 186646144}
@@ -6219,5 +6220,4 @@ SceneRoots:
   - {fileID: 852181925}
   - {fileID: 1918436929}
   - {fileID: 339426190}
-  - {fileID: 1397659150}
   - {fileID: 1821307615}

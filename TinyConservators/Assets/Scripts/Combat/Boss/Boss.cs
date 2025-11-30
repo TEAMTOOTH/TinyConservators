@@ -157,7 +157,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
     void Hurt(GameObject hurter)
     {
         float leaveTime = 0.5f;
-        float pauseBeforeLeaving = 2f;
+        float pauseBeforeLeaving = 1f;
         GetComponentInChildren<BossDamage>().AllowCollisions(false);
         GetComponent<BossAttack>().InterruptAttack();
         GetComponent<RadialPush2D>().PushAway(2f, 10f, false);

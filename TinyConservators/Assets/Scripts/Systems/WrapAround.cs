@@ -9,6 +9,8 @@ public class WrapAround : MonoBehaviour
 
     void CheckOutOfBounds()
     {
+        if (!gameObject.activeSelf)
+            return;
         Vector2 pos = transform.position;
         Vector2 newPos = pos;
 

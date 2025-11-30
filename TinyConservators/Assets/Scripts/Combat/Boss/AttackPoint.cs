@@ -60,6 +60,8 @@ public class AttackPoint : MonoBehaviour
         //newIndex = Mathf.Clamp(newIndex, 0, visuals.Length - 1);
         int newIndex = damageIndex;
 
+        GameObject levelUDP = GameObject.FindGameObjectWithTag("LevelUDPManager");
+
         if (newIndex > oldDamageIndex)
         {
             visual.sprite = visuals[newIndex];
@@ -69,15 +71,18 @@ public class AttackPoint : MonoBehaviour
             {
                 cm.GenerateImpulseWithForce(0.2f);
             }
-
+            levelUDP?.GetComponent<LevelUDPCommunicator>().SendMessage("damagePainting");
             oldDamageIndex = newIndex;
         }
         else if(newIndex < oldDamageIndex)
         {
             visual.sprite = visuals[newIndex];
             fixParticleSystem.GetComponent<ParticleSystem>()?.Play();
+            levelUDP?.GetComponent<LevelUDPCommunicator>().SendMessage("fixPainting");
             //Do a little sparkle
         }
+
+
     }
 
     void CalculateHealthBarLook()

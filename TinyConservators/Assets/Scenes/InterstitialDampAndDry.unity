@@ -185,7 +185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &122829400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 939271725}
   endPoint: {fileID: 1555984943}
-  duration: 2.5
+  duration: 0.1
   spiralGrowth: 4
   spiralFrequency: 2
   targetScale: {x: 1, y: 1, z: 1}
@@ -931,7 +931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 364489458}
-  moveTime: 2.5
+  moveTime: 2
   moveIndex: 0
   parallell: 0
 --- !u!1 &519420028
@@ -3553,7 +3553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1821600392
 Transform:
   m_ObjectHideFlags: 0
