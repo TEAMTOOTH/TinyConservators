@@ -10,6 +10,8 @@ public class Minion : MonoBehaviour, IEatable
     [SerializeField] bool spittable; //Want to have access in editor
 
     [SerializeField] int pointsForEating = 100;
+    [SerializeField] GameObject visualObject;
+    [SerializeField] ParticleSystem respawnParticleSystem;
     
     Enemy mount;
 
@@ -154,12 +156,24 @@ public class Minion : MonoBehaviour, IEatable
     {
         //Have it set the one it rode when it got knocked off as mount.
         //Transport that mount back in. Set state back to hunting player
-        //Destroy minion.
+        
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        visualObject.SetActive(false);
+        respawnParticleSystem.Play();
 
-        //Do visual
         mount.transform.position = transform.position;
         mount.Recover();
-        Destroy(gameObject);
+        StartCoroutine(WaitForParticleSystem());
+
+        IEnumerator WaitForParticleSystem()
+        {
+            yield return new WaitForSeconds(0.4f);
+            
+            Destroy(gameObject);
+        }
+
+        
 
     }
 
