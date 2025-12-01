@@ -33,7 +33,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Count dance 1
+  m_Name: Normal
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -63,19 +63,19 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -4418980828781512980}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 300, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3237757711914658406}
-    m_Position: {x: 235, y: 65, z: 0}
+    m_Position: {x: 300, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7770543386915130761}
-    m_Position: {x: 270, y: 130, z: 0}
+    m_Position: {x: 300, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6789496695597785338}
-    m_Position: {x: 305, y: 195, z: 0}
+    m_Position: {x: 300, y: 320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3782622957522535378}
-    m_Position: {x: 340, y: 260, z: 0}
+    m_Position: {x: 300, y: 220, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -115,7 +115,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Count dance 2
+  m_Name: Normal2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -141,7 +141,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Count dance 3
+  m_Name: Normal3
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
