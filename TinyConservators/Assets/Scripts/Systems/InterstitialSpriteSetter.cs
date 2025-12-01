@@ -16,14 +16,17 @@ public class InterstitialSpriteSetter : MonoBehaviour
 
             
             bool value = spriteStateInfo.GetBossInterstitialState(statToGet);
-            Debug.Log("In setSpriteForInterstitial value is: " + value);
+            //Debug.Log("In setSpriteForInterstitial value is: " + value);
+
+
+
             if (value)
             {
-                GetComponent<Animator>().Play(animationStates[0]);
+                GetComponentInChildren<Animator>().Play(animationStates[0]);
             }
             else
             {
-                GetComponent<Animator>().Play(animationStates[1]);
+                GetComponentInChildren<Animator>().Play(animationStates[1]);
             }
             
         }
