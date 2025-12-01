@@ -1601,6 +1601,7 @@ Transform:
   - {fileID: 766326982}
   - {fileID: 1072599192}
   - {fileID: 188306224}
+  - {fileID: 2061063462}
   - {fileID: 1205543841}
   - {fileID: 500443307}
   - {fileID: 1925834450}
@@ -1932,6 +1933,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   length: 1
+--- !u!114 &1212946625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8634518897022413565, guid: 503fb987b6c7417418dcd607896701ed, type: 3}
+  m_PrefabInstance: {fileID: 8121378966730768814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad9ea8e23f757041bab2f4cff8f6246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1216931699
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,6 +3027,51 @@ MonoBehaviour:
   moveTime: 0
   pushForce: 0
   spawnPoint: {fileID: 2052658884}
+--- !u!1 &2061063461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2061063462}
+  - component: {fileID: 2061063463}
+  m_Layer: 0
+  m_Name: LevelFlowStartSubtitles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2061063462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061063461}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.4315267, y: -0.64440817, z: -0.088822216}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1110465864}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2061063463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061063461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d552a90acc48145b503d62a26e4e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleController: {fileID: 1212946625}
 --- !u!1001 &8121378966730768814
 PrefabInstance:
   m_ObjectHideFlags: 0
