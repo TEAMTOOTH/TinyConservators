@@ -63,6 +63,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
 
         enemySpawner = GameObject.FindGameObjectWithTag("EnemySpawner").GetComponent<EnemySpawner>();
         //State = BossStates.readying;
+        //PlayAnimationIfHasState("Hurt");
     }
 
 
@@ -110,10 +111,11 @@ public class Boss : MonoBehaviour, IDamageReceiver
         StartCoroutine(ReadyAttack());
         IEnumerator ReadyAttack()
         {
+            PlayAnimationIfHasState("Normal");
             yield return new WaitForSeconds(timeToNextAttack);
             State = BossStates.attack;
             //GetComponentInChildren<Animator>().Play("BossHungry");
-            PlayAnimationIfHasState("BossBat");
+            
         }
     }
     
@@ -123,7 +125,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
         //bossVisual.transform.localScale = new Vector3(bossAttackSize, bossAttackSize, bossAttackSize);
         GameObject attackSpot = GetComponent<BossMovement>().FindAttackSpot();
 
-        PlayAnimationIfHasState("BossNormal");
+        PlayAnimationIfHasState("Normal");
 
 
         if (attackSpot == null)
@@ -155,7 +157,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
     void Hurt(GameObject hurter)
     {
         float leaveTime = 0.5f;
-        float pauseBeforeLeaving = 2f;
+        float pauseBeforeLeaving = 1f;
         GetComponentInChildren<BossDamage>().AllowCollisions(false);
         GetComponent<BossAttack>().InterruptAttack();
         GetComponent<RadialPush2D>().PushAway(2f, 10f, false);
@@ -220,7 +222,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
         if (lastRound)
         {
             //Should be boss escaping. Or scream face
-            PlayAnimationIfHasState("BossDefeat");
+            PlayAnimationIfHasState("Hurt");
             GameObject g = GameObject.FindGameObjectWithTag("StatTracker");
             if(g != null)
             {
@@ -231,7 +233,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
         }
         else
         {
-            PlayAnimationIfHasState("BossStaggered");
+            PlayAnimationIfHasState("Hurt");
             LeaveScreen(pauseBeforeLeaving,leaveTime, true);
         }
         
@@ -278,9 +280,6 @@ public class Boss : MonoBehaviour, IDamageReceiver
         StartCoroutine(Move());
         IEnumerator Move()
         {
-            yield return new WaitForSeconds(initialWaitTime);
-            PlayAnimationIfHasState("BossPoof");
-            yield return new WaitForSeconds(.25f);
             
             GetComponent<BossMovement>().Move(time, transform.position, closest.transform.position);
 
@@ -288,11 +287,11 @@ public class Boss : MonoBehaviour, IDamageReceiver
             {
                 SpawnAccruedDamage(GetComponent<BossAttack>().GetMostRecentlyAttackedPoints());
                 
-                PlayAnimationIfHasState("BossHurt");
+                PlayAnimationIfHasState("Hurt");
             }
             else
             {
-                PlayAnimationIfHasState("BossFull");
+                PlayAnimationIfHasState("Normal");
             }
             
             yield return new WaitForSeconds(time);

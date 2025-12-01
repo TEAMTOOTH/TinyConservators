@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -175,6 +176,7 @@ public class Player : MonoBehaviour, IDamageReceiver
     public void ShowVisual(bool state)
     {
         GetComponentInChildren<SpriteRenderer>().enabled = state;
+        GetComponentInChildren<TextMeshPro>().enabled = state;
     }
 
     //Not sure what this is?
@@ -213,7 +215,7 @@ public class Player : MonoBehaviour, IDamageReceiver
     {
         //Debug.Log(GetComponent<WalkingMovement>().GetDirection() + ", " + transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()));
         expulsionFart.Play();
-        lightSignaler.SendMessage("burp");
+        lightSignaler?.SendMessage("burp");
         Vector3 returnVector = new Vector3(transform.position.x + (colorExpulsionOffset.x * GetComponent<WalkingMovement>().GetDirection()), transform.position.y, transform.position.z);
         return returnVector;
     }

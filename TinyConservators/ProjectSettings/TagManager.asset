@@ -24,6 +24,8 @@ TagManager:
   - HoverPoint
   - DontDestroyManager
   - UDPCommunicator
+  - Subtitles
+  - LevelUDPCommunicator
   layers:
   - Default
   - TransparentFX

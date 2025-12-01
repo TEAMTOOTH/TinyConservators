@@ -12,8 +12,8 @@ public class UDPMessageUnityEvent : UnityEvent<string> { }
 public class UDPManager : MonoBehaviour
 {
     public string targetIP = "127.0.0.1";
-    public int targetPort = 4703;
-    public int listenPort = 4703;
+    public int targetPort;
+    public int listenPort;
 
     private UdpClient udpReceiver;
     private UdpClient udpSender;
@@ -101,6 +101,12 @@ public class UDPManager : MonoBehaviour
     }
 
     private void OnApplicationQuit()
+    {
+        udpReceiver?.Close();
+        udpSender?.Close();
+    }
+
+    private void OnDestroy()
     {
         udpReceiver?.Close();
         udpSender?.Close();

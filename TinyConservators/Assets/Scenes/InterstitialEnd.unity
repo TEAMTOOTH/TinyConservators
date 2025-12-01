@@ -890,7 +890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualMove: {fileID: 1902279822}
-  moveTime: 3
+  moveTime: 2
   moveIndex: 0
   parallell: 0
 --- !u!1 &519420028
@@ -1800,7 +1800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 780164570}
   endPoint: {fileID: 2063183661}
-  duration: 3
+  duration: 1
   spiralGrowth: 4
   spiralFrequency: 3
   targetScale: {x: 3, y: 3, z: 3}

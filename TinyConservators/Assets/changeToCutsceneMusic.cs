@@ -16,7 +16,7 @@ public class changeToCutsceneMusic : MonoBehaviour, ILevelFlowComponent
 
         //Set music skip trigger to go to the next cutscene
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("cutsceneGo", 1);
-
+        FinishSection();
 
         StartCoroutine(PassTime());
         IEnumerator PassTime()
@@ -30,7 +30,7 @@ public class changeToCutsceneMusic : MonoBehaviour, ILevelFlowComponent
 
             // Reset the music skip trigger
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("cutsceneGo", 0);
-            FinishSection();
+            
         }
     }
 }
