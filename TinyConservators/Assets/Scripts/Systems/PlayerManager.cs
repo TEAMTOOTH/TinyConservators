@@ -25,6 +25,8 @@ public class PlayerManager : MonoBehaviour
     public void OnPlayerUnjoined(Player p)
     {
         players.Remove(p);
+        //GameObject.FindGameObjectWithTag("PlayerJoinManager").GetComponent<PlayerSpawnManager>().RemovePlayer(p.GetPlayerId());
+
     }
 
     public int GetAmountOfPlayers()

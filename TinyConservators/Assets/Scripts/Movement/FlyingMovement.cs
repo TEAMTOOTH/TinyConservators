@@ -36,6 +36,7 @@ public class FlyingMovement : MonoBehaviour
     {
         if (ctx.performed)
         {
+            GetComponent<Player>().InputRegistered();
             if(amountOfFlaps > 0 && canFlap && allowedToFlap)
             {
                 player?.SetGrounded(false);

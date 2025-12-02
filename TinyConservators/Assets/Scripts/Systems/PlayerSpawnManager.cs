@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Linq;
+using UnityEngine.InputSystem.Users;
 
 public class PlayerSpawnManager : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class PlayerSpawnManager : MonoBehaviour
     private void OnEnable()
     {
         FindSpawnPoints();
+    }
+
+    private void OnDisable()
+    {
+        
     }
 
     public void FindSpawnPoints() 
@@ -133,5 +139,19 @@ public class PlayerSpawnManager : MonoBehaviour
     void WakeUpConservator()
     {
 
+    }
+
+    public void RemovePlayer(PlayerInput playerInputToRemove )
+    {
+        foreach (var device in playerInputToRemove.devices)
+        {
+            //InputUser.UnpairDevice(device);
+        }
+
+        // Destroy the PlayerInput component
+        Destroy(playerInputToRemove);
+
+        // Optionally, destroy the entire player game object
+        Destroy(playerInputToRemove.gameObject);
     }
 }

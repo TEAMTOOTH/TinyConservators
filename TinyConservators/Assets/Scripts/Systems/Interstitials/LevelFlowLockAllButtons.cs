@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LevelFlowResetButtons : MonoBehaviour, ILevelFlowComponent
+public class LevelFlowLockAllButtons : MonoBehaviour, ILevelFlowComponent
 {
     [SerializeField] GameObject udpCommunicator;
     LevelFlowManager owner;
@@ -12,20 +12,19 @@ public class LevelFlowResetButtons : MonoBehaviour, ILevelFlowComponent
     public void StartSection(LevelFlowManager flowManager)
     {
         owner = flowManager;
-        udpCommunicator.GetComponent<CharacterCreatorUDPCaller>().UnlockButtons();
+        udpCommunicator.GetComponent<CharacterCreatorUDPCaller>().LockAllButtons();
         FinishSection();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Debug.Log("Locking all buttons");
-        //udpCommunicator.GetComponent<CharacterCreatorUDPCaller>().LockAllButtons();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

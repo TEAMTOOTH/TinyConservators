@@ -36,7 +36,7 @@ public class LevelUDPCommunicator : MonoBehaviour
     {
         if (udpManager != null)
         {
-            udpManager.SendMessage($"level,{message}");
+            udpManager.SendMessage($"{message}");
         }
         else
         {

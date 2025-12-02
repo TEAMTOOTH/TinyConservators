@@ -912,6 +912,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2048245701}
+  - {fileID: 2045527605}
   - {fileID: 1192353687}
   - {fileID: 185563069}
   - {fileID: 1437624163}
@@ -2173,23 +2174,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &627908523 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6239904217166950410, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
-  m_PrefabInstance: {fileID: 1636050699}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &627908526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627908523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d575d46c0d15d2a409f4100b88d1cd40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &641535546
 GameObject:
   m_ObjectHideFlags: 0
@@ -3891,9 +3875,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad39e83d9fc3b4478a8a48b005bbff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetIP: 10.101.255.100
+  targetIP: 127.0.0.1
   targetPort: 4742
-  listenIP: 10.101.255.110
+  listenIP: 127.0.0.1
   listenPort: 4742
   OnUPDMessageReceived:
     m_PersistentCalls:
@@ -4750,9 +4734,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6239904217166950410, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 4777534917301986821, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 627908526}
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 7262862617474497723, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 9b2efadf0e002724e980492919184b7e, type: 3}
 --- !u!1 &1654935330
 GameObject:
@@ -5886,6 +5873,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1397659150}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2045527604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2045527605}
+  - component: {fileID: 2045527606}
+  m_Layer: 0
+  m_Name: LevelFlowLockButtons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2045527605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045527604}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 389517198}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2045527606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045527604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6daf270697f833748b82edf9e183c564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  udpCommunicator: {fileID: 1821307613}
 --- !u!1 &2048245700
 GameObject:
   m_ObjectHideFlags: 0

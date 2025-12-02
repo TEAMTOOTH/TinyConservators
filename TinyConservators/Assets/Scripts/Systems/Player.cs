@@ -7,11 +7,15 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour, IDamageReceiver
 {
+    [SerializeField] float inactivityTimerLimit;
     [SerializeField] Sprite[] playerSprites; //This is only for testing!
     //[SerializeField] GameObject colorExpulsionPoint;
     [SerializeField] Vector3 colorExpulsionOffset;
     [SerializeField] ParticleSystem expulsionFart;
-    int playerId;
+
+
+    int spawnId;
+    int visualId;
     PlayerStates state = PlayerStates.paused;
 
     PlayerCommunication lightSignaler; 
@@ -19,13 +23,17 @@ public class Player : MonoBehaviour, IDamageReceiver
     VisualController playerVisuals;
     bool grounded = false;
 
-    public void Initialize(int id)
+    float inactivityTimer;
+
+    bool canMoveCheckForInactivity = true;
+
+    public void Initialize(int spawnId)
     {
         GameObject.FindGameObjectWithTag("DontDestroyManager").GetComponent<DontDestroyOnLoadManager>().AddDontDestroyObject(gameObject);
 
         OnPlayerStateChanged += (from, to) => StateChanged(from, to);
 
-        playerId = id;
+        this.spawnId = spawnId;
 
         //State = PlayerStates.customizing;
 
@@ -64,6 +72,15 @@ public class Player : MonoBehaviour, IDamageReceiver
         
     }
 
+    void Update()
+    {
+        inactivityTimer += Time.deltaTime;
+        if(inactivityTimerLimit < inactivityTimer && canMoveCheckForInactivity)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     void StateChanged(PlayerStates from, PlayerStates to)
     {
@@ -99,9 +116,15 @@ public class Player : MonoBehaviour, IDamageReceiver
         
         GetComponent<FlyingMovement>().SetAllowedToFlap(state); //Don't know if I need these, clean up if you have the time to check.
         GetComponent<FlyingMovement>().enabled = state;
-        
+
+        canMoveCheckForInactivity = state;
         //GetComponent<PlayerInput>().enabled = state;
-        
+
+    }
+
+    public void InputRegistered()
+    {
+        inactivityTimer = 0;
     }
 
     IEnumerator SpawnPause()
@@ -177,6 +200,7 @@ public class Player : MonoBehaviour, IDamageReceiver
     {
         GetComponentInChildren<SpriteRenderer>().enabled = state;
         GetComponentInChildren<TextMeshPro>().enabled = state;
+        inactivityTimer = 0;
     }
 
     //Not sure what this is?
@@ -188,9 +212,14 @@ public class Player : MonoBehaviour, IDamageReceiver
         }
     }
 
+    public void SetPlayerVisualId(int newPlayerId)
+    {
+        visualId = newPlayerId;
+    }
+
     public int GetPlayerId()
     {
-        return playerId;
+        return visualId;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -228,6 +257,20 @@ public class Player : MonoBehaviour, IDamageReceiver
     public void SetGrounded(bool state)
     {
         grounded = state;
+        //GetComponent<PlayerInput>().
+    }
+
+    public void OnEnable()
+    {
+        
+    }
+
+    public void OnDestroy()
+    {
+        PlayerManager pm = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
+        pm.OnPlayerUnjoined(this);
+        GetComponent<PlayerCommunication>().SendMessage("reset");
+
     }
 }
 

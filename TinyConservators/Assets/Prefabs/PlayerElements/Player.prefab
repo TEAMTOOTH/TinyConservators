@@ -647,6 +647,7 @@ MonoBehaviour:
   impulseForce: 5
   amountOfFlapsPerFly: 1000
   flapCooldown: 0.1
+  player: {fileID: 0}
 --- !u!114 &3221399604692902498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,6 +703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ebd3d27890c7f4dbd83fbbb1fa78ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inactivityTimerLimit: 45
   playerSprites:
   - {fileID: 9073101412676522767, guid: 997227bbf973ce1438ad2d0cf3e2a6e5, type: 3}
   - {fileID: -9111161092224608492, guid: aef452685b85583439a87833724b4a31, type: 3}
@@ -843,8 +845,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59cf7d048a8f40e4b974691d202062ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sendMessage: 0
-  UDPManager: {fileID: 0}
+  sendTestMessage: 0
+  udpManager: {fileID: 0}
 --- !u!114 &5591082706657798158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,6 +981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1670600523678584220}
   - component: {fileID: 4521417332248192587}
+  - component: {fileID: 2066766588910299524}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: PlayerVisuals
@@ -1016,6 +1019,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 0
   visualElements: []
+--- !u!114 &2066766588910299524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6239904217166950410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d575d46c0d15d2a409f4100b88d1cd40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7262862617474497723
 GameObject:
   m_ObjectHideFlags: 0
