@@ -32,6 +32,18 @@ public class LevelUDPCommunicator : MonoBehaviour
         }
     }
 
+    public void SendMessageOverridePrefix(string message)
+    {
+        if (udpManager != null)
+        {
+            udpManager.SendMessage($"level,{message}");
+        }
+        else
+        {
+            Debug.LogError("No UDPManager found on this GameObject!");
+        }
+    }
+
     // This method can be assigned in the Inspector to a UnityEvent
     public void HandleInitializationMessage(string message)
     {
