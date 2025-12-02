@@ -9,6 +9,8 @@ public class WalkingMovement : MonoBehaviour
     Vector2 velocity;
     int direction = 1;
     bool canMove = true;
+    Player player;
+
 
     [SerializeField] Vector2 targetVelocity;
     [SerializeField] float horizontalSpeedIncrease = 50;
@@ -16,6 +18,8 @@ public class WalkingMovement : MonoBehaviour
     [SerializeField] float acceleration = 4f;    // lower = floatier
     [SerializeField] float deceleration = 1f;    // lower = floatier
     [SerializeField] float reverseDrag = 0.5f;   // more drag when reversing
+
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -115,6 +119,7 @@ public class WalkingMovement : MonoBehaviour
 
         if (input != 0)
         {
+            GetComponent<Player>().InputRegistered();
             float direction = Mathf.Sign(input);
             float targetSpeed = targetVelocity.x * Mathf.Abs(input);
 

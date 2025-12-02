@@ -11,9 +11,11 @@ public class UDPMessageUnityEvent : UnityEvent<string> { }
 
 public class UDPManager : MonoBehaviour
 {
-    public string targetIP = "127.0.0.1";
+    public string targetIP;
     public int targetPort;
+    public string listenIP;
     public int listenPort;
+    
 
     private UdpClient udpReceiver;
     private UdpClient udpSender;
@@ -37,7 +39,13 @@ public class UDPManager : MonoBehaviour
         udpSender = new UdpClient();
         ipEndPoint = new IPEndPoint(IPAddress.Parse(targetIP), targetPort);
 
+
+
         // Initialize receiver
+        IPEndPoint localEndPoint = new IPEndPoint(IPAddress.Parse(listenIP), listenPort);
+        udpReceiver = new UdpClient(localEndPoint);
+
+
         udpReceiver = new UdpClient(listenPort);
         Debug.Log($"[UDP] Receiver listening on port {listenPort}");
 

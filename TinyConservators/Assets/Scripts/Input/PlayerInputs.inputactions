@@ -165,6 +165,61 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "ArcadeJoystick",
+                    "id": "2756c87b-7227-4cfb-b8bd-eef2365ea3df",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "a2329a00-6c87-45a6-be91-6fe72ca30339",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/stick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";GenericJoystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "331e0554-ad2c-49c2-96b8-440d3598c087",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";GenericJoystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "436d3b96-a60c-4f02-a5db-13cb21433b75",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";GenericJoystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "8f8f6a03-d54f-4911-a7b3-64aed9bd8b69",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/stick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";GenericJoystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "27ab7d1e-9683-4847-b00f-8d6e667ab32c",
                     "path": "<Keyboard>/n",
@@ -193,6 +248,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";NesGamePad",
+                    "action": "PrimaryAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "888efffa-970a-4b0d-ae4f-261737afd224",
+                    "path": "<Joystick>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";GenericJoystick",
                     "action": "PrimaryAction",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -271,6 +337,17 @@
             "name": "NesGamePad",
             "bindingGroup": "NesGamePad",
             "devices": []
+        },
+        {
+            "name": "GenericJoystick",
+            "bindingGroup": "GenericJoystick",
+            "devices": [
+                {
+                    "devicePath": "<Joystick>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
         }
     ]
 }

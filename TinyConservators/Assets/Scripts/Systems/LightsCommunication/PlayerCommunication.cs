@@ -7,7 +7,7 @@ public class PlayerCommunication : MonoBehaviour
 
     [SerializeField] UDPManager udpManager;
 
-    int controllerIndex;
+    string controllerColor;
     bool hasReceivedInitializionMessage = false;
 
     void OnEnable()
@@ -24,7 +24,7 @@ public class PlayerCommunication : MonoBehaviour
     {
         if (udpManager != null)
         {
-            udpManager.SendMessage($"{controllerIndex},{message}");
+            udpManager.SendMessage($"{controllerColor},{message}");
         }
         else
         {
@@ -37,7 +37,9 @@ public class PlayerCommunication : MonoBehaviour
     {
         if (!hasReceivedInitializionMessage)
         {
+            int controllerIndex;
             controllerIndex = (int)Enum.Parse(typeof(playerControllers), message);
+            controllerColor = message;
             GetComponentInChildren<CharacterCustomizer>()?.Initialize(controllerIndex);
             hasReceivedInitializionMessage = true;
             Debug.Log("Initializing player with color: " + message + " and index: " + controllerIndex);
@@ -63,5 +65,5 @@ public enum playerControllers
     cyan,
     red,
     green,
-    yellow
+    table
 }

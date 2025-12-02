@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -25,6 +27,15 @@ public class PlayerManager : MonoBehaviour
     public void OnPlayerUnjoined(Player p)
     {
         players.Remove(p);
+        if(players.Count == 0)
+        {
+            SceneManager.LoadScene("StartScene");
+
+            Debug.LogError("You have not made sure you are destroying all objects and doing a proper restart!");
+            throw new NotImplementedException();
+        }
+        //GameObject.FindGameObjectWithTag("PlayerJoinManager").GetComponent<PlayerSpawnManager>().RemovePlayer(p.GetPlayerId());
+
     }
 
     public int GetAmountOfPlayers()
