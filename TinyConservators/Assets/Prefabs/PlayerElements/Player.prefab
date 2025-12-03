@@ -102,7 +102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &330273068104423368
 Transform:
   m_ObjectHideFlags: 0
@@ -724,6 +724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites: []
+  initialScale: 0.08
 --- !u!50 &7163694605996157019
 Rigidbody2D:
   serializedVersion: 5
@@ -981,7 +982,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1670600523678584220}
   - component: {fileID: 4521417332248192587}
-  - component: {fileID: 2066766588910299524}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: PlayerVisuals
@@ -1026,18 +1026,6 @@ MonoBehaviour:
   - {fileID: 3482233920084460305, guid: ec4fbb73d9d5e614892688c0db17dd88, type: 3}
   - {fileID: 5567257856815497786, guid: 2bdf13bb025b3ed48830526d1dbd2e18, type: 3}
   - {fileID: 469575024425818844, guid: 59637b99311fd7441a85e3d54e8b1104, type: 3}
---- !u!114 &2066766588910299524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6239904217166950410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d575d46c0d15d2a409f4100b88d1cd40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7262862617474497723
 GameObject:
   m_ObjectHideFlags: 0

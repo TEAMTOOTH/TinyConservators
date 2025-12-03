@@ -3,25 +3,28 @@ using UnityEngine;
 public class VisualController : MonoBehaviour
 {
     [SerializeField] SpriteRenderer[] sprites;
+    [SerializeField] float initialScale;
 
     Rigidbody2D rb2D;
     WalkingMovement movement;
 
-    float initialScale;
+    GameObject visualObject;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sprites = GetComponentsInChildren<SpriteRenderer>();
         rb2D = GetComponent<Rigidbody2D>();
         movement = GetComponent<WalkingMovement>();
-        initialScale = transform.localScale.x;
+        visualObject = GetComponentInChildren<Animator>().gameObject;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        transform.localScale = new Vector3(initialScale * movement.GetDirection(), transform.localScale.y, transform.localScale.z);
+        GetComponentInChildren<Animator>().transform.localScale = new Vector3(initialScale * movement.GetDirection(), transform.localScale.y, transform.localScale.z);
 
         /*if (movement.GetDirection() < 0)
         {
