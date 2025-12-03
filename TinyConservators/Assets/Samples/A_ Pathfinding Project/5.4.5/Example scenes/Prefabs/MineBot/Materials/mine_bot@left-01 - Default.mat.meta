@@ -5,6 +5,6 @@ AssetOrigin:
   productId: 87744
   packageName: A* Pathfinding Project Pro
   packageVersion: 5.4.5
-  assetPath: Packages/com.arongranberg.astar/ExampleScenes~/Prefabs/MineBot/Materials/mine_bot@left-01
+  assetPath: Assets/Samples/A_ Pathfinding Project/5.4.5/Example scenes/Prefabs/MineBot/Materials/mine_bot@left-01
     - Default.mat
   uploadId: 822890

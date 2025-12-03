@@ -94,5 +94,5 @@ AssetOrigin:
   productId: 87744
   packageName: A* Pathfinding Project Pro
   packageVersion: 5.4.5
-  assetPath: Packages/com.arongranberg.astar/ExampleScenes~/Scenes/HexagonalTurnBased/Textures/hexagon.png
+  assetPath: Assets/Samples/A_ Pathfinding Project/5.4.5/Example scenes/Scenes/HexagonalTurnBased/Textures/hexagon.png
   uploadId: 822890
