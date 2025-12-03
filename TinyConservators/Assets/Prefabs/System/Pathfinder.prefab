@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1501813166031965762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5062862452056141114}
+  - component: {fileID: 6422026933438693127}
+  - component: {fileID: 2899676977656774937}
+  m_Layer: 0
+  m_Name: Pathfinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5062862452056141114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501813166031965762}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6422026933438693127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501813166031965762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1073741824
+  data:
+    dataString: UEsDBBQAAAgIAAAIIeyBItkAsgIAAPAFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF9VNtuGjEQ/RXk5xItlKShby0Q0ockKKTKQ8mDWc+yFsZe+RIgEf/eGe8VKlVCWnPmzPjMzZ9MaldA6o2dWykejAD2vcfozL70WuM9HPjG6KX8gJrzKoXPicQj55l7aRAfkJszO/BWpj/0RhE5QTBomRm7m4kNTIzzDuGMKwdossaTt0bos8cO+OmPyeWIp+E3On3gaZz0TnhMQXuwLbUm1rSSFXSq+K4AQZJb8tcmbEnTmEzFSK6uKbpRSrpKC/PHIuY64YULmAkShOSYWxRAqeYgN7mngF3npyxz4CtRlh+n0mKJyqjspynrtuNuWyp75ypAI70M+fCPtT+I5sya3X196yChG3wu0+0zP6bc+U5Zu/D0XHbQe662fK3gNQf9aObWBC3Q6G0g1+BgOG3/NolNcki3LV5KvQBD8d/mnGLqh6WHokkjuRq16G8HbqlMrHwVkiwVEgcDLPbtF6YTx8ZVFyBKGtH/hW+681UZ7qR1Hk1VDSqUuAtsDwjQKVRl7xNBk7y1CZZisVnUSsUIfmKshghXAgvQXPnjAiP6y/5f2Dq6Lix3nFatUlfZ6g26cIlwy0+SC9PC7JteW5xcF8e5Pv15oya43OwfwOVPwSupO9UmwyMWeGK0Lse2W8zabRlsxtOOm4eDDxam3PN4G8rB+RJdV6xl9NBBKRrlmEBUhAnQ743qm3O8V0WYPRod1+7sG+VvghTnC8KGXNwOYHgtktFIjIfj/hDW14OBuLkFGGSj0Q2LGyQ1lpurRVmvqks4XbrNReO21A9hb255ETdWWL6fy4+d6XRe6swsUwugn8oITbJg8RJ8W8RMSExzCd5LHeeSfa6YMukWxKoJtIqFnR285as2yooV8t14QlZsEl++FSO42Ugc3XcJe7r8LBgobB2IF6lgxwsyJSd2+gtQSwMEFAAACAgAAAgh7CBVoi1sAAAAdwAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw1TPRM9VRUEovSizIKAYKGII4pZkpIHa0klFiioVhqpFpioGJSYqlkaWuUWqSqaFhiplFaqphmomJmVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAACCHsgSLZALICAADwBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAACCHsIFWiLWwAAAB3AAAACQAkAAAAAAAAAAAAAAD/AgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAALYDAAAAAA==
+    file_cachedStartup: {fileID: 0}
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  graphUpdateDebugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 4
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors: []
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 4
+  maxFrameTime: 10
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  navmeshUpdates:
+    updateInterval: 0
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 10
+  showGraphs: 1
+  showGraphsInStandalonePlayer: 0
+--- !u!114 &2899676977656774937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501813166031965762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1764de1de43cc4d19af52679d3eaae06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1073741824
+  desiredSimulationFPS: 20
+  workerThreads: 2
+  doubleBuffering: 0
+  hardCollisions: 1
+  symmetryBreakingBias: 0.1
+  movementPlane: 1
+  useNavmeshAsObstacle: 0
+  drawQuadtree: 0

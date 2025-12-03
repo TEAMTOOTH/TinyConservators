@@ -36,6 +36,7 @@ Transform:
   m_Children:
   - {fileID: 6489184739642271165}
   - {fileID: 8669840326867801725}
+  - {fileID: 2642368516716416292}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &3671128505368184303
@@ -72,8 +73,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.012138069, y: 0.040596306}
-  m_Size: {x: 0.47572386, y: 0.68197024}
+  m_Offset: {x: 0.07616496, y: 0.15741543}
+  m_Size: {x: 0.3828028, y: 0.7312094}
   m_Direction: 0
 --- !u!50 &1275319813948098079
 Rigidbody2D:
@@ -162,7 +163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6489184739642271165
 Transform:
   m_ObjectHideFlags: 0
@@ -255,6 +256,76 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &2306763579254931108
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6729358470519504602}
+    m_Modifications:
+    - target: {fileID: 335748427294094208, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 335748427294094208, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 335748427294094208, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.118
+      objectReference: {fileID: 0}
+    - target: {fileID: 335748427294094208, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.695
+      objectReference: {fileID: 0}
+    - target: {fileID: 335748427294094208, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 335748427294094208, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 335748427294094208, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 335748427294094208, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 335748427294094208, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 335748427294094208, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 335748427294094208, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 335748427294094208, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468394200017529827, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+      propertyPath: m_Name
+      value: minion-solo-anim-unity-2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+--- !u!4 &2642368516716416292 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 335748427294094208, guid: 46c63e6f9e3b8be42920cef05c90b121, type: 3}
+  m_PrefabInstance: {fileID: 2306763579254931108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8765989698840610591
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,143 +4,151 @@ using UnityEngine;
 
 public class AttackPoint : MonoBehaviour
 {
-    [SerializeField] Sprite[] visuals;
+    [Header("Visuals & Health")]
+    [SerializeField] Sprite[] visuals;               // 0 = undamaged, last = fully damaged
     [SerializeField] GameObject healthBar;
     [SerializeField] GameObject fixParticleSystem;
+    [SerializeField] int initialHealth = 36;
 
-    SpriteRenderer visual;
-    int damageSteps; // total steps of visible damage
+    [Header("Visual Step Settings")]
+    [SerializeField] int hitsPerVisualStep = 3;     // How many hits per visual change
 
-    float damageToPainting = 0f; // between 0-1
-    int oldDamageIndex = 0;
+    private SpriteRenderer visual;
+    private int damageSteps;                          // visuals.Length - 1
 
-    int damageIndex = 0;
+    private int health;                               // main health value
+    private int damageIndex = 0;                      // which sprite to show
+    private int oldDamageIndex = 0;
 
-    float hackyFixAmount = 0;
-
-    Vector3 origHealthBarSize;
+    private Vector3 origHealthBarSize;
 
     private void Start()
     {
         visual = GetComponent<SpriteRenderer>();
         origHealthBarSize = healthBar.transform.localScale;
         damageSteps = visuals.Length - 1;
-        //UpdateVisuals();
-        //CalculateHealthBarLook();
+
+        health = initialHealth;
+        UpdateDamageIndexFromHealth();
+        UpdateVisuals();
+        CalculateHealthBarLook();
     }
 
-    public void NewAttack()
-    {
-        damageToPainting = 0;
-        oldDamageIndex = 0;
-        //UpdateVisuals();
-        //CalculateHealthBarLook();
-    }
-
+    // -----------------------------------------
+    // DAMAGE
+    // -----------------------------------------
     public void Damage()
     {
-        damageIndex++;
-        
+        health = Mathf.Max(0, health - 1);
+        OnHealthChanged();
+    }
+
+    public void Damage(int dmg)
+    {
+        health = Mathf.Max(0, health - dmg);
+        OnHealthChanged();
+    }
+
+    // -----------------------------------------
+    // HEAL / FIX DAMAGE
+    // -----------------------------------------
+    public void FixDamage(int amount)
+    {
+        health = Mathf.Min(initialHealth, health + amount);
+        OnHealthChanged();
+
+        // Sparkle effect when healing
+        fixParticleSystem.GetComponent<ParticleSystem>()?.Play();
+
+        // Notify system
+        var udp = GameObject.FindGameObjectWithTag("LevelUDPManager");
+        udp?.GetComponent<LevelUDPCommunicator>().SendMessage("fixPainting");
+    }
+
+    // Full restore (call this when player has 12 fix items)
+    public void FullRestore()
+    {
+        health = initialHealth;
+        damageIndex = 0;
+        oldDamageIndex = 0;
+
+        visual.sprite = visuals[0];
+        healthBar.transform.localScale = origHealthBarSize;
+
+        fixParticleSystem.GetComponent<ParticleSystem>()?.Play();
+
+        var udp = GameObject.FindGameObjectWithTag("LevelUDPManager");
+        udp?.GetComponent<LevelUDPCommunicator>().SendMessage("fixPainting");
+    }
+
+    // -----------------------------------------
+    // INTERNAL HEALTH HANDLING
+    // -----------------------------------------
+    private void OnHealthChanged()
+    {
+        UpdateDamageIndexFromHealth();
         UpdateVisuals();
         CalculateHealthBarLook();
     }
 
-    public void Damage(int damageSteps)
+    private void UpdateDamageIndexFromHealth()
     {
-        damageIndex += damageSteps;
+        int damageTaken = initialHealth - health;
 
-        UpdateVisuals();
-        CalculateHealthBarLook();
+        // Each visual step occurs after 'hitsPerVisualStep' hits
+        damageIndex = damageTaken / hitsPerVisualStep;
+
+        damageIndex = Mathf.Clamp(damageIndex, 0, damageSteps);
     }
 
-    void UpdateVisuals()
+    // -----------------------------------------
+    // VISUALS + HEALTH BAR
+    // -----------------------------------------
+    private void UpdateVisuals()
     {
-        // Determine step index based on total damage (0-1 range mapped to steps)
-        //int newIndex = Mathf.FloorToInt(damageToPainting * damageSteps);
-        //newIndex = Mathf.Clamp(newIndex, 0, visuals.Length - 1);
-        int newIndex = damageIndex;
+        var udp = GameObject.FindGameObjectWithTag("LevelUDPManager");
 
-        GameObject levelUDP = GameObject.FindGameObjectWithTag("LevelUDPManager");
-
-        if (newIndex > oldDamageIndex)
+        if (damageIndex > oldDamageIndex)
         {
-            visual.sprite = visuals[newIndex];
+            // Damage occurred
+            visual.sprite = visuals[damageIndex];
 
             CinemachineImpulseSource cm = GetComponent<CinemachineImpulseSource>();
-            if (cm != null)
-            {
-                cm.GenerateImpulseWithForce(0.2f);
-            }
-            levelUDP?.GetComponent<LevelUDPCommunicator>().SendMessage("damagePainting");
-            oldDamageIndex = newIndex;
+            cm?.GenerateImpulseWithForce(0.2f);
+
+            udp?.GetComponent<LevelUDPCommunicator>().SendMessage("damagePainting");
         }
-        else if(newIndex < oldDamageIndex)
+        else if (damageIndex < oldDamageIndex)
         {
-            visual.sprite = visuals[newIndex];
+            // Healing occurred
+            visual.sprite = visuals[damageIndex];
             fixParticleSystem.GetComponent<ParticleSystem>()?.Play();
-            levelUDP?.GetComponent<LevelUDPCommunicator>().SendMessage("fixPainting");
-            //Do a little sparkle
+
+            udp?.GetComponent<LevelUDPCommunicator>().SendMessage("fixPainting");
         }
 
-
+        oldDamageIndex = damageIndex;
     }
 
-    void CalculateHealthBarLook()
+    private void CalculateHealthBarLook()
     {
-        //float scaleX = Mathf.Clamp(1f - damageToPainting, 0f, 1f);
-        //float scaleX = Mathf.Clamp01(damageIndex / damageSteps);
-        //Debug.Log(scaleX);
-        //healthBar.transform.localScale = new Vector3(scaleX * origHealthBarSize.x, origHealthBarSize.y, origHealthBarSize.z);
-
-        float scaleX = 1f - Mathf.Clamp01((float)damageIndex / damageSteps);
+        float healthPercent = (float)health / initialHealth;
 
         healthBar.transform.localScale = new Vector3(
-            scaleX * origHealthBarSize.x,
+            origHealthBarSize.x * healthPercent,
             origHealthBarSize.y,
             origHealthBarSize.z
-            );
-
-    }
-
-    //Doing a hacky fix, where each painting dot will heal 1 level
-    public void FixDamage(float amount)
-    {
-        hackyFixAmount += amount;
-        
-        if(hackyFixAmount >= 1.3f)
-        {
-            if(damageIndex > 0)
-            {
-                damageIndex--;
-            }
-            
-
-            UpdateVisuals();
-            CalculateHealthBarLook();
-
-            hackyFixAmount = 0;
-        }
-        //damageIndex--;
-        
-    }
-
-    /*public void FixDamage(float amount)
-    {
-        damageToPainting -= amount;
-        damageToPainting = Mathf.Clamp01(damageToPainting);
-        //damageIndex--;
-        UpdateVisuals();
-        CalculateHealthBarLook();
-    }*/
-
-    public int GetAmountOfVisualDamageSteps()
-    {
-        return visuals.Length;
+        );
     }
 
     public float GetAmountOfDamage()
     {
-        return Mathf.Clamp01((float)damageIndex / damageSteps);
+        return (float)health / initialHealth;
     }
 
+    // -----------------------------------------
+    // GETTERS
+    // -----------------------------------------
+    public int GetHealth() => health;
+    public float GetDamagePercent() => 1f - (float)health / initialHealth;
 }

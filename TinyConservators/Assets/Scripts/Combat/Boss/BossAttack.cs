@@ -87,16 +87,11 @@ public class BossAttack : MonoBehaviour
             
             
 
-            currentAttackPoint.NewAttack();
+            //currentAttackPoint.NewAttack();
 
             currentAttackPoint.Damage(damageStepsPerAttack);
             damageVisualSpawner.SpawnFakePickups();
 
-            // Calculate dynamic intervals
-            int damageSteps = (currentAttackPoint.GetAmountOfVisualDamageSteps() - 1) / 3;
-            Debug.Log("Damage steps: " + damageSteps);
-            float damageInterval = maxEatTime / damageSteps;
-            int damageCalls = 0;
             float elapsed = 0f;
 
             eating = true;
@@ -108,13 +103,6 @@ public class BossAttack : MonoBehaviour
 
                 if (bubble != null)
                     bubble.ChangeBubbleSize(elapsed, maxEatTime);
-
-                // Trigger next damage step if passed
-                //if (damageCalls < damageSteps && elapsed >= damageInterval * (damageCalls + 1))
-                //{
-                //    currentAttackPoint.Damage();
-                //    damageCalls++;
-                //}
 
                 // End phase
                 if (elapsed >= maxEatTime)

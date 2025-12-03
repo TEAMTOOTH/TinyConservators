@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
+using Pathfinding;
+using Pathfinding.RVO;
 
 public class Enemy : MonoBehaviour, IDamageReceiver
 {
@@ -35,6 +37,15 @@ public class Enemy : MonoBehaviour, IDamageReceiver
 
     public event Action<EnemyStates, EnemyStates> OnEnemyStateChanged;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+       
+        OnEnemyStateChanged += (from, to) => StateChanged(from, to);
+        originalSpeed = GetComponent<EnemyMovement>().GetCurrentSpeed();
+        
+    }
+
     public void Hurt(GameObject hurter)
     {
         if (receiveDamage)
@@ -50,12 +61,7 @@ public class Enemy : MonoBehaviour, IDamageReceiver
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        OnEnemyStateChanged += (from, to) => StateChanged(from, to);
-        originalSpeed = GetComponent<EnemyMovement>().GetCurrentSpeed();
-    }
+
 
     void StateChanged(EnemyStates from, EnemyStates to) 
     {
@@ -96,6 +102,8 @@ public class Enemy : MonoBehaviour, IDamageReceiver
 
         //GetComponent<CapsuleCollider>().enabled = false;
         gameObject.layer = LayerMask.NameToLayer("NoCollision");
+
+        GetComponent<RVOController>().enabled = false;
 
         GameObject closest = null;
         float shortestDistance = Mathf.Infinity;
@@ -142,7 +150,10 @@ public class Enemy : MonoBehaviour, IDamageReceiver
         State = EnemyStates.flying;
         if(goblinVisual != null)
             goblinVisual.SetActive(true);
+
+        GetComponent<RVOController>().enabled = true;
         GetComponent<EnemyMovement>().SetLookForTarget(true);
+
         GetComponentInChildren<Animator>()?.SetBool("isMounted", true);
         gameObject.layer = LayerMask.NameToLayer("Enemy");
     }

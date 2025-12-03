@@ -77,7 +77,7 @@ public class Player : MonoBehaviour, IDamageReceiver
         inactivityTimer += Time.deltaTime;
         if(inactivityTimerLimit < inactivityTimer && canMoveCheckForInactivity)
         {
-            Destroy(gameObject);
+            DestroyPlayerForInactivity();
         }
     }
 
@@ -260,17 +260,11 @@ public class Player : MonoBehaviour, IDamageReceiver
         //GetComponent<PlayerInput>().
     }
 
-    public void OnEnable()
-    {
-        
-    }
-
-    public void OnDestroy()
+    void DestroyPlayerForInactivity()
     {
         PlayerManager pm = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
         pm.OnPlayerUnjoined(this);
         GetComponent<PlayerCommunication>().SendMessage("reset");
-
     }
 }
 

@@ -192,7 +192,7 @@ public class Pickup : MonoBehaviour, IEatable, IFixer
 
             transform.position = endPos;
             
-            damageOwner.FixDamage(.33f);
+            damageOwner.FixDamage(1);
             Sparkle();
            
             

@@ -8,12 +8,20 @@ public class EnemyMovement : MonoBehaviour
     bool lookForTarget = true;
 
     GameObject[] hoverPoints;
+
+    AIPath ai;
+
+    float initialScale;
     
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         hoverPoints = GameObject.FindGameObjectsWithTag("HoverPoint");
+        ai = GetComponent<AIPath>();
+
+        initialScale = transform.localScale.x;
     }
 
     // Update is called once per frame
@@ -23,6 +31,17 @@ public class EnemyMovement : MonoBehaviour
         {
             FindTarget();
         }
+
+        if(ai.velocity.x < 0)
+        {
+            transform.localScale = new Vector3(-initialScale, transform.localScale.y, transform.localScale.z);
+        }
+        else
+        {
+            transform.localScale = new Vector3(initialScale, transform.localScale.y, transform.localScale.z);
+        }
+
+        Debug.Log(ai.velocity);
     }
 
     public void StartMoving()
@@ -36,8 +55,8 @@ public class EnemyMovement : MonoBehaviour
 
     void FindTarget()
     {
-        float searchWidth = 15;
-        float searchHeight = 12;
+        float searchWidth = 20;
+        float searchHeight = 15;
         float shortestDistance = searchWidth+searchHeight;
 
         GameObject targetObject = GetFurthestAwayPoint(transform.position, hoverPoints);
@@ -68,7 +87,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void SetNewTarget(GameObject newTarget)
     {
-        GetComponent<AIDestinationSetter>().target = newTarget.transform;
+        GetComponent<AIPath>().destination = newTarget.transform.position;
     }
 
     public void SetCanMove(bool state)
