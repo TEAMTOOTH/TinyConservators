@@ -5834,6 +5834,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 36a3b3ce461f14e288e27d27429e1102, type: 3}
   healthBar: {fileID: 1881702638}
   fixParticleSystem: {fileID: 1291629609}
+  initialHealth: 36
+  hitsPerVisualStep: 3
 --- !u!114 &782506232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8155,6 +8157,8 @@ MonoBehaviour:
   - {fileID: -7709155023990145213, guid: da9db82fa84704fd582604a0560800da, type: 3}
   healthBar: {fileID: 0}
   fixParticleSystem: {fileID: 0}
+  initialHealth: 36
+  hitsPerVisualStep: 3
 --- !u!212 &1077789066
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15984,7 +15988,7 @@ PrefabInstance:
       objectReference: {fileID: 458196994}
     - target: {fileID: 2930508527253700928, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
       propertyPath: damageStepsPerAttack
-      value: 4
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4726754196825053061, guid: a9de1058c9b224c4e9e3ff167e968027, type: 3}
       propertyPath: m_Size.x

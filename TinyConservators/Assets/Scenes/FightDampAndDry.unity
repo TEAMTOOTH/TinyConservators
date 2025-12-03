@@ -5871,6 +5871,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 25c5961c74ddc45f29a8e3c4d925dcdc, type: 3}
   healthBar: {fileID: 1537111029}
   fixParticleSystem: {fileID: 1306910460}
+  initialHealth: 36
+  hitsPerVisualStep: 3
 --- !u!114 &782506232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8251,6 +8253,8 @@ MonoBehaviour:
   - {fileID: -7709155023990145213, guid: da9db82fa84704fd582604a0560800da, type: 3}
   healthBar: {fileID: 0}
   fixParticleSystem: {fileID: 0}
+  initialHealth: 36
+  hitsPerVisualStep: 3
 --- !u!212 &1077789066
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8673,7 +8677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpots: {fileID: 782506228}
   bubble: {fileID: 0}
-  damageStepsPerAttack: 4
+  damageStepsPerAttack: 12
   damageVisualSpawner: {fileID: 1214515549}
   bossItemManagers: {fileID: 0}
 --- !u!114 &1125268993
