@@ -157,9 +157,11 @@ public class Minion : MonoBehaviour, IEatable
         //Have it set the one it rode when it got knocked off as mount.
         //Transport that mount back in. Set state back to hunting player
         
+
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-        visualObject.SetActive(false);
+        //visualObject.SetActive(false);
+        GetComponentInChildren<Animator>()?.gameObject.SetActive(false);
         respawnParticleSystem.Play();
 
         mount.transform.position = transform.position;
@@ -180,6 +182,7 @@ public class Minion : MonoBehaviour, IEatable
     public void Die()
     {
         hasDied = true;
+        
         StartCoroutine(die());
         IEnumerator die()
         {

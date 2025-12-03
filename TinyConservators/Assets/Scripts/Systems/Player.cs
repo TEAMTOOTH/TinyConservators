@@ -198,7 +198,9 @@ public class Player : MonoBehaviour, IDamageReceiver
 
     public void ShowVisual(bool state)
     {
-        GetComponentInChildren<SpriteRenderer>().enabled = state;
+        if(GetComponentInChildren<Animator>() != null)
+            GetComponentInChildren<Animator>().gameObject.SetActive(state);
+        
         GetComponentInChildren<TextMeshPro>().enabled = state;
         inactivityTimer = 0;
     }

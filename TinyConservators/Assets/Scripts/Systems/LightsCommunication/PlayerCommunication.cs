@@ -13,7 +13,7 @@ public class PlayerCommunication : MonoBehaviour
 
     void OnEnable()
     {
-        udpManager = GameObject.FindGameObjectWithTag("UDPCommunicator").GetComponent<UDPManager>();
+        udpManager = GameObject.FindGameObjectWithTag("UDPCommunicator")?.GetComponent<UDPManager>();
         
         if (udpManager != null && udpManager.OnUPDMessageReceived != null)
         {
@@ -24,7 +24,7 @@ public class PlayerCommunication : MonoBehaviour
 
         IEnumerator GiveRandomColor()
         {
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(2f);
             playerControllers[] values = (playerControllers[])System.Enum.GetValues(typeof(playerControllers));
             int index = UnityEngine.Random.Range(0, values.Length);
 
