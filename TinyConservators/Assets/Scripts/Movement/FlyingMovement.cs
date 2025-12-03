@@ -17,6 +17,8 @@ public class FlyingMovement : MonoBehaviour
     bool canFlap = true;
     bool allowedToFlap = true; //A general lock on flapping, while can flap is used as local/short term check.
 
+    
+
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -53,6 +55,7 @@ public class FlyingMovement : MonoBehaviour
                 StartCoroutine(ResetCanFlap());
                 IEnumerator ResetCanFlap()
                 {
+                    GetComponent<VisualController>().PlayAnimationIfHasState("Flap");
                     canFlap = false;
                     float timeElapsed = 0;
                     while(timeElapsed < flapCooldown)
@@ -61,6 +64,8 @@ public class FlyingMovement : MonoBehaviour
                         yield return null;
                     }
                     canFlap = true;
+                    //GetComponent<VisualController>().PlayAnimationIfHasState("Flap");
+
                 }
             }
             
