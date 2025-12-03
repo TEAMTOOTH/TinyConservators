@@ -263,6 +263,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: lady-animations-unity
       objectReference: {fileID: 0}
+    - target: {fileID: 2225465096881087298, guid: 7ea10567da373f24a985742e5ab24a85, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131111259902625282, guid: 7ea10567da373f24a985742e5ab24a85, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596874637003604255, guid: 7ea10567da373f24a985742e5ab24a85, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
