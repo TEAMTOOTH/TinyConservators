@@ -5,6 +5,7 @@ public class CharacterCustomizer : MonoBehaviour
 {
     [SerializeField] float sensitivity;
     [SerializeField] CustomizePart[] visualElements;
+    [SerializeField] GameObject[] tinyConservatorBodies;
 
     
 
@@ -50,13 +51,15 @@ public class CharacterCustomizer : MonoBehaviour
     public void Initialize(int id)
     {
         //Debug.Log("Initializing " + id);
-        visualElements = GetComponentsInChildren<CustomizePart>();
+        /*visualElements = GetComponentsInChildren<CustomizePart>();
         foreach (CustomizePart cp in visualElements)
         {
             //cp.ChangePart(id);
             cp.SetParts(GameObject.FindGameObjectWithTag("CharacterBuilder").GetComponent<BadPartsGetter>().GetMyColororedBodyParts(id));
             cp.ChangePart(0);
-        }
+        }*/
+
+        GameObject bodySpawned = Instantiate(tinyConservatorBodies[id], transform);
       
     }
 

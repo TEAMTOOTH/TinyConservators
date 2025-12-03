@@ -41,7 +41,7 @@ public class EnemyMovement : MonoBehaviour
             transform.localScale = new Vector3(initialScale, transform.localScale.y, transform.localScale.z);
         }
 
-        Debug.Log(ai.velocity);
+        //Debug.Log(ai.velocity);
     }
 
     public void StartMoving()

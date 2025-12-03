@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerCommunication : MonoBehaviour
@@ -18,6 +19,18 @@ public class PlayerCommunication : MonoBehaviour
         {
             udpManager.OnUPDMessageReceived.AddListener(HandleInitializationMessage);
         }
+
+        StartCoroutine(GiveRandomColor());
+
+        IEnumerator GiveRandomColor()
+        {
+            yield return new WaitForSeconds(10f);
+            playerControllers[] values = (playerControllers[])System.Enum.GetValues(typeof(playerControllers));
+            int index = UnityEngine.Random.Range(0, values.Length);
+
+            HandleInitializationMessage(values[index].ToString());
+        }
+        
     }
 
     public void SendMessage(string message)
@@ -37,6 +50,7 @@ public class PlayerCommunication : MonoBehaviour
     {
         if (!hasReceivedInitializionMessage)
         {
+            StopAllCoroutines();
             int controllerIndex;
             controllerIndex = (int)Enum.Parse(typeof(playerControllers), message);
             controllerColor = message;
@@ -61,9 +75,9 @@ public class PlayerCommunication : MonoBehaviour
 public enum playerControllers
 {
     blue,
-    purple,
-    cyan,
-    red,
     green,
-    table
+    purple,
+    red,
+    table,
+    yellow
 }

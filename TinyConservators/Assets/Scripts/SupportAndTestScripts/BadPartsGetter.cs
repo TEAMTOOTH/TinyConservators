@@ -7,7 +7,7 @@ public class BadPartsGetter : MonoBehaviour
     void Start()
     {
         characters = GetComponentsInChildren<BadCharacterBuilder>();
-        GameObject.FindGameObjectWithTag("DontDestroyManager").GetComponent<DontDestroyOnLoadManager>().AddDontDestroyObject(gameObject);
+        //GameObject.FindGameObjectWithTag("DontDestroyManager").GetComponent<DontDestroyOnLoadManager>().AddDontDestroyObject(gameObject);
     }
 
     public Sprite[] GetMyColororedBodyParts(int colorIndex)

@@ -22,6 +22,8 @@ public class PlayerKnockout : MonoBehaviour, IKnockoutable
             statusEnumerator = RecoverCountdown();
             StartCoroutine(statusEnumerator);
 
+            GetComponent<VisualController>().PlayAnimationIfHasState("Hurt");
+
             GetComponent<Player>().SetMoveState(false);
             gameObject.layer = LayerMask.NameToLayer("Knockout");
             isKnockedOut = true;
@@ -56,6 +58,7 @@ public class PlayerKnockout : MonoBehaviour, IKnockoutable
         gameObject.layer = LayerMask.NameToLayer("Player");
         isKnockedOut = false;
         GetComponent<PlayerCommunication>()?.SendMessage("recover");
+        GetComponent<VisualController>().PlayAnimationIfHasState("Float");
     }
 
     IEnumerator RecoverCountdown()
