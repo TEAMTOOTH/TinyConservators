@@ -32,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
             FindTarget();
         }
 
-        if(ai.velocity.x < 0)
+        if(ai.destination.x < transform.position.x)
         {
             transform.localScale = new Vector3(-initialScale, transform.localScale.y, transform.localScale.z);
         }

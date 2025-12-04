@@ -24,11 +24,11 @@ public class PlayerCommunication : MonoBehaviour
 
         IEnumerator GiveRandomColor()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(.5f);
             playerControllers[] values = (playerControllers[])System.Enum.GetValues(typeof(playerControllers));
             int index = UnityEngine.Random.Range(0, values.Length);
 
-            HandleInitializationMessage(values[index].ToString());
+            ChooseBody(values[index].ToString());
         }
         
     }
@@ -48,16 +48,27 @@ public class PlayerCommunication : MonoBehaviour
     // This method can be assigned in the Inspector to a UnityEvent
     public void HandleInitializationMessage(string message)
     {
+        Debug.Log("HandleInitializationMessage received: " + message);
+
+        if (!Enum.IsDefined(typeof(playerControllers), message))
+            return;
+        
         if (!hasReceivedInitializionMessage)
         {
-            StopAllCoroutines();
-            int controllerIndex;
-            controllerIndex = (int)Enum.Parse(typeof(playerControllers), message);
-            controllerColor = message;
-            GetComponentInChildren<CharacterCustomizer>()?.Initialize(controllerIndex);
+            ChooseBody(message);
             hasReceivedInitializionMessage = true;
-            Debug.Log("Initializing player with color: " + message + " and index: " + controllerIndex);
         }
+    }
+
+    public void ChooseBody(string message)
+    {
+        StopAllCoroutines();
+        int controllerIndex;
+        controllerIndex = (int)Enum.Parse(typeof(playerControllers), message);
+        controllerColor = message;
+        GetComponentInChildren<CharacterCustomizer>()?.Initialize(controllerIndex);
+        
+        Debug.Log("Initializing player with color: " + message + " and index: " + controllerIndex);
     }
 
 

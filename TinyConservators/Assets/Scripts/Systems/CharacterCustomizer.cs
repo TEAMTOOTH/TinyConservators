@@ -58,8 +58,15 @@ public class CharacterCustomizer : MonoBehaviour
             cp.SetParts(GameObject.FindGameObjectWithTag("CharacterBuilder").GetComponent<BadPartsGetter>().GetMyColororedBodyParts(id));
             cp.ChangePart(0);
         }*/
+        Animator[] a = GetComponentsInChildren<Animator>();
+
+        for(int i = 0; i < a.Length; i++)
+        {
+            Destroy(a[i].gameObject);
+        }
 
         GameObject bodySpawned = Instantiate(tinyConservatorBodies[id], transform);
+        GetComponentInParent<VisualController>().SetVisualObject(bodySpawned);
       
     }
 

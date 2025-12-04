@@ -9,20 +9,4 @@ public class CharacterCreatorUDPCaller : MonoBehaviour
     {
         levelUDP = GetComponent<LevelUDPCommunicator>();
     }
-
-    public void UnlockButtons()
-    {
-       
-        string[] playerNames = { "blue", "red", "purple", "green", "orange", "table" };
-
-        for(int i = 0; i < playerNames.Length; i++)
-        {
-            levelUDP.SendMessageOverridePrefix($"{playerNames[i]},reset");
-        }
-    }
-
-    public void LockAllButtons()
-    {
-        levelUDP.SendMessageOverridePrefix($"lockbuttons");
-    }
 }
