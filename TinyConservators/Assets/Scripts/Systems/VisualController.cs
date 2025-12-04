@@ -16,15 +16,17 @@ public class VisualController : MonoBehaviour
         sprites = GetComponentsInChildren<SpriteRenderer>();
         rb2D = GetComponent<Rigidbody2D>();
         movement = GetComponent<WalkingMovement>();
-        visualObject = GetComponentInChildren<Animator>().gameObject;
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (visualObject == null)
+            return;
 
-        GetComponentInChildren<Animator>().transform.localScale = new Vector3(initialScale * movement.GetDirection(), transform.localScale.y, transform.localScale.z);
+        visualObject.transform.localScale = new Vector3(initialScale * movement.GetDirection(), visualObject.transform.localScale.y, visualObject.transform.localScale.z);
 
         /*if (movement.GetDirection() < 0)
         {
@@ -45,6 +47,12 @@ public class VisualController : MonoBehaviour
     {
         //this is also terrible!!!
         //sprites[0].GetComponent<CustomizePart>().SetPart(visualIndex);
+    }
+
+    public void SetVisualObject(GameObject visual)
+    {
+        visualObject = visual;
+        initialScale = visual.transform.localScale.x;
     }
 
     public void PlayAnimationIfHasState(string state)

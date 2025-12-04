@@ -29,12 +29,18 @@ public class PlayerManager : MonoBehaviour
         players.Remove(p);
         if(players.Count == 0)
         {
+            GameObject.FindGameObjectWithTag("DontDestroyManager")?.GetComponent<DontDestroyOnLoadManager>().DestroyAllDontDestroyObjects();
+            
+            
             SceneManager.LoadScene("StartScene");
 
-            Debug.LogError("You have not made sure you are destroying all objects and doing a proper restart!");
-            throw new NotImplementedException();
         }
         //GameObject.FindGameObjectWithTag("PlayerJoinManager").GetComponent<PlayerSpawnManager>().RemovePlayer(p.GetPlayerId());
+
+    }
+
+    void EndGame()
+    {
 
     }
 

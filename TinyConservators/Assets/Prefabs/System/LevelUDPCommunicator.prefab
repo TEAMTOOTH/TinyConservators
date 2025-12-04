@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 904676892269342851}
   m_Layer: 0
   m_Name: LevelUDPCommunicator
-  m_TagString: LevelUDPCommunicator
+  m_TagString: LevelUDPManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,4 +59,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ffeb11db2bf8ea4595ffaa5635d4d74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startUdpMessage: 
+  startUdpMessage: charactercreator

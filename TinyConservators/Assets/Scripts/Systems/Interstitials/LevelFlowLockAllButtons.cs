@@ -2,8 +2,14 @@ using UnityEngine;
 
 public class LevelFlowLockAllButtons : MonoBehaviour, ILevelFlowComponent
 {
-    [SerializeField] GameObject udpCommunicator;
+    LevelUDPCommunicator udpCommunicator;
     LevelFlowManager owner;
+
+    void Awake()
+    {
+        udpCommunicator = GameObject.FindGameObjectWithTag("LevelUDPManager")?.GetComponent<LevelUDPCommunicator>();
+    }
+
     public void FinishSection()
     {
         owner.ProgressFlow();
@@ -12,8 +18,13 @@ public class LevelFlowLockAllButtons : MonoBehaviour, ILevelFlowComponent
     public void StartSection(LevelFlowManager flowManager)
     {
         owner = flowManager;
-        udpCommunicator.GetComponent<CharacterCreatorUDPCaller>().LockAllButtons();
+        udpCommunicator.GetComponent<LevelUDPCommunicator>().SendMessageOverridePrefix("lockbuttons");
         FinishSection();
+    }
+
+    void LockAllButtons()
+    {
+
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

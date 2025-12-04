@@ -15,7 +15,6 @@ public class UDPManager : MonoBehaviour
     public int targetPort;
     public string listenIP;
     public int listenPort;
-    
 
     private UdpClient udpReceiver;
     private UdpClient udpSender;
@@ -24,12 +23,12 @@ public class UDPManager : MonoBehaviour
     private int receivedCount = 0;
     private int sentCount = 0;
 
+    private bool isRunning = false;
 
     public UDPMessageUnityEvent OnUPDMessageReceived;
 
     public void TriggerUDPMessageReceived(string message)
     {
-        // Invoke the UnityEvent, passing the parameters
         OnUPDMessageReceived.Invoke(message);
     }
 
@@ -39,34 +38,29 @@ public class UDPManager : MonoBehaviour
         udpSender = new UdpClient();
         ipEndPoint = new IPEndPoint(IPAddress.Parse(targetIP), targetPort);
 
-
-
         // Initialize receiver
         IPEndPoint localEndPoint = new IPEndPoint(IPAddress.Parse(listenIP), listenPort);
         udpReceiver = new UdpClient(localEndPoint);
 
-
-        udpReceiver = new UdpClient(listenPort);
         Debug.Log($"[UDP] Receiver listening on port {listenPort}");
 
         // Start receive loop
+        isRunning = true;
         _ = ReceiveLoop();
     }
 
-
-    
-
-
     private void Start()
     {
-        GameObject.FindGameObjectWithTag("DontDestroyManager")?.GetComponent<DontDestroyOnLoadManager>().AddDontDestroyObject(gameObject);
+        GameObject.FindGameObjectWithTag("DontDestroyManager")
+            ?.GetComponent<DontDestroyOnLoadManager>()
+            .AddDontDestroyObject(gameObject);
     }
 
     private async Task ReceiveLoop()
     {
         try
         {
-            while (true)
+            while (isRunning)
             {
                 UdpReceiveResult result = await udpReceiver.ReceiveAsync();
                 receivedCount++;
@@ -81,6 +75,10 @@ public class UDPManager : MonoBehaviour
 
                 TriggerUDPMessageReceived(message);
             }
+        }
+        catch (ObjectDisposedException)
+        {
+            // Normal shutdown — ignore
         }
         catch (Exception ex)
         {
@@ -108,15 +106,24 @@ public class UDPManager : MonoBehaviour
         );
     }
 
-    private void OnApplicationQuit()
+    private void StopUDP()
     {
+        if (!isRunning) return;
+
+        isRunning = false;
+
+        // Closing UdpClients will trigger ObjectDisposedException in ReceiveLoop
         udpReceiver?.Close();
         udpSender?.Close();
     }
 
+    private void OnApplicationQuit()
+    {
+        StopUDP();
+    }
+
     private void OnDestroy()
     {
-        udpReceiver?.Close();
-        udpSender?.Close();
+        StopUDP();
     }
 }

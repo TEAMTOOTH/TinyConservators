@@ -1266,9 +1266,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad39e83d9fc3b4478a8a48b005bbff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetIP: 10.101.255.100
+  targetIP: 127.0.0.1
   targetPort: 4742
-  listenIP: 10.101.255.110
+  listenIP: 127.0.0.1
   listenPort: 4742
   OnUPDMessageReceived:
     m_PersistentCalls:
