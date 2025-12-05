@@ -49,10 +49,19 @@ public class VisualController : MonoBehaviour
         //sprites[0].GetComponent<CustomizePart>().SetPart(visualIndex);
     }
 
+    public void SetVisualObjectVisibility(bool state)
+    {
+        if(visualObject != null)
+        {
+            visualObject.SetActive(state);
+        }
+    }
+
     public void SetVisualObject(GameObject visual)
     {
         visualObject = visual;
         initialScale = visual.transform.localScale.x;
+        
     }
 
     public void PlayAnimationIfHasState(string state)

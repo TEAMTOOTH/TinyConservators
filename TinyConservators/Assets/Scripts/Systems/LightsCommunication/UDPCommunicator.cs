@@ -165,12 +165,16 @@ public class UDPCommunicator : MonoBehaviour
     {
         // If you already use a dispatcher, plug it in here.
         // Otherwise use this simple method:
-        UnityEngine.WSA.Application.InvokeOnAppThread(() =>
-        {
-            Debug.Log($"UDP RECEIVED: {message}");
-            // TODO: Handle your message here
-            //Send out an event with the color message or grab who joined last and apply color to them?
-        }, false);
+#if UNITY_WSA
+UnityEngine.WSA.Application.InvokeOnAppThread(() =>
+{
+    Debug.Log($"UDP RECEIVED: {message}");
+}, false);
+#else
+        // Most platforms allow you to safely call Debug.Log directly from the callback.
+        // If your UDP callback is not on Unity’s main thread, wrap it if needed.
+        Debug.Log($"UDP RECEIVED: {message}");
+#endif
     }
 
 }

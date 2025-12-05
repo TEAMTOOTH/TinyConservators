@@ -143,7 +143,7 @@ public class AttackPoint : MonoBehaviour
 
     public float GetAmountOfDamage()
     {
-        return (float)health / initialHealth;
+        return 1-((float)health / initialHealth);
     }
 
     // -----------------------------------------
