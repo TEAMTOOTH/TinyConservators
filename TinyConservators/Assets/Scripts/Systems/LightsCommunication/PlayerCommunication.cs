@@ -24,10 +24,20 @@ public class PlayerCommunication : MonoBehaviour
 
         IEnumerator GiveRandomColor()
         {
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(0f);
             playerControllers[] values = (playerControllers[])System.Enum.GetValues(typeof(playerControllers));
-            int index = UnityEngine.Random.Range(0, values.Length);
+            //int 
 
+            PlayerManager pm = GameObject.FindGameObjectWithTag("PlayerManager")?.GetComponent<PlayerManager>();
+            int index;
+            if(pm != null)
+            {
+                index = pm.GetAmountOfPlayers()-1;
+            }
+            else
+            {
+                index = UnityEngine.Random.Range(0, values.Length);
+            }
             ChooseBody(values[index].ToString());
         }
         
@@ -48,7 +58,7 @@ public class PlayerCommunication : MonoBehaviour
     // This method can be assigned in the Inspector to a UnityEvent
     public void HandleInitializationMessage(string message)
     {
-        Debug.Log("HandleInitializationMessage received: " + message);
+        /*Debug.Log("HandleInitializationMessage received: " + message);
 
         if (!Enum.IsDefined(typeof(playerControllers), message))
             return;
@@ -57,7 +67,8 @@ public class PlayerCommunication : MonoBehaviour
         {
             ChooseBody(message);
             hasReceivedInitializionMessage = true;
-        }
+        }*/
+        hasReceivedInitializionMessage = true;
     }
 
     public void ChooseBody(string message)
@@ -85,10 +96,10 @@ public class PlayerCommunication : MonoBehaviour
 
 public enum playerControllers
 {
-    blue,
     green,
     purple,
+    yellow,
     red,
-    table,
-    yellow
+    blue,
+    table
 }

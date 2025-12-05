@@ -198,9 +198,10 @@ public class Player : MonoBehaviour, IDamageReceiver
 
     public void ShowVisual(bool state)
     {
-        if(GetComponentInChildren<Animator>() != null)
-            GetComponentInChildren<Animator>().gameObject.SetActive(state);
-        
+        //if(GetComponentInChildren<Animator>() != null)
+        //GetComponentInChildren<Animator>().gameObject.SetActive(state);
+        GetComponent<VisualController>()?.SetVisualObjectVisibility(state);
+
         GetComponentInChildren<TextMeshPro>().enabled = state;
         inactivityTimer = 0;
     }

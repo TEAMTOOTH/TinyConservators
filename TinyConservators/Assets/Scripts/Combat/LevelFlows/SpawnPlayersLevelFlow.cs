@@ -44,6 +44,7 @@ public class SpawnPlayersLevelFlow : MonoBehaviour, ILevelFlowComponent
     {
         for (int i = 0; i < players.Length; i++)
         {
+            players[i].GetComponent<VisualController>();
             if (visualSpawn)
             {
                 if (i < players.Length / 2)
