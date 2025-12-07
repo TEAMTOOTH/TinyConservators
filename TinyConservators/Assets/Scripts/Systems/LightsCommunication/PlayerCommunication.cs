@@ -20,6 +20,12 @@ public class PlayerCommunication : MonoBehaviour
             udpManager.OnUPDMessageReceived.AddListener(HandleInitializationMessage);
         }
 
+        //FindBody();
+        
+    }
+
+    void FindBody()
+    {
         StartCoroutine(GiveRandomColor());
 
         IEnumerator GiveRandomColor()
@@ -30,9 +36,9 @@ public class PlayerCommunication : MonoBehaviour
 
             PlayerManager pm = GameObject.FindGameObjectWithTag("PlayerManager")?.GetComponent<PlayerManager>();
             int index;
-            if(pm != null)
+            if (pm != null)
             {
-                index = pm.GetAmountOfPlayers()-1;
+                index = pm.GetAmountOfPlayers() - 1;
             }
             else
             {
@@ -40,7 +46,16 @@ public class PlayerCommunication : MonoBehaviour
             }
             ChooseBody(values[index].ToString());
         }
-        
+    }
+
+    public void SetColorOfBodyThroughIndex(int index)
+    {
+        if (!hasReceivedInitializionMessage)
+        {
+            playerControllers[] values = (playerControllers[])System.Enum.GetValues(typeof(playerControllers));
+            ChooseBody(values[index].ToString());
+            hasReceivedInitializionMessage = true;
+        }
     }
 
     public void SendMessage(string message)
