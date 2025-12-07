@@ -668,6 +668,51 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a922250c6bbe94b1e8fcfaeb0496b7d1, type: 3}
   - {fileID: 21300000, guid: 9b94b972d07e04aec919714e90359796, type: 3}
   - {fileID: 21300000, guid: a07c7d02cea744182941ed154718030c, type: 3}
+--- !u!1 &114404038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 114404039}
+  - component: {fileID: 114404040}
+  m_Layer: 0
+  m_Name: LevelSendLightMessage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &114404039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114404038}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1178552288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114404040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114404038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02035eb799fb40a489d0c3bfcfbd7a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: trapped
 --- !u!4 &143962063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6793743527882762316, guid: 644c9b907b7b3754187b6028ade9ed98, type: 3}
@@ -8488,6 +8533,7 @@ Transform:
   - {fileID: 276212469}
   - {fileID: 960180496}
   - {fileID: 106333139}
+  - {fileID: 114404039}
   - {fileID: 954885807}
   - {fileID: 953588667}
   - {fileID: 822534529}
