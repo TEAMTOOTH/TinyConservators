@@ -10,7 +10,7 @@ public class VisualTurnOffCollider : MonoBehaviour
         {
             collision.GetComponent<Player>().ShowVisual(false);
             collision.GetComponent<Player>().FullFreeze(true);
-            collision.transform.position = new Vector3(0, -100, 0);
+            collision.transform.position = new Vector3(0, 0, 0);
         }
     }
 }

@@ -268,6 +268,8 @@ public class Player : MonoBehaviour, IDamageReceiver
         PlayerManager pm = GameObject.FindGameObjectWithTag("PlayerManager").GetComponent<PlayerManager>();
         pm.OnPlayerUnjoined(this);
         GetComponent<PlayerCommunication>().SendMessage("reset");
+        PlayerSpawnManager psm = GameObject.FindGameObjectWithTag("PlayerJoinManager").GetComponent<PlayerSpawnManager>();
+        psm.RemovePlayer(gameObject);
     }
 }
 

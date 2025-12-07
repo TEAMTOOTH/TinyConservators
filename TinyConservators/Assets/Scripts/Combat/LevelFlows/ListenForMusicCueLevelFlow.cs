@@ -36,7 +36,7 @@ public class ListenForMusicCueLevelFlow : MonoBehaviour, ILevelFlowComponent
             {
                 //FMODUnity.RuntimeManager.StudioSystem.getParameterByID(desc.id, out result);
                 FMODUnity.RuntimeManager.StudioSystem.getParameterByName(eventName, out _, out result);
-                Debug.Log("result: " + result);
+                //Debug.Log("result: " + result);
                 if (result == 1)
                 {
                     break;

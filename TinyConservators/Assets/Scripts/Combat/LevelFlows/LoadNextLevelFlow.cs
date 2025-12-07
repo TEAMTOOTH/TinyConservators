@@ -18,6 +18,16 @@ public class LoadNextLevelFlow : MonoBehaviour, ILevelFlowComponent
             g.GetComponent<StatTracker>().SetStats(levelNumberForStats);
         }
 
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+        //Back up if sucking doesnt work, just going to double up on the ones that already have been transformed.
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i].GetComponent<Player>().ShowVisual(false);
+            players[i].GetComponent<Player>().FullFreeze(true);
+            players[i].transform.position = new Vector3(0, 0, 0);
+        }
+        
         FinishSection();
     }
 

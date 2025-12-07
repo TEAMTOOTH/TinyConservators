@@ -71,17 +71,20 @@ public class PlayerSpawnManager : MonoBehaviour
         Player p = player.GetComponent<Player>();
         if(p != null)
         {
+            p.Initialize(id);
+
+            p.ShowVisual(true);
+            p.FullFreeze(false);
+            p.SetMoveState(false);
+
+            pm.OnPlayerJoined(player.GetComponent<Player>());
 
             if (!inGame)
             {
                 StartCoroutine(wakeUpPlayer());
                 IEnumerator wakeUpPlayer()
                 {
-                    p.Initialize(id);
-
-                    p.ShowVisual(true);
-                    p.FullFreeze(false);
-                    p.SetMoveState(false);
+                    
                     Vector2 spawnForce = new Vector2(Random.Range(initialSpawnForceFromTo.x, initialSpawnForceFromTo.y), 0);
 
                     if (id % 2 == 0)
@@ -101,7 +104,7 @@ public class PlayerSpawnManager : MonoBehaviour
                     
                     //p.FullFreeze(true);
                     //p.ShowVisual(false);
-                    pm.OnPlayerJoined(player.GetComponent<Player>());
+                    
 
                     //sleepingPlayers[id].GetComponent<Animator>().Play("WakeUp");
                     //yield return new WaitForSeconds(wakeUpTime);
@@ -121,13 +124,10 @@ public class PlayerSpawnManager : MonoBehaviour
             else
             {
 
-                p.Initialize(id);
-                p.transform.position = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
-                p.FullFreeze(false);
-                pm.OnPlayerJoined(player.GetComponent<Player>());
+                Vector3[] spawnPositions = { new Vector3(-8, -4, 0), new Vector3(8, -4, 0) };
+                p.transform.position = spawnPositions[Random.Range(0, spawnPositions.Length)];
                 player.GetComponent<Player>().PlayPoof();
             }
-            
         }
         else
         {
@@ -141,17 +141,12 @@ public class PlayerSpawnManager : MonoBehaviour
 
     }
 
-    public void RemovePlayer(PlayerInput playerInputToRemove )
+    public void RemovePlayer(GameObject playerToRemove)
     {
-        foreach (var device in playerInputToRemove.devices)
-        {
-            //InputUser.UnpairDevice(device);
-        }
-
         // Destroy the PlayerInput component
-        Destroy(playerInputToRemove);
+        //Destroy(playerInputToRemove);
 
         // Optionally, destroy the entire player game object
-        Destroy(playerInputToRemove.gameObject);
+        Destroy(playerToRemove);
     }
 }
