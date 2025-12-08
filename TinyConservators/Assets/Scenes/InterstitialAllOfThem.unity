@@ -1788,7 +1788,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 676331822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96d2ad3bc97747a47b66175693f203bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 0aca72f3d8bccd5488f32785819c5e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &686697068
@@ -3814,11 +3814,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5815155454295808419, guid: 4e92123cbe0a60f4681c4189fb313182, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9998847
+      value: 0.99988395
       objectReference: {fileID: 0}
     - target: {fileID: 5815155454295808419, guid: 4e92123cbe0a60f4681c4189fb313182, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.015183437
+      value: 0.015235031
       objectReference: {fileID: 0}
     - target: {fileID: 6051242881050036010, guid: 4e92123cbe0a60f4681c4189fb313182, type: 3}
       propertyPath: m_LocalScale.x
@@ -3878,11 +3878,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6294512362369608876, guid: 4e92123cbe0a60f4681c4189fb313182, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99997103
+      value: 0.99997085
       objectReference: {fileID: 0}
     - target: {fileID: 6294512362369608876, guid: 4e92123cbe0a60f4681c4189fb313182, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.007611998
+      value: -0.007637818
       objectReference: {fileID: 0}
     - target: {fileID: 6731231900648797378, guid: 4e92123cbe0a60f4681c4189fb313182, type: 3}
       propertyPath: m_SortingOrder
@@ -3910,7 +3910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8508169833065227809, guid: 4e92123cbe0a60f4681c4189fb313182, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70658505
+      value: 0.7065668
       objectReference: {fileID: 0}
     - target: {fileID: 8508169833065227809, guid: 4e92123cbe0a60f4681c4189fb313182, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3918,7 +3918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8508169833065227809, guid: 4e92123cbe0a60f4681c4189fb313182, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.70762813
+      value: -0.70764637
       objectReference: {fileID: 0}
     - target: {fileID: 8740172928081413891, guid: 4e92123cbe0a60f4681c4189fb313182, type: 3}
       propertyPath: m_SortingOrder

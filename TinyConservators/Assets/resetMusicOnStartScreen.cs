@@ -1,5 +1,5 @@
 using UnityEngine;
-
+// ********* OLD SCRIPT **** // IT HAS BEEN UPDATED TO resetAllMusic.cs
 public class resetMusicOnStartScreen : MonoBehaviour
 {
     //private FMOD.Studio.EventInstance musicSelector; //saving code bits here in case I need it later

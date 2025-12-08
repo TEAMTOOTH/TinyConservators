@@ -3511,6 +3511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 537706729}
   - component: {fileID: 537706730}
+  - component: {fileID: 537706731}
   m_Layer: 0
   m_Name: LevelFlowActivateMaze (2)
   m_TagString: Untagged
@@ -3548,6 +3549,18 @@ MonoBehaviour:
   objectsToChange:
   - {fileID: 1684091342}
   active: 1
+--- !u!114 &537706731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537706728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d39f4c67230e34298a322f02eebb80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &545409325 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4842016671446212425, guid: 4e92123cbe0a60f4681c4189fb313182, type: 3}
@@ -6786,6 +6799,7 @@ GameObject:
   m_Component:
   - component: {fileID: 886424007}
   - component: {fileID: 886424008}
+  - component: {fileID: 886424009}
   m_Layer: 0
   m_Name: LevelFlowActivateMaze
   m_TagString: Untagged
@@ -6823,6 +6837,18 @@ MonoBehaviour:
   objectsToChange:
   - {fileID: 1684091342}
   active: 1
+--- !u!114 &886424009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886424006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d39f4c67230e34298a322f02eebb80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &896040189
 GameObject:
   m_ObjectHideFlags: 0
@@ -13345,6 +13371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1732799373}
   - component: {fileID: 1732799374}
+  - component: {fileID: 1732799375}
   m_Layer: 0
   m_Name: LevelFlowActivateMaze (1)
   m_TagString: Untagged
@@ -13382,6 +13409,18 @@ MonoBehaviour:
   objectsToChange:
   - {fileID: 1684091342}
   active: 1
+--- !u!114 &1732799375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732799372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d39f4c67230e34298a322f02eebb80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1737729428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2284897704738182420, guid: a7a090e3906c7004e9d73ab58d73f7e7, type: 3}

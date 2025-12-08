@@ -1596,6 +1596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 676331823}
+  - component: {fileID: 676331826}
   - component: {fileID: 676331825}
   - component: {fileID: 676331824}
   m_Layer: 0
@@ -1646,6 +1647,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31590737a5deea34da473ceb5dc545e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &676331826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676331822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aca72f3d8bccd5488f32785819c5e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &740928269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,6 +1668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 740928270}
+  - component: {fileID: 740928273}
   - component: {fileID: 740928272}
   m_Layer: 0
   m_Name: LevelFlowFadeInGameOver
@@ -1696,6 +1710,18 @@ MonoBehaviour:
   parallell: 1
   fadeInAndOut: 0
   timeOfExistence: 0
+--- !u!114 &740928273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740928269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d39f4c67230e34298a322f02eebb80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &758665509
 GameObject:
   m_ObjectHideFlags: 0

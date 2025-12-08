@@ -211,9 +211,7 @@ public class Boss : MonoBehaviour, IDamageReceiver
                 time += Time.deltaTime;
                 yield return null;
             }
-
-            // Reset the boss voice volume
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("bossVoice", 1);
+            
 
             // set boss got hit to back to false
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("bossGotHit", 0);
