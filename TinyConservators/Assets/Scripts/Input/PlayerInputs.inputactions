@@ -364,7 +364,7 @@
                 {
                     "name": "",
                     "id": "f33b6293-e825-4c73-adc4-408566859bf5",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -375,7 +375,7 @@
                 {
                     "name": "",
                     "id": "c4d68658-4669-43f2-83cd-f484242ec59b",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -386,7 +386,7 @@
                 {
                     "name": "",
                     "id": "10b17a69-b113-413f-8323-d69a1563d2ca",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -397,7 +397,7 @@
                 {
                     "name": "",
                     "id": "0b4647d3-62e3-4c24-a5a5-2932983a316f",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button5",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -408,7 +408,7 @@
                 {
                     "name": "",
                     "id": "53728fd7-01b7-4d25-a602-30de0c5e09f7",
-                    "path": "",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button6",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -419,7 +419,7 @@
                 {
                     "name": "",
                     "id": "123d0d4c-2cc7-4c1f-b467-9eb790fd7146",
-                    "path": "",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button7",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
