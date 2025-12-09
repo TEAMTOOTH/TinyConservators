@@ -28,7 +28,7 @@ public class CountRandomAnimation : MonoBehaviour
 
     IEnumerator RandomDance(int newDance)
     {
-        Debug.Log("Play dance " + newDance);
+        //Debug.Log("Play dance " + newDance);
         countAnimator.Play(countDanceAnimation[newDance]);
         yield return new WaitForSeconds(timeBetweenDances);
         ChooseDance();

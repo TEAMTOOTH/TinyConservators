@@ -23,9 +23,9 @@ public class LoadNextLevelFlow : MonoBehaviour, ILevelFlowComponent
         //Back up if sucking doesnt work, just going to double up on the ones that already have been transformed.
         for (int i = 0; i < players.Length; i++)
         {
-            players[i].GetComponent<Player>().ShowVisual(false);
+            //players[i].GetComponent<Player>().ShowVisual(false);
             players[i].GetComponent<Player>().FullFreeze(true);
-            players[i].transform.position = new Vector3(0, 0, 0);
+            players[i].transform.position = new Vector3(0, 100, 0);
         }
         
         FinishSection();

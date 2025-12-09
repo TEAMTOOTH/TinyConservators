@@ -54,7 +54,23 @@ public class VisualController : MonoBehaviour
         if(visualObject != null)
         {
             visualObject.SetActive(state);
+            
+            if (state == true)
+            {
+                //I have no idea why, but it seems that maybe resetting the items that are active as you spawn saves you from losing the face.
+                //SpriteRenderer[] activeSpriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+
+                //GetComponentInChildren<Animator>()?.Play("Float");
+                //for(int i = 0; i < activeSpriteRenderers.Length; i++)
+                //{
+                    //activeSpriteRenderers[i].gameObject.SetActive(false);
+                    //activeSpriteRenderers[i].gameObject.SetActive(true);
+                //}
+
+            }
         }
+
+        
     }
 
     public void SetVisualObject(GameObject visual)

@@ -39,7 +39,7 @@ public class SpawnPoint : MonoBehaviour
         p.GetComponent<Player>().GetPlayerId();
         player.GetComponent<Player>().FullFreeze(false);
         player.GetComponent<Player>().PauseMovement(1f);
-        player.GetComponent<Player>().ShowVisual(true);
+        //player.GetComponent<Player>().ShowVisual(true);
 
         player.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 0);
         player.GetComponent<Rigidbody2D>().AddForce(new Vector2(GetScreenSide() * pushForce * spawnOffset , 0), ForceMode2D.Impulse);
