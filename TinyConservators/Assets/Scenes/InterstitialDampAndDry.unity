@@ -864,6 +864,9 @@ MonoBehaviour:
   - Normal
   - Normal2
   - Normal3
+  - Normal4
+  - Normal5
+  - Normal6
   timeBetweenDances: 6
 --- !u!1001 &451146777
 PrefabInstance:
@@ -1426,7 +1429,7 @@ MonoBehaviour:
   visualMove: {fileID: 1216931699}
   moveTime: 1
   moveIndex: 0
-  parallell: 0
+  parallell: 1
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,8 +2585,8 @@ Transform:
   - {fileID: 836836931}
   - {fileID: 651463468}
   - {fileID: 1925834450}
-  - {fileID: 613945345}
   - {fileID: 312139215}
+  - {fileID: 613945345}
   - {fileID: 1086421541}
   - {fileID: 1827897521}
   - {fileID: 93732389}

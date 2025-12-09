@@ -120,7 +120,7 @@ AnimatorStateMachine:
     m_Position: {x: 260, y: 210, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9108716090806288259}
-    m_Position: {x: 295, y: 275, z: 0}
+    m_Position: {x: 260, y: 260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -871999547205331168}
     m_Position: {x: 330, y: 340, z: 0}
@@ -167,7 +167,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: lady dance 1
+  m_Name: Dance
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

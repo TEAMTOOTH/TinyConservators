@@ -73,7 +73,7 @@ public class PlayerSpawnManager : MonoBehaviour
         {
             p.Initialize(id);
 
-            p.ShowVisual(true);
+            //p.ShowVisual(true);
             p.FullFreeze(false);
             p.SetMoveState(false);
 

@@ -8,9 +8,9 @@ public class VisualTurnOffCollider : MonoBehaviour
     {
         if (collision.CompareTag("Player") && shouldBeEnabled)
         {
-            collision.GetComponent<Player>().ShowVisual(false);
+            //collision.GetComponent<Player>().ShowVisual(false);
             collision.GetComponent<Player>().FullFreeze(true);
-            collision.transform.position = new Vector3(0, 0, 0);
+            collision.transform.position = new Vector3(0, 100, 0);
         }
     }
 }

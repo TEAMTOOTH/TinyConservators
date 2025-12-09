@@ -976,7 +976,6 @@ Transform:
   - {fileID: 1768383560}
   - {fileID: 1632445374}
   - {fileID: 949831816}
-  - {fileID: 1380395509}
   - {fileID: 514192043}
   - {fileID: 1977653878}
   - {fileID: 522236909}
@@ -4008,51 +4007,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1397659150}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1380395508
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1380395509}
-  - component: {fileID: 1380395510}
-  m_Layer: 0
-  m_Name: playersPlaySoundOnConservator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1380395509
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380395508}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 389517198}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1380395510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380395508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02035eb799fb40a489d0c3bfcfbd7a4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: chaos
 --- !u!1 &1393778213
 GameObject:
   m_ObjectHideFlags: 0

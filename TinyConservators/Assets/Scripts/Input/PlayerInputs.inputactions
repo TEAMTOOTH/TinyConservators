@@ -40,6 +40,60 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Green",
+                    "type": "Button",
+                    "id": "52de3ccb-ce18-4894-887b-c7565f2cbc6d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Purple",
+                    "type": "Button",
+                    "id": "80a88211-a942-4c81-b6a1-8a5725bc953e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Yellow",
+                    "type": "Button",
+                    "id": "0888b49f-048b-49a6-b078-a0795d69a7a4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Red",
+                    "type": "Button",
+                    "id": "8aba6010-0b90-467b-ae58-562adc28bff1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Blue",
+                    "type": "Button",
+                    "id": "f4161714-8f85-41ad-a89d-feddc9db0edd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Table",
+                    "type": "Button",
+                    "id": "7a2370ef-3bd7-4405-9ba6-8b071d4138b0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -304,6 +358,72 @@
                     "processors": "",
                     "groups": "",
                     "action": "SecondaryAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f33b6293-e825-4c73-adc4-408566859bf5",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Green",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c4d68658-4669-43f2-83cd-f484242ec59b",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Purple",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "10b17a69-b113-413f-8323-d69a1563d2ca",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yellow",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0b4647d3-62e3-4c24-a5a5-2932983a316f",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Red",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "53728fd7-01b7-4d25-a602-30de0c5e09f7",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Blue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "123d0d4c-2cc7-4c1f-b467-9eb790fd7146",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Table",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

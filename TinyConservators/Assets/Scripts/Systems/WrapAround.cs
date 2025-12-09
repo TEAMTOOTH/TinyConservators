@@ -23,15 +23,17 @@ public class WrapAround : MonoBehaviour
         else if (pos.x < left)
             newPos.x = right;
 
+        /*
         // --- Fall reset ---
         if (pos.y < fallY)
         {
             newPos = respawnPosition;
             GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero; // Stop momentum on respawn
         }
-
+        */
         if (newPos != pos)
             transform.position = newPos;
+        
     }
 
     void FixedUpdate() //Dont need to check every frame, so adding it to fixed update to check 30times per second

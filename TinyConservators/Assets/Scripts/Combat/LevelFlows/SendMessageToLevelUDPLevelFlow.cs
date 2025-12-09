@@ -21,7 +21,7 @@ public class SendMessageToLevelUDPLevelFlow : MonoBehaviour, ILevelFlowComponent
     {
         owner = flowManager;
 
-        udpCommunicator.SendMessage(message);
+        udpCommunicator?.SendMessage(message);
 
         FinishSection();
     }
